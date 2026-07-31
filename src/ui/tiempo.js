@@ -112,7 +112,7 @@ export class Regla {
     }
 
     // marcas
-    ctx.font = '8px ui-monospace, monospace';
+    ctx.font = '8px "IBM Plex Mono", ui-monospace, monospace';
     ctx.fillStyle = 'rgba(120,150,170,0.75)';
     ctx.textAlign = 'center';
     for (const [a, lb] of MARCAS) {

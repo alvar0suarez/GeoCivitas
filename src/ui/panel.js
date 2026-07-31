@@ -3,7 +3,8 @@
 import {
   D, CONTROL, activas, instantaneaDe, choquesActivos, tecnoDisponible,
   difusion, eventosEn, regional, ich, COMPONENTES_ICH, global as gGlobal,
-  horizonteDe, TIPO_BANDA, ciudadesActivas,
+  horizonteDe, TIPO_BANDA, ciudadesActivas, batallasEn, inventosEn,
+  regimenesEn, institucionesEn, poblacionCiudad,
 } from '../core/datos.js';
 import { porFormato, num, compacto, clamp } from '../core/series.js';
 import { formatoAño, era } from '../core/escala.js';
@@ -51,6 +52,12 @@ export function expediente(est) {
     case 'paso':   return fichaPaso(s.paso);
     case 'ruta':   return fichaRuta(s.ruta);
     case 'banda':  return fichaBanda(s.banda, s.horizonte);
+    case 'batalla': return fichaBatalla(s.batalla);
+    case 'invento': return fichaInvento(s.invento, est);
+    case 'lengua': return fichaLengua(s.familia, est);
+    case 'teoria': return fichaTeoria(s.teoria);
+    case 'institucion': return fichaInstitucion(s.inst);
+    case 'ciudad': return fichaCiudad(s.ciudad, est);
     default: return vacio(est);
   }
 }
@@ -251,6 +258,99 @@ function fichaBanda(b, h) {
   </div>`;
 }
 
+function fichaBatalla(b) {
+  const emp = b.vence === -1;
+  return `<div class="sec">
+    <div class="sub" style="color:#fb7185">Encuentro decisivo · ${esc(b.tipo)}</div>
+    <h2 class="ttl">${esc(b.name)}</h2>
+    <div class="sub">${esc(formatoAño(b.year))}</div>
+    <div class="bar"><i style="width:${b.peso * 20}%;background:#fb7185"></i></div>
+    <div class="sub" style="margin:4px 0 12px">peso histórico ${b.peso}/5</div>
+  </div>
+  <div class="sec">
+    <div class="sec__t">CONTENDIENTES</div>
+    ${b.bandos.map((n, i) => `
+      <div class="kv"><div class="kv__k" style="color:${emp ? 'var(--ink-dim)' : i === b.vence ? '#a3e635' : '#fb7185'}">
+        ${emp ? 'Bando ' + (i + 1) : i === b.vence ? 'Vence' : 'Pierde'}</div>
+      <div class="kv__v">${esc(n)}<br><span style="font-family:var(--mono);font-size:10px;color:var(--ink-faint)">≈ ${num(b.fuerzas[i])} efectivos</span></div></div>`).join('')}
+    ${emp ? '<p class="txt" style="font-size:11px;color:var(--ink-faint)">Sin vencedor claro sobre el terreno.</p>' : ''}
+  </div>
+  <div class="sec">
+    <div class="sec__t">POR QUÉ IMPORTA</div>
+    <p class="txt">${esc(b.efecto)}</p>
+  </div>`;
+}
+
+function fichaInvento(inv, est) {
+  const d = clamp((est.año - inv.year) / Math.max(1, inv.difusion), 0, 1);
+  const campo = D.inventos.meta.campos[inv.campo] || inv.campo;
+  return `<div class="sec">
+    <div class="sub" style="color:#67e8f9">Invención · ${esc(campo)}</div>
+    <h2 class="ttl">${esc(inv.name)}</h2>
+    <div class="sub">${esc(formatoAño(inv.year))}</div>
+    ${inv.speculative ? '<span class="chip chip--spec">ESCENARIO</span>' : ''}
+    <p class="txt">${esc(inv.nota)}</p>
+  </div>
+  <div class="sec">
+    <div class="sec__t">ALCANCE</div>
+    <div class="kv"><div class="kv__k">Impacto</div><div class="kv__v">${'▮'.repeat(inv.impacto)}${'▯'.repeat(5 - inv.impacto)} ${inv.impacto}/5</div></div>
+    <div class="kv"><div class="kv__k">Difusión plena</div><div class="kv__v">${num(inv.difusion)} años</div></div>
+    <div class="bar"><i style="width:${(d * 100).toFixed(0)}%;background:#67e8f9"></i></div>
+    <div class="sub" style="margin:4px 0 0">${(d * 100).toFixed(0)} % difundida en ${esc(formatoAño(est.año))}</div>
+  </div>`;
+}
+
+function fichaLengua(f, est) {
+  return `<div class="sec">
+    <div class="sub" style="color:${f.color}">Familia lingüística</div>
+    <h2 class="ttl">${esc(f.name)}</h2>
+    <div class="sub">Patria reconstruida · ${esc(formatoAño(f.fecha))}</div>
+    <p class="txt">${esc(f.nota)}</p>
+  </div>
+  <div class="sec">
+    <div class="sec__t">DATOS</div>
+    <div class="kv"><div class="kv__k">Hablantes hoy</div><div class="kv__v">${f.hablantes >= 1 ? num(f.hablantes) + ' millones' : num(f.hablantes * 1000) + ' mil'}</div></div>
+    <div class="kv"><div class="kv__k">Etapas trazadas</div><div class="kv__v">${f.expansion.map((e) => esc(formatoAño(e.year))).join(' · ')}</div></div>
+    <p class="txt" style="font-size:11px;color:var(--ink-faint);margin-top:8px">${esc(D.lenguas.meta.aviso)}</p>
+  </div>`;
+}
+
+function fichaTeoria(t) {
+  return `<div class="sec">
+    <div class="sub" style="color:#e879f9">Origen del lenguaje · hipótesis</div>
+    <h2 class="ttl">${esc(t.name)}</h2>
+    <div class="sub">${esc(t.defensa)} · ventana ${esc(formatoAño(t.rango[0]))} — ${esc(formatoAño(t.rango[1]))}</div>
+    <p class="txt">${esc(t.resumen)}</p>
+    <p class="txt" style="font-size:11px;color:var(--ink-faint)">El lenguaje no fosiliza. Ninguna de estas hipótesis puede confirmarse con evidencia directa, y por eso conviven.</p>
+  </div>`;
+}
+
+function fichaInstitucion(i) {
+  return `<div class="sec">
+    <div class="sub" style="color:#38bdf8">Arquitectura institucional</div>
+    <h2 class="ttl">${esc(i.name)}</h2>
+    <div class="sub">${esc(formatoAño(i.year))}</div>
+    ${i.speculative ? '<span class="chip chip--spec">ESCENARIO</span>' : ''}
+    <p class="txt">${esc(i.nota)}</p>
+  </div>`;
+}
+
+function fichaCiudad(c, est) {
+  const v = poblacionCiudad(c, est.año);
+  const años = c.p.map((x) => x[0]);
+  const vals = c.p.map((x) => x[1]);
+  return `<div class="sec">
+    <div class="sub" style="color:#f5b642">Centro urbano</div>
+    <h2 class="ttl">${esc(c.n)}</h2>
+    <div class="stat" style="grid-template-columns:1fr">
+      ${tarjeta('', 'POBLACIÓN EN ' + formatoAño(est.año).toUpperCase(), v > 0 ? num(v) : '—', 'mil hab.', chispa(años, vals, est.año, '#f5b642'))}
+    </div>
+    <div class="kv" style="margin-top:10px"><div class="kv__k">Máximo</div>
+      <div class="kv__v">${num(Math.max(...vals))} mil hab. en ${esc(formatoAño(años[vals.indexOf(Math.max(...vals))]))}</div></div>
+    <div class="kv"><div class="kv__k">Primer registro</div><div class="kv__v">${esc(formatoAño(años[0]))}</div></div>
+  </div>`;
+}
+
 /* ── mundo ─────────────────────────────────────────────────── */
 
 export function mundo(est) {
@@ -281,6 +381,18 @@ export function mundo(est) {
     <div class="sec__t">SERIE GLOBAL</div>
     <div class="stat">${tarjetas}</div>
     <p class="txt" style="font-size:10.5px;color:var(--ink-faint);margin-top:8px">${esc(D.humanidad.meta.nota)}</p>
+  </div>
+
+  <div class="sec">
+    <div class="sec__t">CÓMO SE GOBIERNA LA HUMANIDAD</div>
+    <div class="pila">${regimenesEn(año).map((r) =>
+      `<i style="width:${r.pct}%;background:${r.tipo.color}" title="${esc(r.tipo.name)} · ${r.pct.toFixed(1)} %"></i>`).join('')}</div>
+    ${regimenesEn(año).map((r) => `
+      <button class="item" data-regimen="${esc(r.tipo.id)}" style="border-left-color:${r.tipo.color}">
+        <div class="item__t">${esc(r.tipo.name)} <span style="font-family:var(--mono);color:${r.tipo.color}">${r.pct.toFixed(1)} %</span></div>
+        <div class="item__d">${esc(r.tipo.desc)}</div>
+      </button>`).join('')}
+    <p class="txt" style="font-size:10.5px;color:var(--ink-faint);margin-top:8px">${esc(D.politica.meta.aviso)}</p>
   </div>
 
   <div class="sec">
@@ -320,6 +432,17 @@ export function archivo(est) {
   }
   for (const e of eventosEn(año, 150)) {
     items.push({ y: e.year, tipo: 'HITO', t: e.t, d: e.d, c: '#dbe9f4', data: `data-evento="${esc(e.year)}"` });
+  }
+  for (const b of batallasEn(año, 120)) {
+    items.push({ y: b.year, tipo: 'BATALLA', t: b.name, d: b.efecto, c: '#fb7185', data: `data-batalla="${esc(b.id)}"` });
+  }
+  for (const i of D.inventos.inventos) {
+    if (Math.abs(i.year - año) <= 150) {
+      items.push({ y: i.year, tipo: 'INVENCIÓN', t: i.name, d: i.nota, c: '#67e8f9', data: `data-invento="${esc(i.id)}"` });
+    }
+  }
+  for (const i of institucionesEn(año, 150)) {
+    items.push({ y: i.year, tipo: 'INSTITUCIÓN', t: i.name, d: i.nota, c: '#38bdf8', data: `data-inst="${esc(i.year)}"` });
   }
 
   items.sort((a, b) => a.y - b.y);

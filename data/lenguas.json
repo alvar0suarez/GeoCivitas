@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "titulo": "Familias lingüísticas y origen del lenguaje",
+    "nota": "Las patrias de origen (Urheimat) son hipótesis reconstruidas por comparación léxica, arqueología y genética de poblaciones. Casi todas tienen alternativas defendidas por especialistas serios; aquí se recoge la más aceptada y se señala la discusión cuando es relevante.",
+    "aviso": "La expansión de una familia no implica sustitución de población: a veces viajan hablantes, a veces sólo viaja la lengua."
+  },
+  "teoriasOrigen": [
+    { "id": "continuidad", "name": "Continuidad gradual", "defensa": "Pinker, Jackendoff", "rango": [-2000000, -100000], "resumen": "El lenguaje evoluciona por selección natural desde sistemas de comunicación anteriores, en incrementos pequeños y útiles. Cada paso intermedio tiene que haber servido para algo por sí mismo." },
+    { "id": "discontinuidad", "name": "Salto único", "defensa": "Chomsky, Berwick", "rango": [-200000, -60000], "resumen": "Una sola innovación —la operación de combinar recursivamente dos elementos en uno nuevo— aparece de golpe en un individuo o grupo pequeño, y todo lo demás se sigue de ahí. El lenguaje habría nacido como herramienta de pensamiento y sólo después se externalizó como habla." },
+    { "id": "gestual", "name": "Origen gestual", "defensa": "Corballis, Arbib", "rango": [-2000000, -200000], "resumen": "Primero se habla con las manos y luego con la boca. Apoyo: las neuronas espejo, la gestualidad espontánea al hablar y la facilidad con que aparecen lenguas de signos completas donde no había ninguna." },
+    { "id": "musical", "name": "Protolenguaje musical", "defensa": "Mithen, Darwin", "rango": [-500000, -150000], "resumen": "Antes que palabras hubo frases melódicas holísticas, sin partes intercambiables, usadas para cohesionar y cortejar. El significado se habría segmentado después, no antes." },
+    { "id": "cotilleo", "name": "Hipótesis del acicalamiento vocal", "defensa": "Dunbar", "rango": [-500000, -100000], "resumen": "Los primates mantienen alianzas espulgándose, y eso no escala más allá de unos 50 individuos. El lenguaje sería un acicalamiento a distancia que permite grupos de ~150: el habla nace para hablar de terceros." },
+    { "id": "foxp2", "name": "Evidencia genética", "defensa": "Pääbo y colaboradores", "rango": [-600000, -200000], "resumen": "La variante humana de FOXP2 —implicada en el control motor fino del habla— la compartimos con neandertales, lo que empuja hacia atrás la capacidad física. No es «el gen del lenguaje»: es una pieza necesaria y no suficiente." },
+    { "id": "arqueologica", "name": "Evidencia indirecta", "defensa": "d'Errico, Henshilwood", "rango": [-100000, -40000], "resumen": "El lenguaje no fosiliza, pero sus consecuencias sí: ocre grabado en Blombos (-75.000), cuentas de concha transportadas cientos de kilómetros, y sobre todo la travesía planificada a Sahul hace 65.000 años, que exige coordinar una empresa que nadie ha visto terminar." }
+  ],
+  "familias": [
+    {
+      "id": "indoeuropea", "name": "Indoeuropea", "color": "#38bdf8", "hablantes": 3200,
+      "urheimat": [45, 49], "fecha": -4500,
+      "nota": "Reconstruida desde el sánscrito y el lituano hasta el inglés. La hipótesis de la estepa póntico-caspia gana terreno con el ADN antiguo: los pastores yamnaya aportan un tercio del genoma del norte de Europa hacia el 2500 a. C. La alternativa anatolia, que la ligaba a la difusión agrícola, sigue teniendo defensores.",
+      "expansion": [
+        { "year": -4500, "members": ["Ukraine", "Russia", "Kazakhstan"], "box": [30, 44, 58, 54] },
+        { "year": -2000, "members": ["Ukraine", "Russia", "Poland", "Germany", "Czechia", "Slovakia", "Hungary", "Romania", "Kazakhstan", "Turkey", "Iran", "Afghanistan", "Greece", "Bulgaria", "Serbia", "Uzbekistan", "Turkmenistan", "India", "Pakistan", "Austria", "Belarus", "Lithuania", "Latvia", "Estonia"], "box": [5, 24, 90, 60] },
+        { "year": -500, "members": ["Spain", "Portugal", "France", "Italy", "Germany", "United Kingdom", "Ireland", "Poland", "Czechia", "Slovakia", "Hungary", "Romania", "Bulgaria", "Greece", "Serbia", "Croatia", "Austria", "Switzerland", "Belgium", "Netherlands", "Denmark", "Sweden", "Norway", "Ukraine", "Belarus", "Russia", "Lithuania", "Latvia", "Estonia", "Turkey", "Armenia", "Iran", "Afghanistan", "Pakistan", "India", "Bangladesh", "Nepal", "Sri Lanka", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kazakhstan", "Albania", "Macedonia", "Bosnia and Herz.", "Slovenia", "Montenegro", "Moldova"], "box": [-11, 5, 92, 71] },
+        { "year": 1900, "members": ["Spain", "Portugal", "France", "Italy", "Germany", "United Kingdom", "Ireland", "Poland", "Czechia", "Slovakia", "Hungary", "Romania", "Bulgaria", "Greece", "Serbia", "Croatia", "Austria", "Switzerland", "Belgium", "Netherlands", "Denmark", "Sweden", "Norway", "Ukraine", "Belarus", "Russia", "Lithuania", "Latvia", "Estonia", "Armenia", "Iran", "Afghanistan", "Pakistan", "India", "Bangladesh", "Nepal", "Sri Lanka", "Tajikistan", "United States of America", "Canada", "Mexico", "Brazil", "Argentina", "Colombia", "Peru", "Chile", "Venezuela", "Bolivia", "Ecuador", "Uruguay", "Paraguay", "Australia", "New Zealand", "South Africa", "Cuba", "Guatemala", "Honduras", "Nicaragua", "Costa Rica", "Panama", "Dominican Rep.", "Moldova", "Albania", "Slovenia", "Bosnia and Herz."], "box": [-180, -56, 180, 75] }
+      ]
+    },
+    {
+      "id": "afroasiatica", "name": "Afroasiática", "color": "#f5b642", "hablantes": 600,
+      "urheimat": [38, 12], "fecha": -12000,
+      "nota": "Incluye el semítico, el bereber, el egipcio antiguo y el cusita. La mayor diversidad interna está en el Cuerno de África, lo que suele indicar antigüedad: la patria más probable es africana, no asiática, aunque la rama semítica se expandiera después desde Arabia.",
+      "expansion": [
+        { "year": -12000, "members": ["Ethiopia", "Eritrea", "Somalia", "Sudan", "Djibouti"], "box": [32, 3, 48, 20] },
+        { "year": -3000, "members": ["Egypt", "Sudan", "Ethiopia", "Eritrea", "Somalia", "Israel", "Palestine", "Lebanon", "Syria", "Jordan", "Saudi Arabia", "Yemen", "Iraq", "Libya", "Chad", "Niger", "Algeria", "Morocco", "Tunisia", "Mali", "W. Sahara", "Mauritania", "Oman"], "box": [-17, 3, 60, 37] },
+        { "year": 1000, "members": ["Egypt", "Sudan", "S. Sudan", "Ethiopia", "Eritrea", "Somalia", "Somaliland", "Israel", "Palestine", "Lebanon", "Syria", "Jordan", "Saudi Arabia", "Yemen", "Iraq", "Libya", "Chad", "Niger", "Algeria", "Morocco", "Tunisia", "Mali", "W. Sahara", "Mauritania", "Oman", "United Arab Emirates", "Kuwait", "Qatar", "Nigeria", "Djibouti", "Malta"], "box": [-17, 3, 60, 37] }
+      ]
+    },
+    {
+      "id": "nigercongo", "name": "Níger-Congo · expansión bantú", "color": "#a3e635", "hablantes": 700,
+      "urheimat": [11, 7], "fecha": -3000,
+      "nota": "Una de las expansiones demográficas más rápidas de la prehistoria: en dos mil años, agricultores con hierro y ñame parten del actual Camerún y ocupan medio continente. Explica por qué media África habla lenguas emparentadas y por qué los pigmeos y los joisán quedaron reducidos a refugios.",
+      "expansion": [
+        { "year": -3000, "members": ["Cameroon", "Nigeria"], "box": [7, 3, 15, 12] },
+        { "year": -500, "members": ["Cameroon", "Nigeria", "Gabon", "Congo", "Dem. Rep. Congo", "Central African Rep.", "Eq. Guinea", "Angola", "Uganda", "Kenya", "Tanzania"], "box": [7, -14, 40, 12] },
+        { "year": 1000, "members": ["Cameroon", "Nigeria", "Gabon", "Congo", "Dem. Rep. Congo", "Central African Rep.", "Eq. Guinea", "Angola", "Uganda", "Kenya", "Tanzania", "Zambia", "Zimbabwe", "Mozambique", "Malawi", "Botswana", "South Africa", "Namibia", "Rwanda", "Burundi", "Lesotho", "eSwatini", "Ghana", "Côte d'Ivoire", "Guinea", "Senegal", "Liberia", "Sierra Leone", "Togo", "Benin", "Burkina Faso", "Guinea-Bissau", "Gambia"], "box": [-18, -35, 42, 16] }
+      ]
+    },
+    {
+      "id": "sinotibetana", "name": "Sinotibetana", "color": "#fb7185", "hablantes": 1400,
+      "urheimat": [107, 35], "fecha": -6000,
+      "nota": "Segunda familia del mundo por número de hablantes, muy concentrada: el chino mandarín solo suma más de mil millones. La patria más probable está en el curso alto del Huang He, ligada a los primeros cultivadores de mijo.",
+      "expansion": [
+        { "year": -6000, "members": ["China"], "box": [102, 30, 114, 40] },
+        { "year": -1000, "members": ["China", "Myanmar", "Nepal", "Bhutan"], "box": [80, 20, 122, 42] },
+        { "year": 1500, "members": ["China", "Myanmar", "Nepal", "Bhutan", "Taiwan", "India", "Thailand", "Laos"], "box": [73, 15, 125, 45] }
+      ]
+    },
+    {
+      "id": "austronesia", "name": "Austronesia", "color": "#2dd4bf", "hablantes": 400,
+      "urheimat": [121, 23.7], "fecha": -3000,
+      "nota": "La expansión marítima más extraordinaria antes de la brújula: desde Taiwán hasta Madagascar y la isla de Pascua, un tercio de la circunferencia terrestre en canoa de balancín. Malgache y hawaiano son parientes reconocibles.",
+      "expansion": [
+        { "year": -3000, "members": ["Taiwan"], "box": [119, 21, 123, 26] },
+        { "year": -1500, "members": ["Taiwan", "Philippines", "Indonesia", "Malaysia", "Brunei", "Timor-Leste"], "box": [95, -11, 128, 26] },
+        { "year": 500, "members": ["Taiwan", "Philippines", "Indonesia", "Malaysia", "Brunei", "Timor-Leste", "Madagascar", "Papua New Guinea", "Solomon Is.", "Vanuatu", "Fiji", "New Zealand", "New Caledonia"], "box": [40, -50, 180, 26] }
+      ]
+    },
+    {
+      "id": "uralica", "name": "Urálica", "color": "#a78bfa", "hablantes": 25,
+      "urheimat": [58, 58], "fecha": -4000,
+      "nota": "Finlandés, estonio, húngaro y una veintena de lenguas siberianas. El húngaro llega a Europa central en el siglo IX con los magiares, dejando una isla lingüística a 2.500 km de sus parientes más próximos.",
+      "expansion": [
+        { "year": -4000, "members": ["Russia"], "box": [48, 52, 70, 65] },
+        { "year": 1000, "members": ["Russia", "Finland", "Estonia", "Hungary", "Norway", "Sweden"], "box": [8, 45, 90, 71] }
+      ]
+    },
+    {
+      "id": "turquica", "name": "Túrquica", "color": "#e879f9", "hablantes": 200,
+      "urheimat": [98, 48], "fecha": -1000,
+      "nota": "De Mongolia occidental al Bósforo en dos mil años, siguiendo el corredor de estepa. Un hablante de turco de Estambul y otro de uzbeko de Samarcanda todavía se entienden a medias.",
+      "expansion": [
+        { "year": -500, "members": ["Mongolia", "China", "Russia"], "box": [88, 42, 112, 54] },
+        { "year": 1000, "members": ["Mongolia", "China", "Russia", "Kazakhstan", "Kyrgyzstan", "Uzbekistan", "Turkmenistan", "Azerbaijan", "Iran"], "box": [46, 35, 112, 56] },
+        { "year": 1500, "members": ["Turkey", "Azerbaijan", "Kazakhstan", "Kyrgyzstan", "Uzbekistan", "Turkmenistan", "China", "Mongolia", "Russia", "Iran", "Bulgaria", "Cyprus", "N. Cyprus"], "box": [24, 33, 112, 58] }
+      ]
+    },
+    {
+      "id": "dravidica", "name": "Dravídica", "color": "#fb923c", "hablantes": 250,
+      "urheimat": [77, 15], "fecha": -4000,
+      "nota": "Tamil, télugu, canarés, malayalam. El brahui, aislado en Baluchistán a 1.500 km del resto, alimenta la hipótesis de que la familia ocupó el noroeste antes de la llegada indoeuropea — y de que la lengua del Indo pudo ser dravídica.",
+      "expansion": [
+        { "year": -4000, "members": ["India", "Pakistan"], "box": [66, 8, 82, 32] },
+        { "year": 500, "members": ["India", "Sri Lanka", "Pakistan"], "box": [72, 6, 82, 30] }
+      ]
+    },
+    {
+      "id": "quechua", "name": "Quechua y aimara", "color": "#5eead4", "hablantes": 12,
+      "urheimat": [-77, -12], "fecha": -1000,
+      "nota": "El quechua se difunde por la costa central peruana antes que los incas y ellos lo adoptan como lengua administrativa. Es un caso claro de lengua que se expande por prestigio y comercio antes que por conquista.",
+      "expansion": [
+        { "year": -500, "members": ["Peru"], "box": [-79, -15, -74, -9] },
+        { "year": 1500, "members": ["Peru", "Bolivia", "Ecuador", "Colombia", "Argentina", "Chile"], "box": [-80, -25, -66, 2] }
+      ]
+    },
+    {
+      "id": "utoazteca", "name": "Uto-azteca", "color": "#22d3ee", "hablantes": 2,
+      "urheimat": [-108, 28], "fecha": -3000,
+      "nota": "Une el náhuatl de Tenochtitlan con el shoshone de la Gran Cuenca. Su expansión suele asociarse a la difusión del maíz hacia el norte, aunque hay quien defiende el sentido contrario.",
+      "expansion": [
+        { "year": -2000, "members": ["Mexico", "United States of America"], "box": [-118, 22, -100, 42] }
+      ]
+    },
+    {
+      "id": "pamanyungana", "name": "Pama-ñungana", "color": "#fbbf24", "hablantes": 0.05,
+      "urheimat": [140, -18], "fecha": -3000,
+      "nota": "Cubre siete octavas partes de Australia pese a que el continente lleva poblado 65.000 años: una expansión interna relativamente reciente barrió una diversidad anterior mucho mayor. De unas 250 lenguas en 1788 quedan menos de 20 con transmisión intergeneracional.",
+      "expansion": [
+        { "year": -3000, "members": ["Australia"], "box": [113, -39, 154, -11] }
+      ]
+    },
+    {
+      "id": "esquimoaleutiana", "name": "Esquimo-aleutiana", "color": "#cffafe", "hablantes": 0.1,
+      "urheimat": [-165, 64], "fecha": -2000,
+      "nota": "La última gran expansión sobre territorio no habitado por humanos: la cultura thule cruza el Ártico americano de Alaska a Groenlandia en apenas dos siglos, hacia el 1000 d. C., con trineo, kayak y caza de ballena.",
+      "expansion": [
+        { "year": -2000, "members": ["United States of America", "Russia"], "box": [-172, 54, -150, 71] },
+        { "year": 1200, "members": ["United States of America", "Canada", "Greenland", "Russia"], "box": [-172, 54, -20, 84] }
+      ]
+    }
+  ]
+}

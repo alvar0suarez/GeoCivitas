@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "titulo": "Formas de gobierno y arquitectura institucional",
+    "nota": "Reparto estimado de la humanidad por régimen político. Las categorías son gruesas a propósito: un mismo estado puede ser burocrático y dinástico a la vez, y aquí se asigna por rasgo dominante. Las cifras se normalizan al 100 % en cada corte.",
+    "aviso": "Reconstrucción indicativa a partir de la literatura comparada; anterior a 1800 son estimaciones de orden de magnitud."
+  },
+  "regimenes": {
+    "years": [-50000, -10000, -5000, -3000, -1000, 1, 500, 1000, 1500, 1700, 1800, 1900, 1950, 2000, 2025, 2050, 2100],
+    "tipos": [
+      { "id": "banda", "name": "Bandas igualitarias", "color": "#5eead4", "desc": "Sin jerarquía formal ni especialistas a tiempo completo. La decisión se toma cara a cara y el liderazgo es situacional y revocable.",
+        "serie": [100, 100, 60, 30, 13, 5, 4, 3, 2, 1, 0.5, 0.2, 0.1, 0, 0, 0, 0] },
+      { "id": "jefatura", "name": "Jefaturas y confederaciones", "color": "#a3e635", "desc": "Jerarquía hereditaria sin aparato administrativo. Redistribución de excedente como fuente de legitimidad.",
+        "serie": [0, 0, 38, 45, 30, 15, 14, 12, 10, 7, 5, 2, 1, 0.3, 0.2, 0.1, 0] },
+      { "id": "monarquia", "name": "Monarquía sacralizada", "color": "#fbbf24", "desc": "El gobernante encarna o representa un orden cósmico. La legitimidad es religiosa antes que contractual.",
+        "serie": [0, 0, 2, 25, 50, 30, 32, 35, 33, 25, 18, 6, 2, 1, 1, 1, 1] },
+      { "id": "burocracia", "name": "Imperio burocrático", "color": "#f97316", "desc": "Administración profesional, catastro, archivo y fiscalidad regular. El cargo se separa de la persona.",
+        "serie": [0, 0, 0, 0, 5, 40, 32, 30, 30, 30, 25, 15, 5, 2, 2, 2, 2] },
+      { "id": "republica", "name": "República oligárquica", "color": "#38bdf8", "desc": "Poder repartido entre un cuerpo restringido de ciudadanos propietarios, con magistraturas temporales.",
+        "serie": [0, 0, 0, 0, 2, 8, 2, 3, 5, 4, 3, 2, 1, 0.5, 0.5, 0.5, 0.5] },
+      { "id": "feudal", "name": "Orden feudal", "color": "#a78bfa", "desc": "Soberanía fragmentada en cadenas de fidelidad personal. Sin fiscalidad monetaria, pagar es entregar tierra.",
+        "serie": [0, 0, 0, 0, 0, 2, 12, 15, 14, 10, 6, 2, 1, 0, 0, 0, 0] },
+      { "id": "absolutista", "name": "Monarquía absoluta", "color": "#e879f9", "desc": "Corte centralizada, ejército permanente y nobleza domesticada. El rey concentra lo que antes estaba disperso.",
+        "serie": [0, 0, 0, 0, 0, 0, 0, 0, 5, 20, 28, 15, 3, 1, 1, 1, 1] },
+      { "id": "colonial", "name": "Dominio colonial", "color": "#fb7185", "desc": "Población gobernada por un estado extranjero sin representación en él. En 1900 alcanza a un tercio de la humanidad.",
+        "serie": [0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 14, 35, 25, 1, 0.3, 0, 0] },
+      { "id": "liberal", "name": "Estado liberal censitario", "color": "#67e8f9", "desc": "Constitución, separación de poderes y sufragio limitado por renta, sexo o instrucción.",
+        "serie": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 15, 20, 15, 12, 12, 12] },
+      { "id": "democracia", "name": "Democracia de sufragio universal", "color": "#22d3ee", "desc": "Elecciones competitivas con voto sin restricción de censo ni sexo. Antes de 1893 no existe en ningún lugar del mundo.",
+        "serie": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 20, 45, 43, 45, 50] },
+      { "id": "autocracia", "name": "Autocracia de masas", "color": "#f43f5e", "desc": "Partido único, régimen militar o personalismo plebiscitario. Moviliza en vez de excluir, y por eso penetra más hondo que la monarquía absoluta.",
+        "serie": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 22, 34, 40, 38, 33] }
+    ]
+  },
+  "instituciones": [
+    { "year": -2100, "name": "Asamblea de ancianos", "at": [45.6, 31.3], "nota": "El poema de Gilgamesh describe un rey que debe consultar a dos cámaras. Sea histórico o no, la idea de que el poder necesita consentimiento es tan vieja como el registro escrito." },
+    { "year": -1754, "name": "Ley publicada", "at": [44.42, 32.54], "nota": "Hammurabi expone su código en piedra en el espacio público. La novedad no es castigar, sino comprometerse por adelantado a un criterio conocido." },
+    { "year": -594, "name": "Cancelación de deudas", "at": [23.73, 37.98], "nota": "La seisachtheia de Solón libera a los atenienses esclavizados por deuda y prohíbe la práctica. Sin ese paso no hay ciudadanía posible: un deudor no puede ser ciudadano." },
+    { "year": -508, "name": "Isonomía", "at": [23.73, 37.98], "nota": "Clístenes reorganiza el cuerpo cívico por territorio en lugar de por linaje, y reparte cargos por sorteo. La igualdad ante la ley precede al voto." },
+    { "year": -450, "name": "Ley de las XII Tablas", "at": [12.5, 41.9], "nota": "La plebe romana arranca la publicación del derecho consuetudinario. Todo derecho escrito posterior en Occidente desciende de este tronco." },
+    { "year": -221, "name": "Estandarización imperial", "at": [108.94, 34.34], "nota": "Qin unifica escritura, moneda, pesos y ancho de eje. Gobernar deja de ser negociar con cada localidad y pasa a ser aplicar la misma regla en todas." },
+    { "year": 605, "name": "Examen imperial", "at": [112.45, 34.62], "nota": "El acceso al cargo por examen anónimo se institucionaliza en la China Sui-Tang. Europa adopta la idea para su función pública recién en el siglo XIX." },
+    { "year": 930, "name": "Althing", "at": [-21.1, 64.25], "nota": "Asamblea general islandesa reunida anualmente en Thingvellir. Parlamento en funcionamiento continuado más antiguo del mundo." },
+    { "year": 1188, "name": "Cortes de León", "at": [-5.57, 42.6], "nota": "Primera asamblea europea documentada con representación del estamento urbano junto a nobleza y clero. La ciudad entra en la política del reino." },
+    { "year": 1215, "name": "Carta Magna", "at": [-0.56, 51.44], "nota": "El rey acepta por escrito límites a su poder y un procedimiento antes de la pena. El contenido es feudal; el precedente, permanente." },
+    { "year": 1648, "name": "Soberanía territorial", "at": [7.63, 52.28], "nota": "Westfalia acepta que dentro de sus fronteras cada príncipe decide. El sistema internacional pasa a componerse de piezas formalmente iguales." },
+    { "year": 1689, "name": "Declaración de Derechos inglesa", "at": [-0.13, 51.5], "nota": "El Parlamento fija que no hay impuesto ni ejército permanente sin su consentimiento. El control del dinero es el control del poder." },
+    { "year": 1748, "name": "Separación de poderes", "at": [-0.58, 44.84], "nota": "Montesquieu formula que sólo el poder detiene al poder. Se convertirá en el plano arquitectónico de casi todas las constituciones posteriores." },
+    { "year": 1787, "name": "Constitución escrita", "at": [-75.15, 39.95], "nota": "Un texto único, superior a la ley ordinaria y modificable por procedimiento agravado. Modelo copiado por casi todos los estados del mundo." },
+    { "year": 1791, "name": "Revuelta de Saint-Domingue", "at": [-72.34, 18.54], "nota": "Personas esclavizadas se sublevan y fundan un estado. Obliga a la Ilustración a mirarse en el espejo de sus propias contradicciones." },
+    { "year": 1848, "name": "Sufragio masculino amplio", "at": [2.35, 48.86], "nota": "Francia instaura el voto de todos los varones adultos. El cuerpo electoral pasa de 250.000 a 9 millones en unos meses." },
+    { "year": 1893, "name": "Sufragio femenino", "at": [174.78, -41.29], "nota": "Nueva Zelanda es el primer país que reconoce el voto a las mujeres en elecciones nacionales. Hasta ese año no había existido una democracia de sufragio universal en ningún sitio." },
+    { "year": 1889, "name": "Seguro social obligatorio", "at": [13.4, 52.5], "nota": "Bismarck crea pensiones y seguro de enfermedad para desactivar al socialismo. El estado del bienestar nace como cálculo conservador." },
+    { "year": 1919, "name": "Jornada de ocho horas", "at": [6.14, 46.2], "nota": "La OIT fija el primer convenio internacional del trabajo. Empieza la caída sostenida de la jornada anual que aún continúa." },
+    { "year": 1945, "name": "Prohibición de la conquista", "at": [-122.42, 37.77], "nota": "La Carta de la ONU proscribe la adquisición de territorio por la fuerza. Imperfecto, pero la anexión pasa de norma a excepción sancionable." },
+    { "year": 1948, "name": "Derechos humanos universales", "at": [2.35, 48.86], "nota": "Primera norma que atribuye derechos a la persona por existir, no por pertenecer a un estado. Sin fuerza ejecutiva y con enorme fuerza normativa." },
+    { "year": 1957, "name": "Integración supranacional", "at": [12.5, 41.9], "nota": "Los Tratados de Roma crean instituciones con competencias cedidas voluntariamente. Primera vez que estados soberanos delegan poder sin ser derrotados." },
+    { "year": 1998, "name": "Jurisdicción penal internacional", "at": [4.29, 52.08], "nota": "El Estatuto de Roma crea un tribunal permanente para crímenes de guerra y genocidio. La inmunidad del gobernante deja de ser absoluta en el papel." },
+    { "year": 2017, "name": "Personalidad jurídica de un río", "at": [175.2, -39.5], "nota": "Nueva Zelanda reconoce al Whanganui como sujeto de derecho con representantes propios. Precedente para India, Colombia y Ecuador en años siguientes." },
+    { "year": 2039, "name": "Cámaras deliberativas por sorteo", "at": [4.35, 50.85], "speculative": true, "nota": "Escenario del Archivo: asambleas ciudadanas elegidas por muestreo aleatorio con capacidad legislativa vinculante en materias de horizonte largo. Vuelta a Clístenes con estadística moderna." },
+    { "year": 2071, "name": "Estatuto de los bienes comunes", "at": [0, 0], "speculative": true, "nota": "Escenario del Archivo: alta mar, atmósfera, órbita baja y genoma bajo administración común con capacidad recaudatoria propia." }
+  ]
+}

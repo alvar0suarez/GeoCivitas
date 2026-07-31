@@ -21,8 +21,10 @@
   --line-2: rgba(90, 150, 175, 0.30);
   --glass:  rgba(6, 14, 24, 0.78);
 
-  --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
-  --sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  /* IBM Plex Mono lleva todo el aparato de instrumento: rótulos, cifras, HUD.
+     Archivo, de nombre oportuno, lleva la prosa de los expedientes. */
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --sans: "Archivo", "Segoe UI", system-ui, sans-serif;
 
   --rail-w:  186px;
   --panel-w: 356px;
@@ -218,14 +220,19 @@ button { cursor: pointer; background: none; border: 0; }
 }
 .rail__hd {
   font-family: var(--mono); font-size: 8px; letter-spacing: .26em;
-  color: var(--ink-faint); margin: 14px 0 7px; padding-left: 2px;
+  color: var(--ink-faint); margin: 12px 0 6px; padding-left: 2px;
+}
+/* el simulador queda siempre al alcance aunque la lista de capas se alargue */
+.rail__pie {
+  position: sticky; bottom: -12px; margin-top: 12px;
+  padding: 8px 0 12px; background: linear-gradient(180deg, transparent, var(--bg) 22%);
 }
 .rail__hd:first-child { margin-top: 0; }
 .rail__list { display: flex; flex-direction: column; gap: 1px; }
 
 .lyr {
   display: flex; align-items: center; gap: 8px;
-  padding: 6px 7px; text-align: left; width: 100%;
+  padding: 4px 7px; text-align: left; width: 100%;
   border-left: 2px solid transparent; transition: .14s;
 }
 .lyr:hover { background: rgba(34,211,238,.06); }
@@ -432,6 +439,67 @@ button { cursor: pointer; background: none; border: 0; }
 .fac__v { font-family: var(--mono); font-size: 9px; color: var(--ink-faint); width: 42px; text-align: right; flex: none; font-variant-numeric: tabular-nums; }
 
 .crosshair { position: absolute; pointer-events: none; z-index: 11; }
+
+/* ── barra de gobierno apilada ───────────────────────────── */
+.pila {
+  display: flex; height: 16px; width: 100%; margin-bottom: 10px;
+  border: 1px solid var(--line); background: var(--bg);
+}
+.pila > i { display: block; height: 100%; transition: width .35s ease; }
+
+/* ── BUSCADOR ────────────────────────────────────────────── */
+.pal {
+  position: fixed; inset: 0; z-index: 95;
+  display: flex; justify-content: center; align-items: flex-start;
+  padding: 90px 24px 24px;
+  background: rgba(2, 5, 10, .78); backdrop-filter: blur(6px);
+}
+.pal[hidden] { display: none; }
+.pal__box {
+  width: min(720px, 100%); max-height: 74vh; display: flex; flex-direction: column;
+  background: var(--bg-2); border: 1px solid var(--line-2);
+  box-shadow: 0 30px 90px rgba(0,0,0,.85), 0 0 0 1px rgba(34,211,238,.1);
+}
+.pal__inp {
+  display: flex; align-items: center; gap: 10px; padding: 0 14px;
+  border-bottom: 1px solid var(--line); flex: none;
+}
+.pal__pre { color: var(--cy); font-size: 17px; }
+.pal__esc {
+  font-family: var(--mono); font-size: 8px; letter-spacing: .16em;
+  color: var(--ink-faint); border: 1px solid var(--line-2); padding: 3px 6px;
+}
+#palInput {
+  flex: 1; background: none; border: 0; outline: none; padding: 16px 0;
+  font-family: var(--mono); font-size: 14px; color: var(--ink);
+}
+#palInput::placeholder { color: var(--ink-faint); }
+.pal__list { overflow-y: auto; padding: 6px; }
+.pal__row {
+  display: flex; align-items: baseline; gap: 11px; width: 100%;
+  padding: 8px 10px; text-align: left;
+  border-left: 2px solid transparent; transition: .12s;
+}
+.pal__row:hover, .pal__row.is-sel { background: rgba(34,211,238,.09); border-left-color: var(--cy); }
+.pal__cls {
+  font-family: var(--mono); font-size: 8px; letter-spacing: .14em;
+  color: var(--am); width: 92px; flex: none;
+}
+.pal__t { font-size: 13px; color: var(--ink); flex: 1; min-width: 0; }
+.pal__sub { display: block; font-size: 10.5px; color: var(--ink-faint); margin-top: 1px; }
+.pal__y {
+  font-family: var(--mono); font-size: 10px; color: var(--ink-dim);
+  flex: none; font-variant-numeric: tabular-nums;
+}
+.pal__hint {
+  font-family: var(--mono); font-size: 9.5px; color: var(--ink-faint);
+  padding: 24px 14px; text-align: center; line-height: 1.9;
+}
+
+.ibtn--wide {
+  width: auto; padding: 0 10px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: .16em;
+}
 
 /* ── ADAPTATIVO ──────────────────────────────────────────── */
 @media (max-width: 1180px) {

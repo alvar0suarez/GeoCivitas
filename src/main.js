@@ -5,7 +5,10 @@
  * por `set()`, que marca el lienzo como sucio y refresca el panel.
  */
 
-import { cargar, D, activas, nivelMar, horizonteDe, CONTROL, TIPO_BANDA, global as gGlobal } from './core/datos.js';
+import {
+  cargar, D, activas, nivelMar, horizonteDe, CONTROL, TIPO_BANDA,
+  global as gGlobal, buscar, regimenesEn,
+} from './core/datos.js';
 import { Atlas, ESCALAS } from './render/atlas.js';
 import { Regla } from './ui/tiempo.js';
 import * as Panel from './ui/panel.js';
@@ -25,7 +28,8 @@ const est = {
   tematica: 'ninguna',
   capas: {
     soberania: true, prehistoria: true, densidad: true, orografia: true,
-    rutas: false, choques: true, tecno: false, eventos: true,
+    batallas: true, rutas: false, choques: true, tecno: false,
+    inventos: false, lenguas: false, eventos: true,
     pasos: false, graticula: true,
   },
   seleccion: null,
@@ -39,10 +43,13 @@ const est = {
 const CAPAS = [
   ['soberania',   'SOBERANÍA',    '#22d3ee'],
   ['prehistoria', 'HORIZONTES',   '#e879f9'],
+  ['lenguas',     'LENGUAS',      '#38bdf8'],
+  ['batallas',    'BATALLAS',     '#fb7185'],
   ['densidad',    'DENSIDAD',     '#f5b642'],
   ['orografia',   'OROGRAFÍA',    '#d9b260'],
   ['rutas',       'RUTAS',        '#38bdf8'],
   ['choques',     'CHOQUES',      '#fb7185'],
+  ['inventos',    'INVENCIONES',  '#67e8f9'],
   ['tecno',       'TECNOMILITAR', '#a3e635'],
   ['eventos',     'HITOS',        '#dbe9f4'],
   ['pasos',       'PASOS',        '#f5b642'],
@@ -88,6 +95,10 @@ let atlas, regla, sucio = true, ultimo = 0;
   redimensionar();
   conectar();
   set({ año: 117 });
+
+  // el lienzo mide el texto al dibujarlo: si las tipografías llegan después,
+  // hay que rehacer los rótulos y la regla con las métricas correctas
+  if (document.fonts?.ready) document.fonts.ready.then(() => { regla.dibujar(); sucio = true; });
 
   setTimeout(() => { $('#boot').classList.add('is-out'); setTimeout(() => $('#boot').remove(), 600); }, 350);
   requestAnimationFrame(bucle);
@@ -259,8 +270,22 @@ function conectar() {
 
   // panel: navegación interna
   $('#panelBody').addEventListener('click', (e) => {
-    const t = e.target.closest('[data-polity],[data-region],[data-choque],[data-tecno],[data-evento],[data-sim]');
+    const t = e.target.closest('[data-polity],[data-region],[data-choque],[data-tecno],[data-evento],[data-sim],[data-batalla],[data-invento],[data-inst],[data-regimen]');
     if (!t) return;
+    const ir = (sel) => { set({ seleccion: sel, tab: 'dossier' }); marcarTab('dossier'); };
+    if (t.dataset.batalla) {
+      const b = D.batallas.batallas.find((x) => x.id === t.dataset.batalla);
+      if (b) { atlas.vista.centro = b.at; return ir({ tipo: 'batalla', batalla: b }); }
+    }
+    if (t.dataset.invento) {
+      const i = D.inventos.inventos.find((x) => x.id === t.dataset.invento);
+      if (i) { atlas.vista.centro = i.at; return ir({ tipo: 'invento', invento: i }); }
+    }
+    if (t.dataset.inst) {
+      const i = D.politica.instituciones.find((x) => String(x.year) === t.dataset.inst);
+      if (i) { atlas.vista.centro = i.at; return ir({ tipo: 'institucion', inst: i }); }
+    }
+    if (t.dataset.regimen) return;
     if (t.dataset.polity) set({ seleccion: { tipo: 'polity', pol: D.porId.get(t.dataset.polity) }, tab: 'dossier' }), marcarTab('dossier');
     else if (t.dataset.region) set({ seleccion: { tipo: 'region', reg: D.regiones.find((r) => r.id === t.dataset.region) }, tab: 'dossier' }), marcarTab('dossier');
     else if (t.dataset.choque) set({ seleccion: { tipo: 'choque', choque: D.choques.shocks.find((s) => s.id === t.dataset.choque) }, tab: 'dossier' }), marcarTab('dossier');
@@ -296,6 +321,21 @@ function conectar() {
   document.querySelectorAll('.modal').forEach((m) => m.addEventListener('click', (e) => {
     if (e.target === m) m.hidden = true;
   }));
+
+  // buscador
+  $('#btnBuscar').addEventListener('click', abrirPal);
+  $('#palInput').addEventListener('input', (e) => pintarPal(buscar(e.target.value)));
+  $('#palInput').addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); moverPal(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); moverPal(-1); }
+    else if (e.key === 'Enter') { e.preventDefault(); elegirPal(palIdx); }
+    else if (e.key === 'Escape') $('#pal').hidden = true;
+  });
+  $('#palList').addEventListener('click', (e) => {
+    const f = e.target.closest('[data-n]');
+    if (f) elegirPal(+f.dataset.n);
+  });
+  $('#pal').addEventListener('click', (e) => { if (e.target === $('#pal')) $('#pal').hidden = true; });
 
   conectarLienzo();
   conectarTeclado();
@@ -453,6 +493,7 @@ function conectarTeclado() {
       case 'ArrowRight': set({ año: est.año + p * (e.shiftKey ? 20 : 4) }); break;
       case 'ArrowUp': atlas.vista.k = clamp(atlas.vista.k * 1.12, 110, 5200); sucio = true; break;
       case 'ArrowDown': atlas.vista.k = clamp(atlas.vista.k / 1.12, 110, 5200); sucio = true; break;
+      case '/': e.preventDefault(); abrirPal(); break;
       case 'p': case 'P': $('#btnPanel').click(); break;
       case 's': case 'S': abrirSim(); break;
       case 'r': case 'R': saltoAleatorio(); break;
@@ -517,6 +558,58 @@ function recalcularSim() {
   r.año = est.año;
   pintarResultado(simRefs.out, r, atacante, defensor);
   set({ frente: { desde: atacante.at, hasta: defensor.at, prob: r.prob } });
+}
+
+/* ── buscador ──────────────────────────────────────────────── */
+
+let palRes = [];
+let palIdx = 0;
+
+function abrirPal() {
+  $('#pal').hidden = false;
+  const i = $('#palInput');
+  i.value = '';
+  pintarPal([]);
+  i.focus();
+}
+
+function pintarPal(res) {
+  palRes = res;
+  palIdx = 0;
+  const L = $('#palList');
+  if (!res.length) {
+    L.innerHTML = `<div class="pal__hint">
+      ${D.polities.length} entidades · ${D.batallas.batallas.length} batallas · ${D.inventos.inventos.length} invenciones · ${D.tecno.tech.length} umbrales militares<br>
+      ${D.choques.shocks.length} catástrofes · ${D.eventos.eventos.length} hitos · ${D.politica.instituciones.length} instituciones · ${D.lenguas.familias.length} familias lingüísticas · ${D.ciudades.ciudades.length} ciudades<br><br>
+      Escribe al menos dos letras · ↑↓ para moverte · ↵ para abrir
+    </div>`;
+    return;
+  }
+  L.innerHTML = res.map((r, n) => `
+    <button class="pal__row ${n === 0 ? 'is-sel' : ''}" data-n="${n}">
+      <span class="pal__cls">${esc(r.clase)}</span>
+      <span class="pal__t">${esc(r.texto)}<span class="pal__sub">${esc(r.etiqueta)}</span></span>
+      <span class="pal__y">${r.año == null ? '—' : esc(formatoAño(r.año))}</span>
+    </button>`).join('');
+}
+
+function moverPal(d) {
+  if (!palRes.length) return;
+  palIdx = (palIdx + d + palRes.length) % palRes.length;
+  const filas = $('#palList').querySelectorAll('.pal__row');
+  filas.forEach((f, n) => f.classList.toggle('is-sel', n === palIdx));
+  filas[palIdx]?.scrollIntoView({ block: 'nearest' });
+}
+
+function elegirPal(n) {
+  const r = palRes[n];
+  if (!r) return;
+  $('#pal').hidden = true;
+  if (r.at) atlas.vista.centro = r.at;
+  const cambios = { seleccion: r.sel, tab: 'dossier' };
+  if (r.año != null) cambios.año = r.año;
+  set(cambios);
+  marcarTab('dossier');
 }
 
 /* ── ayuda ─────────────────────────────────────────────────── */

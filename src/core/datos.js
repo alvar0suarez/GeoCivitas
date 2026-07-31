@@ -18,6 +18,10 @@ const F = [
   ['geo', 'geografia.json'],
   ['ciudades', 'ciudades.json'],
   ['eventos', 'eventos.json'],
+  ['batallas', 'batallas.json'],
+  ['inventos', 'inventos.json'],
+  ['lenguas', 'lenguas.json'],
+  ['politica', 'politica.json'],
 ];
 
 export const D = {
@@ -30,10 +34,17 @@ export const D = {
 export async function cargar(progreso = () => {}) {
   const out = {};
   let hechos = 0;
+  // La versión empaquetada en un solo archivo deja el Archivo ya incrustado;
+  // la versión servida por HTTP lo pide pieza a pieza.
+  const incrustado = globalThis.__GEO_DATA;
   await Promise.all(F.map(async ([clave, archivo]) => {
-    const r = await fetch(`./data/${archivo}`);
-    if (!r.ok) throw new Error(`no se pudo leer ${archivo} (${r.status})`);
-    out[clave] = await r.json();
+    if (incrustado) {
+      out[clave] = incrustado[clave];
+    } else {
+      const r = await fetch(`./data/${archivo}`);
+      if (!r.ok) throw new Error(`no se pudo leer ${archivo} (${r.status})`);
+      out[clave] = await r.json();
+    }
     progreso(++hechos / F.length, archivo);
   }));
 
@@ -206,6 +217,78 @@ export const COMPONENTES_ICH = [
   ['unfree', 'Libertad personal'],
   ['gdppc', 'Renta'],
 ];
+
+/* ── batallas, invenciones, lenguas, gobierno ──────────────── */
+
+export function batallasEn(año, ventana = 40) {
+  return D.batallas.batallas.filter((b) => Math.abs(b.year - año) <= ventana);
+}
+
+export function inventosEn(año, ventana = 90) {
+  return D.inventos.inventos.filter((i) => año >= i.year && año - i.year <= Math.max(ventana, i.difusion));
+}
+
+/** Extensión de una familia lingüística en el año dado. */
+export function expansionDe(fam, año) {
+  if (año < fam.fecha - 500) return null;
+  let mejor = fam.expansion[0];
+  for (const e of fam.expansion) if (e.year <= año) mejor = e;
+  return mejor;
+}
+
+/** Reparto de la humanidad por régimen, normalizado al 100 %. */
+export function regimenesEn(año) {
+  const { years, tipos } = D.politica.regimenes;
+  const crudo = tipos.map((t) => ({ t, v: Math.max(0, enArrays(years, t.serie, año)) }));
+  const tot = crudo.reduce((s, x) => s + x.v, 0) || 1;
+  return crudo.map((x) => ({ tipo: x.t, pct: (x.v / tot) * 100 })).filter((x) => x.pct > 0.05)
+    .sort((a, b) => b.pct - a.pct);
+}
+
+export function institucionesEn(año, ventana = 140) {
+  return D.politica.instituciones.filter((i) => Math.abs(i.year - año) <= ventana);
+}
+
+/* ── búsqueda global ───────────────────────────────────────── */
+
+let indice = null;
+
+/** Índice plano de todo lo consultable, para el buscador. */
+export function buscar(q) {
+  if (!indice) construirIndice();
+  const t = q.trim().toLowerCase();
+  if (t.length < 2) return [];
+  const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const tn = norm(t);
+  const out = [];
+  for (const e of indice) {
+    const i = e.busca.indexOf(tn);
+    if (i < 0) continue;
+    out.push({ ...e, orden: (i === 0 ? 0 : 1) * 1000 + i });
+  }
+  return out.sort((a, b) => a.orden - b.orden).slice(0, 40);
+}
+
+function construirIndice() {
+  const norm = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  indice = [];
+  const add = (clase, etiqueta, año, texto, sel, at) =>
+    indice.push({ clase, etiqueta, año, texto, sel, at, busca: norm(texto + ' ' + etiqueta) });
+
+  for (const p of D.polities) add('ENTIDAD', p.kind, p.snapshots[0].year, p.name, { tipo: 'polity', pol: p }, p.capital);
+  for (const b of D.batallas.batallas) add('BATALLA', b.bandos.join(' vs '), b.year, b.name, { tipo: 'batalla', batalla: b }, b.at);
+  for (const i of D.inventos.inventos) add('INVENCIÓN', i.campo, i.year, i.name, { tipo: 'invento', invento: i }, i.at);
+  for (const t of D.tecno.tech) add('TECNOMILITAR', t.class, t.year, t.name, { tipo: 'tecno', tecno: t }, t.origin);
+  for (const s of D.choques.shocks) add('CHOQUE', s.place, s.year, s.name, { tipo: 'choque', choque: s }, s.center);
+  for (const e of D.eventos.eventos) add('HITO', e.type, e.year, e.t, { tipo: 'evento', evento: e }, e.at);
+  for (const f of D.lenguas.familias) add('LENGUA', `${f.hablantes} M hablantes`, f.fecha, f.name, { tipo: 'lengua', familia: f }, f.urheimat);
+  for (const t of D.lenguas.teoriasOrigen) add('TEORÍA', t.defensa, t.rango[1], t.name, { tipo: 'teoria', teoria: t }, null);
+  for (const i of D.politica.instituciones) add('INSTITUCIÓN', 'gobierno', i.year, i.name, { tipo: 'institucion', inst: i }, i.at);
+  for (const p of D.geo.pasos) add('PASO', p.tipo, null, p.name, { tipo: 'paso', paso: p }, p.at);
+  for (const r of D.geo.rutas) add('RUTA', r.tipo, r.from, r.name, { tipo: 'ruta', ruta: r }, null);
+  for (const r of D.regiones) add('REGIÓN', 'macrorregión', null, r.name, { tipo: 'region', reg: r }, r.anchor);
+  for (const c of D.ciudades.ciudades) add('CIUDAD', 'centro urbano', c.p[0][0], c.n, { tipo: 'ciudad', ciudad: c }, c.c);
+}
 
 /* ── ciudades ──────────────────────────────────────────────── */
 

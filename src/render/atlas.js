@@ -10,7 +10,7 @@ import { Vista, trazarAnillo, trazarLinea, anilloCaja, anilloElipse, cajasSolapa
 import {
   D, activas, instantaneaDe, zonasDe, CONTROL, ORDEN_CONTROL, horizonteDe,
   TIPO_BANDA, choquesActivos, tecnoDisponible, difusion, eventosEn,
-  regional, ich, ciudadesActivas,
+  regional, ich, ciudadesActivas, expansionDe, inventosEn, batallasEn,
 } from '../core/datos.js';
 import { rgba, RAMPAS, clamp, num } from '../core/series.js';
 
@@ -58,12 +58,15 @@ export class Atlas {
     if (est.capas.orografia) this.orografia(est);
     if (est.tematica !== 'ninguna') this.coropleta(est);
     this.costa();
+    if (est.capas.lenguas) this.lenguas(est);
     if (est.capas.prehistoria) this.prehistoria(est);
     if (est.capas.soberania) this.soberania(est);
     if (est.capas.rutas) this.rutas(est);
     if (est.capas.densidad) this.densidad(est);
     if (est.capas.choques) this.choques(est);
     if (est.capas.tecno) this.tecno(est);
+    if (est.capas.inventos) this.inventos(est);
+    if (est.capas.batallas) this.batallas(est);
     if (est.frente) this.frenteConquista(est);
 
     if (vista.modo === 'orto') { ctx.restore(); this.limbo(); }
@@ -622,6 +625,142 @@ export class Atlas {
     ctx.restore();
   }
 
+  /* ── familias lingüísticas ────────────────────────────────── */
+
+  lenguas(est) {
+    const { ctx, vista } = this;
+    ctx.save();
+    for (const fam of D.lenguas.familias) {
+      const ex = expansionDe(fam, est.año);
+      if (!ex) continue;
+      const p = new Path2D();
+      let algo = false;
+      for (const nombre of ex.members) {
+        const rings = D.paises.get(nombre);
+        if (!rings) continue;
+        for (const r of rings) algo = trazarAnillo(p, r, vista) || algo;
+      }
+      if (!algo) continue;
+
+      ctx.save();
+      if (ex.box) {
+        const cp = new Path2D();
+        trazarAnillo(cp, anilloCaja(ex.box, 3), vista);
+        ctx.clip(cp);
+      }
+      ctx.globalAlpha = 0.17;
+      ctx.fillStyle = fam.color;
+      ctx.fill(p);
+      ctx.globalAlpha = 0.4;
+      ctx.strokeStyle = fam.color;
+      ctx.lineWidth = 0.7;
+      ctx.setLineDash([6, 5]);
+      ctx.stroke(p);
+      ctx.restore();
+
+      const u = vista.proyectar(fam.urheimat[0], fam.urheimat[1]);
+      if (u) {
+        ctx.globalAlpha = 0.9;
+        ctx.strokeStyle = fam.color;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(u[0], u[1], 4, 0, TAU);
+        ctx.moveTo(u[0] - 7, u[1]); ctx.lineTo(u[0] + 7, u[1]);
+        ctx.stroke();
+        this.etiquetas.push({ x: u[0], y: u[1] - 10, texto: fam.name.toUpperCase(), color: fam.color, prio: 1, estilo: 'aviso' });
+      }
+      this.golpes.push({ tipo: 'lengua', path: p, familia: fam });
+    }
+    ctx.restore();
+  }
+
+  /* ── invenciones ──────────────────────────────────────────── */
+
+  inventos(est) {
+    const { ctx, vista } = this;
+    ctx.save();
+    for (const inv of inventosEn(est.año, 90)) {
+      const xy = vista.proyectar(inv.at[0], inv.at[1]);
+      if (!xy) continue;
+      const edad = est.año - inv.year;
+      const reciente = edad < Math.max(40, inv.difusion * 0.25);
+      const col = inv.speculative ? '#e879f9' : COLOR_CAMPO[inv.campo] || '#67e8f9';
+      const r = 3 + inv.impacto * 0.9;
+
+      if (reciente) {
+        const d = clamp(edad / Math.max(1, inv.difusion), 0, 1);
+        ctx.globalAlpha = 0.35 * (1 - d);
+        ctx.strokeStyle = col;
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 4]);
+        ctx.beginPath();
+        ctx.arc(xy[0], xy[1], vista.escalaKm(400 + d * 8000), 0, TAU);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+
+      ctx.globalAlpha = reciente ? 0.95 : 0.45;
+      ctx.strokeStyle = col;
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.arc(xy[0], xy[1], r, 0, TAU);
+      ctx.moveTo(xy[0] - r * 0.55, xy[1]); ctx.lineTo(xy[0] + r * 0.55, xy[1]);
+      ctx.moveTo(xy[0], xy[1] - r * 0.55); ctx.lineTo(xy[0], xy[1] + r * 0.55);
+      ctx.stroke();
+
+      if (reciente && inv.impacto >= 4) {
+        this.etiquetas.push({ x: xy[0], y: xy[1] - r - 7, texto: inv.name.toUpperCase(), color: col, prio: 1, estilo: 'aviso' });
+      }
+      const hp = new Path2D();
+      hp.arc(xy[0], xy[1], Math.max(9, r + 4), 0, TAU);
+      this.golpes.push({ tipo: 'invento', path: hp, invento: inv });
+    }
+    ctx.restore();
+  }
+
+  /* ── batallas ─────────────────────────────────────────────── */
+
+  batallas(est) {
+    const { ctx, vista } = this;
+    ctx.save();
+    for (const b of batallasEn(est.año, 40)) {
+      const xy = vista.proyectar(b.at[0], b.at[1]);
+      if (!xy) continue;
+      const d = Math.abs(b.year - est.año);
+      const foco = d <= 6;
+      const s = 3.5 + b.peso * 1.1;
+      const col = b.tipo === 'naval' ? '#38bdf8' : b.tipo === 'asedio' ? '#f5b642' : '#fb7185';
+
+      if (foco) {
+        const g = ctx.createRadialGradient(xy[0], xy[1], 0, xy[0], xy[1], s * 4);
+        g.addColorStop(0, rgba(col, 0.4));
+        g.addColorStop(1, rgba(col, 0));
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(xy[0], xy[1], s * 4, 0, TAU);
+        ctx.fill();
+      }
+
+      // espadas cruzadas
+      ctx.globalAlpha = foco ? 1 : 0.42;
+      ctx.strokeStyle = col;
+      ctx.lineWidth = foco ? 1.5 : 1;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(xy[0] - s, xy[1] - s); ctx.lineTo(xy[0] + s, xy[1] + s);
+      ctx.moveTo(xy[0] + s, xy[1] - s); ctx.lineTo(xy[0] - s, xy[1] + s);
+      ctx.stroke();
+
+      if (foco) {
+        this.etiquetas.push({ x: xy[0], y: xy[1] - s - 8, texto: `${b.name.toUpperCase()} · ${b.year < 0 ? -b.year + ' a.C.' : b.year}`, color: col, prio: 1, estilo: 'aviso' });
+      }
+      const hp = new Path2D();
+      hp.arc(xy[0], xy[1], Math.max(10, s + 4), 0, TAU);
+      this.golpes.push({ tipo: 'batalla', path: hp, batalla: b });
+    }
+    ctx.restore();
+  }
+
   /* ── pasos y estrechos ───────────────────────────────────── */
 
   pasos() {
@@ -706,7 +845,7 @@ export class Atlas {
       ctx.stroke();
     }
     ctx.fillStyle = col;
-    ctx.font = '600 10px ui-monospace, monospace';
+    ctx.font = '600 10px "IBM Plex Mono", ui-monospace, monospace';
     ctx.textAlign = 'center';
     ctx.fillText(`${Math.round(f.prob * 100)} %`, mx, my - 6);
     ctx.restore();
@@ -727,7 +866,7 @@ export class Atlas {
     for (const e of orden) {
       const titulo = e.estilo === 'titulo';
       const size = titulo ? 10.5 : e.estilo === 'menor' ? 8.5 : 9;
-      ctx.font = `${titulo ? 600 : 400} ${size}px ui-monospace, "SF Mono", monospace`;
+      ctx.font = `${titulo ? 600 : 400} ${size}px "IBM Plex Mono", ui-monospace, monospace`;
       const w = ctx.measureText(e.texto).width;
       const caja = { x: e.x - w / 2 - 3, y: e.y - size / 2 - 2, w: w + 6, h: size + 4 };
       let choca = false;
@@ -760,7 +899,10 @@ export class Atlas {
     const { ctx } = this;
     ctx.save();
     ctx.scale(this.dpr, this.dpr);
-    const prioridad = { choque: 1, tecno: 1, evento: 1, paso: 1, ruta: 2, polity: 3, banda: 4, region: 5 };
+    const prioridad = {
+      batalla: 0, invento: 1, choque: 1, tecno: 1, evento: 1, paso: 1,
+      ruta: 2, polity: 3, lengua: 4, banda: 4, region: 5,
+    };
     let mejor = null;
     for (const g of this.golpes) {
       const dentro = g.trazo
@@ -774,6 +916,16 @@ export class Atlas {
     return mejor ? mejor.g : null;
   }
 }
+
+const COLOR_CAMPO = {
+  cognicion: '#e879f9',
+  energia: '#f5b642',
+  materiales: '#fb923c',
+  informacion: '#67e8f9',
+  salud: '#4ade80',
+  transporte: '#38bdf8',
+  alimentacion: '#a3e635',
+};
 
 const COLOR_CHOQUE = {
   peste: '#e879f9',

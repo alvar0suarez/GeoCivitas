@@ -50,6 +50,39 @@ compuesto que resume siete de ellas en una cifra comparable entre épocas.
 Es la respuesta a la pregunta que el mapa político nunca contesta: *y a la gente,
 ¿cómo le iba?*
 
+### Batallas decisivas
+
+50 encuentros entre Meguido (1457 a. C.) y la defensa de Kiev (2022), con
+contendientes, efectivos estimados, tipo (terrestre, naval, asedio), peso
+histórico y —lo que importa— por qué el mapa dejó de funcionar igual después.
+
+### Invenciones
+
+60 hitos técnicos civiles: del control del fuego a los modelos generalistas,
+pasando por la aguja de coser que hizo habitable Siberia, el cero posicional, la
+contabilidad por partida doble y el contenedor normalizado. Cada uno con foco,
+campo, impacto y curva de difusión.
+
+### Lenguas
+
+12 familias lingüísticas con su patria reconstruida y sus etapas de expansión
+—indoeuropea, bantú, austronesia, túrquica, esquimo-aleutiana…— más las siete
+hipótesis principales sobre **el origen del lenguaje**, desde el salto único de
+Chomsky al acicalamiento vocal de Dunbar.
+
+### Gobierno
+
+Reparto de la humanidad por régimen político a lo largo del tiempo, de las
+bandas igualitarias a la democracia de sufragio universal, con 26 hitos de
+arquitectura institucional. El dato que suele sorprender: la democracia de
+sufragio universal no existe en ningún lugar del mundo antes de 1893.
+
+### Buscador
+
+`/` abre un buscador sobre todo el Archivo —entidades, batallas, invenciones,
+umbrales militares, catástrofes, hitos, instituciones, lenguas, rutas, pasos,
+regiones y ciudades—. Insensible a acentos, con salto directo al año y al lugar.
+
 ### Choques
 
 33 catástrofes fechadas y situadas: sequías (evento 4.2 ka, colapso del Bronce,
@@ -107,8 +140,29 @@ data/
   geografia.json       cordilleras, áridas, selvas, pasos, rutas
   ciudades.json        66 centros urbanos con series de población
   eventos.json         hitos institucionales y de conocimiento
-tools/build-geo.mjs    convierte los TopoJSON de world-atlas al formato compacto
+  batallas.json        50 encuentros decisivos
+  inventos.json        60 invenciones civiles
+  lenguas.json         familias lingüísticas y origen del lenguaje
+  politica.json        regímenes de gobierno e instituciones
+styles/fonts.css       tipografías incrustadas (generado)
+tools/
+  build-geo.mjs        convierte los TopoJSON de world-atlas al formato compacto
+  build-fonts.mjs      incrusta las tipografías como data URI
+  build-artifact.mjs   empaqueta todo en un único HTML autocontenido
 ```
+
+### Empaquetar en un solo archivo
+
+```bash
+npm i esbuild @fontsource/ibm-plex-mono @fontsource/archivo
+node tools/build-fonts.mjs .
+node tools/build-artifact.mjs dist/geocivitas.html
+```
+
+Produce un HTML de ~560 KB que se abre sin servidor: el Archivo va incrustado
+como `window.__GEO_DATA` y las tipografías como data URI, porque una fuente
+enlazada a un CDN falla en silencio allí donde hay política de contenido
+estricta y deja la página con la tipografía de sistema.
 
 ### Regenerar la base cartográfica
 
@@ -159,6 +213,7 @@ resolución ni el método lo permiten.
 | Clic | Abrir el expediente de lo que haya bajo el cursor |
 | Espacio | Reproducir la línea del tiempo |
 | ← → | Avanzar por pasos (con Mayús, saltos largos) |
+| / | Buscar en todo el Archivo |
 | S · R · P | Simulador · salto aleatorio · panel |
 | ? | Guía |
 
@@ -167,3 +222,6 @@ resolución ni el método lo permiten.
 Geometría base: [Natural Earth](https://www.naturalearthdata.com/) (dominio
 público) vía [world-atlas](https://github.com/topojson/world-atlas), simplificada a
 110 m y reprocesada a un formato plano propio.
+
+Tipografías: **IBM Plex Mono** (IBM) y **Archivo** (Omnibus-Type), ambas bajo
+SIL Open Font License 1.1, incrustadas en subconjunto latino.
