@@ -86,6 +86,41 @@ export class Atlas {
     ctx.clip();
   }
 
+  /* ── memoria de geometría ─────────────────────────────────── */
+
+  /**
+   * Proyectar setenta y seis entidades sesenta veces por segundo es tirar
+   * trabajo: mientras no se mueva la cámara ni cambie el conjunto de
+   * instantáneas activas, los Path2D en coordenadas de pantalla siguen siendo
+   * válidos. Se guardan bajo una clave que describe exactamente eso.
+   */
+  claveVista() {
+    const v = this.vista;
+    return `${v.modo}|${v.lam.toFixed(5)}|${v.phi.toFixed(5)}|${v.k.toFixed(2)}|${v.w}x${v.h}`;
+  }
+
+  memo(nombre, clave, construir) {
+    if (!this._memo) this._memo = new Map();
+    const e = this._memo.get(nombre);
+    if (e && e.clave === clave) return e.valor;
+    const valor = construir();
+    this._memo.set(nombre, { clave, valor });
+    return valor;
+  }
+
+  /** Une los anillos de una lista de países en un solo trazado. */
+  trazoDePaises(miembros, extra) {
+    const p = new Path2D();
+    let algo = false;
+    for (const nombre of miembros || []) {
+      const rings = D.paises.get(nombre);
+      if (!rings) continue;
+      for (const r of rings) algo = trazarAnillo(p, r, this.vista) || algo;
+    }
+    for (const r of extra || []) algo = trazarAnillo(p, r, this.vista) || algo;
+    return algo ? p : null;
+  }
+
   /* ── fondo ────────────────────────────────────────────────── */
 
   fondo(est) {
@@ -213,10 +248,13 @@ export class Atlas {
 
   /* ── tierra ───────────────────────────────────────────────── */
 
-  tierra(est) {
+  tierra() {
     const { ctx, vista } = this;
-    const p = new Path2D();
-    for (const ring of D.mundo.land) trazarAnillo(p, ring, vista);
+    const p = this.memo('tierra', this.claveVista(), () => {
+      const q = new Path2D();
+      for (const ring of D.mundo.land) trazarAnillo(q, ring, vista);
+      return q;
+    });
     ctx.fillStyle = '#1d374c';
     ctx.fill(p);
     this.pathTierra = p;
@@ -286,16 +324,13 @@ export class Atlas {
       if (hi - lo < 1e-6) hi = lo + 1;
     }
 
+    const trazos = this.memo('coropleta', this.claveVista(),
+      () => D.regiones.map((reg) => this.trazoDePaises(reg.members)));
+
     ctx.save();
     D.regiones.forEach((reg, i) => {
-      const p = new Path2D();
-      let algo = false;
-      for (const nombre of reg.members) {
-        const rings = D.paises.get(nombre);
-        if (!rings) continue;
-        for (const r of rings) algo = trazarAnillo(p, r, vista) || algo;
-      }
-      if (!algo) return;
+      const p = trazos[i];
+      if (!p) return;
       let t = (vals[i] - lo) / (hi - lo);
       if (conf.inv) t = 1 - t;
       ctx.fillStyle = conf.rampa(clamp(t, 0, 1));
@@ -312,23 +347,21 @@ export class Atlas {
     const { ctx, vista } = this;
     const h = horizonteDe(est.año);
     if (!h || est.año > -2800) return;
+
+    const preparado = this.memo('prehistoria', `${this.claveVista()}#${h.year}`,
+      () => h.bands.map((b) => {
+        const path = this.trazoDePaises(b.members);
+        if (!path) return null;
+        let recorte = null;
+        if (b.box) { recorte = new Path2D(); trazarAnillo(recorte, anilloCaja(b.box, 3), vista); }
+        return { b, path, recorte };
+      }).filter(Boolean));
+
     ctx.save();
-    for (const b of h.bands) {
+    for (const { b, path: p, recorte } of preparado) {
       const info = TIPO_BANDA[b.kind] || TIPO_BANDA.sapiens;
-      const p = new Path2D();
-      let algo = false;
-      for (const nombre of b.members) {
-        const rings = D.paises.get(nombre);
-        if (!rings) continue;
-        for (const r of rings) algo = trazarAnillo(p, r, vista) || algo;
-      }
-      if (!algo) continue;
       ctx.save();
-      if (b.box) {
-        const cp = new Path2D();
-        trazarAnillo(cp, anilloCaja(b.box, 3), vista);
-        ctx.clip(cp);
-      }
+      if (recorte) ctx.clip(recorte);
       ctx.globalAlpha = b.kind === 'hielo' ? 0.46 : 0.2;
       ctx.fillStyle = info.c;
       ctx.fill(p);
@@ -348,29 +381,32 @@ export class Atlas {
   soberania(est) {
     const { ctx, vista } = this;
     const pols = activas(est.año);
-    ctx.save();
 
-    for (const pol of pols) {
+    // La firma incluye qué instantánea está activa de cada entidad, no el año:
+    // arrastrar la línea temporal dentro de un mismo periodo no reproyecta nada.
+    const firma = this.claveVista() + '#' +
+      pols.map((p) => `${p.id}@${instantaneaDe(p, est.año)?.year}`).join(',');
+
+    const preparado = this.memo('soberania', firma, () => pols.map((pol) => {
       const snap = instantaneaDe(pol, est.año);
-      if (!snap) continue;
+      if (!snap) return null;
       const zonas = zonasDe(snap);
       const zonasOrd = ORDEN_CONTROL.map((c) => zonas.find((z) => z.control === c)).filter(Boolean);
-      let pathPrincipal = null;
-
+      const capas = [];
       for (const z of zonasOrd) {
-        const p = new Path2D();
-        let algo = false;
-        for (const nombre of z.members) {
-          const rings = D.paises.get(nombre);
-          if (!rings) continue;
-          for (const r of rings) algo = trazarAnillo(p, r, vista) || algo;
-        }
-        if (z.extra) for (const r of z.extra) algo = trazarAnillo(p, r, vista) || algo;
-        if (!algo) continue;
+        const path = this.trazoDePaises(z.members, z.extra);
+        if (!path) continue;
+        capas.push({ z, path, recorte: this.construirRecorte(z) });
+      }
+      return { pol, capas };
+    }).filter(Boolean));
 
+    ctx.save();
+    for (const { pol, capas } of preparado) {
+      for (const { z, path: p, recorte } of capas) {
         const cfg = CONTROL[z.control];
         ctx.save();
-        this.aplicarRecorte(ctx, z);
+        if (recorte) ctx.clip(recorte, 'evenodd');
 
         ctx.globalAlpha = cfg.alfa * (est.resaltado === pol.id ? 1.25 : 1) * (pol.speculative ? 0.72 : 1);
         ctx.fillStyle = pol.color;
@@ -390,8 +426,7 @@ export class Atlas {
         ctx.stroke(p);
         ctx.restore();
 
-        if (z.control === 'provincia' || !pathPrincipal) pathPrincipal = p;
-        this.golpes.push({ tipo: 'polity', path: p, pol, control: z.control, recorte: z });
+        this.golpes.push({ tipo: 'polity', path: p, pol, control: z.control });
       }
 
       const c = vista.proyectar(pol.capital[0], pol.capital[1]);
@@ -415,12 +450,12 @@ export class Atlas {
   }
 
   /**
-   * Recorta a la caja de la zona y perfora sus huecos con la regla par-impar.
-   * Un hueco que no solapa la caja no resta nada: con par-impar se sumaría, así
-   * que se descarta antes de construir el recorte.
+   * Trazado de recorte: la caja de la zona con sus huecos perforados por la
+   * regla par-impar. Un hueco que no solapa la caja no resta nada — con
+   * par-impar se sumaría —, así que se descarta antes de construirlo.
    */
-  aplicarRecorte(ctx, z) {
-    if (!z.box && !z.holes) return;
+  construirRecorte(z) {
+    if (!z.box && !z.holes) return null;
     const rec = new Path2D();
     if (z.box) trazarAnillo(rec, anilloCaja(z.box, 3), this.vista);
     else rec.rect(0, 0, this.vista.w, this.vista.h);
@@ -430,7 +465,7 @@ export class Atlas {
         trazarAnillo(rec, anilloCaja(h, 3), this.vista);
       }
     }
-    ctx.clip(rec, 'evenodd');
+    return rec;
   }
 
   patron(color, tipo) {
@@ -486,25 +521,37 @@ export class Atlas {
   densidad(est) {
     const { ctx, vista } = this;
     const ciudades = ciudadesActivas(est.año, 5);
+
+    // El halo urbano son decenas de degradados radiales compuestos en modo
+    // «screen»: caro de rehacer en cada imagen y siempre idéntico mientras no
+    // se mueva la cámara. Se cocina una vez en un lienzo aparte y se estampa.
+    const capa = this.memo('densidad', `${this.claveVista()}#${est.año}`, () => {
+      const off = document.createElement('canvas');
+      off.width = Math.max(1, Math.round(vista.w));
+      off.height = Math.max(1, Math.round(vista.h));
+      const g2 = off.getContext('2d');
+      for (const { c, v } of ciudades) {
+        const xy = vista.proyectar(c.c[0], c.c[1]);
+        if (!xy) continue;
+        const r = clamp(Math.sqrt(v) * 0.42 * (vista.k / 300), 2.2, 92);
+        const g = g2.createRadialGradient(xy[0], xy[1], 0, xy[0], xy[1], r);
+        const int = clamp(0.1 + Math.log10(v + 1) * 0.13, 0.1, 0.5);
+        g.addColorStop(0, `rgba(255, 236, 190, ${int})`);
+        g.addColorStop(0.35, `rgba(245, 182, 66, ${int * 0.55})`);
+        g.addColorStop(1, 'rgba(245, 182, 66, 0)');
+        g2.fillStyle = g;
+        g2.beginPath();
+        g2.arc(xy[0], xy[1], r, 0, TAU);
+        g2.fill();
+      }
+      return off;
+    });
+
     ctx.save();
     ctx.globalCompositeOperation = 'screen';
-
-    for (const { c, v } of ciudades) {
-      const xy = vista.proyectar(c.c[0], c.c[1]);
-      if (!xy) continue;
-      const r = clamp(Math.sqrt(v) * 0.42 * (vista.k / 300), 2.2, 92);
-      const g = ctx.createRadialGradient(xy[0], xy[1], 0, xy[0], xy[1], r);
-      const int = clamp(0.1 + Math.log10(v + 1) * 0.13, 0.1, 0.5);
-      g.addColorStop(0, `rgba(255, 236, 190, ${int})`);
-      g.addColorStop(0.35, `rgba(245, 182, 66, ${int * 0.55})`);
-      g.addColorStop(1, 'rgba(245, 182, 66, 0)');
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      ctx.arc(xy[0], xy[1], r, 0, TAU);
-      ctx.fill();
-    }
-
+    ctx.drawImage(capa, 0, 0, vista.w, vista.h);
     ctx.globalCompositeOperation = 'source-over';
+
     const grandes = ciudades.slice(0, 22);
     for (const { c, v } of grandes) {
       const xy = vista.proyectar(c.c[0], c.c[1]);
@@ -629,25 +676,23 @@ export class Atlas {
 
   lenguas(est) {
     const { ctx, vista } = this;
-    ctx.save();
-    for (const fam of D.lenguas.familias) {
-      const ex = expansionDe(fam, est.año);
-      if (!ex) continue;
-      const p = new Path2D();
-      let algo = false;
-      for (const nombre of ex.members) {
-        const rings = D.paises.get(nombre);
-        if (!rings) continue;
-        for (const r of rings) algo = trazarAnillo(p, r, vista) || algo;
-      }
-      if (!algo) continue;
+    const firma = this.claveVista() + '#' +
+      D.lenguas.familias.map((f) => `${f.id}@${expansionDe(f, est.año)?.year}`).join(',');
 
+    const preparado = this.memo('lenguas', firma, () => D.lenguas.familias.map((fam) => {
+      const ex = expansionDe(fam, est.año);
+      if (!ex) return null;
+      const path = this.trazoDePaises(ex.members);
+      if (!path) return null;
+      let recorte = null;
+      if (ex.box) { recorte = new Path2D(); trazarAnillo(recorte, anilloCaja(ex.box, 3), vista); }
+      return { fam, path, recorte };
+    }).filter(Boolean));
+
+    ctx.save();
+    for (const { fam, path: p, recorte } of preparado) {
       ctx.save();
-      if (ex.box) {
-        const cp = new Path2D();
-        trazarAnillo(cp, anilloCaja(ex.box, 3), vista);
-        ctx.clip(cp);
-      }
+      if (recorte) ctx.clip(recorte);
       ctx.globalAlpha = 0.17;
       ctx.fillStyle = fam.color;
       ctx.fill(p);

@@ -73,7 +73,7 @@ const TEMATICAS = [
   ['energy', 'ENERGÍA'],
 ];
 
-let atlas, regla, sucio = true, ultimo = 0;
+let atlas, regla, sucio = true, ultimo = 0, ultimoAmbiente = 0;
 
 /* ── arranque ──────────────────────────────────────────────── */
 
@@ -133,10 +133,17 @@ function bucle(t) {
     else { est.año = nuevo; sucio = true; }
   }
 
+  // Interactuar exige respuesta inmediata; los pulsos de rutas y choques son
+  // ambientales y a 24 imágenes por segundo no se distinguen de 60, así que se
+  // les racionan los redibujados y el hilo principal queda libre.
   const animando = est.capas.rutas || est.capas.choques || est.capas.tecno || est.frente;
-  if (sucio || animando) {
+  if (sucio) {
     atlas.dibujar(est);
     sucio = false;
+    ultimoAmbiente = t;
+  } else if (animando && t - ultimoAmbiente >= 42) {
+    atlas.dibujar(est);
+    ultimoAmbiente = t;
   }
   requestAnimationFrame(bucle);
 }

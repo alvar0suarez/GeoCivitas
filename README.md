@@ -132,7 +132,7 @@ src/
   main.js              estado, interacción, bucle
 data/
   world.json           costas y países (Natural Earth 110m, precisión 0,01°)
-  polities.json        35 entidades políticas con zonas de control
+  polities.json        76 entidades políticas con zonas de control
   prehistory.json      horizontes profundos, nivel del mar, plataformas
   humanidad.json       serie global + desviaciones regionales
   shocks.json          catástrofes
@@ -149,7 +149,20 @@ tools/
   build-geo.mjs        convierte los TopoJSON de world-atlas al formato compacto
   build-fonts.mjs      incrusta las tipografías como data URI
   build-artifact.mjs   empaqueta todo en un único HTML autocontenido
+  validar-datos.mjs    integridad referencial del Archivo
 ```
+
+### Validar
+
+```bash
+node tools/validar-datos.mjs
+```
+
+El renderizador es tolerante: un país mal escrito no rompe nada, simplemente no
+se pinta — lo que convierte una errata en un error invisible. El validador
+comprueba nombres de país, orden y rango de las series, coordenadas, cajas
+invertidas e identificadores repetidos, y distingue el error real del aviso
+esperable (Malta, Singapur o Maldivas no tienen geometría a 110 m).
 
 ### Empaquetar en un solo archivo
 
@@ -159,7 +172,7 @@ node tools/build-fonts.mjs .
 node tools/build-artifact.mjs dist/geocivitas.html
 ```
 
-Produce un HTML de ~560 KB que se abre sin servidor: el Archivo va incrustado
+Produce un HTML de ~590 KB que se abre sin servidor: el Archivo va incrustado
 como `window.__GEO_DATA` y las tipografías como data URI, porque una fuente
 enlazada a un CDN falla en silencio allí donde hay política de contenido
 estricta y deja la página con la tipografía de sistema.
