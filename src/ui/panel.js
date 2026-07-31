@@ -4,7 +4,7 @@ import {
   D, CONTROL, activas, instantaneaDe, choquesActivos, tecnoDisponible,
   difusion, eventosEn, regional, ich, COMPONENTES_ICH, global as gGlobal,
   horizonteDe, TIPO_BANDA, ciudadesActivas, batallasEn, inventosEn,
-  regimenesEn, institucionesEn, poblacionCiudad,
+  regimenesEn, institucionesEn, poblacionCiudad, debatesDe, NIVEL_CONFIANZA,
 } from '../core/datos.js';
 import { porFormato, num, compacto, clamp } from '../core/series.js';
 import { formatoAño, era } from '../core/escala.js';
@@ -38,6 +38,17 @@ function tarjeta(clave, etiqueta, valor, unidad, spark) {
     <div class="stat__v">${valor}<span class="stat__u">${esc(unidad)}</span></div>${spark || ''}</div>`;
 }
 
+/** Marca visible cuando un registro está en discusión historiográfica. */
+function avisoDebate(familia, id) {
+  const ds = debatesDe(familia, id);
+  if (!ds.length) return '';
+  return ds.map((d) => `
+    <button class="disputa" data-debate="${esc(d.id)}">
+      <span class="disputa__t">EN DISCUSIÓN · ${esc(d.tema)}</span>
+      <span class="disputa__d">${esc(d.estado)}</span>
+    </button>`).join('');
+}
+
 /* ── expediente ────────────────────────────────────────────── */
 
 export function expediente(est) {
@@ -58,6 +69,7 @@ export function expediente(est) {
     case 'teoria': return fichaTeoria(s.teoria);
     case 'institucion': return fichaInstitucion(s.inst);
     case 'ciudad': return fichaCiudad(s.ciudad, est);
+    case 'debate': return fichaDebate(s.debate);
     default: return vacio(est);
   }
 }
@@ -121,6 +133,7 @@ function fichaPolity(pol, est) {
       <div class="kv__v" style="opacity:${zonas.includes(k) ? 1 : 0.45}">${esc(c.desc)}</div></div>`).join('')}
   </div>
 
+  ${avisoDebate('polities', pol.id)}
   <button class="railbtn" data-sim="${esc(pol.id)}">SIMULAR CAMPAÑA DESDE AQUÍ</button>`;
 }
 
@@ -193,6 +206,7 @@ function fichaChoque(s) {
       ${tarjeta('', 'DURACIÓN', fin - s.year || '<1', 'años')}
       ${tarjeta('', 'HUELLA', num(s.radius), 'km')}
     </div>
+    ${avisoDebate('choques', s.id)}
   </div>`;
 }
 
@@ -214,6 +228,7 @@ function fichaTecno(t, est) {
     ${ef.map(([k, v]) => `<div class="fac"><div class="fac__k">${esc(k)}</div>
       <div class="fac__bar"><i class="${v < 0 ? 'neg' : ''}" style="${v < 0 ? `right:50%;width:${(-v * 50).toFixed(0)}%;left:auto` : `left:50%;width:${(v * 50).toFixed(0)}%`}"></i></div>
       <div class="fac__v">${v > 0 ? '+' : ''}${v.toFixed(2)}</div></div>`).join('')}
+    ${avisoDebate('tecno', t.id)}
   </div>`;
 }
 
@@ -312,6 +327,7 @@ function fichaLengua(f, est) {
     <div class="kv"><div class="kv__k">Hablantes hoy</div><div class="kv__v">${f.hablantes >= 1 ? num(f.hablantes) + ' millones' : num(f.hablantes * 1000) + ' mil'}</div></div>
     <div class="kv"><div class="kv__k">Etapas trazadas</div><div class="kv__v">${f.expansion.map((e) => esc(formatoAño(e.year))).join(' · ')}</div></div>
     <p class="txt" style="font-size:11px;color:var(--ink-faint);margin-top:8px">${esc(D.lenguas.meta.aviso)}</p>
+    ${avisoDebate('lenguas', f.id)}
   </div>`;
 }
 
@@ -348,6 +364,24 @@ function fichaCiudad(c, est) {
     <div class="kv" style="margin-top:10px"><div class="kv__k">Máximo</div>
       <div class="kv__v">${num(Math.max(...vals))} mil hab. en ${esc(formatoAño(años[vals.indexOf(Math.max(...vals))]))}</div></div>
     <div class="kv"><div class="kv__k">Primer registro</div><div class="kv__v">${esc(formatoAño(años[0]))}</div></div>
+  </div>`;
+}
+
+function fichaDebate(d) {
+  return `<div class="sec">
+    <div class="sub" style="color:#f5b642">Controversia historiográfica</div>
+    <h2 class="ttl">${esc(d.tema)}</h2>
+    <p class="txt">${esc(d.resumen)}</p>
+  </div>
+  <div class="sec">
+    <div class="sec__t">POSICIONES</div>
+    ${d.posiciones.map((p) => `<div class="kv">
+      <div class="kv__k" style="color:var(--cy)">${esc(p.quien)}</div>
+      <div class="kv__v">${esc(p.que)}</div></div>`).join('')}
+  </div>
+  <div class="sec">
+    <div class="sec__t">ESTADO DE LA CUESTIÓN</div>
+    <p class="txt">${esc(d.estado)}</p>
   </div>`;
 }
 
@@ -473,9 +507,58 @@ export function archivo(est) {
   </div>
 
   <div class="sec">
-    <div class="sec__t">PROCEDENCIA</div>
-    <p class="txt" style="font-size:11px;color:var(--ink-dim)">${esc(D.polities.length)} entidades políticas, ${esc(D.choques.shocks.length)} choques, ${esc(D.tecno.tech.length)} umbrales tecnomilitares, ${esc(D.eventos.eventos.length)} hitos y ${esc(D.ciudades.ciudades.length)} centros urbanos.</p>
-    <p class="txt" style="font-size:11px;color:var(--ink-faint)">${esc(D.polities ? D.humanidad.meta.aviso : '')}</p>
-    <p class="txt" style="font-size:11px;color:var(--ink-faint)">${esc(D.mundo.meta.source)} · ${esc(D.mundo.meta.precision)}</p>
+    <div class="sec__t">VOLUMEN DEL ARCHIVO</div>
+    <p class="txt" style="font-size:11px;color:var(--ink-dim)">${esc(D.polities.length)} entidades políticas, ${esc(D.batallas.batallas.length)} batallas, ${esc(D.inventos.inventos.length)} invenciones, ${esc(D.tecno.tech.length)} umbrales tecnomilitares, ${esc(D.choques.shocks.length)} choques, ${esc(D.eventos.eventos.length)} hitos y ${esc(D.ciudades.ciudades.length)} centros urbanos.</p>
+  </div>`;
+}
+
+/* ── procedencia ───────────────────────────────────────────── */
+
+export function fuentes() {
+  const F = D.fuentes;
+  return `
+  <div class="sec">
+    <div class="sub">Aparato crítico</div>
+    <h2 class="ttl">Procedencia y controversia</h2>
+    <p class="txt">${esc(F.meta.nota)}</p>
+    <p class="txt" style="border-left:2px solid var(--am);padding-left:10px;color:var(--ink)">${esc(F.meta.principio)}</p>
+  </div>
+
+  <div class="sec">
+    <div class="sec__t">CUÁNTO FIARSE DE CADA REGISTRO</div>
+    ${F.confianza.map((c) => {
+      const n = NIVEL_CONFIANZA[c.nivel];
+      return `<div class="kv">
+        <div class="kv__k">${esc(c.registro)}</div>
+        <div class="kv__v">
+          <span class="chip" style="border-color:${n.color};color:${n.color}">${esc(n.label)}</span><br>
+          ${esc(c.nota)}
+        </div></div>`;
+    }).join('')}
+  </div>
+
+  <div class="sec">
+    <div class="sec__t">DONDE LA DISCIPLINA NO SE PONE DE ACUERDO · ${F.debates.length}</div>
+    <p class="txt" style="font-size:11px;color:var(--ink-faint)">Que un dato esté discutido no es un defecto del atlas: es información sobre el dato.</p>
+    ${F.debates.map((d) => `
+      <button class="item" data-debate="${esc(d.id)}" style="border-left-color:#f5b642">
+        <div class="item__t">${esc(d.tema)}</div>
+        <div class="item__d">${esc(d.posiciones.length)} posiciones · ${esc(d.estado)}</div>
+      </button>`).join('')}
+  </div>
+
+  <div class="sec">
+    <div class="sec__t">BIBLIOGRAFÍA · ${F.obras.length} OBRAS</div>
+    ${F.obras.map((o) => `
+      <div class="obra">
+        <div class="obra__c">${esc(o.cita)}</div>
+        <div class="obra__u">${esc(o.uso)}</div>
+      </div>`).join('')}
+  </div>
+
+  <div class="sec">
+    <div class="sec__t">CARTOGRAFÍA BASE</div>
+    <p class="txt" style="font-size:11px;color:var(--ink-dim)">${esc(D.mundo.meta.source)} · precisión ${esc(D.mundo.meta.precision)}. Dominio público.</p>
+    <p class="txt" style="font-size:11px;color:var(--ink-faint)">Las extensiones son estilizadas: se componen uniendo geometría moderna y recortándola. Sirven para comparar a escala continental, no para arbitrar fronteras.</p>
   </div>`;
 }

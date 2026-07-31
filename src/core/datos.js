@@ -22,6 +22,7 @@ const F = [
   ['inventos', 'inventos.json'],
   ['lenguas', 'lenguas.json'],
   ['politica', 'politica.json'],
+  ['fuentes', 'fuentes.json'],
 ];
 
 export const D = {
@@ -249,6 +250,27 @@ export function institucionesEn(año, ventana = 140) {
   return D.politica.instituciones.filter((i) => Math.abs(i.year - año) <= ventana);
 }
 
+/* ── procedencia y controversia ────────────────────────────── */
+
+/**
+ * Debates abiertos que afectan a un registro concreto. Que un dato esté
+ * discutido no es un defecto del atlas: es información sobre el dato.
+ */
+export function debatesDe(familia, id) {
+  return D.fuentes.debates.filter((d) => d.afecta === `${familia}/${id}`);
+}
+
+export function obraPorId(id) {
+  return D.fuentes.obras.find((o) => o.id === id) || null;
+}
+
+export const NIVEL_CONFIANZA = {
+  alta: { label: 'Alta', color: '#a3e635' },
+  media: { label: 'Media', color: '#f5b642' },
+  baja: { label: 'Baja', color: '#fb7185' },
+  escenario: { label: 'Escenario', color: '#e879f9' },
+};
+
 /* ── búsqueda global ───────────────────────────────────────── */
 
 let indice = null;
@@ -288,6 +310,7 @@ function construirIndice() {
   for (const r of D.geo.rutas) add('RUTA', r.tipo, r.from, r.name, { tipo: 'ruta', ruta: r }, null);
   for (const r of D.regiones) add('REGIÓN', 'macrorregión', null, r.name, { tipo: 'region', reg: r }, r.anchor);
   for (const c of D.ciudades.ciudades) add('CIUDAD', 'centro urbano', c.p[0][0], c.n, { tipo: 'ciudad', ciudad: c }, c.c);
+  for (const d of D.fuentes.debates) add('DEBATE', 'controversia abierta', null, d.tema, { tipo: 'debate', debate: d }, null);
 }
 
 /* ── ciudades ──────────────────────────────────────────────── */

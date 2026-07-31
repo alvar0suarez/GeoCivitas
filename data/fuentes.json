@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "titulo": "Procedencia, confianza y controversia",
+    "nota": "Este atlas no produce datos originales: reordena estimaciones publicadas. Aquí está de dónde sale cada serie, cuánto conviene fiarse de ella y en qué puntos la disciplina no ha llegado a acuerdo.",
+    "principio": "Un mapa histórico sin aparato crítico es una ilustración. Con él, es un argumento discutible — que es lo máximo a lo que puede aspirar."
+  },
+  "confianza": [
+    { "registro": "Geometría de costas y países", "nivel": "alta", "nota": "Natural Earth 110 m, dominio público. Precisión de 0,01°: adecuada a escala continental, insuficiente por debajo de unos 50 km." },
+    { "registro": "Extensión de las entidades políticas", "nivel": "baja", "nota": "Composición estilizada de geometría moderna recortada. Sirve para comparar magnitudes y vecindades, no para arbitrar fronteras ni resolver litigios territoriales." },
+    { "registro": "Población mundial", "nivel": "media", "nota": "Alta desde 1950, media entre 1700 y 1950, baja antes. Los rangos publicados para el año 1 van de 170 a 400 millones." },
+    { "registro": "Renta por persona", "nivel": "media", "nota": "Maddison es el estándar de facto y también el más criticado: reconstruir PIB preindustrial exige supuestos fuertes sobre consumo de subsistencia." },
+    { "registro": "Esperanza de vida y mortalidad infantil", "nivel": "media", "nota": "Fiable desde 1800 en Europa; antes se apoya en necrópolis y registros parroquiales con sesgos de conservación conocidos." },
+    { "registro": "Población urbana histórica", "nivel": "baja", "nota": "Las cifras de Chandler y Modelski difieren entre sí hasta en un factor de dos para la misma ciudad y año." },
+    { "registro": "Muerte violenta", "nivel": "baja", "nota": "Para la prehistoria depende de muestras esqueléticas pequeñas y probablemente sesgadas hacia lo excepcional." },
+    { "registro": "Fechas de invenciones", "nivel": "media", "nota": "Se registra la evidencia más antigua conservada, que casi nunca es la primera vez que algo se hizo." },
+    { "registro": "Familias lingüísticas", "nivel": "media", "nota": "El parentesco está firmemente establecido; la patria de origen y las fechas siguen abiertas en casi todas." },
+    { "registro": "Efectivos en batalla", "nivel": "baja", "nota": "Antes del siglo XVIII las cifras proceden de fuentes interesadas en exagerar al enemigo. Se dan como orden de magnitud." },
+    { "registro": "Reparto por régimen político", "nivel": "baja", "nota": "Categorías gruesas asignadas por rasgo dominante. Es una lente comparativa, no una taxonomía consensuada." },
+    { "registro": "Proyecciones posteriores a 2030", "nivel": "escenario", "nota": "No son predicción. Son un escenario central coherente, útil para pensar y sin valor probatorio." }
+  ],
+  "obras": [
+    { "id": "hyde", "cita": "Klein Goldewijk, K. et al. (2017). «Anthropogenic land use estimates for the Holocene — HYDE 3.2». Earth System Science Data 9.", "uso": "Población por región desde el 10 000 a. C." },
+    { "id": "mcevedy", "cita": "McEvedy, C. y Jones, R. (1978). Atlas of World Population History. Penguin.", "uso": "Referencia clásica de población preindustrial; conservadora y todavía muy citada." },
+    { "id": "maddison", "cita": "Bolt, J. y van Zanden, J. L. (2024). Maddison Project Database 2023. Universidad de Groninga.", "uso": "Renta por persona en dólares internacionales de 1990." },
+    { "id": "broadberry", "cita": "Broadberry, S. et al. (2015). British Economic Growth 1270–1870. Cambridge University Press.", "uso": "Contraste con Maddison sobre el arranque del crecimiento europeo." },
+    { "id": "riley", "cita": "Riley, J. C. (2005). «Estimates of Regional and Global Life Expectancy, 1800–2001». Population and Development Review 31.", "uso": "Esperanza de vida por región desde 1800." },
+    { "id": "chandler", "cita": "Chandler, T. (1987). Four Thousand Years of Urban Growth: An Historical Census. Edwin Mellen Press.", "uso": "Población de ciudades históricas." },
+    { "id": "modelski", "cita": "Modelski, G. (2003). World Cities: –3000 to 2000. FAROS.", "uso": "Segunda serie urbana, usada para acotar la horquilla de Chandler." },
+    { "id": "bairoch", "cita": "Bairoch, P. (1988). Cities and Economic Development. University of Chicago Press.", "uso": "Tasas de urbanización preindustrial." },
+    { "id": "buringh", "cita": "Buringh, E. y van Zanden, J. L. (2009). «Charting the 'Rise of the West'». Journal of Economic History 69.", "uso": "Alfabetización y producción de manuscritos y libros." },
+    { "id": "eisner", "cita": "Eisner, M. (2003). «Long-Term Historical Trends in Violent Crime». Crime and Justice 30.", "uso": "Series de homicidio en Europa desde el siglo XIII." },
+    { "id": "keeley", "cita": "Keeley, L. H. (1996). War Before Civilization. Oxford University Press.", "uso": "Mortalidad violenta en sociedades sin estado." },
+    { "id": "ferguson", "cita": "Ferguson, R. B. (2013). «Pinker's List: Exaggerating Prehistoric War Mortality», en War, Peace, and Human Nature. Oxford University Press.", "uso": "Crítica sistemática a las estimaciones anteriores. Se cita junto a Keeley a propósito." },
+    { "id": "smil", "cita": "Smil, V. (2017). Energy and Civilization: A History. MIT Press.", "uso": "Energía por persona y transiciones energéticas." },
+    { "id": "fogel", "cita": "Fogel, R. W. (2004). The Escape from Hunger and Premature Death, 1700–2100. Cambridge University Press.", "uso": "Nutrición, estatura y mortalidad." },
+    { "id": "federico", "cita": "Federico, G. (2005). Feeding the World: An Economic History of Agriculture, 1800–2000. Princeton University Press.", "uso": "Rendimientos agrícolas." },
+    { "id": "fao", "cita": "FAO (2024). FAOSTAT: Food Balance Sheets y Crops. Organización de las Naciones Unidas para la Alimentación.", "uso": "Ingesta diaria y rendimiento cerealista contemporáneos." },
+    { "id": "voth", "cita": "Voth, H.-J. (2001). Time and Work in England 1750–1830. Oxford University Press.", "uso": "Horas trabajadas por año en la industrialización." },
+    { "id": "sahlins", "cita": "Sahlins, M. (1972). Stone Age Economics. Aldine.", "uso": "«La sociedad opulenta original»: base de la estimación de jornada en cazadores-recolectores, y también objeto de crítica posterior." },
+    { "id": "reich", "cita": "Reich, D. (2018). Who We Are and How We Got Here. Pantheon.", "uso": "Paleogenética de las expansiones humanas." },
+    { "id": "bellwood", "cita": "Bellwood, P. (2005). First Farmers: The Origins of Agricultural Societies. Blackwell.", "uso": "Difusión agrícola y su relación con las familias lingüísticas." },
+    { "id": "anthony", "cita": "Anthony, D. W. (2007). The Horse, the Wheel, and Language. Princeton University Press.", "uso": "Hipótesis de la estepa para el indoeuropeo." },
+    { "id": "heggarty", "cita": "Heggarty, P. et al. (2023). «Language trees with sampled ancestors support a hybrid model for the origin of Indo-European languages». Science 381.", "uso": "Modelo híbrido que reabre la discusión sobre la patria indoeuropea." },
+    { "id": "lambeck", "cita": "Lambeck, K. et al. (2014). «Sea level and global ice volumes from the Last Glacial Maximum to the Holocene». PNAS 111.", "uso": "Curva de nivel del mar y emersión de plataformas continentales." },
+    { "id": "sigl", "cita": "Sigl, M. et al. (2015). «Timing and climate forcing of volcanic eruptions for the past 2,500 years». Nature 523.", "uso": "Cronología volcánica a partir de núcleos de hielo." },
+    { "id": "buntgen", "cita": "Büntgen, U. et al. (2016). «Cooling and societal change during the Late Antique Little Ice Age». Nature Geoscience 9.", "uso": "El episodio frío del 536 y sus efectos sociales." },
+    { "id": "benedictow", "cita": "Benedictow, O. J. (2004). The Black Death 1346–1353: The Complete History. Boydell.", "uso": "Mortalidad de la Peste Negra." },
+    { "id": "green", "cita": "Green, M. H. (ed.) (2014). Pandemic Disease in the Medieval World: Rethinking the Black Death. Arc Medieval Press.", "uso": "Revisión de la geografía y cronología de la segunda pandemia." },
+    { "id": "mordechai", "cita": "Mordechai, L. et al. (2019). «The Justinianic Plague: An inconsequential pandemic?». PNAS 116.", "uso": "Revisión a la baja del impacto de la peste de Justiniano." },
+    { "id": "koch", "cita": "Koch, A. et al. (2019). «Earth system impacts of the European arrival and Great Dying in the Americas after 1492». Quaternary Science Reviews 207.", "uso": "Colapso demográfico americano y su huella en el CO₂ atmosférico." },
+    { "id": "denevan", "cita": "Denevan, W. M. (ed.) (1992). The Native Population of the Americas in 1492, 2.ª ed. University of Wisconsin Press.", "uso": "Horquilla de población americana precontacto." },
+    { "id": "eltis", "cita": "Eltis, D. y Richardson, D. (2010). Atlas of the Transatlantic Slave Trade. Yale University Press.", "uso": "Volumen y rutas de la trata atlántica." },
+    { "id": "sen", "cita": "Sen, A. (1981). Poverty and Famines: An Essay on Entitlement and Deprivation. Clarendon Press.", "uso": "Marco de titularidades para las hambrunas de Bengala y otras." },
+    { "id": "ograda", "cita": "Ó Gráda, C. (2009). Famine: A Short History. Princeton University Press.", "uso": "Síntesis comparada de hambrunas y matización del marco anterior." },
+    { "id": "davis", "cita": "Davis, M. (2001). Late Victorian Holocausts: El Niño Famines and the Making of the Third World. Verso.", "uso": "Sequías globales de 1876–1879 y su gestión política." },
+    { "id": "parker", "cita": "Parker, G. (1988). The Military Revolution: Military Innovation and the Rise of the West. Cambridge University Press.", "uso": "Fortificación abaluartada, coste del asedio y fiscalidad." },
+    { "id": "black", "cita": "Black, J. (1991). A Military Revolution? Military Change and European Society 1550–1800. Macmillan.", "uso": "Crítica a la cronología y al alcance de la tesis anterior." },
+    { "id": "mcneill", "cita": "McNeill, W. H. (1982). The Pursuit of Power: Technology, Armed Force and Society since A.D. 1000. University of Chicago Press.", "uso": "Relación entre técnica militar, comercio y estado." },
+    { "id": "boulding", "cita": "Boulding, K. E. (1962). Conflict and Defense: A General Theory. Harper & Row.", "uso": "Gradiente de pérdida de fuerza: núcleo del motor de conquista." },
+    { "id": "lanchester", "cita": "Lanchester, F. W. (1916). Aircraft in Warfare: The Dawn of the Fourth Arm. Constable.", "uso": "Ley cuadrática de concentración de fuego." },
+    { "id": "turchin", "cita": "Turchin, P. (2003). Historical Dynamics: Why States Rise and Fall. Princeton University Press.", "uso": "Modelos formales de expansión y colapso imperial." },
+    { "id": "burbank", "cita": "Burbank, J. y Cooper, F. (2010). Empires in World History: Power and the Politics of Difference. Princeton University Press.", "uso": "Fundamento de la clasificación por grados de control: los imperios gobiernan por diferencia, no por homogeneidad." },
+    { "id": "scott", "cita": "Scott, J. C. (2017). Against the Grain: A Deep History of the Earliest States. Yale University Press.", "uso": "Cereal, catastro y coerción en los primeros estados." },
+    { "id": "abulughod", "cita": "Abu-Lughod, J. (1989). Before European Hegemony: The World System A.D. 1250–1350. Oxford University Press.", "uso": "Sistema comercial euroasiático anterior al dominio europeo." },
+    { "id": "pomeranz", "cita": "Pomeranz, K. (2000). The Great Divergence: China, Europe, and the Making of the Modern World Economy. Princeton University Press.", "uso": "Cronología de la divergencia entre Europa y Asia oriental." },
+    { "id": "stasavage", "cita": "Stasavage, D. (2020). The Decline and Rise of Democracy. Princeton University Press.", "uso": "Formas de gobierno participativo antes y fuera de Europa." },
+    { "id": "morris", "cita": "Morris, I. (2013). The Measure of Civilization. Princeton University Press.", "uso": "Índices compuestos de desarrollo social; precedente metodológico del ICH de este atlas." },
+    { "id": "harper", "cita": "Harper, K. (2017). The Fate of Rome: Climate, Disease, and the End of an Empire. Princeton University Press.", "uso": "Lectura climática y epidémica del final de Roma." },
+    { "id": "dunbar", "cita": "Dunbar, R. (1996). Grooming, Gossip and the Evolution of Language. Harvard University Press.", "uso": "Hipótesis del acicalamiento vocal." },
+    { "id": "berwick", "cita": "Berwick, R. y Chomsky, N. (2016). Why Only Us: Language and Evolution. MIT Press.", "uso": "Hipótesis del salto único." },
+    { "id": "corballis", "cita": "Corballis, M. (2002). From Hand to Mouth: The Origins of Language. Princeton University Press.", "uso": "Hipótesis gestual." },
+    { "id": "mithen", "cita": "Mithen, S. (2005). The Singing Neanderthals. Weidenfeld & Nicolson.", "uso": "Protolenguaje musical." },
+    { "id": "henshilwood", "cita": "Henshilwood, C. et al. (2011). «A 100,000-Year-Old Ochre-Processing Workshop at Blombos Cave». Science 334.", "uso": "Evidencia indirecta de conducta simbólica." },
+    { "id": "un", "cita": "Naciones Unidas (2024). World Population Prospects 2024. División de Población.", "uso": "Población y proyecciones desde 1950." },
+    { "id": "gapminder", "cita": "Gapminder Foundation (2024). Life Expectancy y Child Mortality, versiones documentadas.", "uso": "Series de salud reconciliadas entre fuentes." },
+    { "id": "ourworldindata", "cita": "Roser, M., Ortiz-Ospina, E. y Ritchie, H. (2024). Our World in Data. Universidad de Oxford.", "uso": "Alfabetización, energía y compilaciones diversas." }
+  ],
+  "debates": [
+    {
+      "id": "justiniana", "tema": "¿Fue devastadora la peste de Justiniano?", "afecta": "choques/justiniana",
+      "resumen": "La cifra tradicional de 25-50 millones procede de fuentes literarias bizantinas y de una extrapolación a partir de Procopio.",
+      "posiciones": [
+        { "quien": "Síntesis tradicional", "que": "Mortalidad comparable a la Peste Negra; explica el fracaso de la reconquista de Justiniano y el vacío previo a la expansión árabe." },
+        { "quien": "Mordechai et al. (2019)", "que": "El registro polínico, numismático, funerario y legislativo no muestra la ruptura que cabría esperar. Proponen un impacto regional y moderado." }
+      ],
+      "estado": "Abierto y muy activo. Este atlas usa la cifra alta y la señala como discutida."
+    },
+    {
+      "id": "indoeuropeo", "tema": "¿Dónde y cuándo nace el indoeuropeo?", "afecta": "lenguas/indoeuropea",
+      "resumen": "Dos hipótesis rivales durante cuarenta años, con una tercera que ha ganado terreno desde 2023.",
+      "posiciones": [
+        { "quien": "Estepa (Gimbutas, Anthony)", "que": "Patria póntico-caspia hacia el 4500 a. C., difundida por pastores con caballo y carro. La apoya el ADN antiguo de Yamnaya." },
+        { "quien": "Anatolia (Renfrew)", "que": "Patria anatolia hacia el 7000 a. C., difundida con la agricultura. Encaja mejor con la datación glotocronológica bayesiana." },
+        { "quien": "Híbrido (Heggarty et al. 2023)", "que": "Origen al sur del Cáucaso hacia el 6000 a. C., con la estepa como difusora secundaria de las ramas europeas." }
+      ],
+      "estado": "Abierto. El atlas usa la hipótesis de la estepa por ser la más asentada, no por estar resuelta."
+    },
+    {
+      "id": "america1492", "tema": "¿Cuánta gente vivía en América en 1492?", "afecta": "choques/viruela_am",
+      "resumen": "La estimación condiciona por completo la magnitud del colapso posterior, y las cifras publicadas difieren en un factor de diez.",
+      "posiciones": [
+        { "quien": "Escuela baja (Kroeber, Rosenblat)", "que": "Entre 8 y 15 millones. Desconfía de las cifras de los cronistas." },
+        { "quien": "Escuela alta (Dobyns)", "que": "Entre 90 y 112 millones, a partir de tasas de despoblación retroproyectadas." },
+        { "quien": "Consenso operativo (Denevan, Koch et al.)", "que": "Entre 50 y 60 millones, con una caída del 80-95 % en el siglo siguiente." }
+      ],
+      "estado": "Convergencia parcial en torno a la cifra intermedia, que es la que usa este atlas."
+    },
+    {
+      "id": "roma", "tema": "¿Por qué cae el Imperio romano de Occidente?", "afecta": "polities/roma",
+      "resumen": "Probablemente la pregunta con más respuestas publicadas de toda la disciplina.",
+      "posiciones": [
+        { "quien": "Fiscal-militar (Goldsworthy, Heather)", "que": "Coste de frontera creciente sobre una base fiscal que se contrae, más presión bárbara sostenida." },
+        { "quien": "Climático-epidémico (Harper)", "que": "Óptimo climático que se acaba, peste antonina y de Cipriano, y el episodio frío del 536 como golpes exógenos." },
+        { "quien": "Transformación (Brown, Wickham)", "que": "No hay caída sino transición: la estructura se recompone en formas locales sin ruptura civilizatoria." }
+      ],
+      "estado": "Sin resolver, y probablemente irresoluble en esos términos. El atlas presenta la extensión, no la causa."
+    },
+    {
+      "id": "divergencia", "tema": "¿Cuándo se separan Europa y Asia oriental?", "afecta": "humanidad/asia_este",
+      "resumen": "De la respuesta depende que la ventaja europea se explique por instituciones milenarias o por una coyuntura tardía.",
+      "posiciones": [
+        { "quien": "Divergencia tardía (Pomeranz)", "que": "El delta del Yangtsé y Inglaterra son comparables hasta 1750-1800. Deciden el carbón accesible y las colonias." },
+        { "quien": "Divergencia temprana (Broadberry, Allen)", "que": "Las series de salarios reales y PIB muestran a Inglaterra por delante ya en 1500-1600." }
+      ],
+      "estado": "Abierto. La serie de este atlas se sitúa en una posición intermedia y por tanto no satisface a ninguna de las dos escuelas."
+    },
+    {
+      "id": "violencia", "tema": "¿Era más violenta la vida antes del estado?", "afecta": "humanidad/violence",
+      "resumen": "La serie de muerte violenta de este atlas parte de valores prehistóricos muy altos, y ese punto de partida está discutido.",
+      "posiciones": [
+        { "quien": "Keeley, Pinker", "que": "Hasta el 15 % de las muertes en sociedades sin estado son violentas, muy por encima de cualquier siglo moderno." },
+        { "quien": "Ferguson, Fry", "que": "La muestra esquelética está sesgada hacia yacimientos excepcionales y hacia grupos ya en contacto con estados. La guerra sería tardía, no originaria." }
+      ],
+      "estado": "Abierto. El atlas usa cifras altas y avisa de que probablemente lo sean en exceso."
+    },
+    {
+      "id": "maya", "tema": "¿Colapsaron los mayas por sequía?", "afecta": "choques/maya_seq",
+      "resumen": "Los registros de espeleotemas confirman sequías severas; lo discutido es su papel causal.",
+      "posiciones": [
+        { "quien": "Causa climática (Hodell, Kennett)", "que": "Series de sequía multidecenal coinciden con el abandono de los grandes centros del sur." },
+        { "quien": "Multicausal (Demarest, Aimers)", "que": "Guerra endémica, sobreexplotación y rigidez política; la sequía es un acelerante, no un motor. Y el norte no colapsa." }
+      ],
+      "estado": "Convergencia hacia lo multicausal, con la sequía como factor necesario y no suficiente."
+    },
+    {
+      "id": "revmilitar", "tema": "¿Hubo una «revolución militar» europea?", "afecta": "tecno/trace",
+      "resumen": "Tesis que vincula la fortificación abaluartada, el crecimiento de los ejércitos y la construcción del estado fiscal.",
+      "posiciones": [
+        { "quien": "Parker, Roberts", "que": "Un encadenamiento técnico-fiscal entre 1500 y 1660 explica la posterior ventaja europea global." },
+        { "quien": "Black y críticos", "que": "Los cambios son más lentos, más tardíos y menos exclusivos de Europa; el Imperio otomano y los mogoles hacen lo mismo antes o a la vez." }
+      ],
+      "estado": "Matizado más que refutado. El motor de conquista de este atlas incorpora el efecto pero no la cronología estricta."
+    },
+    {
+      "id": "agricultura", "tema": "¿Fue la agricultura una mejora?", "afecta": "eventos/-9000",
+      "resumen": "El indicador agregado sube y los indicadores individuales bajan durante milenios: una de las divergencias más incómodas de este atlas.",
+      "posiciones": [
+        { "quien": "Diamond, Cohen", "que": "«El peor error de la historia de la especie»: peor dieta, más enfermedad, más trabajo y desigualdad naciente." },
+        { "quien": "Bowles, Bocquet-Appel", "que": "La ventaja no fue el bienestar sino la fecundidad: sostiene más gente por km², y eso basta para que se imponga." }
+      ],
+      "estado": "Amplio acuerdo en que empeoró la vida individual y aumentó la capacidad de carga. El desacuerdo es sobre cómo ponderar ambas cosas."
+    },
+    {
+      "id": "esclavitud", "tema": "¿Financió la trata atlántica la Revolución Industrial?", "afecta": "geografia/triangulo",
+      "resumen": "Planteado por Eric Williams en 1944 y discutido desde entonces sin interrupción.",
+      "posiciones": [
+        { "quien": "Williams y continuadores", "que": "Los beneficios del circuito atlántico aportan capital, demanda y materia prima decisivos para la industrialización británica." },
+        { "quien": "Engerman, O'Brien", "que": "Los beneficios de la trata son pequeños frente a la formación bruta de capital británica; la causalidad principal está en otra parte." },
+        { "quien": "Revisión reciente (Inikori, Berg)", "que": "El peso no está en el beneficio directo sino en los encadenamientos: seguros, banca, construcción naval y mercados coloniales cautivos." }
+      ],
+      "estado": "Abierto, con desplazamiento reciente hacia las posiciones de encadenamiento."
+    },
+    {
+      "id": "angkor", "tema": "¿Por qué se abandona Angkor?", "afecta": "polities/jemer",
+      "resumen": "La mayor aglomeración preindustrial documentada deja de serlo en menos de un siglo.",
+      "posiciones": [
+        { "quien": "Colapso hidráulico (Buckley, Fletcher)", "que": "Alternancia de megasequías y monzones extremos destruye una red de canales que no tolera irregularidad." },
+        { "quien": "Desplazamiento comercial (Vickery, Lieberman)", "que": "El comercio marítimo con China favorece capitales portuarias; Angkor queda tierra adentro y pierde sentido económico." }
+      ],
+      "estado": "Compatibles entre sí; la discusión es de peso relativo."
+    }
+  ]
+}

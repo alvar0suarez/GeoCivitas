@@ -1,0 +1,58 @@
+name: Publicar en GitHub Pages
+
+# El sitio es estático y sin build: se sirve el repositorio tal cual.
+# Sólo se valida la integridad del Archivo antes de publicar, para que una
+# errata en los datos no llegue a producción sin que nadie se entere.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Integridad del Archivo
+        run: node tools/validar-datos.mjs
+
+  publicar:
+    needs: validar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Excluir lo que no forma parte del sitio
+        run: |
+          touch .nojekyll
+          rm -rf tools .github dist node_modules
+
+      - name: Empaquetar
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Desplegar
+        id: despliegue
+        uses: actions/deploy-pages@v4

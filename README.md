@@ -4,6 +4,8 @@ Atlas interactivo de la especie humana entre el **50 000 a. C. y el 2200**, pens
 como si se consultara desde el siglo XXII: no un mapa de reyes y batallas, sino un
 instrumento para leer a la vez **quién mandaba, cómo se vivía y por qué**.
 
+**En línea:** https://alvar0suarez.github.io/GeoCivitas/
+
 No hay dependencias, ni build, ni framework. HTML, CSS y JavaScript de módulos ES
 sobre un solo `<canvas>`.
 
@@ -83,6 +85,42 @@ sufragio universal no existe en ningún lugar del mundo antes de 1893.
 umbrales militares, catástrofes, hitos, instituciones, lenguas, rutas, pasos,
 regiones y ciudades—. Insensible a acentos, con salto directo al año y al lugar.
 
+### Aparato crítico
+
+Un mapa histórico sin procedencia es una ilustración. La pestaña **Fuentes**
+declara, para cada registro, **cuánto conviene fiarse** —alta, media, baja o
+escenario, con el motivo—, recoge **57 obras** con lo que se usa de cada una, y
+abre **11 controversias** donde la disciplina no se ha puesto de acuerdo: la
+magnitud real de la peste de Justiniano, la patria del indoeuropeo, la población
+americana de 1492, la Gran Divergencia, la violencia prehistórica…
+
+Cuando un dato del atlas está discutido, su ficha lo dice y enlaza a las
+posiciones enfrentadas. Que un dato esté en disputa no es un defecto del atlas:
+es información sobre el dato.
+
+### Citar una vista
+
+Todo el estado —año, encuadre, capas, temática y selección— vive en el fragmento
+de la URL. `L` copia el enlace a la vista exacta que estés viendo; `E` exporta un
+expediente en Markdown con la serie global, las entidades activas, los choques en
+curso, la tabla regional y la bibliografía completa.
+
+### Analista del Archivo
+
+Un panel de preguntas en lenguaje natural que **no responde de memoria**: recibe
+los registros concretos del año seleccionado —entidades, regiones, choques,
+batallas, invenciones, hitos, avisos de procedencia y debates abiertos— y se le
+exige ceñirse a ellos, marcar explícitamente lo que quede fuera del Archivo y
+señalar lo que esté en discusión. Bajo cada respuesta se enseña qué se le pasó.
+
+Requiere credenciales, así que sólo funciona donde se configuren:
+
+- **Proxy propio** (recomendado): la clave vive en el servidor. En
+  `tools/proxy-ejemplo.js` hay uno completo para Cloudflare Workers, con lista de
+  orígenes, modelos permitidos y techo de gasto por petición.
+- **Clave en el navegador**: sólo para uso personal. Queda expuesta a cualquier
+  script de la página y no se puede limitar.
+
 ### Choques
 
 33 catástrofes fechadas y situadas: sequías (evento 4.2 ka, colapso del Bronce,
@@ -144,13 +182,23 @@ data/
   inventos.json        60 invenciones civiles
   lenguas.json         familias lingüísticas y origen del lenguaje
   politica.json        regímenes de gobierno e instituciones
+  fuentes.json         confianza, bibliografía y controversias
 styles/fonts.css       tipografías incrustadas (generado)
 tools/
   build-geo.mjs        convierte los TopoJSON de world-atlas al formato compacto
   build-fonts.mjs      incrusta las tipografías como data URI
   build-artifact.mjs   empaqueta todo en un único HTML autocontenido
   validar-datos.mjs    integridad referencial del Archivo
+  proxy-ejemplo.js     proxy de la API para el Analista (Cloudflare Workers)
+.github/workflows/
+  pages.yml            valida los datos y publica en GitHub Pages
 ```
+
+### Publicación
+
+Cada `push` a `main` valida el Archivo y, si no hay errores, despliega el
+repositorio tal cual en GitHub Pages. No hay paso de compilación: el sitio *es*
+el repositorio.
 
 ### Validar
 
@@ -227,6 +275,7 @@ resolución ni el método lo permiten.
 | Espacio | Reproducir la línea del tiempo |
 | ← → | Avanzar por pasos (con Mayús, saltos largos) |
 | / | Buscar en todo el Archivo |
+| L · E | Copiar enlace a esta vista · exportar expediente |
 | S · R · P | Simulador · salto aleatorio · panel |
 | ? | Guía |
 

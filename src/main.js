@@ -7,12 +7,13 @@
 
 import {
   cargar, D, activas, nivelMar, horizonteDe, CONTROL, TIPO_BANDA,
-  global as gGlobal, buscar, regimenesEn,
+  global as gGlobal, buscar, regimenesEn, regional, ich,
 } from './core/datos.js';
 import { Atlas, ESCALAS } from './render/atlas.js';
 import { Regla } from './ui/tiempo.js';
 import * as Panel from './ui/panel.js';
 import { pintarSim, pintarResultado, evaluar } from './ui/sim.js';
+import * as Ana from './ui/analista.js';
 import { aT, aAño, formatoAño, era, pasoNatural, SALTOS, AÑO_MIN, AÑO_MAX } from './core/escala.js';
 import { num, compacto, porFormato, clamp } from './core/series.js';
 
@@ -94,7 +95,7 @@ let atlas, regla, sucio = true, ultimo = 0, ultimoAmbiente = 0;
   construirSaltos();
   redimensionar();
   conectar();
-  set({ año: 117 });
+  if (!aplicarEstadoDeURL()) set({ año: 117 });
 
   // el lienzo mide el texto al dibujarlo: si las tipografías llegan después,
   // hay que rehacer los rótulos y la regla con las métricas correctas
@@ -117,6 +118,7 @@ function set(cambios) {
   refrescarLeyenda();
   $('#timeRange').value = String(Math.round(aT(est.año) * 10000));
   $('#timeHead').style.left = `${(aT(est.año) * 100).toFixed(3)}%`;
+  actualizarHash();
 }
 
 /* ── bucle ─────────────────────────────────────────────────── */
@@ -218,6 +220,7 @@ function refrescarPanel() {
   const body = $('#panelBody');
   if (est.tab === 'dossier') body.innerHTML = Panel.expediente(est);
   else if (est.tab === 'mundo') body.innerHTML = Panel.mundo(est);
+  else if (est.tab === 'fuentes') body.innerHTML = Panel.fuentes(est);
   else body.innerHTML = Panel.archivo(est);
 }
 
@@ -277,9 +280,13 @@ function conectar() {
 
   // panel: navegación interna
   $('#panelBody').addEventListener('click', (e) => {
-    const t = e.target.closest('[data-polity],[data-region],[data-choque],[data-tecno],[data-evento],[data-sim],[data-batalla],[data-invento],[data-inst],[data-regimen]');
+    const t = e.target.closest('[data-polity],[data-region],[data-choque],[data-tecno],[data-evento],[data-sim],[data-batalla],[data-invento],[data-inst],[data-regimen],[data-debate]');
     if (!t) return;
     const ir = (sel) => { set({ seleccion: sel, tab: 'dossier' }); marcarTab('dossier'); };
+    if (t.dataset.debate) {
+      const d = D.fuentes.debates.find((x) => x.id === t.dataset.debate);
+      if (d) return ir({ tipo: 'debate', debate: d });
+    }
     if (t.dataset.batalla) {
       const b = D.batallas.batallas.find((x) => x.id === t.dataset.batalla);
       if (b) { atlas.vista.centro = b.at; return ir({ tipo: 'batalla', batalla: b }); }
@@ -318,6 +325,9 @@ function conectar() {
   $('#btnSim').addEventListener('click', () => abrirSim());
   $('#btnRandom').addEventListener('click', saltoAleatorio);
   $('#btnHelp').addEventListener('click', () => { pintarAyuda(); $('#modalHelp').hidden = false; });
+  $('#btnAnalista').addEventListener('click', abrirAnalista);
+  $('#btnEnlace').addEventListener('click', copiarEnlace);
+  $('#btnExport').addEventListener('click', exportar);
   $('#btnPanel').addEventListener('click', () => {
     $('#panel').classList.toggle('is-open');
     $('#panel').classList.toggle('is-hidden');
@@ -393,6 +403,7 @@ function conectarLienzo() {
       const f = 180 / (atlas.vista.k * Math.PI) * 1.6;
       atlas.vista.centro = [lam0 - dx * f, phi0 + dy * f];
       sucio = true;
+      actualizarHash();
       tip.hidden = true;
       return;
     }
@@ -501,6 +512,8 @@ function conectarTeclado() {
       case 'ArrowUp': atlas.vista.k = clamp(atlas.vista.k * 1.12, 110, 5200); sucio = true; break;
       case 'ArrowDown': atlas.vista.k = clamp(atlas.vista.k / 1.12, 110, 5200); sucio = true; break;
       case '/': e.preventDefault(); abrirPal(); break;
+      case 'l': case 'L': copiarEnlace(); break;
+      case 'e': case 'E': exportar(); break;
       case 'p': case 'P': $('#btnPanel').click(); break;
       case 's': case 'S': abrirSim(); break;
       case 'r': case 'R': saltoAleatorio(); break;
@@ -567,6 +580,185 @@ function recalcularSim() {
   set({ frente: { desde: atacante.at, hasta: defensor.at, prob: r.prob } });
 }
 
+/* ── enlace permanente ─────────────────────────────────────── */
+
+/**
+ * Una vista de este atlas es un argumento: año, encuadre, capas y selección.
+ * Sin poder enlazarla, no se puede citar ni discutir — así que va toda en el
+ * fragmento de la URL, que no se envía al servidor y sobrevive al recargado.
+ */
+function serializarEstado() {
+  const v = atlas.vista;
+  const capas = Object.entries(est.capas).filter(([, on]) => on).map(([k]) => k).join('.');
+  const p = [
+    `y=${est.año}`,
+    `v=${v.modo}`,
+    `c=${v.centro[0].toFixed(2)},${v.centro[1].toFixed(2)},${Math.round(v.k)}`,
+    `l=${capas}`,
+  ];
+  if (est.tematica !== 'ninguna') p.push(`t=${est.tematica}`);
+  const s = est.seleccion;
+  const idDe = {
+    polity: () => s.pol?.id, region: () => s.reg?.id, choque: () => s.choque?.id,
+    tecno: () => s.tecno?.id, batalla: () => s.batalla?.id, invento: () => s.invento?.id,
+    lengua: () => s.familia?.id, debate: () => s.debate?.id, ciudad: () => s.ciudad?.n,
+  };
+  if (s && idDe[s.tipo]) {
+    const id = idDe[s.tipo]();
+    if (id) p.push(`s=${s.tipo}.${encodeURIComponent(id)}`);
+  }
+  return p.join('&');
+}
+
+function aplicarEstadoDeURL() {
+  const h = location.hash.replace(/^#/, '');
+  if (!h) return false;
+  const q = Object.fromEntries(h.split('&').map((x) => {
+    const i = x.indexOf('=');
+    return i < 0 ? [x, ''] : [x.slice(0, i), decodeURIComponent(x.slice(i + 1))];
+  }));
+
+  if (q.v === 'plana' || q.v === 'orto') {
+    atlas.vista.modo = q.v;
+    document.querySelectorAll('[data-proj]').forEach((b) => b.classList.toggle('is-on', b.dataset.proj === q.v));
+  }
+  if (q.c) {
+    const [lon, lat, k] = q.c.split(',').map(Number);
+    if (isFinite(lon) && isFinite(lat)) atlas.vista.centro = [lon, lat];
+    if (isFinite(k)) atlas.vista.k = clamp(k, 110, 5200);
+  }
+  if (q.l != null) {
+    const activas_ = new Set(q.l ? q.l.split('.') : []);
+    for (const k of Object.keys(est.capas)) est.capas[k] = activas_.has(k);
+    construirRail();
+  }
+  if (q.t && ESCALAS[q.t]) est.tematica = q.t;
+
+  let seleccion = null;
+  if (q.s) {
+    const [tipo, id] = q.s.split('.');
+    const buscarEn = {
+      polity: () => ({ tipo: 'polity', pol: D.porId.get(id) }),
+      region: () => ({ tipo: 'region', reg: D.regiones.find((r) => r.id === id) }),
+      choque: () => ({ tipo: 'choque', choque: D.choques.shocks.find((x) => x.id === id) }),
+      tecno: () => ({ tipo: 'tecno', tecno: D.tecno.tech.find((x) => x.id === id) }),
+      batalla: () => ({ tipo: 'batalla', batalla: D.batallas.batallas.find((x) => x.id === id) }),
+      invento: () => ({ tipo: 'invento', invento: D.inventos.inventos.find((x) => x.id === id) }),
+      lengua: () => ({ tipo: 'lengua', familia: D.lenguas.familias.find((x) => x.id === id) }),
+      debate: () => ({ tipo: 'debate', debate: D.fuentes.debates.find((x) => x.id === id) }),
+      ciudad: () => ({ tipo: 'ciudad', ciudad: D.ciudades.ciudades.find((x) => x.n === id) }),
+    };
+    const s = buscarEn[tipo]?.();
+    if (s && Object.values(s).every((v) => v != null)) seleccion = s;
+  }
+
+  const año = Number(q.y);
+  set({ año: isFinite(año) ? año : est.año, seleccion });
+  return true;
+}
+
+let pendienteHash = 0;
+function actualizarHash() {
+  clearTimeout(pendienteHash);
+  pendienteHash = setTimeout(() => {
+    history.replaceState(null, '', `#${serializarEstado()}`);
+  }, 400);
+}
+
+async function copiarEnlace() {
+  const url = `${location.origin}${location.pathname}#${serializarEstado()}`;
+  try {
+    await navigator.clipboard.writeText(url);
+    aviso('Enlace a esta vista copiado al portapapeles');
+  } catch {
+    history.replaceState(null, '', `#${serializarEstado()}`);
+    aviso('Enlace en la barra de direcciones: cópialo desde ahí');
+  }
+}
+
+/* ── exportación ───────────────────────────────────────────── */
+
+/** Todo lo que el atlas sabe del año en curso, en un archivo citable. */
+function dossierDelAño() {
+  const a = est.año;
+  const pols = activas(a);
+  const M = D.humanidad.metricas;
+  const l = [];
+  l.push(`# GEOCIVITAS · ${formatoAño(a)}`, '', `**${era(a)}**`, '');
+  if (a > 2030) l.push('> Escenario prospectivo. No es una predicción.', '');
+
+  l.push('## Serie global', '');
+  for (const [k, m] of Object.entries(M)) {
+    l.push(`- **${m.label}**: ${porFormato(gGlobal(k, a), m.fmt)} ${m.unit}`);
+  }
+
+  l.push('', '## Entidades políticas activas', '');
+  if (!pols.length) l.push('_Ninguna: el mundo no está organizado en estados._');
+  for (const p of pols) {
+    l.push(`### ${p.name} (${formatoAño(p.from)} — ${formatoAño(p.to)})`);
+    l.push(`*${p.kind}. Sede: ${p.seat}.*`, '');
+    l.push(`- **Base**: ${p.dossier.base}`);
+    l.push(`- **Estado**: ${p.dossier.estado}`);
+    l.push(`- **Límite**: ${p.dossier.limite}`);
+    if (p.dossier.colapso !== '—') l.push(`- **Colapso**: ${p.dossier.colapso}`);
+    l.push('');
+  }
+
+  const ch = D.choques.shocks.filter((s) => a >= s.year && a <= (s.endYear ?? s.year));
+  if (ch.length) {
+    l.push('## Choques en curso', '');
+    for (const s of ch) l.push(`- **${s.name}** (${s.place}): ${s.note}`);
+    l.push('');
+  }
+
+  const reg = D.regiones.map((r) => ({ r, i: ich(r, a) })).sort((x, y) => y.i - x.i);
+  l.push('## Condición humana por región', '', '| Región | ICH | Población (M) | Vida (años) | Renta |', '|---|---|---|---|---|');
+  for (const { r, i } of reg) {
+    l.push(`| ${r.name} | ${(i * 100).toFixed(0)} | ${porFormato(regional(r, 'pop', a), '0.0')} | ${porFormato(regional(r, 'lifeExp', a), '0.0')} | ${porFormato(regional(r, 'gdppc', a), '0')} |`);
+  }
+
+  l.push('', '---', '', '## Procedencia', '');
+  l.push(D.fuentes.meta.nota, '');
+  for (const c of D.fuentes.confianza) l.push(`- **${c.registro}** — confianza ${c.nivel}. ${c.nota}`);
+  l.push('', '### Bibliografía', '');
+  for (const o of D.fuentes.obras) l.push(`- ${o.cita}`);
+  l.push('', `_Generado por GEOCIVITAS. Enlace a esta vista: #${serializarEstado()}_`);
+  return l.join('\n');
+}
+
+async function exportar() {
+  const nombre = `geocivitas-${est.año < 0 ? Math.abs(est.año) + 'ac' : est.año}.md`;
+  const texto = dossierDelAño();
+  // En la página publicada el guardado lo confirma quien mira; en un servidor
+  // normal no existe esa vía y se recurre al enlace de descarga de siempre.
+  const api = globalThis.claude?.downloads;
+  if (api) {
+    try {
+      await api.save({ filename: nombre, data: texto });
+      aviso('Expediente guardado');
+    } catch (e) {
+      if (e?.code !== 'declined') aviso(`No se pudo guardar: ${e?.message ?? 'error desconocido'}`);
+    }
+    return;
+  }
+  const url = URL.createObjectURL(new Blob([texto], { type: 'text/markdown;charset=utf-8' }));
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = nombre;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  aviso('Expediente descargado');
+}
+
+let avisoT = 0;
+function aviso(texto) {
+  const el = $('#aviso');
+  el.textContent = texto;
+  el.hidden = false;
+  clearTimeout(avisoT);
+  avisoT = setTimeout(() => { el.hidden = true; }, 3200);
+}
+
 /* ── buscador ──────────────────────────────────────────────── */
 
 let palRes = [];
@@ -617,6 +809,81 @@ function elegirPal(n) {
   if (r.año != null) cambios.año = r.año;
   set(cambios);
   marcarTab('dossier');
+}
+
+/* ── analista ──────────────────────────────────────────────── */
+
+let anaRefs = null;
+let anaAbort = null;
+
+function abrirAnalista() {
+  anaRefs = Ana.pintarAnalista($('#anaBody'), est);
+  $('#modalAna').hidden = false;
+
+  const sincronizarModo = () => {
+    const proxy = anaRefs.modo.value === 'proxy';
+    $('#anaProxy').hidden = !proxy;
+    $('#anaDirecto').hidden = proxy;
+  };
+  anaRefs.modo.addEventListener('change', sincronizarModo);
+
+  anaRefs.guardar.addEventListener('click', () => {
+    Ana.guardarConfig({
+      modo: anaRefs.modo.value,
+      url: anaRefs.url?.value.trim() || '',
+      clave: anaRefs.clave?.value.trim() || '',
+      modelo: anaRefs.modelo.value,
+    });
+    aviso(Ana.configurado() ? 'Conexión guardada' : 'Falta la URL o la clave');
+    abrirAnalista();
+  });
+
+  $('#anaBody').addEventListener('click', (e) => {
+    const s = e.target.closest('[data-sug]');
+    if (s) { anaRefs.pregunta.value = s.dataset.sug; anaRefs.pregunta.focus(); }
+  });
+
+  anaRefs.enviar.addEventListener('click', enviarPregunta);
+  anaRefs.pregunta.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) enviarPregunta();
+  });
+}
+
+async function enviarPregunta() {
+  const q = anaRefs.pregunta.value.trim();
+  if (!q) return;
+  if (!Ana.configurado()) { aviso('Configura primero la conexión'); return; }
+
+  anaAbort?.abort();
+  anaAbort = new AbortController();
+  anaRefs.enviar.disabled = true;
+  anaRefs.salida.innerHTML = `<div class="ana__resp"><div class="ana__sello">CONSULTANDO…</div>
+    <div class="bar"><i style="width:100%;background:var(--mg);animation:sweep 1.1s ease-in-out infinite"></i></div></div>`;
+
+  try {
+    const { texto, contexto, uso } = await Ana.preguntar(q, est, anaAbort.signal);
+    const registros = Object.entries(contexto)
+      .filter(([, v]) => Array.isArray(v) && v.length)
+      .map(([k, v]) => `${k} (${v.length})`).join(' · ');
+    anaRefs.salida.innerHTML = `
+      <div class="ana__resp">
+        <div class="ana__sello">RESPUESTA GENERADA · ${esc(Ana.leerConfig().modelo || 'modelo por defecto')}</div>
+        ${Ana.formatearRespuesta(texto)}
+        <div class="ana__pie">
+          Anclada en: ${esc(registros)}.
+          ${uso ? `· ${uso.input_tokens} tokens de entrada, ${uso.output_tokens} de salida.` : ''}<br>
+          Texto generado por un modelo de lenguaje a partir de los registros del atlas. Verifícalo antes de citarlo.
+        </div>
+      </div>`;
+  } catch (e) {
+    if (e.name === 'AbortError') return;
+    anaRefs.salida.innerHTML = `<div class="aviso" style="margin-top:16px">
+      <b>No se pudo consultar.</b> ${esc(e.message)}<br><br>
+      Si usas clave directa, comprueba que sea válida y que tu navegador no bloquee la petición.
+      Si usas proxy, comprueba que responda con CORS abierto a este origen.</div>`;
+  } finally {
+    anaRefs.enviar.disabled = false;
+  }
 }
 
 /* ── ayuda ─────────────────────────────────────────────────── */

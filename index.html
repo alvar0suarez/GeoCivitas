@@ -42,6 +42,8 @@
       </div>
       <button class="ibtn ibtn--wide" id="btnBuscar" title="Buscar en el Archivo (/)">⌕ BUSCAR</button>
       <button class="ibtn" id="btnPanel" title="Panel de análisis (P)" aria-label="Panel de análisis">◨</button>
+      <button class="ibtn" id="btnExport" title="Exportar la vista actual (E)" aria-label="Exportar">⤓</button>
+      <button class="ibtn" id="btnEnlace" title="Copiar enlace a esta vista (L)" aria-label="Copiar enlace">⚯</button>
       <button class="ibtn" id="btnHelp" title="Guía (?)" aria-label="Guía">?</button>
     </div>
   </header>
@@ -53,6 +55,7 @@
     <div class="stage__scan" aria-hidden="true"></div>
 
     <div class="tooltip" id="tip" hidden></div>
+    <div class="toast" id="aviso" role="status" hidden></div>
 
     <!-- lectura rápida sobre el lienzo -->
     <div class="readout" id="readout">
@@ -79,6 +82,7 @@
       <div class="rail__hd" style="margin-top:0">SIMULADOR</div>
       <button class="railbtn" id="btnSim">MOTOR DE CONQUISTA</button>
       <button class="railbtn" id="btnRandom">SALTO ALEATORIO</button>
+      <button class="railbtn" id="btnAnalista">ANALISTA DEL ARCHIVO</button>
     </div>
   </aside>
 
@@ -88,6 +92,7 @@
       <button class="tab is-on" data-tab="dossier">EXPEDIENTE</button>
       <button class="tab" data-tab="mundo">MUNDO</button>
       <button class="tab" data-tab="archivo">ARCHIVO</button>
+      <button class="tab" data-tab="fuentes">FUENTES</button>
     </div>
     <div class="panel__body" id="panelBody"></div>
   </aside>
@@ -136,6 +141,17 @@
         <button class="ibtn" data-close>✕</button>
       </div>
       <div class="modal__body" id="simBody"></div>
+    </div>
+  </div>
+
+  <!-- ══ ANALISTA ══ -->
+  <div class="modal" id="modalAna" hidden>
+    <div class="modal__box">
+      <div class="modal__hd">
+        <span>ANALISTA DEL ARCHIVO · respuestas ancladas a los registros</span>
+        <button class="ibtn" data-close>✕</button>
+      </div>
+      <div class="modal__body" id="anaBody"></div>
     </div>
   </div>
 

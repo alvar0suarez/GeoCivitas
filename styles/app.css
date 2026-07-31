@@ -440,12 +440,84 @@ button { cursor: pointer; background: none; border: 0; }
 
 .crosshair { position: absolute; pointer-events: none; z-index: 11; }
 
+.toast {
+  position: absolute; z-index: 45; left: 50%; top: 18px; transform: translateX(-50%);
+  padding: 9px 15px; background: rgba(3, 9, 16, .95);
+  border: 1px solid var(--cy-d); border-left: 2px solid var(--cy);
+  font-family: var(--mono); font-size: 10px; letter-spacing: .06em; color: var(--ink);
+  box-shadow: 0 6px 30px rgba(0,0,0,.7); pointer-events: none;
+}
+.toast[hidden] { display: none; }
+
 /* ── barra de gobierno apilada ───────────────────────────── */
 .pila {
   display: flex; height: 16px; width: 100%; margin-bottom: 10px;
   border: 1px solid var(--line); background: var(--bg);
 }
 .pila > i { display: block; height: 100%; transition: width .35s ease; }
+
+/* ── controversia y bibliografía ─────────────────────────── */
+.disputa {
+  display: block; width: 100%; text-align: left; margin: 12px 0;
+  padding: 9px 11px; border: 1px solid rgba(245,182,66,.38);
+  border-left-width: 2px; background: rgba(245,182,66,.06); transition: .16s;
+}
+.disputa:hover { background: rgba(245,182,66,.13); border-color: var(--am); }
+.disputa__t {
+  display: block; font-family: var(--mono); font-size: 8.5px;
+  letter-spacing: .14em; color: var(--am); line-height: 1.5;
+}
+.disputa__d { display: block; font-size: 11px; color: var(--ink-dim); margin-top: 4px; line-height: 1.5; }
+
+.obra { padding: 7px 0; border-bottom: 1px solid rgba(90,150,175,.08); }
+.obra__c { font-size: 11.5px; line-height: 1.55; color: #c4d6e3; }
+.obra__u { font-family: var(--mono); font-size: 9.5px; color: var(--ink-faint); margin-top: 3px; line-height: 1.5; }
+
+.aviso {
+  padding: 9px 11px; margin: 10px 0; border-left: 2px solid var(--rd);
+  background: rgba(251,113,133,.07);
+  font-size: 11.5px; line-height: 1.6; color: #d8c2c8;
+}
+.aviso b { color: var(--rd); }
+
+/* ── analista ────────────────────────────────────────────── */
+.ana__ctx { padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+.ana__cfg { border: 1px solid var(--line-2); padding: 10px 12px; }
+.ana__cfg > summary {
+  cursor: pointer; font-family: var(--mono); font-size: 9px;
+  letter-spacing: .16em; color: var(--cy); list-style: none;
+}
+.ana__cfg > summary::before { content: '▸ '; }
+.ana__cfg[open] > summary::before { content: '▾ '; }
+.chip--btn { cursor: pointer; transition: .14s; }
+.chip--btn:hover { border-color: var(--cy); color: var(--cy); background: rgba(34,211,238,.08); }
+
+.ana__caja { display: flex; gap: 10px; align-items: flex-end; margin-top: 12px; }
+.ana__caja textarea {
+  flex: 1; resize: vertical; min-height: 46px;
+  background: var(--bg); border: 1px solid var(--line-2); padding: 10px;
+  font-family: var(--sans); font-size: 13px; color: var(--ink); outline: none;
+}
+.ana__caja textarea:focus { border-color: var(--cy-d); }
+.ana__caja .railbtn { width: auto; margin-top: 0; white-space: nowrap; padding: 12px 14px; }
+.railbtn[disabled] { opacity: .4; cursor: not-allowed; }
+.railbtn[disabled]:hover { color: var(--ink-dim); background: none; border-color: var(--line-2); box-shadow: none; }
+
+.ana__resp {
+  margin-top: 16px; padding: 14px; border: 1px solid var(--line);
+  border-left: 2px solid var(--mg); background: rgba(232,121,249,.04);
+}
+.ana__resp p { font-size: 13px; line-height: 1.65; color: #cfe0ec; margin: 0 0 10px; }
+.ana__resp ul { margin: 0 0 10px; padding-left: 18px; }
+.ana__resp li { font-size: 13px; line-height: 1.6; color: #cfe0ec; margin-bottom: 4px; }
+.ana__sello {
+  font-family: var(--mono); font-size: 8px; letter-spacing: .18em;
+  color: var(--mg); margin-bottom: 10px;
+}
+.ana__pie {
+  font-family: var(--mono); font-size: 9px; color: var(--ink-faint);
+  margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line);
+}
 
 /* ── BUSCADOR ────────────────────────────────────────────── */
 .pal {
