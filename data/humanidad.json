@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "titulo": "Atlas de la condición humana",
+    "nota": "Serie global de referencia más desviaciones regionales. Reconstrucción sintética a partir de los órdenes de magnitud aceptados en Maddison (renta), HYDE (población), Riley y Gapminder (salud), FAO (nutrición y rendimiento), Pinker/Eisner (violencia) y Roser (alfabetización). Antes de 1500 son órdenes de magnitud, no mediciones.",
+    "aviso": "Los valores posteriores a 2030 son proyección de escenario central, no dato."
+  },
+  "metricas": {
+    "pop": { "label": "Población", "unit": "millones", "fmt": "0.0", "dir": 1 },
+    "gdppc": { "label": "Renta por persona", "unit": "$ int. 1990", "fmt": "0", "dir": 1 },
+    "lifeExp": { "label": "Esperanza de vida al nacer", "unit": "años", "fmt": "0.0", "dir": 1 },
+    "childMort": { "label": "Mortalidad antes de los 5 años", "unit": "‰", "fmt": "0", "dir": -1 },
+    "kcal": { "label": "Ingesta diaria", "unit": "kcal/día", "fmt": "0", "dir": 1 },
+    "yield": { "label": "Rendimiento cerealista", "unit": "t/ha", "fmt": "0.00", "dir": 1 },
+    "urban": { "label": "Población urbana", "unit": "%", "fmt": "0.0", "dir": 1 },
+    "literacy": { "label": "Alfabetización", "unit": "%", "fmt": "0.0", "dir": 1 },
+    "violence": { "label": "Muerte violenta", "unit": "por 100.000/año", "fmt": "0.0", "dir": -1 },
+    "unfree": { "label": "Población no libre", "unit": "%", "fmt": "0.0", "dir": -1 },
+    "hours": { "label": "Jornada anual", "unit": "horas/año", "fmt": "0", "dir": -1 },
+    "energy": { "label": "Energía por persona", "unit": "GJ/año", "fmt": "0", "dir": 1 }
+  },
+  "global": {
+    "years":     [-50000, -10000, -5000, -3000, -1000, -500,   1,    500,  1000, 1300, 1400, 1500, 1600, 1700, 1820, 1870, 1913, 1950, 1980, 2000, 2025, 2050, 2100, 2200],
+    "pop":       [1.2,    4,      20,    30,    72,    150,    230,  210,  275,  400,  375,  460,  560,  640,  1050, 1270, 1790, 2530, 4440, 6140, 8200, 9700, 10300, 9600],
+    "gdppc":     [250,    260,    300,   330,   370,   400,    467,  430,  453,  520,  500,  566,  596,  615,  666,  875,  1524, 2104, 4000, 6038, 9500, 14000, 22000, 32000],
+    "lifeExp":   [30,     31,     30,    30,    29,    28,     28,   27,   29,   28,   28,   30,   30,   31,   29,   30,   34,   46,   63,   67,   73,   77,   82,   88],
+    "childMort": [480,    475,    470,   470,   470,   470,    465,  470,  465,  470,  470,  460,  460,  450,  430,  410,  360,  225,  120,  77,   36,   22,   12,   8],
+    "kcal":      [2000,   2100,   2200,  2100,  2050,  2100,   2100, 2000, 2050, 2100, 2050, 2100, 2150, 2200, 2050, 2250, 2400, 2200, 2550, 2720, 2950, 3050, 3100, 3100],
+    "yield":     [0,      0.05,   0.5,   0.55,  0.6,   0.65,   0.7,  0.65, 0.7,  0.75, 0.75, 0.8,  0.85, 0.9,  1.0,  1.1,  1.2,  1.2,  2.0,  2.8,  4.1,  5.0,  6.0,  6.5],
+    "urban":     [0,      0,      0.5,   1,     3,     4,      5,    4,    5,    7,    7,    8,    8,    9,    9,    17,   22,   30,   39,   47,   58,   68,   80,   85],
+    "literacy":  [0,      0,      0.1,   0.2,   1,     2,      3,    3,    4,    5,    6,    8,    10,   12,   12,   21,   32,   42,   68,   82,   87,   92,   96,   98],
+    "violence":  [500,    420,    320,   280,   220,   190,    160,  170,  145,  130,  125,  110,  100,  90,   70,   50,   60,   40,   15,   9,    6,    5,    4,    4],
+    "unfree":    [0,      0.5,    2,     5,     10,    15,     20,   20,   25,   25,   25,   25,   25,   22,   20,   12,   4,    2,    0.8,  0.5,  0.6,  0.4,  0.2,  0.1],
+    "hours":     [1400,   1450,   1600,  1800,  1900,  1950,   2000, 2000, 2000, 2100, 2100, 2200, 2300, 2400, 3000, 2900, 2600, 2300, 1900, 1800, 1700, 1550, 1400, 1300],
+    "energy":    [5,      5,      8,     9,     10,    11,     12,   11,   12,   14,   14,   15,   17,   19,   22,   28,   40,   45,   64,   72,   79,   85,   95,   100]
+  },
+  "notasGlobales": [
+    { "year": -50000, "texto": "Un millón largo de personas en todo el planeta: menos que una ciudad media actual. La jornada de trabajo más corta de la historia y la muerte violenta más probable." },
+    { "year": -3000, "texto": "La agricultura ya alimenta a treinta millones, pero cada persona come peor, trabaja más y vive menos que su bisabuela cazadora. El excedente no mejora la vida: financia el estado." },
+    { "year": 1, "texto": "Tres cuartas partes de la humanidad viven en Asia. Roma y Han, en los dos extremos del continente, apenas se conocen y suman un tercio del total." },
+    { "year": 1400, "texto": "Único punto del gráfico en que la población mundial baja: la peste borra un siglo de crecimiento en seis años." },
+    { "year": 1820, "texto": "Máximo histórico de horas trabajadas y de población no libre, en pleno arranque industrial. El progreso agregado y el bienestar individual divergen durante tres generaciones." },
+    { "year": 1950, "texto": "Punto de inflexión: la mortalidad infantil se desploma antes de que suba la renta. La salud pública resulta más barata que el crecimiento." },
+    { "year": 2025, "texto": "Primera vez que más de la mitad de la humanidad vive en ciudades, come por encima de las 2.900 kcal y sabe leer. También la primera en que el clima se convierte en variable política de primer orden." },
+    { "year": 2100, "texto": "Escenario central: la población se estabiliza y luego cede. El problema deja de ser cuántos somos y pasa a ser cuántos sostienen a cuántos." }
+  ],
+  "regiones": [
+    {
+      "id": "europa_occ",
+      "name": "Europa Occidental",
+      "anchor": [5, 48],
+      "members": ["France", "Germany", "Italy", "Spain", "Portugal", "United Kingdom", "Ireland", "Belgium", "Netherlands", "Luxembourg", "Switzerland", "Austria", "Denmark", "Sweden", "Norway", "Finland", "Iceland", "Greece"],
+      "popShare": [[-10000, 0.03], [-3000, 0.05], [1, 0.1], [1000, 0.09], [1500, 0.11], [1700, 0.13], [1820, 0.12], [1913, 0.13], [1950, 0.11], [2000, 0.06], [2025, 0.05], [2100, 0.03]],
+      "gdppcRel": [[-3000, 0.8], [1, 1.2], [1000, 0.9], [1500, 1.3], [1700, 1.6], [1820, 2.0], [1913, 2.4], [1950, 2.5], [2000, 3.2], [2025, 3.0], [2100, 2.4]],
+      "lifeRel": [[1, 1.0], [1500, 1.0], [1820, 1.15], [1913, 1.4], [1950, 1.45], [2000, 1.16], [2025, 1.14], [2100, 1.08]],
+      "urbanRel": [[1, 1.4], [1000, 0.8], [1500, 1.2], [1820, 1.6], [1913, 2.1], [1950, 1.8], [2025, 1.4], [2100, 1.15]],
+      "nota": "Periferia atrasada del sistema euroasiático durante milenios; su ventaja empieza a construirse hacia 1500 y se dispara con el carbón."
+    },
+    {
+      "id": "europa_or",
+      "name": "Europa Oriental y Rusia",
+      "anchor": [40, 55],
+      "members": ["Russia", "Ukraine", "Belarus", "Poland", "Czechia", "Slovakia", "Hungary", "Romania", "Bulgaria", "Serbia", "Croatia", "Bosnia and Herz.", "Slovenia", "Albania", "Macedonia", "Montenegro", "Kosovo", "Moldova", "Estonia", "Latvia", "Lithuania"],
+      "popShare": [[-10000, 0.02], [-3000, 0.02], [1, 0.04], [1000, 0.05], [1500, 0.05], [1700, 0.06], [1820, 0.08], [1913, 0.09], [1950, 0.09], [2000, 0.07], [2025, 0.05], [2100, 0.03]],
+      "gdppcRel": [[1, 0.7], [1000, 0.7], [1500, 0.8], [1820, 1.0], [1913, 1.1], [1950, 1.4], [2000, 1.1], [2025, 1.5], [2100, 1.6]],
+      "lifeRel": [[1, 0.95], [1820, 1.0], [1913, 1.0], [1950, 1.3], [2000, 1.05], [2025, 1.03], [2100, 1.03]],
+      "urbanRel": [[1, 0.5], [1500, 0.6], [1820, 0.7], [1913, 0.8], [1950, 1.3], [2025, 1.25], [2100, 1.1]],
+      "nota": "Servidumbre hasta 1861 e industrialización comprimida en dos generaciones a un coste demográfico sin equivalente europeo."
+    },
+    {
+      "id": "mena",
+      "name": "Oriente Próximo y Norte de África",
+      "anchor": [38, 30],
+      "members": ["Turkey", "Iran", "Iraq", "Syria", "Lebanon", "Israel", "Palestine", "Jordan", "Saudi Arabia", "Yemen", "Oman", "United Arab Emirates", "Qatar", "Kuwait", "Egypt", "Libya", "Tunisia", "Algeria", "Morocco", "W. Sahara", "Cyprus"],
+      "popShare": [[-10000, 0.1], [-3000, 0.2], [-500, 0.15], [1, 0.11], [1000, 0.09], [1500, 0.06], [1700, 0.05], [1820, 0.04], [1913, 0.03], [1950, 0.03], [2000, 0.06], [2025, 0.07], [2100, 0.08]],
+      "gdppcRel": [[-3000, 1.6], [-500, 1.5], [1, 1.2], [1000, 1.3], [1500, 0.9], [1820, 0.7], [1913, 0.6], [1950, 0.7], [2000, 0.9], [2025, 1.1], [2100, 1.0]],
+      "lifeRel": [[1, 1.0], [1500, 1.0], [1913, 0.9], [1950, 0.95], [2000, 1.03], [2025, 1.02], [2100, 1.0]],
+      "urbanRel": [[-3000, 3.0], [1, 1.6], [1000, 1.8], [1500, 1.4], [1820, 1.2], [1913, 1.0], [2025, 1.15], [2100, 1.1]],
+      "nota": "Primera región urbana del planeta y primera en perder la primacía: cuando el comercio se hace oceánico, el corredor terrestre se convierte en periferia."
+    },
+    {
+      "id": "africa_sub",
+      "name": "África Subsahariana",
+      "anchor": [20, 0],
+      "members": ["Nigeria", "Ethiopia", "Dem. Rep. Congo", "Tanzania", "South Africa", "Kenya", "Uganda", "Sudan", "S. Sudan", "Angola", "Ghana", "Mozambique", "Madagascar", "Cameroon", "Côte d'Ivoire", "Niger", "Burkina Faso", "Mali", "Malawi", "Zambia", "Senegal", "Chad", "Somalia", "Somaliland", "Zimbabwe", "Guinea", "Rwanda", "Benin", "Burundi", "Togo", "Sierra Leone", "Liberia", "Mauritania", "Eritrea", "Namibia", "Botswana", "Gabon", "Lesotho", "Guinea-Bissau", "Eq. Guinea", "Gambia", "Djibouti", "Congo", "Central African Rep.", "eSwatini"],
+      "popShare": [[-10000, 0.25], [-3000, 0.12], [1, 0.08], [1000, 0.11], [1500, 0.11], [1700, 0.1], [1820, 0.07], [1913, 0.07], [1950, 0.07], [2000, 0.11], [2025, 0.15], [2050, 0.22], [2100, 0.38]],
+      "gdppcRel": [[1, 0.9], [1000, 0.85], [1500, 0.75], [1820, 0.6], [1913, 0.45], [1950, 0.4], [2000, 0.28], [2025, 0.25], [2050, 0.32], [2100, 0.45]],
+      "lifeRel": [[1, 0.95], [1500, 0.95], [1913, 0.75], [1950, 0.8], [2000, 0.76], [2025, 0.88], [2100, 0.94]],
+      "urbanRel": [[1, 0.4], [1500, 0.5], [1820, 0.4], [1913, 0.3], [1950, 0.45], [2000, 0.72], [2025, 0.78], [2100, 0.95]],
+      "nota": "Cuna de la especie y única gran región con pirámide joven en 2100. La trata atlántica y sahariana le costó, entre 1500 y 1900, un estancamiento demográfico de cuatro siglos."
+    },
+    {
+      "id": "asia_sur",
+      "name": "Asia Meridional",
+      "anchor": [78, 22],
+      "members": ["India", "Pakistan", "Bangladesh", "Nepal", "Sri Lanka", "Bhutan", "Afghanistan"],
+      "popShare": [[-10000, 0.1], [-3000, 0.15], [1, 0.32], [1000, 0.28], [1500, 0.24], [1700, 0.25], [1820, 0.2], [1913, 0.17], [1950, 0.2], [2000, 0.22], [2025, 0.24], [2100, 0.24]],
+      "gdppcRel": [[1, 1.0], [1000, 1.0], [1500, 0.98], [1700, 0.9], [1820, 0.8], [1913, 0.44], [1950, 0.29], [2000, 0.32], [2025, 0.55], [2050, 0.75], [2100, 0.9]],
+      "lifeRel": [[1, 0.95], [1500, 0.93], [1913, 0.66], [1950, 0.68], [2000, 0.93], [2025, 0.96], [2100, 0.98]],
+      "urbanRel": [[-3000, 2.0], [1, 1.0], [1500, 0.9], [1820, 0.8], [1913, 0.5], [1950, 0.57], [2025, 0.6], [2100, 0.85]],
+      "nota": "Un cuarto de la humanidad de forma casi ininterrumpida durante 3.000 años. La renta relativa se hunde entre 1750 y 1950 y sólo empieza a recuperarse tras 1990."
+    },
+    {
+      "id": "asia_este",
+      "name": "Asia Oriental",
+      "anchor": [110, 34],
+      "members": ["China", "Japan", "South Korea", "North Korea", "Taiwan", "Mongolia"],
+      "popShare": [[-10000, 0.08], [-3000, 0.15], [1, 0.27], [1000, 0.24], [1500, 0.26], [1700, 0.28], [1820, 0.37], [1913, 0.27], [1950, 0.27], [2000, 0.26], [2025, 0.21], [2050, 0.16], [2100, 0.11]],
+      "gdppcRel": [[1, 1.1], [1000, 1.2], [1300, 1.4], [1500, 1.2], [1700, 1.1], [1820, 0.9], [1913, 0.55], [1950, 0.3], [1980, 0.35], [2000, 0.65], [2025, 1.35], [2050, 1.8], [2100, 2.0]],
+      "lifeRel": [[1, 1.0], [1500, 1.05], [1820, 1.0], [1913, 0.85], [1950, 0.85], [2000, 1.05], [2025, 1.06], [2100, 1.06]],
+      "urbanRel": [[1, 1.2], [1000, 1.4], [1500, 1.1], [1820, 0.7], [1913, 0.5], [1950, 0.4], [2000, 0.75], [2025, 1.1], [2100, 1.15]],
+      "nota": "Mayor economía del mundo en volumen durante dieciocho de los últimos veinte siglos. La excepción son 1850-1980, y es esa excepción la que solemos llamar «historia moderna»."
+    },
+    {
+      "id": "asia_sudeste",
+      "name": "Sudeste Asiático",
+      "anchor": [108, 5],
+      "members": ["Indonesia", "Philippines", "Vietnam", "Thailand", "Myanmar", "Malaysia", "Cambodia", "Laos", "Brunei", "Timor-Leste", "Papua New Guinea"],
+      "popShare": [[-10000, 0.06], [-3000, 0.05], [1, 0.05], [1000, 0.05], [1500, 0.05], [1820, 0.04], [1913, 0.05], [1950, 0.06], [2000, 0.08], [2025, 0.09], [2100, 0.08]],
+      "gdppcRel": [[1, 0.9], [1000, 0.95], [1500, 0.9], [1820, 0.7], [1913, 0.55], [1950, 0.4], [2000, 0.5], [2025, 0.85], [2100, 1.3]],
+      "lifeRel": [[1, 0.95], [1913, 0.7], [1950, 0.8], [2000, 0.98], [2025, 1.0], [2100, 1.0]],
+      "urbanRel": [[1, 0.6], [1500, 0.8], [1913, 0.4], [1950, 0.5], [2025, 0.85], [2100, 1.05]],
+      "nota": "Encrucijada de los estrechos: riqueza de tránsito, especias y arroz. Nunca dominó el sistema mundial y nunca quedó fuera de él."
+    },
+    {
+      "id": "asia_central",
+      "name": "Asia Central y estepa",
+      "anchor": [68, 45],
+      "members": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Kyrgyzstan", "Tajikistan", "Azerbaijan", "Armenia", "Georgia"],
+      "popShare": [[-10000, 0.03], [-3000, 0.03], [1, 0.02], [1000, 0.02], [1300, 0.03], [1500, 0.02], [1820, 0.01], [1913, 0.01], [1950, 0.01], [2000, 0.01], [2025, 0.012], [2100, 0.012]],
+      "gdppcRel": [[1, 0.9], [1000, 1.1], [1300, 1.0], [1500, 0.8], [1820, 0.6], [1913, 0.5], [1950, 0.8], [2000, 0.5], [2025, 0.9], [2100, 1.1]],
+      "lifeRel": [[1, 0.9], [1913, 0.8], [1950, 1.1], [2000, 0.98], [2025, 0.99], [2100, 1.0]],
+      "urbanRel": [[1, 0.8], [1000, 1.5], [1500, 1.0], [1913, 0.6], [1950, 1.0], [2025, 0.85], [2100, 0.95]],
+      "nota": "Durante tres milenios, el corredor que conecta y amenaza a todos los demás. El cañón y el ferrocarril la convierten de eje del mundo en interior aislado."
+    },
+    {
+      "id": "norteamerica",
+      "name": "Norteamérica",
+      "anchor": [-98, 40],
+      "members": ["United States of America", "Canada", "Greenland"],
+      "popShare": [[-10000, 0.01], [-3000, 0.01], [1, 0.01], [1000, 0.01], [1500, 0.015], [1600, 0.005], [1700, 0.003], [1820, 0.01], [1913, 0.06], [1950, 0.07], [2000, 0.05], [2025, 0.048], [2100, 0.04]],
+      "gdppcRel": [[1, 0.7], [1500, 0.7], [1700, 1.1], [1820, 1.9], [1913, 3.5], [1950, 4.5], [2000, 4.5], [2025, 4.2], [2100, 3.2]],
+      "lifeRel": [[1, 1.0], [1500, 1.0], [1820, 1.3], [1913, 1.5], [1950, 1.5], [2000, 1.16], [2025, 1.06], [2100, 1.05]],
+      "urbanRel": [[1, 0.2], [1500, 0.2], [1820, 0.8], [1913, 2.2], [1950, 2.1], [2025, 1.45], [2100, 1.2]],
+      "nota": "La caída del 1500 al 1700 no es error de escala: es el colapso demográfico indígena. La región se repuebla, con otra gente, sobre la mejor dotación agrícola del planeta."
+    },
+    {
+      "id": "mesoamerica",
+      "name": "Mesoamérica y Caribe",
+      "anchor": [-92, 17],
+      "members": ["Mexico", "Guatemala", "Cuba", "Haiti", "Dominican Rep.", "Honduras", "Nicaragua", "El Salvador", "Costa Rica", "Panama", "Belize", "Jamaica", "Puerto Rico", "Bahamas", "Trinidad and Tobago"],
+      "popShare": [[-10000, 0.01], [-3000, 0.01], [1, 0.02], [1000, 0.03], [1500, 0.05], [1600, 0.012], [1700, 0.008], [1820, 0.01], [1913, 0.01], [1950, 0.015], [2000, 0.025], [2025, 0.026], [2100, 0.021]],
+      "gdppcRel": [[1, 0.8], [1500, 0.85], [1700, 0.7], [1820, 0.8], [1913, 0.9], [1950, 1.1], [2000, 1.0], [2025, 0.95], [2100, 0.95]],
+      "lifeRel": [[1, 1.0], [1500, 1.0], [1600, 0.6], [1913, 0.85], [1950, 1.0], [2000, 1.09], [2025, 1.03], [2100, 1.02]],
+      "urbanRel": [[1, 1.0], [1500, 1.4], [1600, 0.6], [1820, 0.9], [1913, 0.6], [1950, 1.2], [2025, 1.35], [2100, 1.15]],
+      "nota": "El único lugar del atlas donde la esperanza de vida cae a la mitad en una generación sin guerra de por medio: la caída del 1520 es microbiana."
+    },
+    {
+      "id": "sudamerica",
+      "name": "Sudamérica",
+      "anchor": [-60, -15],
+      "members": ["Brazil", "Argentina", "Colombia", "Peru", "Venezuela", "Chile", "Ecuador", "Bolivia", "Paraguay", "Uruguay", "Guyana", "Suriname"],
+      "popShare": [[-10000, 0.02], [-3000, 0.02], [1, 0.02], [1000, 0.03], [1500, 0.04], [1600, 0.012], [1700, 0.01], [1820, 0.01], [1913, 0.03], [1950, 0.04], [2000, 0.06], [2025, 0.055], [2100, 0.04]],
+      "gdppcRel": [[1, 0.8], [1500, 0.85], [1700, 0.7], [1820, 0.9], [1913, 1.2], [1950, 1.3], [2000, 1.1], [2025, 1.05], [2100, 1.0]],
+      "lifeRel": [[1, 1.0], [1500, 1.0], [1600, 0.65], [1913, 0.85], [1950, 1.05], [2000, 1.07], [2025, 1.03], [2100, 1.02]],
+      "urbanRel": [[1, 0.9], [1500, 1.2], [1600, 0.6], [1820, 0.9], [1913, 1.0], [1950, 1.3], [2025, 1.5], [2100, 1.2]],
+      "nota": "Los Andes generan el único imperio del mundo sin moneda, mercado ni escritura fonética. Después, tres siglos de economía extractiva orientada al exterior."
+    },
+    {
+      "id": "oceania",
+      "name": "Oceanía",
+      "anchor": [145, -25],
+      "members": ["Australia", "New Zealand", "Fiji", "Solomon Is.", "Vanuatu", "New Caledonia"],
+      "popShare": [[-10000, 0.005], [-3000, 0.004], [1, 0.002], [1500, 0.003], [1820, 0.002], [1913, 0.004], [1950, 0.005], [2000, 0.005], [2025, 0.006], [2100, 0.007]],
+      "gdppcRel": [[1, 0.7], [1500, 0.7], [1820, 1.0], [1913, 3.7], [1950, 3.4], [2000, 3.3], [2025, 3.4], [2100, 2.8]],
+      "lifeRel": [[1, 1.0], [1913, 1.6], [1950, 1.5], [2000, 1.18], [2025, 1.14], [2100, 1.08]],
+      "urbanRel": [[1, 0.2], [1500, 0.2], [1913, 2.0], [1950, 2.2], [2025, 1.55], [2100, 1.2]],
+      "nota": "Poblada hace 65.000 años y aislada después: la mayor continuidad cultural documentada del planeta, interrumpida en una sola generación a partir de 1788."
+    }
+  ]
+}

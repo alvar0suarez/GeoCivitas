@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "titulo": "Horizontes profundos · 50.000 a. C. — 3.000 a. C.",
+    "nota": "Antes del estado no hay fronteras: hay áreas de presencia. Estas manchas son difusas a propósito — representan densidad de evidencia arqueológica, no soberanía.",
+    "fuentes": "Síntesis de rangos aceptados en arqueología y paleogenética; los umbrales de fecha son objeto de debate activo."
+  },
+  "nivelMar": [
+    { "year": -50000, "m": -70 },
+    { "year": -30000, "m": -85 },
+    { "year": -21000, "m": -125 },
+    { "year": -15000, "m": -100 },
+    { "year": -12000, "m": -65 },
+    { "year": -9000, "m": -35 },
+    { "year": -6000, "m": -5 },
+    { "year": -3000, "m": 0 },
+    { "year": 1900, "m": 0 },
+    { "year": 2025, "m": 0.23 },
+    { "year": 2100, "m": 0.8 },
+    { "year": 2200, "m": 1.6 }
+  ],
+  "plataformas": [
+    {
+      "id": "beringia",
+      "name": "Beringia",
+      "umbral": -50,
+      "nota": "Puente de mil kilómetros de ancho entre Asia y América. Estepa de mamut, no corredor helado.",
+      "ring": [-172, 65, -168, 68, -160, 68.5, -155, 68, -160, 64, -168, 60, -175, 58, 180, 58, 175, 62, 172, 66, 178, 68, -180, 68, -176, 66]
+    },
+    {
+      "id": "sunda",
+      "name": "Sondalandia",
+      "umbral": -40,
+      "nota": "Península continental que unía Malasia, Sumatra, Java y Borneo. La mayor superficie emergida perdida del Holoceno.",
+      "ring": [102, 6, 110, 8, 116, 7, 119, 3, 118, -2, 115, -5, 110, -7, 105, -7, 101, -4, 99, 1, 100, 4]
+    },
+    {
+      "id": "sahul",
+      "name": "Sahul",
+      "umbral": -50,
+      "nota": "Australia, Nueva Guinea y Tasmania como un solo continente hasta hace ~8.000 años.",
+      "ring": [131, -9, 138, -8, 143, -9, 147, -8, 152, -10, 154, -20, 153, -30, 150, -40, 146, -44, 140, -40, 132, -33, 126, -33, 118, -34, 113, -30, 113, -22, 122, -14, 128, -12]
+    },
+    {
+      "id": "doggerland",
+      "name": "Doggerland",
+      "umbral": -30,
+      "nota": "Llanura habitada entre Britania y Jutlandia, anegada definitivamente hacia el 6200 a. C.",
+      "ring": [-2, 51, 3, 51.5, 8, 54, 8, 57, 4, 57.5, 0, 56, -2, 54]
+    },
+    {
+      "id": "golfo_persico",
+      "name": "Oasis del Golfo",
+      "umbral": -40,
+      "nota": "El Golfo Pérsico era un valle fluvial regado por el Tigris, el Éufrates y el Karún.",
+      "ring": [48, 30, 52, 27, 56, 25, 56.5, 24, 52, 24, 50, 26, 48.5, 28.5]
+    }
+  ],
+  "horizontes": [
+    {
+      "year": -50000,
+      "titulo": "Dispersión inicial",
+      "resumen": "Al menos cuatro humanidades coexisten. Sapiens ya está en Australia; Europa sigue siendo neandertal.",
+      "poblacionMundial": 1.2,
+      "bands": [
+        { "id": "sapiens_af", "name": "Homo sapiens · África", "kind": "sapiens", "members": ["Ethiopia", "Kenya", "Tanzania", "Uganda", "South Africa", "Botswana", "Namibia", "Sudan", "S. Sudan", "Chad", "Niger", "Mali", "Nigeria", "Cameroon", "Dem. Rep. Congo", "Angola", "Zambia", "Zimbabwe", "Mozambique", "Somalia", "Eritrea", "Algeria", "Morocco", "Libya", "Egypt", "Mauritania", "Senegal", "Guinea", "Ghana", "Côte d'Ivoire", "Burkina Faso", "Central African Rep.", "Congo", "Gabon", "Malawi", "Madagascar"], "box": [-18, -35, 52, 37] },
+        { "id": "sapiens_as", "name": "Homo sapiens · Ruta sur", "kind": "sapiens", "members": ["Israel", "Palestine", "Lebanon", "Jordan", "Saudi Arabia", "Yemen", "Oman", "United Arab Emirates", "India", "Pakistan", "Sri Lanka", "Bangladesh", "Myanmar", "Thailand", "Malaysia", "Indonesia", "Vietnam", "Cambodia", "Laos", "Papua New Guinea", "Australia", "Timor-Leste", "Philippines"], "box": [33, -40, 155, 36] },
+        { "id": "neandertal", "name": "Homo neanderthalensis", "kind": "neandertal", "members": ["Spain", "Portugal", "France", "Italy", "Germany", "Belgium", "Croatia", "Greece", "Turkey", "Syria", "Iraq", "Iran", "Uzbekistan", "Russia", "Ukraine", "Romania", "Hungary", "Bulgaria", "Serbia", "Bosnia and Herz.", "Austria", "Czechia", "Poland", "Switzerland", "Slovakia", "Georgia", "Armenia", "Azerbaijan", "Israel", "Turkmenistan"], "box": [-10, 32, 90, 55] },
+        { "id": "denisovano", "name": "Denisovanos", "kind": "denisovano", "members": ["Russia", "Mongolia", "China", "Kazakhstan"], "box": [75, 40, 125, 58] },
+        { "id": "floresiensis", "name": "H. floresiensis · H. luzonensis", "kind": "otro", "members": ["Indonesia", "Philippines"], "box": [118, -10, 125, 19] }
+      ]
+    },
+    {
+      "year": -40000,
+      "titulo": "Europa cambia de especie",
+      "resumen": "El Auriñaciense entra por el Danubio. En 5.000 años el neandertal desaparece del registro. Arte figurativo, flauta de hueso, propulsor.",
+      "poblacionMundial": 1.5,
+      "bands": [
+        { "id": "sapiens_eu", "name": "Auriñaciense", "kind": "sapiens", "members": ["France", "Spain", "Germany", "Austria", "Czechia", "Hungary", "Romania", "Bulgaria", "Italy", "Croatia", "Serbia", "Slovakia", "Poland", "Ukraine", "Belgium", "Greece", "Turkey"], "box": [-9, 36, 40, 54] },
+        { "id": "neandertal_r", "name": "Refugio neandertal", "kind": "neandertal", "members": ["Spain", "Portugal", "Croatia", "Italy"], "box": [-10, 36, 20, 46] },
+        { "id": "sapiens_af2", "name": "África", "kind": "sapiens", "members": ["Ethiopia", "Kenya", "Tanzania", "South Africa", "Sudan", "Chad", "Mali", "Nigeria", "Dem. Rep. Congo", "Angola", "Zambia", "Algeria", "Morocco", "Egypt", "Namibia", "Botswana", "Somalia", "Niger", "Mauritania", "Zimbabwe", "Mozambique", "Cameroon", "Madagascar"], "box": [-18, -35, 52, 37] },
+        { "id": "sapiens_as2", "name": "Asia meridional y Sahul", "kind": "sapiens", "members": ["India", "Pakistan", "Sri Lanka", "Bangladesh", "Myanmar", "Thailand", "Malaysia", "Indonesia", "Vietnam", "China", "Papua New Guinea", "Australia", "Japan", "Philippines", "Iran", "Iraq", "Saudi Arabia", "Yemen", "Oman"], "box": [33, -45, 150, 45] }
+      ]
+    },
+    {
+      "year": -21000,
+      "titulo": "Último Máximo Glacial",
+      "resumen": "El hielo baja hasta Berlín y Chicago. El mar está 125 m más bajo. Europa habitable se reduce a tres refugios y la población mundial cae.",
+      "poblacionMundial": 2.5,
+      "bands": [
+        { "id": "hielo_lau", "name": "Casquete Laurentino", "kind": "hielo", "members": ["Canada", "Greenland", "United States of America"], "box": [-140, 42, -55, 84] },
+        { "id": "hielo_fen", "name": "Casquete Fenoscandio", "kind": "hielo", "members": ["Norway", "Sweden", "Finland", "Russia", "Estonia", "Latvia", "Lithuania", "Denmark", "United Kingdom", "Ireland", "Iceland", "Poland", "Belarus", "Germany"], "box": [-12, 52, 78, 82] },
+        { "id": "refugio_ib", "name": "Refugio ibérico", "kind": "refugio", "members": ["Spain", "Portugal", "France"], "box": [-10, 36, 3, 45] },
+        { "id": "refugio_bk", "name": "Refugios balcánico e itálico", "kind": "refugio", "members": ["Italy", "Greece", "Albania", "Macedonia", "Bulgaria", "Serbia", "Croatia", "Bosnia and Herz.", "Montenegro"], "box": [8, 36, 30, 46] },
+        { "id": "refugio_uk", "name": "Refugio ucraniano", "kind": "refugio", "members": ["Ukraine", "Russia", "Moldova", "Romania"], "box": [22, 44, 45, 52] },
+        { "id": "beringios", "name": "Estancamiento beringio", "kind": "sapiens", "members": ["Russia", "United States of America"], "box": [155, 58, 195, 70] },
+        { "id": "asia_lgm", "name": "Asia y Sahul", "kind": "sapiens", "members": ["China", "India", "Thailand", "Vietnam", "Indonesia", "Australia", "Papua New Guinea", "Japan", "Myanmar", "Pakistan", "Iran", "Malaysia", "Philippines"], "box": [60, -45, 150, 45] },
+        { "id": "africa_lgm", "name": "África", "kind": "sapiens", "members": ["Ethiopia", "Kenya", "Tanzania", "South Africa", "Dem. Rep. Congo", "Nigeria", "Sudan", "Angola", "Zambia", "Namibia", "Botswana", "Mozambique", "Somalia", "Egypt", "Morocco", "Algeria", "Chad", "Mali", "Cameroon", "Zimbabwe"], "box": [-18, -35, 52, 34] }
+      ]
+    },
+    {
+      "year": -13000,
+      "titulo": "América poblada · Dryas Reciente",
+      "resumen": "Los humanos alcanzan Tierra del Fuego. Un enfriamiento brusco de 1.200 años interrumpe la recuperación climática.",
+      "poblacionMundial": 4,
+      "bands": [
+        { "id": "america_n", "name": "Paleoindio", "kind": "sapiens", "members": ["United States of America", "Canada", "Mexico", "Guatemala", "Honduras", "Nicaragua", "Costa Rica", "Panama", "Belize", "El Salvador"], "box": [-168, 12, -55, 70] },
+        { "id": "america_s", "name": "Sudamérica", "kind": "sapiens", "members": ["Colombia", "Venezuela", "Ecuador", "Peru", "Brazil", "Bolivia", "Chile", "Argentina", "Paraguay", "Uruguay", "Guyana", "Suriname"], "box": [-82, -56, -34, 13] },
+        { "id": "natufiense", "name": "Natufiense", "kind": "protoagricola", "members": ["Israel", "Palestine", "Lebanon", "Syria", "Jordan", "Turkey", "Iraq"], "box": [33, 30, 44, 38] },
+        { "id": "jomon", "name": "Jomon inicial", "kind": "protoagricola", "members": ["Japan"], "box": [128, 30, 146, 46] },
+        { "id": "vieja_af", "name": "África", "kind": "sapiens", "members": ["Ethiopia", "Kenya", "Tanzania", "South Africa", "Dem. Rep. Congo", "Nigeria", "Sudan", "Angola", "Zambia", "Namibia", "Botswana", "Mozambique", "Somalia", "Egypt", "Morocco", "Algeria", "Chad", "Mali", "Niger", "Cameroon", "Zimbabwe", "Mauritania", "Senegal"], "box": [-18, -35, 52, 36] },
+        { "id": "eurasia_13k", "name": "Eurasia", "kind": "sapiens", "members": ["France", "Spain", "Germany", "Italy", "Ukraine", "Russia", "China", "India", "Iran", "Turkey", "Poland", "Romania", "Kazakhstan", "Mongolia", "Thailand", "Vietnam", "Myanmar", "Indonesia", "Australia", "Papua New Guinea", "Pakistan"], "box": [-10, -45, 150, 62] }
+      ]
+    },
+    {
+      "year": -9000,
+      "titulo": "Revolución neolítica",
+      "resumen": "Domesticación independiente en al menos once focos. Por primera vez el alimento se produce en vez de encontrarse — y por primera vez se puede acumular, y por tanto arrebatar.",
+      "poblacionMundial": 5,
+      "bands": [
+        { "id": "fertil", "name": "Creciente Fértil · trigo, cebada, oveja", "kind": "agricultura", "members": ["Iraq", "Syria", "Turkey", "Iran", "Israel", "Palestine", "Lebanon", "Jordan"], "box": [33, 30, 50, 40] },
+        { "id": "china_n", "name": "Huang He y Yangtsé · mijo y arroz", "kind": "agricultura", "members": ["China"], "box": [104, 26, 122, 40] },
+        { "id": "nueva_guinea", "name": "Kuk · taro y banana", "kind": "agricultura", "members": ["Papua New Guinea"], "box": [140, -8, 148, -4] },
+        { "id": "sahel_n", "name": "Sahel · sorgo y mijo perla", "kind": "agricultura", "members": ["Mali", "Niger", "Chad", "Sudan", "Nigeria", "Burkina Faso"], "box": [-8, 10, 34, 18] },
+        { "id": "meso_n", "name": "Mesoamérica · calabaza y teosinte", "kind": "agricultura", "members": ["Mexico"], "box": [-102, 15, -94, 21] },
+        { "id": "andes_n", "name": "Andes · patata, quinoa, camélidos", "kind": "agricultura", "members": ["Peru", "Bolivia", "Ecuador"], "box": [-80, -20, -66, 0] },
+        { "id": "cazadores_9k", "name": "Cazadores-recolectores", "kind": "sapiens", "members": ["Russia", "Canada", "United States of America", "Australia", "Brazil", "Argentina", "Kazakhstan", "Mongolia", "South Africa", "Dem. Rep. Congo", "Angola", "Sweden", "Norway", "Finland", "France", "Spain", "Germany", "Poland", "Ukraine", "India", "Indonesia", "Japan", "Namibia", "Botswana", "Chile", "Colombia", "Venezuela", "Mexico", "Algeria", "Libya", "Egypt", "Saudi Arabia"], "box": [-180, -56, 180, 78] }
+      ]
+    },
+    {
+      "year": -5000,
+      "titulo": "Sahara verde · expansión agrícola",
+      "resumen": "El Sahara es sabana con lagos y ganaderos. La agricultura alcanza Europa atlántica, el Indo y el Nilo. Aparecen la rueda, la vela y el arado.",
+      "poblacionMundial": 20,
+      "bands": [
+        { "id": "sahara_verde", "name": "Sahara húmedo · pastores", "kind": "agricultura", "members": ["Algeria", "Libya", "Niger", "Chad", "Mali", "Mauritania", "Sudan", "Egypt", "W. Sahara", "Morocco", "Tunisia"], "box": [-16, 14, 34, 30] },
+        { "id": "neolitico_eu", "name": "Neolítico europeo · cardial y bandas", "kind": "agricultura", "members": ["Spain", "Portugal", "France", "Italy", "Germany", "Poland", "Czechia", "Hungary", "Romania", "Bulgaria", "Greece", "Serbia", "Croatia", "Austria", "Ukraine", "United Kingdom", "Ireland", "Netherlands", "Belgium", "Denmark", "Switzerland", "Slovakia", "Moldova"], "box": [-11, 36, 32, 58] },
+        { "id": "indo", "name": "Cuenca del Indo", "kind": "agricultura", "members": ["Pakistan", "India", "Afghanistan"], "box": [65, 22, 78, 34] },
+        { "id": "nilo_pre", "name": "Nilo predinástico", "kind": "agricultura", "members": ["Egypt", "Sudan"], "box": [29, 18, 34, 32] },
+        { "id": "china_5k", "name": "Yangshao y Hemudu", "kind": "agricultura", "members": ["China"], "box": [102, 24, 123, 41] },
+        { "id": "estepa_5k", "name": "Estepa póntica · caballo", "kind": "protoagricola", "members": ["Ukraine", "Russia", "Kazakhstan"], "box": [30, 44, 62, 54] },
+        { "id": "cazadores_5k", "name": "Cazadores-recolectores", "kind": "sapiens", "members": ["Canada", "United States of America", "Australia", "Brazil", "Argentina", "Russia", "Mongolia", "South Africa", "Namibia", "Botswana", "Chile", "Colombia", "Venezuela", "Indonesia", "Papua New Guinea", "Finland", "Norway", "Sweden"], "box": [-180, -56, 180, 78] }
+      ]
+    },
+    {
+      "year": -3300,
+      "titulo": "Umbral urbano",
+      "resumen": "Uruk supera los 40.000 habitantes. Aparecen la escritura contable, el impuesto y el ejército permanente: los tres a la vez, y no por casualidad.",
+      "poblacionMundial": 30,
+      "bands": [
+        { "id": "uruk", "name": "Sumer · primeras ciudades", "kind": "urbano", "members": ["Iraq", "Kuwait"], "box": [42, 29, 49, 35] },
+        { "id": "egipto_pre", "name": "Alto y Bajo Egipto", "kind": "urbano", "members": ["Egypt"], "box": [29, 22, 34, 32] },
+        { "id": "indo_h", "name": "Harappa temprana", "kind": "urbano", "members": ["Pakistan", "India"], "box": [66, 22, 78, 33] },
+        { "id": "agri_global", "name": "Sociedades agrarias", "kind": "agricultura", "members": ["China", "Turkey", "Iran", "Syria", "Greece", "Italy", "Spain", "France", "Germany", "Ukraine", "India", "Thailand", "Vietnam", "Mexico", "Peru", "Nigeria", "Ethiopia", "Sudan", "Mali", "United Kingdom", "Poland", "Romania", "Bulgaria", "Portugal", "Japan", "Bangladesh", "Myanmar", "Afghanistan", "Uzbekistan", "Turkmenistan"], "box": [-12, -25, 145, 58] },
+        { "id": "sahara_seco", "name": "Sahara en desecación", "kind": "colapso", "members": ["Algeria", "Libya", "Niger", "Chad", "Mali", "Mauritania", "W. Sahara", "Sudan"], "box": [-16, 16, 32, 30] },
+        { "id": "cazadores_3k", "name": "Cazadores-recolectores", "kind": "sapiens", "members": ["Canada", "United States of America", "Australia", "Brazil", "Argentina", "Russia", "Mongolia", "South Africa", "Namibia", "Botswana", "Chile", "Colombia", "Venezuela", "Indonesia", "Papua New Guinea", "Finland", "Norway", "Sweden", "Kazakhstan"], "box": [-180, -56, 180, 78] }
+      ]
+    }
+  ]
+}

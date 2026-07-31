@@ -1,0 +1,3328 @@
+{
+  "meta": {
+    "titulo": "Registro de entidades políticas",
+    "nota": "Extensiones estilizadas: cada snapshot se compone uniendo geometría moderna y recortándola con cajas de control. Sirve para lectura comparativa a escala continental, no para arbitraje de fronteras.",
+    "escenarios": "Las entidades con speculative=true son proyecciones narrativas del Archivo, no hechos."
+  },
+  "polities": [
+    {
+      "id": "egipto",
+      "name": "Egipto Faraónico",
+      "short": "Kemet",
+      "color": "#fbbf24",
+      "kind": "reino fluvial",
+      "from": -3100,
+      "to": -30,
+      "capital": [
+        31.2,
+        29.9
+      ],
+      "seat": "Menfis · Tebas · Amarna",
+      "dossier": {
+        "base": "Monocultivo de crecida: el limo del Nilo permite excedente cerealista con una fracción del trabajo que exige la agricultura de secano.",
+        "estado": "Burocracia templaria y escriba; el impuesto se calcula sobre la altura de la crecida medida en nilómetros.",
+        "limite": "El desierto protege pero también encierra: la expansión sólo tiene dos vectores, Nubia (oro) y el Levante (madera y estaño).",
+        "colapso": "Tres Períodos Intermedios coinciden con series de crecidas bajas; la legitimidad faraónica es hidráulica antes que militar."
+      },
+      "snapshots": [
+        {
+          "year": -3100,
+          "members": [
+            "Egypt"
+          ],
+          "box": [
+            24,
+            22,
+            36,
+            32
+          ]
+        },
+        {
+          "year": -1450,
+          "members": [
+            "Egypt",
+            "Israel",
+            "Palestine",
+            "Lebanon",
+            "Syria",
+            "Jordan",
+            "Sudan"
+          ],
+          "box": [
+            24,
+            17,
+            39,
+            36
+          ],
+          "holes": [
+            [
+              37,
+              17,
+              46,
+              30
+            ],
+            [
+              30,
+              17,
+              39,
+              21
+            ]
+          ]
+        },
+        {
+          "year": -600,
+          "members": [
+            "Egypt"
+          ],
+          "box": [
+            24,
+            22,
+            36,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "akkad",
+      "name": "Imperio Acadio",
+      "short": "Akkad",
+      "color": "#f59e0b",
+      "kind": "imperio territorial",
+      "from": -2334,
+      "to": -2154,
+      "capital": [
+        44.4,
+        32.5
+      ],
+      "seat": "Agadé",
+      "dossier": {
+        "base": "Regadío de canal entre el Tigris y el Éufrates: alta productividad, alta fragilidad ante la salinización.",
+        "estado": "Primer aparato imperial documentado: gobernadores nombrados, estandarización de pesos y calendario.",
+        "limite": "Los canales exigen mantenimiento centralizado; perder la capital equivale a perder la cosecha.",
+        "colapso": "Aridificación de 4.2 ka y presión gutea sobre el Zagros."
+      },
+      "snapshots": [
+        {
+          "year": -2300,
+          "members": [
+            "Iraq",
+            "Syria",
+            "Kuwait"
+          ],
+          "box": [
+            38,
+            29,
+            49,
+            38
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asiria",
+      "name": "Imperio Neoasirio",
+      "short": "Asiria",
+      "color": "#ef4444",
+      "kind": "imperio militar",
+      "from": -911,
+      "to": -609,
+      "capital": [
+        43.15,
+        36.36
+      ],
+      "seat": "Nínive",
+      "dossier": {
+        "base": "Extracción tributaria sobre un arco de regadío y secano; la corte vive del excedente ajeno más que del propio.",
+        "estado": "Ejército permanente, caminos reales, deportación sistemática de élites como tecnología de pacificación.",
+        "limite": "El terror rinde a corto plazo y multiplica coaliciones a largo plazo.",
+        "colapso": "Coalición medo-babilónica, 612 a.C.: la máquina no sobrevive a la pérdida de su núcleo."
+      },
+      "snapshots": [
+        {
+          "year": -700,
+          "members": [
+            "Iraq",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Turkey",
+            "Iran",
+            "Egypt"
+          ],
+          "box": [
+            28,
+            24,
+            50,
+            39
+          ],
+          "holes": [
+            [
+              44,
+              24,
+              50,
+              31
+            ],
+            [
+              28,
+              24,
+              33,
+              29
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "persia",
+      "name": "Imperio Aqueménida",
+      "short": "Persia",
+      "color": "#a78bfa",
+      "kind": "imperio universal",
+      "from": -550,
+      "to": -330,
+      "capital": [
+        52.9,
+        29.9
+      ],
+      "seat": "Persépolis · Susa · Babilonia",
+      "dossier": {
+        "base": "Agregación de núcleos agrícolas heterogéneos (Nilo, Mesopotamia, Indo, Anatolia) bajo un mismo régimen tributario.",
+        "estado": "Satrapías con autonomía cultural y control fiscal centralizado; el Camino Real mueve órdenes a 2.500 km en una semana.",
+        "limite": "La escala impone delegación, y la delegación produce sátrapas con ejército propio.",
+        "colapso": "Derrota en campo abierto ante una fuerza de choque profesional: la periferia cambia de dueño sin cambiar de estructura."
+      },
+      "snapshots": [
+        {
+          "year": -500,
+          "members": [
+            "Iran",
+            "Iraq",
+            "Turkey",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Armenia",
+            "Azerbaijan",
+            "Georgia",
+            "Turkmenistan",
+            "Uzbekistan",
+            "Tajikistan",
+            "Kyrgyzstan",
+            "Afghanistan",
+            "Pakistan",
+            "Kuwait",
+            "Saudi Arabia",
+            "Bulgaria",
+            "Libya"
+          ],
+          "box": [
+            22,
+            22,
+            78,
+            45
+          ],
+          "holes": [
+            [
+              36,
+              22,
+              60,
+              27
+            ],
+            [
+              22,
+              22,
+              30,
+              30
+            ],
+            [
+              66,
+              22,
+              78,
+              27
+            ]
+          ],
+          "core": {
+            "members": [
+              "Iran",
+              "Iraq"
+            ],
+            "box": [
+              40,
+              25,
+              62,
+              40
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Egypt",
+              "Turkey",
+              "Libya",
+              "Bulgaria",
+              "Saudi Arabia"
+            ],
+            "box": [
+              22,
+              22,
+              45,
+              45
+            ],
+            "holes": [
+              [
+                36,
+                22,
+                45,
+                27
+              ]
+            ]
+          },
+          "contested": {
+            "members": [
+              "Pakistan",
+              "Uzbekistan",
+              "Kyrgyzstan",
+              "Tajikistan",
+              "Afghanistan"
+            ],
+            "box": [
+              60,
+              22,
+              78,
+              45
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "macedonia",
+      "name": "Imperio de Alejandro",
+      "short": "Macedonia",
+      "color": "#c084fc",
+      "kind": "conquista relámpago",
+      "from": -336,
+      "to": -323,
+      "capital": [
+        29.9,
+        31.2
+      ],
+      "seat": "Babilonia · Alejandría",
+      "dossier": {
+        "base": "No construye economía: hereda la aqueménida intacta y redistribuye su tesoro acumulado.",
+        "estado": "Autoridad personal sin institución sucesoria. El imperio dura exactamente lo que dura el cuerpo del rey.",
+        "limite": "Once años de campaña, cero años de administración.",
+        "colapso": "Partición entre diádocos en 323 a.C. Caso de estudio sobre por qué conquistar es más barato que gobernar."
+      },
+      "snapshots": [
+        {
+          "year": -324,
+          "members": [
+            "Iran",
+            "Iraq",
+            "Turkey",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Armenia",
+            "Azerbaijan",
+            "Georgia",
+            "Turkmenistan",
+            "Uzbekistan",
+            "Tajikistan",
+            "Afghanistan",
+            "Pakistan",
+            "Kuwait",
+            "Greece",
+            "Macedonia",
+            "Albania",
+            "Bulgaria"
+          ],
+          "box": [
+            19,
+            22,
+            74,
+            45
+          ],
+          "holes": [
+            [
+              36,
+              22,
+              60,
+              27
+            ],
+            [
+              66,
+              22,
+              74,
+              26
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roma",
+      "name": "Imperio Romano",
+      "short": "Roma",
+      "color": "#f87171",
+      "kind": "imperio marítimo-continental",
+      "from": -27,
+      "to": 476,
+      "capital": [
+        12.5,
+        41.9
+      ],
+      "seat": "Roma · Mediolanum · Rávena",
+      "dossier": {
+        "base": "El Mediterráneo funciona como red logística interna: mover grano por mar cuesta 40 veces menos que por tierra.",
+        "estado": "Ciudadanía extensible, derecho portátil, moneda única y 29 legiones sosteniendo 8.000 km de frontera.",
+        "limite": "La frontera es lineal y la amenaza es móvil: el coste de guarnición crece más rápido que la base fiscal.",
+        "colapso": "Devaluación monetaria, presión en el limes danubiano y federación de ejércitos que dejan de ser romanos sin dejar de cobrar."
+      },
+      "snapshots": [
+        {
+          "year": -27,
+          "members": [
+            "Italy",
+            "Spain",
+            "Portugal",
+            "France",
+            "Greece",
+            "Macedonia",
+            "Albania",
+            "Kosovo",
+            "Serbia",
+            "Montenegro",
+            "Bosnia and Herz.",
+            "Croatia",
+            "Slovenia",
+            "Turkey",
+            "Cyprus",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Egypt",
+            "Libya",
+            "Tunisia",
+            "Algeria",
+            "Bulgaria"
+          ],
+          "box": [
+            -10,
+            23,
+            42,
+            51
+          ],
+          "holes": [
+            [
+              -10,
+              23,
+              10,
+              32
+            ],
+            [
+              10,
+              23,
+              25,
+              30
+            ],
+            [
+              25,
+              23,
+              33,
+              25
+            ]
+          ]
+        },
+        {
+          "year": 117,
+          "members": [
+            "Italy",
+            "Spain",
+            "Portugal",
+            "France",
+            "United Kingdom",
+            "Belgium",
+            "Netherlands",
+            "Switzerland",
+            "Austria",
+            "Germany",
+            "Hungary",
+            "Slovenia",
+            "Croatia",
+            "Bosnia and Herz.",
+            "Serbia",
+            "Montenegro",
+            "Kosovo",
+            "Macedonia",
+            "Albania",
+            "Greece",
+            "Bulgaria",
+            "Romania",
+            "Turkey",
+            "Cyprus",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Iraq",
+            "Egypt",
+            "Libya",
+            "Tunisia",
+            "Algeria",
+            "Morocco",
+            "Armenia"
+          ],
+          "box": [
+            -11,
+            23,
+            48,
+            56
+          ],
+          "holes": [
+            [
+              -11,
+              23,
+              10,
+              31
+            ],
+            [
+              10,
+              23,
+              25,
+              30
+            ],
+            [
+              25,
+              23,
+              33,
+              24
+            ],
+            [
+              10,
+              48,
+              20,
+              56
+            ],
+            [
+              3,
+              52,
+              10,
+              56
+            ],
+            [
+              -9,
+              55,
+              3,
+              61
+            ],
+            [
+              36,
+              23,
+              48,
+              30
+            ]
+          ],
+          "core": {
+            "members": [
+              "Italy",
+              "Spain",
+              "Portugal",
+              "France",
+              "Greece",
+              "Tunisia",
+              "Turkey"
+            ],
+            "box": [
+              -10,
+              30,
+              42,
+              50
+            ],
+            "holes": [
+              [
+                -10,
+                30,
+                10,
+                32
+              ],
+              [
+                25,
+                30,
+                42,
+                35
+              ]
+            ]
+          },
+          "contested": {
+            "members": [
+              "United Kingdom",
+              "Germany",
+              "Romania",
+              "Iraq",
+              "Armenia",
+              "Morocco"
+            ],
+            "box": [
+              -11,
+              23,
+              48,
+              56
+            ],
+            "holes": [
+              [
+                -11,
+                31,
+                25,
+                56
+              ]
+            ]
+          }
+        },
+        {
+          "year": 395,
+          "members": [
+            "Italy",
+            "Spain",
+            "Portugal",
+            "France",
+            "United Kingdom",
+            "Belgium",
+            "Switzerland",
+            "Austria",
+            "Hungary",
+            "Slovenia",
+            "Croatia",
+            "Bosnia and Herz.",
+            "Serbia",
+            "Montenegro",
+            "Kosovo",
+            "Macedonia",
+            "Albania",
+            "Greece",
+            "Bulgaria",
+            "Turkey",
+            "Cyprus",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Libya",
+            "Tunisia",
+            "Algeria",
+            "Morocco"
+          ],
+          "box": [
+            -11,
+            23,
+            45,
+            56
+          ],
+          "holes": [
+            [
+              -11,
+              23,
+              10,
+              31
+            ],
+            [
+              10,
+              23,
+              25,
+              30
+            ],
+            [
+              25,
+              23,
+              33,
+              24
+            ],
+            [
+              -9,
+              55,
+              3,
+              61
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "han",
+      "name": "Dinastía Han",
+      "short": "Han",
+      "color": "#fbbf24",
+      "kind": "imperio burocrático",
+      "from": -206,
+      "to": 220,
+      "capital": [
+        108.9,
+        34.3
+      ],
+      "seat": "Chang'an · Luoyang",
+      "dossier": {
+        "base": "Doble motor agrícola: mijo en el Huang He y arroz en expansión hacia el Yangtsé.",
+        "estado": "Administración examinada, monopolios de sal y hierro, censo fiscal de 57 millones de personas en el año 2 d.C.",
+        "limite": "La estepa del norte no se conquista, se compra o se amuralla; ambas opciones son partidas presupuestarias permanentes.",
+        "colapso": "Concentración de la tierra en clanes exentos, colapso fiscal y rebelión de los Turbantes Amarillos."
+      },
+      "snapshots": [
+        {
+          "year": -100,
+          "members": [
+            "China",
+            "North Korea",
+            "Vietnam",
+            "Mongolia"
+          ],
+          "box": [
+            98,
+            18,
+            126,
+            43
+          ],
+          "holes": [
+            [
+              98,
+              36,
+              104,
+              43
+            ]
+          ]
+        },
+        {
+          "year": 100,
+          "members": [
+            "China",
+            "North Korea",
+            "South Korea",
+            "Vietnam",
+            "Kyrgyzstan",
+            "Tajikistan"
+          ],
+          "box": [
+            73,
+            18,
+            128,
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maurya",
+      "name": "Imperio Maurya",
+      "short": "Maurya",
+      "color": "#f97316",
+      "kind": "imperio subcontinental",
+      "from": -322,
+      "to": -185,
+      "capital": [
+        85.1,
+        25.6
+      ],
+      "seat": "Pataliputra",
+      "dossier": {
+        "base": "Llanura indogangética: dos cosechas anuales y la mayor densidad demográfica del mundo antiguo.",
+        "estado": "Arthashastra: manual de estado fiscal, espionaje y monopolios. Bajo Ashoka, el dharma como política de cohesión postbélica.",
+        "limite": "Integrar el Decán exige atravesar los Ghats: coste militar alto, retorno fiscal bajo.",
+        "colapso": "Sucesión débil y reversión hacia poderes regionales tras Ashoka."
+      },
+      "snapshots": [
+        {
+          "year": -250,
+          "members": [
+            "India",
+            "Pakistan",
+            "Bangladesh",
+            "Nepal",
+            "Afghanistan",
+            "Bhutan"
+          ],
+          "box": [
+            60,
+            8,
+            93,
+            37
+          ],
+          "holes": [
+            [
+              60,
+              8,
+              74,
+              24
+            ]
+          ],
+          "core": {
+            "members": [
+              "India",
+              "Bangladesh"
+            ],
+            "box": [
+              72,
+              18,
+              93,
+              32
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Pakistan",
+              "Afghanistan",
+              "Nepal",
+              "Bhutan"
+            ],
+            "box": [
+              60,
+              22,
+              93,
+              37
+            ]
+          },
+          "contested": {
+            "members": [
+              "India"
+            ],
+            "box": [
+              72,
+              8,
+              90,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sasanida",
+      "name": "Imperio Sasánida",
+      "short": "Eranshahr",
+      "color": "#818cf8",
+      "kind": "imperio de meseta",
+      "from": 224,
+      "to": 651,
+      "capital": [
+        44.6,
+        33.1
+      ],
+      "seat": "Ctesifonte",
+      "dossier": {
+        "base": "Qanats: ingeniería hídrica subterránea que hace cultivable la meseta iraní sin evaporación.",
+        "estado": "Zoroastrismo de estado, caballería acorazada (savaran) y control de la ruta de la seda occidental.",
+        "limite": "Guerra permanente con Roma-Bizancio: dos imperios agotándose durante cuatro siglos en la misma frontera.",
+        "colapso": "Exhausto tras la guerra de 602-628, cae en dos décadas ante la expansión árabe."
+      },
+      "snapshots": [
+        {
+          "year": 500,
+          "members": [
+            "Iran",
+            "Iraq",
+            "Armenia",
+            "Azerbaijan",
+            "Turkmenistan",
+            "Afghanistan",
+            "Georgia",
+            "Kuwait",
+            "Uzbekistan",
+            "Pakistan",
+            "Tajikistan"
+          ],
+          "box": [
+            38,
+            24,
+            72,
+            44
+          ],
+          "holes": [
+            [
+              44,
+              24,
+              56,
+              28
+            ],
+            [
+              64,
+              24,
+              72,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bizancio",
+      "name": "Imperio Bizantino",
+      "short": "Rhomania",
+      "color": "#c026d3",
+      "kind": "imperio de resistencia",
+      "from": 395,
+      "to": 1453,
+      "capital": [
+        28.98,
+        41.01
+      ],
+      "seat": "Constantinopla",
+      "dossier": {
+        "base": "Anatolia como reserva de reclutamiento y grano; el Bósforo como aduana de todo el comercio norte-sur.",
+        "estado": "Themas: soldados-campesinos con tierra a cambio de servicio. Fiscalidad monetizada mil años seguidos.",
+        "limite": "Una capital inexpugnable compensa un ejército mediano — hasta que la marina la deja de proteger.",
+        "colapso": "1204 (saqueo latino) rompe la estructura; 1453 sólo certifica la defunción."
+      },
+      "snapshots": [
+        {
+          "year": 565,
+          "members": [
+            "Turkey",
+            "Greece",
+            "Cyprus",
+            "Italy",
+            "Bulgaria",
+            "Macedonia",
+            "Albania",
+            "Serbia",
+            "Montenegro",
+            "Bosnia and Herz.",
+            "Croatia",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Libya",
+            "Tunisia",
+            "Algeria",
+            "Spain",
+            "Armenia"
+          ],
+          "box": [
+            -6,
+            23,
+            44,
+            47
+          ],
+          "holes": [
+            [
+              -6,
+              23,
+              12,
+              36
+            ],
+            [
+              10,
+              23,
+              25,
+              30
+            ],
+            [
+              -6,
+              40,
+              2,
+              47
+            ],
+            [
+              12,
+              36,
+              25,
+              36.5
+            ]
+          ]
+        },
+        {
+          "year": 1025,
+          "members": [
+            "Turkey",
+            "Greece",
+            "Cyprus",
+            "Bulgaria",
+            "Macedonia",
+            "Albania",
+            "Serbia",
+            "Montenegro",
+            "Italy",
+            "Armenia",
+            "Georgia"
+          ],
+          "box": [
+            14,
+            34,
+            47,
+            46
+          ]
+        },
+        {
+          "year": 1350,
+          "members": [
+            "Greece",
+            "Turkey"
+          ],
+          "box": [
+            20,
+            35,
+            32,
+            42
+          ]
+        }
+      ]
+    },
+    {
+      "id": "califato",
+      "name": "Califato (Omeya · Abasí)",
+      "short": "Califato",
+      "color": "#34d399",
+      "kind": "imperio confesional",
+      "from": 632,
+      "to": 1258,
+      "capital": [
+        44.4,
+        33.3
+      ],
+      "seat": "Damasco → Bagdad",
+      "dossier": {
+        "base": "Unifica en un solo mercado las cuencas del Nilo, Mesopotamia, el Indo occidental y el Mediterráneo sur.",
+        "estado": "Fiscalidad diferenciada (jizya/kharaj), arabización administrativa y una revolución agrícola de cultivos difundidos de este a oeste.",
+        "limite": "La legitimidad califal es indivisible en teoría y fragmentaria en la práctica: al-Ándalus, Fatimíes y Abasíes coexisten.",
+        "colapso": "Autonomía de emiratos, esclavos-soldado turcos y Bagdad 1258."
+      },
+      "snapshots": [
+        {
+          "year": 750,
+          "members": [
+            "Saudi Arabia",
+            "Yemen",
+            "Oman",
+            "United Arab Emirates",
+            "Qatar",
+            "Kuwait",
+            "Iraq",
+            "Iran",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Libya",
+            "Tunisia",
+            "Algeria",
+            "Morocco",
+            "W. Sahara",
+            "Spain",
+            "Portugal",
+            "Afghanistan",
+            "Turkmenistan",
+            "Uzbekistan",
+            "Tajikistan",
+            "Pakistan",
+            "Armenia",
+            "Azerbaijan",
+            "Georgia",
+            "Turkey"
+          ],
+          "box": [
+            -10,
+            12,
+            74,
+            45
+          ],
+          "holes": [
+            [
+              -10,
+              12,
+              12,
+              27
+            ],
+            [
+              12,
+              12,
+              32,
+              22
+            ],
+            [
+              -10,
+              42,
+              4,
+              45
+            ],
+            [
+              30,
+              38,
+              45,
+              45
+            ]
+          ],
+          "core": {
+            "members": [
+              "Syria",
+              "Iraq",
+              "Lebanon",
+              "Israel",
+              "Palestine",
+              "Jordan",
+              "Egypt",
+              "Saudi Arabia"
+            ],
+            "box": [
+              25,
+              12,
+              50,
+              38
+            ],
+            "holes": [
+              [
+                38,
+                12,
+                50,
+                20
+              ]
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Iran",
+              "Morocco",
+              "Algeria",
+              "Tunisia",
+              "Libya",
+              "Spain",
+              "Portugal",
+              "W. Sahara"
+            ],
+            "box": [
+              -10,
+              20,
+              62,
+              45
+            ],
+            "holes": [
+              [
+                -10,
+                42,
+                4,
+                45
+              ]
+            ]
+          },
+          "contested": {
+            "members": [
+              "Afghanistan",
+              "Uzbekistan",
+              "Turkmenistan",
+              "Tajikistan",
+              "Pakistan",
+              "Turkey",
+              "Georgia",
+              "Armenia",
+              "Azerbaijan"
+            ],
+            "box": [
+              36,
+              22,
+              74,
+              45
+            ]
+          }
+        },
+        {
+          "year": 900,
+          "members": [
+            "Saudi Arabia",
+            "Yemen",
+            "Oman",
+            "United Arab Emirates",
+            "Kuwait",
+            "Qatar",
+            "Iraq",
+            "Iran",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Afghanistan",
+            "Turkmenistan",
+            "Uzbekistan",
+            "Tajikistan",
+            "Azerbaijan",
+            "Armenia"
+          ],
+          "box": [
+            25,
+            12,
+            72,
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carolingio",
+      "name": "Imperio Carolingio",
+      "short": "Francia",
+      "color": "#38bdf8",
+      "kind": "imperio agrario",
+      "from": 768,
+      "to": 888,
+      "capital": [
+        6.08,
+        50.77
+      ],
+      "seat": "Aquisgrán",
+      "dossier": {
+        "base": "Arado pesado, rotación trienal y collera: la Europa húmeda del norte se vuelve productiva por primera vez.",
+        "estado": "Missi dominici y vasallaje: administración sin ciudades ni moneda circulante significativa.",
+        "limite": "Sin fiscalidad monetaria, pagar al ejército sólo es posible entregando tierra — y la tierra entregada no vuelve.",
+        "colapso": "Verdún 843: la herencia partible convierte el imperio en un problema de derecho de familia."
+      },
+      "snapshots": [
+        {
+          "year": 814,
+          "members": [
+            "France",
+            "Germany",
+            "Belgium",
+            "Netherlands",
+            "Luxembourg",
+            "Switzerland",
+            "Austria",
+            "Italy",
+            "Slovenia",
+            "Croatia",
+            "Czechia",
+            "Spain"
+          ],
+          "box": [
+            -3,
+            40,
+            18,
+            55
+          ],
+          "holes": [
+            [
+              -3,
+              40,
+              4,
+              42
+            ],
+            [
+              10,
+              51,
+              18,
+              55
+            ],
+            [
+              8,
+              46,
+              18,
+              48.5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mongol",
+      "name": "Imperio Mongol",
+      "short": "Yeke Ulus",
+      "color": "#f43f5e",
+      "kind": "imperio de estepa",
+      "from": 1206,
+      "to": 1368,
+      "capital": [
+        102.8,
+        47.2
+      ],
+      "seat": "Karakórum → Janbalic",
+      "dossier": {
+        "base": "No produce: grava. La estepa aporta movilidad (3 a 5 caballos por jinete) y la periferia sedentaria aporta la renta.",
+        "estado": "Yassa, correo de postas (yam) y meritocracia militar decimal. Tolerancia religiosa como técnica de gobierno.",
+        "limite": "El caballo define el imperio: donde acaba el pasto —selva, arrozal, bosque húmedo— acaba la expansión.",
+        "colapso": "Partición en cuatro kanatos, peste negra sobre las rutas propias y sedentarización de las élites."
+      },
+      "snapshots": [
+        {
+          "year": 1227,
+          "members": [
+            "Mongolia",
+            "China",
+            "Kazakhstan",
+            "Kyrgyzstan",
+            "Uzbekistan",
+            "Turkmenistan",
+            "Tajikistan",
+            "Russia"
+          ],
+          "box": [
+            55,
+            30,
+            128,
+            56
+          ]
+        },
+        {
+          "year": 1279,
+          "members": [
+            "Mongolia",
+            "China",
+            "North Korea",
+            "South Korea",
+            "Kazakhstan",
+            "Kyrgyzstan",
+            "Uzbekistan",
+            "Turkmenistan",
+            "Tajikistan",
+            "Afghanistan",
+            "Iran",
+            "Iraq",
+            "Russia",
+            "Ukraine",
+            "Belarus",
+            "Georgia",
+            "Armenia",
+            "Azerbaijan",
+            "Turkey",
+            "Moldova",
+            "Myanmar"
+          ],
+          "box": [
+            25,
+            22,
+            135,
+            62
+          ],
+          "holes": [
+            [
+              25,
+              22,
+              45,
+              36
+            ],
+            [
+              90,
+              22,
+              110,
+              27
+            ]
+          ],
+          "core": {
+            "members": [
+              "Mongolia",
+              "China"
+            ],
+            "box": [
+              85,
+              30,
+              128,
+              56
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Russia",
+              "Ukraine",
+              "Belarus",
+              "North Korea",
+              "South Korea",
+              "Iran",
+              "Iraq",
+              "Turkey",
+              "Georgia",
+              "Armenia",
+              "Azerbaijan",
+              "Moldova"
+            ],
+            "box": [
+              25,
+              30,
+              135,
+              62
+            ],
+            "holes": [
+              [
+                85,
+                30,
+                128,
+                56
+              ]
+            ]
+          },
+          "contested": {
+            "members": [
+              "Myanmar",
+              "Afghanistan",
+              "Turkmenistan"
+            ],
+            "box": [
+              50,
+              20,
+              110,
+              40
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ming",
+      "name": "Dinastía Ming",
+      "short": "Ming",
+      "color": "#facc15",
+      "kind": "imperio agrario-fiscal",
+      "from": 1368,
+      "to": 1644,
+      "capital": [
+        116.4,
+        39.9
+      ],
+      "seat": "Nankín → Pekín",
+      "dossier": {
+        "base": "Arroz de doble cosecha, cultivos americanos desde 1550 y una población que dobla en dos siglos.",
+        "estado": "Reforma del látigo único: impuestos en plata. China se convierte en el sumidero mundial de la plata americana.",
+        "limite": "Repliegue marítimo tras 1433: la mayor flota del planeta se desmantela por decisión de corte.",
+        "colapso": "Pequeña Edad de Hielo, crisis de la plata, rebelión interna y entrada manchú en 1644."
+      },
+      "snapshots": [
+        {
+          "year": 1450,
+          "members": [
+            "China"
+          ],
+          "box": [
+            98,
+            18,
+            124,
+            42
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qing",
+      "name": "Imperio Qing",
+      "short": "Qing",
+      "color": "#eab308",
+      "kind": "imperio de conquista sinizado",
+      "from": 1644,
+      "to": 1912,
+      "capital": [
+        116.4,
+        39.9
+      ],
+      "seat": "Pekín",
+      "dossier": {
+        "base": "Mayor economía del mundo hasta ~1820 en volumen; pero PIB por cabeza estancado por trampa maltusiana.",
+        "estado": "Sistema de estandartes, dualidad manchú-han y la mayor expansión territorial de la historia china.",
+        "limite": "Superávit comercial estructural convertido en vulnerabilidad cuando el desequilibrio se corrige por la fuerza (opio).",
+        "colapso": "Taiping (20-30 millones de muertos), tratados desiguales y revolución de 1911."
+      },
+      "snapshots": [
+        {
+          "year": 1760,
+          "members": [
+            "China",
+            "Mongolia",
+            "Taiwan",
+            "North Korea"
+          ],
+          "box": [
+            73,
+            18,
+            135,
+            54
+          ],
+          "core": {
+            "members": [
+              "China"
+            ],
+            "box": [
+              98,
+              18,
+              126,
+              45
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Mongolia",
+              "North Korea",
+              "Taiwan"
+            ],
+            "box": [
+              87,
+              18,
+              135,
+              54
+            ]
+          },
+          "contested": {
+            "members": [
+              "China"
+            ],
+            "box": [
+              73,
+              27,
+              98,
+              50
+            ]
+          }
+        },
+        {
+          "year": 1900,
+          "members": [
+            "China",
+            "Mongolia",
+            "Taiwan"
+          ],
+          "box": [
+            73,
+            18,
+            135,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "id": "otomano",
+      "name": "Imperio Otomano",
+      "short": "Devlet-i Aliyye",
+      "color": "#10b981",
+      "kind": "imperio de umbral",
+      "from": 1299,
+      "to": 1922,
+      "capital": [
+        28.98,
+        41.01
+      ],
+      "seat": "Bursa → Edirne → Estambul",
+      "dossier": {
+        "base": "Controla los tres estrechos y las tres rutas: seda, especias y grano del mar Negro.",
+        "estado": "Timar (feudo condicional no hereditario), devshirme y millets: pluralidad confesional bajo soberanía única.",
+        "limite": "La ruta del Cabo (1498) desvía el comercio asiático y erosiona su renta aduanera durante dos siglos.",
+        "colapso": "Deuda externa, nacionalismos balcánicos y la apuesta de 1914."
+      },
+      "snapshots": [
+        {
+          "year": 1520,
+          "members": [
+            "Turkey",
+            "Greece",
+            "Bulgaria",
+            "Macedonia",
+            "Albania",
+            "Serbia",
+            "Montenegro",
+            "Kosovo",
+            "Bosnia and Herz.",
+            "Romania",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Iraq",
+            "Saudi Arabia",
+            "Cyprus"
+          ],
+          "box": [
+            16,
+            20,
+            50,
+            47
+          ],
+          "holes": [
+            [
+              38,
+              20,
+              50,
+              28
+            ]
+          ]
+        },
+        {
+          "year": 1683,
+          "members": [
+            "Turkey",
+            "Greece",
+            "Bulgaria",
+            "Macedonia",
+            "Albania",
+            "Serbia",
+            "Montenegro",
+            "Kosovo",
+            "Bosnia and Herz.",
+            "Croatia",
+            "Hungary",
+            "Romania",
+            "Moldova",
+            "Ukraine",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Iraq",
+            "Saudi Arabia",
+            "Kuwait",
+            "Cyprus",
+            "Libya",
+            "Tunisia",
+            "Algeria",
+            "Armenia",
+            "Georgia",
+            "Yemen"
+          ],
+          "box": [
+            3,
+            12,
+            50,
+            49
+          ],
+          "holes": [
+            [
+              10,
+              20,
+              28,
+              30
+            ],
+            [
+              3,
+              20,
+              12,
+              34
+            ],
+            [
+              38,
+              20,
+              50,
+              26
+            ]
+          ],
+          "core": {
+            "members": [
+              "Turkey",
+              "Greece",
+              "Bulgaria",
+              "Macedonia",
+              "Albania",
+              "Serbia",
+              "Kosovo",
+              "Bosnia and Herz.",
+              "Montenegro"
+            ],
+            "box": [
+              18,
+              34,
+              45,
+              46
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Egypt",
+              "Libya",
+              "Tunisia",
+              "Algeria",
+              "Saudi Arabia",
+              "Iraq",
+              "Moldova",
+              "Romania",
+              "Ukraine",
+              "Yemen",
+              "Kuwait"
+            ],
+            "box": [
+              3,
+              12,
+              50,
+              49
+            ],
+            "holes": [
+              [
+                10,
+                20,
+                28,
+                30
+              ],
+              [
+                3,
+                20,
+                12,
+                34
+              ],
+              [
+                38,
+                20,
+                50,
+                26
+              ]
+            ]
+          },
+          "contested": {
+            "members": [
+              "Hungary",
+              "Croatia",
+              "Ukraine",
+              "Georgia",
+              "Armenia"
+            ],
+            "box": [
+              14,
+              44,
+              50,
+              49
+            ]
+          }
+        },
+        {
+          "year": 1800,
+          "members": [
+            "Turkey",
+            "Greece",
+            "Bulgaria",
+            "Macedonia",
+            "Albania",
+            "Serbia",
+            "Montenegro",
+            "Kosovo",
+            "Bosnia and Herz.",
+            "Romania",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Egypt",
+            "Iraq",
+            "Libya",
+            "Cyprus",
+            "Saudi Arabia"
+          ],
+          "box": [
+            12,
+            20,
+            50,
+            47
+          ],
+          "holes": [
+            [
+              12,
+              20,
+              28,
+              29
+            ],
+            [
+              38,
+              20,
+              50,
+              27
+            ]
+          ]
+        },
+        {
+          "year": 1914,
+          "members": [
+            "Turkey",
+            "Syria",
+            "Lebanon",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Iraq",
+            "Saudi Arabia"
+          ],
+          "box": [
+            25,
+            24,
+            49,
+            43
+          ],
+          "holes": [
+            [
+              40,
+              24,
+              49,
+              30
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mali",
+      "name": "Imperio de Malí",
+      "short": "Malí",
+      "color": "#fb923c",
+      "kind": "imperio de ruta",
+      "from": 1235,
+      "to": 1670,
+      "capital": [
+        -8,
+        12.6
+      ],
+      "seat": "Niani · Tombuctú",
+      "dossier": {
+        "base": "Oro de Bambuk y Buré contra sal sahariana: el desierto no es barrera sino peaje.",
+        "estado": "Mansa como árbitro de clanes; Tombuctú y Yenné como polos universitarios y notariales.",
+        "limite": "La riqueza es de tránsito: quien controle el otro extremo del camello controla el margen.",
+        "colapso": "Ascenso de Songhai y, después, desvío atlántico del comercio hacia la costa."
+      },
+      "snapshots": [
+        {
+          "year": 1350,
+          "members": [
+            "Mali",
+            "Senegal",
+            "Gambia",
+            "Guinea",
+            "Guinea-Bissau",
+            "Mauritania",
+            "Burkina Faso",
+            "Niger",
+            "Côte d'Ivoire"
+          ],
+          "box": [
+            -17,
+            9,
+            4,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "id": "songhai",
+      "name": "Imperio Songhai",
+      "short": "Songhai",
+      "color": "#fdba74",
+      "kind": "imperio fluvial-sahariano",
+      "from": 1464,
+      "to": 1591,
+      "capital": [
+        0.04,
+        16.27
+      ],
+      "seat": "Gao",
+      "dossier": {
+        "base": "Curva del Níger: transporte fluvial barato entre el Sahel productivo y las terminales caravaneras.",
+        "estado": "Administración provincial, flota fluvial de guerra y estandarización de pesos bajo Askia Mohamed.",
+        "limite": "Estado de ruta sin profundidad demográfica frente a ejércitos con armas de fuego.",
+        "colapso": "Tondibi, 1591: 4.000 arcabuceros saadíes cruzan el Sahara y desarticulan un imperio de 1,4 millones de km²."
+      },
+      "snapshots": [
+        {
+          "year": 1550,
+          "members": [
+            "Mali",
+            "Niger",
+            "Burkina Faso",
+            "Senegal",
+            "Mauritania",
+            "Nigeria",
+            "Guinea"
+          ],
+          "box": [
+            -16,
+            10,
+            8,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "id": "etiopia",
+      "name": "Imperio Etíope",
+      "short": "Abisinia",
+      "color": "#4ade80",
+      "kind": "estado de altiplano",
+      "from": 1270,
+      "to": 1974,
+      "capital": [
+        38.7,
+        9
+      ],
+      "seat": "Gondar · Adís Abeba",
+      "dossier": {
+        "base": "Altiplano templado sobre el trópico: cereales propios (teff), sin malaria endémica y con defensa orográfica natural.",
+        "estado": "Monarquía cristiana continua y corte itinerante; supervivencia como estrategia de estado.",
+        "limite": "Aislamiento: la salida al mar depende siempre de terceros.",
+        "colapso": "Único estado africano que derrota una invasión colonial europea (Adua, 1896); cae por revolución interna en 1974."
+      },
+      "snapshots": [
+        {
+          "year": 1500,
+          "members": [
+            "Ethiopia",
+            "Eritrea"
+          ],
+          "box": [
+            33,
+            5,
+            43,
+            18
+          ]
+        },
+        {
+          "year": 1900,
+          "members": [
+            "Ethiopia",
+            "Eritrea",
+            "Somalia"
+          ],
+          "box": [
+            33,
+            3,
+            45,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inca",
+      "name": "Tahuantinsuyo",
+      "short": "Inca",
+      "color": "#2dd4bf",
+      "kind": "imperio vertical",
+      "from": 1438,
+      "to": 1533,
+      "capital": [
+        -71.98,
+        -13.53
+      ],
+      "seat": "Cusco",
+      "dossier": {
+        "base": "Archipiélago vertical: un mismo linaje cultiva a 4 altitudes distintas, diversificando el riesgo climático por diseño.",
+        "estado": "Sin moneda, sin mercado y sin escritura fonética: mita (trabajo rotatorio), quipus y almacenes estatales (qollqas).",
+        "limite": "40.000 km de caminos sin rueda ni animal de tiro: la logística depende del pie humano y la llama.",
+        "colapso": "Guerra civil dinástica + viruela anticipada + captura del Inca: un sistema hipercentralizado tiene un único punto de fallo."
+      },
+      "snapshots": [
+        {
+          "year": 1525,
+          "members": [
+            "Peru",
+            "Bolivia",
+            "Ecuador",
+            "Chile",
+            "Argentina",
+            "Colombia"
+          ],
+          "box": [
+            -82,
+            -36,
+            -63,
+            2
+          ],
+          "holes": [
+            [
+              -72,
+              -36,
+              -63,
+              -8
+            ],
+            [
+              -70,
+              -8,
+              -63,
+              2
+            ]
+          ],
+          "core": {
+            "members": [
+              "Peru"
+            ],
+            "box": [
+              -79,
+              -18,
+              -68,
+              -8
+            ]
+          },
+          "contested": {
+            "members": [
+              "Ecuador",
+              "Colombia",
+              "Chile",
+              "Argentina"
+            ],
+            "box": [
+              -82,
+              -36,
+              -63,
+              2
+            ],
+            "holes": [
+              [
+                -79,
+                -18,
+                -68,
+                -8
+              ],
+              [
+                -72,
+                -36,
+                -63,
+                -8
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "azteca",
+      "name": "Triple Alianza Mexica",
+      "short": "Mexica",
+      "color": "#22d3ee",
+      "kind": "hegemonía tributaria",
+      "from": 1428,
+      "to": 1521,
+      "capital": [
+        -99.13,
+        19.43
+      ],
+      "seat": "Tenochtitlan",
+      "dossier": {
+        "base": "Chinampas lacustres: hasta 7 cosechas anuales, sosteniendo una capital de ~200.000 habitantes sin tracción animal.",
+        "estado": "No anexiona: impone tributo y deja gobiernos locales. Imperio hegemónico, no territorial.",
+        "limite": "El tributo sin integración produce vasallos disponibles para cualquier rival creíble.",
+        "colapso": "1519-21: coalición indígena (Tlaxcala) + viruela + asedio a una ciudad dependiente de calzadas."
+      },
+      "snapshots": [
+        {
+          "year": 1500,
+          "members": [
+            "Mexico",
+            "Guatemala"
+          ],
+          "box": [
+            -104,
+            14,
+            -92,
+            22
+          ],
+          "core": {
+            "members": [
+              "Mexico"
+            ],
+            "box": [
+              -100,
+              18,
+              -97,
+              21
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Mexico",
+              "Guatemala"
+            ],
+            "box": [
+              -104,
+              14,
+              -92,
+              22
+            ],
+            "holes": [
+              [
+                -100,
+                18,
+                -97,
+                21
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "maya",
+      "name": "Ciudades-Estado Mayas",
+      "short": "Maya",
+      "color": "#5eead4",
+      "kind": "sistema policéntrico",
+      "from": 250,
+      "to": 900,
+      "capital": [
+        -89.62,
+        17.22
+      ],
+      "seat": "Tikal · Calakmul",
+      "dossier": {
+        "base": "Agricultura de milpa sobre karst sin ríos superficiales: el agua se almacena en aguadas construidas.",
+        "estado": "Decenas de reinos rivales con escritura completa, calendario de precisión y guerra ritualizada de prestigio.",
+        "limite": "Sin excedente para un poder unificador, la competencia es permanente y el gasto monumental, insostenible.",
+        "colapso": "Sequías multidecenales entre 800 y 950 sobre un sistema hídrico sin margen."
+      },
+      "snapshots": [
+        {
+          "year": 700,
+          "members": [
+            "Guatemala",
+            "Belize",
+            "Mexico",
+            "Honduras",
+            "El Salvador"
+          ],
+          "box": [
+            -94,
+            14,
+            -86,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "espana",
+      "name": "Monarquía Hispánica",
+      "short": "España",
+      "color": "#fbbf24",
+      "kind": "imperio oceánico",
+      "from": 1492,
+      "to": 1898,
+      "capital": [
+        -3.7,
+        40.4
+      ],
+      "seat": "Toledo → Madrid",
+      "dossier": {
+        "base": "Potosí y Zacatecas: la primera moneda verdaderamente global (el real de a ocho) circula de Sevilla a Cantón.",
+        "estado": "Virreinatos con Audiencias, Casa de Contratación y el Galeón de Manila cerrando el primer circuito comercial planetario.",
+        "limite": "Renta minera sin base industrial: la plata financia guerras europeas y alimenta la inflación propia.",
+        "colapso": "Bancarrotas seriadas, independencias americanas de 1810-1824 y 1898."
+      },
+      "snapshots": [
+        {
+          "year": 1580,
+          "members": [
+            "Spain",
+            "Portugal",
+            "Mexico",
+            "Guatemala",
+            "Honduras",
+            "El Salvador",
+            "Nicaragua",
+            "Costa Rica",
+            "Panama",
+            "Cuba",
+            "Dominican Rep.",
+            "Haiti",
+            "Puerto Rico",
+            "Colombia",
+            "Venezuela",
+            "Ecuador",
+            "Peru",
+            "Bolivia",
+            "Chile",
+            "Argentina",
+            "Paraguay",
+            "Uruguay",
+            "Belgium",
+            "Netherlands",
+            "Luxembourg",
+            "Italy",
+            "Philippines",
+            "Brazil",
+            "Angola",
+            "Mozambique"
+          ],
+          "box": [
+            -120,
+            -56,
+            130,
+            55
+          ],
+          "holes": [
+            [
+              -120,
+              -56,
+              -60,
+              -40
+            ],
+            [
+              -120,
+              20,
+              -70,
+              45
+            ],
+            [
+              10,
+              -30,
+              60,
+              30
+            ],
+            [
+              -10,
+              40,
+              2,
+              45
+            ]
+          ]
+        },
+        {
+          "year": 1790,
+          "members": [
+            "Spain",
+            "Mexico",
+            "Guatemala",
+            "Honduras",
+            "El Salvador",
+            "Nicaragua",
+            "Costa Rica",
+            "Panama",
+            "Cuba",
+            "Dominican Rep.",
+            "Puerto Rico",
+            "Colombia",
+            "Venezuela",
+            "Ecuador",
+            "Peru",
+            "Bolivia",
+            "Chile",
+            "Argentina",
+            "Paraguay",
+            "Uruguay",
+            "United States of America",
+            "Philippines"
+          ],
+          "box": [
+            -126,
+            -56,
+            128,
+            45
+          ],
+          "holes": [
+            [
+              -126,
+              37,
+              -66,
+              50
+            ],
+            [
+              -100,
+              -56,
+              -60,
+              -42
+            ]
+          ],
+          "core": {
+            "members": [
+              "Spain",
+              "Mexico",
+              "Peru",
+              "Cuba"
+            ],
+            "box": [
+              -118,
+              -20,
+              5,
+              45
+            ],
+            "holes": [
+              [
+                -118,
+                33,
+                -80,
+                45
+              ]
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Guatemala",
+              "Honduras",
+              "El Salvador",
+              "Nicaragua",
+              "Costa Rica",
+              "Panama",
+              "Colombia",
+              "Venezuela",
+              "Ecuador",
+              "Bolivia",
+              "Chile",
+              "Argentina",
+              "Paraguay",
+              "Uruguay",
+              "Dominican Rep.",
+              "Puerto Rico",
+              "Philippines"
+            ],
+            "box": [
+              -126,
+              -56,
+              128,
+              45
+            ]
+          },
+          "contested": {
+            "members": [
+              "United States of America",
+              "Argentina",
+              "Chile"
+            ],
+            "box": [
+              -126,
+              -56,
+              -60,
+              50
+            ],
+            "holes": [
+              [
+                -118,
+                -20,
+                -60,
+                33
+              ]
+            ]
+          }
+        },
+        {
+          "year": 1898,
+          "members": [
+            "Spain",
+            "Cuba",
+            "Puerto Rico",
+            "Philippines",
+            "W. Sahara",
+            "Eq. Guinea",
+            "Morocco"
+          ],
+          "box": [
+            -20,
+            -2,
+            128,
+            45
+          ],
+          "holes": [
+            [
+              -12,
+              30,
+              0,
+              36
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "portugal",
+      "name": "Imperio Portugués",
+      "short": "Portugal",
+      "color": "#4ade80",
+      "kind": "imperio de factorías",
+      "from": 1415,
+      "to": 1975,
+      "capital": [
+        -9.14,
+        38.72
+      ],
+      "seat": "Lisboa",
+      "dossier": {
+        "base": "No ocupa territorio: ocupa nodos. Ceuta, Goa, Malaca, Ormuz, Macao — una red de puntos que controla flujos.",
+        "estado": "Estado da Índia con capitanías y monopolio real de la pimienta. Después, plantación esclavista en Brasil.",
+        "limite": "Un millón de habitantes gestionando cuatro océanos: la red es larga y el hilo, fino.",
+        "colapso": "Competencia neerlandesa e inglesa en el XVII; descolonización tardía y forzada en 1974-75."
+      },
+      "snapshots": [
+        {
+          "year": 1600,
+          "members": [
+            "Portugal",
+            "Brazil",
+            "Angola",
+            "Mozambique",
+            "Guinea-Bissau",
+            "Timor-Leste",
+            "Oman"
+          ],
+          "box": [
+            -52,
+            -30,
+            130,
+            43
+          ]
+        },
+        {
+          "year": 1900,
+          "members": [
+            "Portugal",
+            "Angola",
+            "Mozambique",
+            "Guinea-Bissau",
+            "Timor-Leste"
+          ],
+          "box": [
+            -20,
+            -30,
+            130,
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "britanico",
+      "name": "Imperio Británico",
+      "short": "Britannia",
+      "color": "#f472b6",
+      "kind": "imperio industrial-marítimo",
+      "from": 1583,
+      "to": 1997,
+      "capital": [
+        -0.13,
+        51.5
+      ],
+      "seat": "Londres",
+      "dossier": {
+        "base": "Carbón + capital + Royal Navy. Primer estado que convierte energía fósil en ventaja militar sostenida.",
+        "estado": "Gobierno indirecto: 1.200 funcionarios administran 300 millones de personas en la India apoyándose en élites locales.",
+        "limite": "El patrón oro y la libra exigen superávit; dos guerras mundiales lo convierten en deuda.",
+        "colapso": "1947-1968: la descolonización no es derrota militar sino insolvencia y agotamiento de legitimidad."
+      },
+      "snapshots": [
+        {
+          "year": 1780,
+          "members": [
+            "United Kingdom",
+            "Ireland",
+            "Canada",
+            "United States of America",
+            "Jamaica",
+            "Bahamas",
+            "Belize",
+            "Guyana",
+            "India",
+            "Bangladesh"
+          ],
+          "box": [
+            -142,
+            -12,
+            95,
+            72
+          ]
+        },
+        {
+          "year": 1920,
+          "members": [
+            "United Kingdom",
+            "Ireland",
+            "Canada",
+            "Australia",
+            "New Zealand",
+            "India",
+            "Pakistan",
+            "Bangladesh",
+            "Myanmar",
+            "Sri Lanka",
+            "Malaysia",
+            "Brunei",
+            "South Africa",
+            "Botswana",
+            "Zimbabwe",
+            "Zambia",
+            "Malawi",
+            "Kenya",
+            "Uganda",
+            "Tanzania",
+            "Nigeria",
+            "Ghana",
+            "Sierra Leone",
+            "Gambia",
+            "Egypt",
+            "Sudan",
+            "S. Sudan",
+            "Somalia",
+            "Somaliland",
+            "Cyprus",
+            "Israel",
+            "Palestine",
+            "Jordan",
+            "Iraq",
+            "Yemen",
+            "Guyana",
+            "Jamaica",
+            "Bahamas",
+            "Belize",
+            "Trinidad and Tobago",
+            "Lesotho",
+            "eSwatini",
+            "Namibia",
+            "Papua New Guinea",
+            "Fiji",
+            "Solomon Is.",
+            "Falkland Is.",
+            "Kuwait",
+            "Oman",
+            "United Arab Emirates",
+            "Qatar",
+            "Nepal"
+          ],
+          "box": [
+            -180,
+            -55,
+            180,
+            84
+          ],
+          "core": {
+            "members": [
+              "United Kingdom",
+              "Canada",
+              "Australia",
+              "New Zealand",
+              "South Africa"
+            ],
+            "box": [
+              -142,
+              -50,
+              180,
+              72
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Egypt",
+              "Iraq",
+              "Jordan",
+              "Kuwait",
+              "Oman",
+              "Qatar",
+              "United Arab Emirates",
+              "Yemen",
+              "Nepal",
+              "Sudan",
+              "S. Sudan"
+            ],
+            "box": [
+              25,
+              10,
+              92,
+              40
+            ]
+          },
+          "contested": {
+            "members": [
+              "Ireland",
+              "India",
+              "Myanmar",
+              "Palestine",
+              "Israel",
+              "Somalia",
+              "Somaliland"
+            ],
+            "box": [
+              -12,
+              -5,
+              100,
+              56
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "napoleon",
+      "name": "Imperio Napoleónico",
+      "short": "Francia I",
+      "color": "#60a5fa",
+      "kind": "imperio de movilización",
+      "from": 1804,
+      "to": 1815,
+      "capital": [
+        2.35,
+        48.86
+      ],
+      "seat": "París",
+      "dossier": {
+        "base": "Leva en masa: el estado-nación puede poner en campaña un porcentaje de población que ningún régimen dinástico igualaba.",
+        "estado": "Código civil, prefecturas y catastro; exporta administración racional junto con la ocupación.",
+        "limite": "El Bloqueo Continental convierte a los aliados en economías perjudicadas — y en enemigos futuros.",
+        "colapso": "Rusia 1812: 600.000 hombres entran, ~90.000 vuelven. La distancia derrota lo que el enemigo no puede."
+      },
+      "snapshots": [
+        {
+          "year": 1812,
+          "members": [
+            "France",
+            "Belgium",
+            "Netherlands",
+            "Luxembourg",
+            "Switzerland",
+            "Italy",
+            "Germany",
+            "Spain",
+            "Portugal",
+            "Poland",
+            "Austria",
+            "Slovenia",
+            "Croatia",
+            "Czechia",
+            "Denmark"
+          ],
+          "box": [
+            -10,
+            35,
+            24,
+            58
+          ],
+          "core": {
+            "members": [
+              "France",
+              "Belgium",
+              "Netherlands",
+              "Luxembourg",
+              "Italy"
+            ],
+            "box": [
+              -6,
+              40,
+              19,
+              54
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Germany",
+              "Poland",
+              "Switzerland",
+              "Denmark",
+              "Austria",
+              "Czechia",
+              "Croatia",
+              "Slovenia"
+            ],
+            "box": [
+              4,
+              42,
+              24,
+              58
+            ]
+          },
+          "contested": {
+            "members": [
+              "Spain",
+              "Portugal"
+            ],
+            "box": [
+              -10,
+              35,
+              4,
+              44
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rusia",
+      "name": "Rusia · URSS",
+      "short": "Rusia",
+      "color": "#fb7185",
+      "kind": "imperio continental",
+      "from": 1547,
+      "to": 1991,
+      "capital": [
+        37.6,
+        55.75
+      ],
+      "seat": "Moscú · San Petersburgo",
+      "dossier": {
+        "base": "Expansión sobre la mayor llanura del planeta: sin barreras naturales, la frontera avanza a ritmo de peletería y fuerte.",
+        "estado": "Servidumbre hasta 1861, después industrialización forzada por planes quinquenales con coste demográfico masivo.",
+        "limite": "Todos sus puertos se congelan o dependen de estrechos ajenos: potencia terrestre con obsesión marítima.",
+        "colapso": "1991: crisis fiscal energética, deslegitimación ideológica y salida de las repúblicas periféricas."
+      },
+      "snapshots": [
+        {
+          "year": 1700,
+          "members": [
+            "Russia"
+          ],
+          "box": [
+            28,
+            44,
+            160,
+            78
+          ]
+        },
+        {
+          "year": 1866,
+          "members": [
+            "Russia",
+            "Finland",
+            "Poland",
+            "Estonia",
+            "Latvia",
+            "Lithuania",
+            "Belarus",
+            "Ukraine",
+            "Moldova",
+            "Kazakhstan",
+            "Uzbekistan",
+            "Turkmenistan",
+            "Kyrgyzstan",
+            "Tajikistan",
+            "Georgia",
+            "Armenia",
+            "Azerbaijan"
+          ],
+          "box": [
+            19,
+            35,
+            190,
+            82
+          ],
+          "core": {
+            "members": [
+              "Russia",
+              "Belarus",
+              "Ukraine",
+              "Estonia",
+              "Latvia",
+              "Lithuania"
+            ],
+            "box": [
+              19,
+              44,
+              130,
+              72
+            ]
+          },
+          "tributary": {
+            "members": [
+              "Finland",
+              "Poland",
+              "Kazakhstan",
+              "Georgia",
+              "Armenia",
+              "Azerbaijan",
+              "Moldova"
+            ],
+            "box": [
+              14,
+              35,
+              90,
+              71
+            ]
+          },
+          "contested": {
+            "members": [
+              "Uzbekistan",
+              "Turkmenistan",
+              "Kyrgyzstan",
+              "Tajikistan"
+            ],
+            "box": [
+              45,
+              35,
+              80,
+              72
+            ]
+          }
+        },
+        {
+          "year": 1945,
+          "members": [
+            "Russia",
+            "Estonia",
+            "Latvia",
+            "Lithuania",
+            "Belarus",
+            "Ukraine",
+            "Moldova",
+            "Kazakhstan",
+            "Uzbekistan",
+            "Turkmenistan",
+            "Kyrgyzstan",
+            "Tajikistan",
+            "Georgia",
+            "Armenia",
+            "Azerbaijan"
+          ],
+          "box": [
+            19,
+            35,
+            190,
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japon",
+      "name": "Imperio del Japón",
+      "short": "Japón",
+      "color": "#fca5a5",
+      "kind": "imperio industrial insular",
+      "from": 1868,
+      "to": 1945,
+      "capital": [
+        139.7,
+        35.7
+      ],
+      "seat": "Tokio",
+      "dossier": {
+        "base": "Industrialización en 40 años sin recursos propios: la doctrina imperial nace de una ecuación de importaciones.",
+        "estado": "Meiji: abolición del samurái, conscripción universal, zaibatsu y alfabetización casi total antes de 1900.",
+        "limite": "Depende del exterior para petróleo, hierro y caucho; expandirse para asegurarlos provoca el embargo que temía.",
+        "colapso": "1945: guerra industrial contra una economía diez veces mayor."
+      },
+      "snapshots": [
+        {
+          "year": 1910,
+          "members": [
+            "Japan",
+            "South Korea",
+            "North Korea",
+            "Taiwan"
+          ],
+          "box": [
+            122,
+            22,
+            155,
+            48
+          ]
+        },
+        {
+          "year": 1942,
+          "members": [
+            "Japan",
+            "South Korea",
+            "North Korea",
+            "Taiwan",
+            "China",
+            "Vietnam",
+            "Laos",
+            "Cambodia",
+            "Thailand",
+            "Myanmar",
+            "Malaysia",
+            "Indonesia",
+            "Philippines",
+            "Brunei",
+            "Papua New Guinea",
+            "Timor-Leste"
+          ],
+          "box": [
+            92,
+            -11,
+            156,
+            50
+          ],
+          "holes": [
+            [
+              92,
+              20,
+              108,
+              45
+            ]
+          ],
+          "core": {
+            "members": [
+              "Japan",
+              "South Korea",
+              "North Korea",
+              "Taiwan"
+            ],
+            "box": [
+              122,
+              22,
+              156,
+              50
+            ]
+          },
+          "tributary": {
+            "members": [
+              "China",
+              "Thailand",
+              "Vietnam",
+              "Laos",
+              "Cambodia"
+            ],
+            "box": [
+              96,
+              8,
+              125,
+              45
+            ],
+            "holes": [
+              [
+                92,
+                20,
+                108,
+                45
+              ]
+            ]
+          },
+          "contested": {
+            "members": [
+              "Indonesia",
+              "Philippines",
+              "Myanmar",
+              "Malaysia",
+              "Papua New Guinea",
+              "Timor-Leste",
+              "Brunei"
+            ],
+            "box": [
+              92,
+              -11,
+              156,
+              25
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "eeuu",
+      "name": "Estados Unidos",
+      "short": "EE. UU.",
+      "color": "#38bdf8",
+      "kind": "república continental",
+      "from": 1776,
+      "to": 2200,
+      "capital": [
+        -77.04,
+        38.9
+      ],
+      "seat": "Washington D. C.",
+      "dossier": {
+        "base": "Cuenca del Misisipi: más kilómetros de vía fluvial navegable que el resto del mundo junto, sobre la mayor superficie arable contigua.",
+        "estado": "Federalismo con mercado interior sin aduanas; dos océanos como foso y ninguna potencia rival en el continente.",
+        "limite": "Hegemonía sostenida en el privilegio de emitir la moneda de reserva mundial.",
+        "colapso": "—"
+      },
+      "snapshots": [
+        {
+          "year": 1800,
+          "members": [
+            "United States of America"
+          ],
+          "box": [
+            -95,
+            24,
+            -66,
+            50
+          ]
+        },
+        {
+          "year": 1900,
+          "members": [
+            "United States of America",
+            "Cuba",
+            "Puerto Rico",
+            "Philippines"
+          ],
+          "box": [
+            -172,
+            5,
+            -60,
+            72
+          ]
+        },
+        {
+          "year": 2000,
+          "members": [
+            "United States of America"
+          ],
+          "box": [
+            -172,
+            15,
+            -60,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "china_rp",
+      "name": "República Popular China",
+      "short": "RPC",
+      "color": "#f59e0b",
+      "kind": "estado-desarrollo",
+      "from": 1949,
+      "to": 2200,
+      "capital": [
+        116.4,
+        39.9
+      ],
+      "seat": "Pekín",
+      "dossier": {
+        "base": "800 millones de personas salen de la pobreza extrema en 40 años: la mayor transferencia demográfica de estatus de la historia.",
+        "estado": "Planificación indicativa con mercado, urbanización dirigida y control del ciclo de inversión.",
+        "limite": "Envejecimiento anticipado y dependencia de estrechos ajenos para energía y alimentos.",
+        "colapso": "—"
+      },
+      "snapshots": [
+        {
+          "year": 1949,
+          "members": [
+            "China"
+          ],
+          "box": [
+            73,
+            18,
+            135,
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "id": "india_rep",
+      "name": "República de la India",
+      "short": "India",
+      "color": "#fb923c",
+      "kind": "democracia continental",
+      "from": 1947,
+      "to": 2200,
+      "capital": [
+        77.2,
+        28.6
+      ],
+      "seat": "Nueva Delhi",
+      "dossier": {
+        "base": "Revolución verde desde 1965: de la hambruna estructural a la exportación de cereal en una generación.",
+        "estado": "Federalismo lingüístico: 22 lenguas oficiales y la mayor operación electoral del planeta.",
+        "limite": "Estrés hídrico en la cuenca gangética y calor húmedo creciente sobre la mayor población activa del mundo.",
+        "colapso": "—"
+      },
+      "snapshots": [
+        {
+          "year": 1947,
+          "members": [
+            "India"
+          ],
+          "box": [
+            66,
+            6,
+            98,
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ue",
+      "name": "Unión Europea",
+      "short": "UE",
+      "color": "#60a5fa",
+      "kind": "unión supranacional",
+      "from": 1993,
+      "to": 2200,
+      "capital": [
+        4.35,
+        50.85
+      ],
+      "seat": "Bruselas",
+      "dossier": {
+        "base": "Mercado único de 440 millones de consumidores: integración por reglamento, no por conquista.",
+        "estado": "Soberanía compartida y competencia normativa: exporta estándares donde no proyecta fuerza.",
+        "limite": "Unión monetaria sin unión fiscal; defensa delegada.",
+        "colapso": "—"
+      },
+      "snapshots": [
+        {
+          "year": 1995,
+          "members": [
+            "France",
+            "Germany",
+            "Italy",
+            "Spain",
+            "Portugal",
+            "Belgium",
+            "Netherlands",
+            "Luxembourg",
+            "Denmark",
+            "Ireland",
+            "Greece",
+            "Austria",
+            "Sweden",
+            "Finland",
+            "United Kingdom"
+          ],
+          "box": [
+            -25,
+            34,
+            32,
+            71
+          ]
+        },
+        {
+          "year": 2010,
+          "members": [
+            "France",
+            "Germany",
+            "Italy",
+            "Spain",
+            "Portugal",
+            "Belgium",
+            "Netherlands",
+            "Luxembourg",
+            "Denmark",
+            "Ireland",
+            "Greece",
+            "Austria",
+            "Sweden",
+            "Finland",
+            "Poland",
+            "Czechia",
+            "Slovakia",
+            "Hungary",
+            "Slovenia",
+            "Croatia",
+            "Romania",
+            "Bulgaria",
+            "Estonia",
+            "Latvia",
+            "Lithuania",
+            "Cyprus",
+            "Malta",
+            "United Kingdom"
+          ],
+          "box": [
+            -25,
+            34,
+            32,
+            71
+          ]
+        },
+        {
+          "year": 2021,
+          "members": [
+            "France",
+            "Germany",
+            "Italy",
+            "Spain",
+            "Portugal",
+            "Belgium",
+            "Netherlands",
+            "Luxembourg",
+            "Denmark",
+            "Ireland",
+            "Greece",
+            "Austria",
+            "Sweden",
+            "Finland",
+            "Poland",
+            "Czechia",
+            "Slovakia",
+            "Hungary",
+            "Slovenia",
+            "Croatia",
+            "Romania",
+            "Bulgaria",
+            "Estonia",
+            "Latvia",
+            "Lithuania",
+            "Cyprus"
+          ],
+          "box": [
+            -25,
+            34,
+            32,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "id": "union_africana",
+      "name": "Federación Panafricana",
+      "short": "FPA",
+      "color": "#a3e635",
+      "kind": "federación continental",
+      "speculative": true,
+      "from": 2061,
+      "to": 2200,
+      "capital": [
+        38.7,
+        9
+      ],
+      "seat": "Adís Abeba · Lagos",
+      "dossier": {
+        "base": "El único gran bloque con pirámide demográfica joven en 2100: 3.900 millones de personas y el 40 % de la fuerza laboral mundial.",
+        "estado": "Escenario del Archivo: mercado continental único (AfCFTA madurada), moneda de reserva regional y red eléctrica sahariana-congoleña.",
+        "limite": "Integrar 55 sistemas fiscales exige una generación de convergencia institucional.",
+        "colapso": "—"
+      },
+      "snapshots": [
+        {
+          "year": 2061,
+          "members": [
+            "Nigeria",
+            "Ghana",
+            "Kenya",
+            "Ethiopia",
+            "South Africa",
+            "Egypt",
+            "Morocco",
+            "Algeria",
+            "Tunisia",
+            "Libya",
+            "Sudan",
+            "S. Sudan",
+            "Tanzania",
+            "Uganda",
+            "Rwanda",
+            "Burundi",
+            "Dem. Rep. Congo",
+            "Congo",
+            "Angola",
+            "Zambia",
+            "Zimbabwe",
+            "Mozambique",
+            "Botswana",
+            "Namibia",
+            "Senegal",
+            "Mali",
+            "Niger",
+            "Chad",
+            "Cameroon",
+            "Côte d'Ivoire",
+            "Burkina Faso",
+            "Guinea",
+            "Benin",
+            "Togo",
+            "Sierra Leone",
+            "Liberia",
+            "Mauritania",
+            "Somalia",
+            "Somaliland",
+            "Eritrea",
+            "Djibouti",
+            "Madagascar",
+            "Malawi",
+            "Gabon",
+            "Eq. Guinea",
+            "Central African Rep.",
+            "Gambia",
+            "Guinea-Bissau",
+            "Lesotho",
+            "eSwatini",
+            "W. Sahara"
+          ],
+          "box": [
+            -20,
+            -38,
+            55,
+            38
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consorcio_artico",
+      "name": "Consorcio Ártico",
+      "short": "Ártico",
+      "color": "#67e8f9",
+      "kind": "condominio de recursos",
+      "speculative": true,
+      "from": 2078,
+      "to": 2200,
+      "capital": [
+        18.95,
+        69.65
+      ],
+      "seat": "Tromsø",
+      "dossier": {
+        "base": "Escenario del Archivo: con el paso del Norte navegable 9 meses al año, la ruta Rotterdam-Shanghái se acorta un 35 %.",
+        "estado": "Condominio de gestión sobre aguas antes cubiertas: cuotas de tránsito, pesca y datos batimétricos compartidos.",
+        "limite": "Superposición con reclamaciones de plataforma continental de cinco estados ribereños.",
+        "colapso": "—"
+      },
+      "snapshots": [
+        {
+          "year": 2078,
+          "members": [
+            "Russia",
+            "Canada",
+            "Greenland",
+            "Norway",
+            "Iceland",
+            "Finland",
+            "Sweden",
+            "United States of America"
+          ],
+          "box": [
+            -180,
+            62,
+            180,
+            84
+          ]
+        }
+      ]
+    },
+    {
+      "id": "concierto_indopacifico",
+      "name": "Concierto Indo-Pacífico",
+      "short": "CIP",
+      "color": "#e879f9",
+      "kind": "arquitectura de seguridad marítima",
+      "speculative": true,
+      "from": 2044,
+      "to": 2200,
+      "capital": [
+        103.85,
+        1.29
+      ],
+      "seat": "Singapur",
+      "dossier": {
+        "base": "Escenario del Archivo: por estos estrechos pasa el 60 % del comercio marítimo mundial y el 80 % del crudo de Asia Oriental.",
+        "estado": "Régimen de tránsito garantizado y vigilancia oceánica compartida: soberanía intacta, corredores mancomunados.",
+        "limite": "Depende de que ninguna potencia firmante prefiera cerrar el grifo a cobrar el peaje.",
+        "colapso": "—"
+      },
+      "snapshots": [
+        {
+          "year": 2044,
+          "members": [
+            "India",
+            "Indonesia",
+            "Malaysia",
+            "Singapore",
+            "Vietnam",
+            "Philippines",
+            "Japan",
+            "South Korea",
+            "Australia",
+            "New Zealand",
+            "Thailand",
+            "Sri Lanka",
+            "Bangladesh",
+            "Brunei",
+            "Papua New Guinea",
+            "Timor-Leste"
+          ],
+          "box": [
+            65,
+            -48,
+            180,
+            48
+          ]
+        }
+      ]
+    }
+  ]
+}

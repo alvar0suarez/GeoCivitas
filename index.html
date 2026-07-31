@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>GEOCIVITAS · Atlas de la Humanidad</title>
+<meta name="description" content="Atlas interactivo de la humanidad: imperios, economía, demografía, agricultura, orografía, tecnología militar y catástrofes desde el 50.000 a. C." />
+<link rel="stylesheet" href="./styles/app.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%2322d3ee' stroke-width='2'/%3E%3Cellipse cx='16' cy='16' rx='6' ry='13' fill='none' stroke='%2322d3ee' stroke-width='1.2'/%3E%3Cpath d='M3 16h26' stroke='%2322d3ee' stroke-width='1.2'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<div id="boot" class="boot">
+  <div class="boot__inner">
+    <div class="boot__mark">GEOCIVITAS</div>
+    <div class="boot__sub">ARCHIVO PLANETARIO · NODO 0447</div>
+    <div class="boot__bar"><i></i></div>
+    <div class="boot__log" id="bootLog">montando sustrato…</div>
+  </div>
+</div>
+
+<div class="app" id="app" hidden>
+
+  <!-- ══ CABECERA ══ -->
+  <header class="hdr">
+    <div class="hdr__brand">
+      <span class="hdr__glyph"></span>
+      <span class="hdr__name">GEOCIVITAS</span>
+      <span class="hdr__tag">atlas de la humanidad</span>
+    </div>
+
+    <div class="hdr__year" id="hdrYear">
+      <output class="hdr__yearval" id="yearVal">—</output>
+      <span class="hdr__yeraera" id="yearEra"></span>
+    </div>
+
+    <div class="hdr__tools">
+      <div class="seg" role="group" aria-label="Proyección">
+        <button class="seg__b is-on" data-proj="orto" title="Vista orbital">ORBITAL</button>
+        <button class="seg__b" data-proj="plana" title="Vista plana">PLANA</button>
+      </div>
+      <button class="ibtn" id="btnPanel" title="Panel de análisis (P)" aria-label="Panel de análisis">◨</button>
+      <button class="ibtn" id="btnHelp" title="Guía (?)" aria-label="Guía">?</button>
+    </div>
+  </header>
+
+  <!-- ══ LIENZO ══ -->
+  <main class="stage" id="stage">
+    <canvas id="cv"></canvas>
+    <div class="stage__vig" aria-hidden="true"></div>
+    <div class="stage__scan" aria-hidden="true"></div>
+
+    <div class="tooltip" id="tip" hidden></div>
+
+    <!-- lectura rápida sobre el lienzo -->
+    <div class="readout" id="readout">
+      <div class="readout__row"><span>POBLACIÓN MUNDIAL</span><b id="roPop">—</b></div>
+      <div class="readout__row"><span>ESPERANZA DE VIDA</span><b id="roLife">—</b></div>
+      <div class="readout__row"><span>RENTA / PERSONA</span><b id="roGdp">—</b></div>
+      <div class="readout__row"><span>URBANIZACIÓN</span><b id="roUrb">—</b></div>
+      <div class="readout__row readout__row--wide"><span>ENTIDADES ACTIVAS</span><b id="roPol">—</b></div>
+    </div>
+
+    <div class="legend" id="legend"></div>
+    <div class="crosshair" id="crosshair" hidden></div>
+  </main>
+
+  <!-- ══ CAPAS (izquierda) ══ -->
+  <aside class="rail" id="rail">
+    <div class="rail__hd">CAPAS</div>
+    <div class="rail__list" id="layerList"></div>
+
+    <div class="rail__hd">TEMÁTICA</div>
+    <div class="rail__list" id="metricList"></div>
+
+    <div class="rail__hd">SIMULADOR</div>
+    <button class="railbtn" id="btnSim">MOTOR DE CONQUISTA</button>
+    <button class="railbtn" id="btnRandom">SALTO ALEATORIO</button>
+  </aside>
+
+  <!-- ══ PANEL (derecha) ══ -->
+  <aside class="panel" id="panel">
+    <div class="panel__tabs">
+      <button class="tab is-on" data-tab="dossier">EXPEDIENTE</button>
+      <button class="tab" data-tab="mundo">MUNDO</button>
+      <button class="tab" data-tab="archivo">ARCHIVO</button>
+    </div>
+    <div class="panel__body" id="panelBody"></div>
+  </aside>
+
+  <!-- ══ TIEMPO ══ -->
+  <footer class="time">
+    <div class="time__ctrl">
+      <button class="tbtn" id="btnBack" title="Retroceder (←)">◀◀</button>
+      <button class="tbtn tbtn--play" id="btnPlay" title="Reproducir (espacio)">▶</button>
+      <button class="tbtn" id="btnFwd" title="Avanzar (→)">▶▶</button>
+      <select class="tsel" id="speed" title="Velocidad">
+        <option value="0.5">×0,5</option>
+        <option value="1" selected>×1</option>
+        <option value="3">×3</option>
+        <option value="8">×8</option>
+        <option value="25">×25</option>
+      </select>
+    </div>
+
+    <div class="time__track" id="track">
+      <canvas id="trackCv"></canvas>
+      <div class="time__head" id="timeHead"></div>
+      <input type="range" id="timeRange" min="0" max="10000" value="8300" step="1" aria-label="Año" />
+    </div>
+
+    <div class="time__jump" id="jump"></div>
+  </footer>
+
+  <!-- ══ SIMULADOR ══ -->
+  <div class="modal" id="modalSim" hidden>
+    <div class="modal__box">
+      <div class="modal__hd">
+        <span>MOTOR DE CONQUISTA · v22.4</span>
+        <button class="ibtn" data-close>✕</button>
+      </div>
+      <div class="modal__body" id="simBody"></div>
+    </div>
+  </div>
+
+  <!-- ══ AYUDA ══ -->
+  <div class="modal" id="modalHelp" hidden>
+    <div class="modal__box modal__box--narrow">
+      <div class="modal__hd"><span>GUÍA DEL ARCHIVO</span><button class="ibtn" data-close>✕</button></div>
+      <div class="modal__body" id="helpBody"></div>
+    </div>
+  </div>
+
+</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
