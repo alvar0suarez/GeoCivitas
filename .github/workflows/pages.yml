@@ -38,10 +38,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Pages debe estar activado una vez a mano en Ajustes → Pages, con
+      # «GitHub Actions» como origen: el token del flujo no tiene permiso para
+      # crear el sitio, sólo para desplegar en uno que ya exista.
       - name: Configurar Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Excluir lo que no forma parte del sitio
         run: |

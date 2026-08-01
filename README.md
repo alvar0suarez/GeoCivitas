@@ -200,6 +200,11 @@ Cada `push` a `main` valida el Archivo y, si no hay errores, despliega el
 repositorio tal cual en GitHub Pages. No hay paso de compilación: el sitio *es*
 el repositorio.
 
+**Activación, una sola vez:** en *Settings → Pages*, elegir **GitHub Actions**
+como origen. El token del flujo de trabajo puede desplegar en un sitio existente
+pero no crearlo, así que hasta ese clic el despliegue falla con
+`Resource not accessible by integration`.
+
 ### Validar
 
 ```bash
