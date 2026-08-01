@@ -267,7 +267,9 @@ function conectar() {
   // proyección
   document.querySelectorAll('[data-proj]').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('[data-proj]').forEach((x) => x.classList.toggle('is-on', x === b));
+    const zoom = atlas.vista.k / atlas.ajuste();
     atlas.vista.modo = b.dataset.proj;
+    atlas.vista.k = clamp(atlas.ajuste() * zoom, 90, 6000);
     if (b.dataset.proj === 'plana') atlas.vista.centro = [atlas.vista.centro[0], 15];
     set({});
   }));
@@ -325,6 +327,8 @@ function conectar() {
   $('#btnSim').addEventListener('click', () => abrirSim());
   $('#btnRandom').addEventListener('click', saltoAleatorio);
   $('#btnHelp').addEventListener('click', () => { pintarAyuda(); $('#modalHelp').hidden = false; });
+  $('#btnCapas').addEventListener('click', () => $('#rail').classList.toggle('is-open'));
+  $('#cv').addEventListener('pointerdown', () => $('#rail').classList.remove('is-open'));
   $('#btnAnalista').addEventListener('click', abrirAnalista);
   $('#btnEnlace').addEventListener('click', copiarEnlace);
   $('#btnExport').addEventListener('click', exportar);
@@ -431,7 +435,7 @@ function conectarLienzo() {
   cv.addEventListener('wheel', (e) => {
     e.preventDefault();
     const f = Math.exp(-e.deltaY * 0.0012);
-    atlas.vista.k = clamp(atlas.vista.k * f, 110, 5200);
+    atlas.vista.k = clamp(atlas.vista.k * f, atlas.ajuste() * 0.55, atlas.ajuste() * 14);
     sucio = true;
   }, { passive: false });
 
@@ -446,7 +450,7 @@ function conectarLienzo() {
   cv.addEventListener('touchmove', (e) => {
     if (e.touches.length === 2 && d0) {
       const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
-      atlas.vista.k = clamp(k0 * (d / d0), 110, 5200);
+      atlas.vista.k = clamp(k0 * (d / d0), atlas.ajuste() * 0.55, atlas.ajuste() * 14);
       sucio = true;
     }
   }, { passive: true });
@@ -509,8 +513,8 @@ function conectarTeclado() {
       case ' ': e.preventDefault(); togglePlay(); break;
       case 'ArrowLeft': set({ año: est.año - p * (e.shiftKey ? 20 : 4) }); break;
       case 'ArrowRight': set({ año: est.año + p * (e.shiftKey ? 20 : 4) }); break;
-      case 'ArrowUp': atlas.vista.k = clamp(atlas.vista.k * 1.12, 110, 5200); sucio = true; break;
-      case 'ArrowDown': atlas.vista.k = clamp(atlas.vista.k / 1.12, 110, 5200); sucio = true; break;
+      case 'ArrowUp': atlas.vista.k = clamp(atlas.vista.k * 1.12, atlas.ajuste() * 0.55, atlas.ajuste() * 14); sucio = true; break;
+      case 'ArrowDown': atlas.vista.k = clamp(atlas.vista.k / 1.12, atlas.ajuste() * 0.55, atlas.ajuste() * 14); sucio = true; break;
       case '/': e.preventDefault(); abrirPal(); break;
       case 'l': case 'L': copiarEnlace(); break;
       case 'e': case 'E': exportar(); break;
@@ -625,7 +629,7 @@ function aplicarEstadoDeURL() {
   if (q.c) {
     const [lon, lat, k] = q.c.split(',').map(Number);
     if (isFinite(lon) && isFinite(lat)) atlas.vista.centro = [lon, lat];
-    if (isFinite(k)) atlas.vista.k = clamp(k, 110, 5200);
+    if (isFinite(k)) atlas.vista.k = clamp(k, atlas.ajuste() * 0.55, atlas.ajuste() * 14);
   }
   if (q.l != null) {
     const activas_ = new Set(q.l ? q.l.split('.') : []);
@@ -932,7 +936,11 @@ function pintarAyuda() {
 /* ── redimensionado ────────────────────────────────────────── */
 
 function redimensionar() {
+  // El zoom se guarda como múltiplo del ajuste al viewport, no en píxeles:
+  // así girar el móvil o abrir el teclado no descoloca el encuadre.
+  const antes = atlas.vista.w ? atlas.vista.k / atlas.ajuste() : null;
   atlas.redimensionar();
+  atlas.vista.k = clamp(atlas.ajuste() * (antes ?? 1), 90, 6000);
   regla.redimensionar();
   regla.dibujar();
   sucio = true;

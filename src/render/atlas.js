@@ -36,6 +36,20 @@ export class Atlas {
     this.cv.height = Math.round(r.height * this.dpr);
     this.vista.redimensionar(r.width, r.height);
     this.estrellas = null;
+    this._memo = null;
+  }
+
+  /**
+   * Escala a la que el mundo entra en pantalla. Un radio fijo deja media
+   * Eurasia fuera en un teléfono, así que la referencia se calcula del
+   * viewport y el zoom del usuario se guarda como múltiplo de ella.
+   */
+  ajuste() {
+    const { w, h, modo } = this.vista;
+    if (!w || !h) return 300;
+    return modo === 'orto'
+      ? Math.min(w * 0.47, h * 0.44)
+      : Math.min(w / (Math.PI * 2), h / Math.PI) * 1.02;
   }
 
   /* ── ciclo principal ──────────────────────────────────────── */
@@ -913,7 +927,11 @@ export class Atlas {
       const size = titulo ? 10.5 : e.estilo === 'menor' ? 8.5 : 9;
       ctx.font = `${titulo ? 600 : 400} ${size}px "IBM Plex Mono", ui-monospace, monospace`;
       const w = ctx.measureText(e.texto).width;
-      const caja = { x: e.x - w / 2 - 3, y: e.y - size / 2 - 2, w: w + 6, h: size + 4 };
+      // sujeta el rótulo al lienzo: en pantallas estrechas, un nombre junto al
+      // limbo se cortaba por la mitad en vez de desplazarse hacia dentro
+      const cx = clamp(e.x, w / 2 + 5, this.vista.w - w / 2 - 5);
+      const cy = clamp(e.y, size / 2 + 3, this.vista.h - size / 2 - 3);
+      const caja = { x: cx - w / 2 - 3, y: cy - size / 2 - 2, w: w + 6, h: size + 4 };
       let choca = false;
       for (const q of puestos) {
         if (caja.x < q.x + q.w && caja.x + caja.w > q.x && caja.y < q.y + q.h && caja.y + caja.h > q.y) { choca = true; break; }
@@ -925,7 +943,7 @@ export class Atlas {
       ctx.fillRect(caja.x, caja.y, caja.w, caja.h);
       ctx.fillStyle = e.color;
       if (titulo) { ctx.shadowColor = e.color; ctx.shadowBlur = 9; }
-      ctx.fillText(e.texto, e.x, e.y);
+      ctx.fillText(e.texto, cx, cy);
       ctx.shadowBlur = 0;
       if (e.spec) {
         ctx.strokeStyle = rgba(e.color, 0.5);
