@@ -13,7 +13,8 @@
  */
 
 import {
-  D, activas, instantaneaDe, choquesActivos, batallasEn, inventosEn,
+  D, activas, instantaneaDe, perfilControl, CONTROL, VIA,
+  choquesActivos, batallasEn, inventosEn,
   tecnoDisponible, eventosEn, regional, ich, regimenesEn, debatesDe,
   global as gGlobal,
 } from '../core/datos.js';
@@ -59,10 +60,22 @@ export function construirContexto(est) {
 
   ctx.entidades = activas(a).map((p) => {
     const s = instantaneaDe(p, a);
+    const perfil = perfilControl(s);
     return {
       nombre: p.name, tipo: p.kind, vigencia: `${formatoAño(p.from)} — ${formatoAño(p.to)}`,
       sede: p.seat, instantanea: s ? formatoAño(s.year) : null,
       escenario: !!p.speculative, analisis: p.dossier,
+      // El desglose por grado de control es lo que permite responder «¿hasta
+      // dónde mandaba de verdad?» sin inventar: cada zona va con su ficha.
+      indiceDeControl: perfil.indice != null ? +perfil.indice.toFixed(0) : null,
+      extensionMillonesKm2: +perfil.area.toFixed(1),
+      reparto: perfil.partes.map((x) => `${CONTROL[x.control].label}: ${x.pct.toFixed(0)} %`),
+      zonas: perfil.partes.flatMap((x) => x.zonas.filter((z) => z.nombre).map((z) => ({
+        zona: z.nombre, grado: CONTROL[x.control].label,
+        adquirida: z.via ? VIA[z.via] : null, desde: z.desde != null ? formatoAño(z.desde) : null,
+        guarnicion: z.guarnicion ?? null, porcentajeDelErario: z.fiscal ?? null,
+        riesgoDeRevueltaAnual: z.revuelta ?? null, nota: z.nota ?? null,
+      }))),
       controversias: debatesDe('polities', p.id).map((d) => d.tema),
     };
   });

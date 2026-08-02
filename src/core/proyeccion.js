@@ -302,6 +302,68 @@ export function anilloCaja([lo0, la0, lo1, la1], paso = 4) {
   return r;
 }
 
+/**
+ * Anillo a partir de un polígono lon/lat suelto, densificando cada arista.
+ *
+ * Sin densificar, una arista larga se proyecta como recta en pantalla y una
+ * frontera trazada con cuatro vértices atraviesa el globo por la cuerda en vez
+ * de seguir la superficie. Subdividir a `paso` grados la devuelve a la esfera.
+ */
+export function anilloPoligono(pts, paso = 4) {
+  const r = [];
+  const n = pts.length;
+  if (n < 3) return r;
+  for (let i = 0; i < n; i++) {
+    const [x0, y0] = pts[i];
+    const [x1, y1] = pts[(i + 1) % n];
+    let dx = x1 - x0;
+    if (dx > 180) dx -= 360;
+    if (dx < -180) dx += 360;
+    const dy = y1 - y0;
+    const cortes = Math.max(1, Math.ceil(Math.max(Math.abs(dx), Math.abs(dy)) / paso));
+    for (let s = 0; s < cortes; s++) {
+      const t = s / cortes;
+      r.push(x0 + dx * t, y0 + dy * t);
+    }
+  }
+  return r;
+}
+
+/**
+ * Mismo anillo recorrido al revés.
+ *
+ * Con la regla par-impar dos piezas que se solapan se anulan en el solape; con
+ * la regla no-nula se unen si giran igual y se restan si giran al contrario.
+ * Invertir los huecos permite usar no-nula y componer un recorte de varias
+ * piezas sin que aparezcan agujeros fantasma donde dos se pisan.
+ */
+export function orientarAnillo(ring, signo) {
+  const a = orientacion(ring);
+  return (a >= 0 ? 1 : -1) === signo ? ring : anilloInvertido(ring);
+}
+
+export function anilloInvertido(ring) {
+  const n = ring.length >> 1;
+  const r = new Array(ring.length);
+  for (let i = 0; i < n; i++) {
+    r[i * 2] = ring[(n - 1 - i) * 2];
+    r[i * 2 + 1] = ring[(n - 1 - i) * 2 + 1];
+  }
+  return r;
+}
+
+/** Caja envolvente [lo0,la0,lo1,la1] de un polígono lon/lat. */
+export function cajaDePoligono(pts) {
+  let lo0 = 180, la0 = 90, lo1 = -180, la1 = -90;
+  for (const [x, y] of pts) {
+    if (x < lo0) lo0 = x;
+    if (x > lo1) lo1 = x;
+    if (y < la0) la0 = y;
+    if (y > la1) la1 = y;
+  }
+  return [lo0, la0, lo1, la1];
+}
+
 /** Elipse inscrita en una caja lon/lat: manchas climáticas sin esquinas. */
 export function anilloElipse([lo0, la0, lo1, la1], pasos = 40) {
   const cx = (lo0 + lo1) / 2;

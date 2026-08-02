@@ -20,19 +20,43 @@ Los módulos ES no funcionan desde `file://`: hay que servir la carpeta por HTTP
 
 ## Qué hace
 
-### El color dice qué clase de dominio es
+### El color dice hasta dónde manda de verdad
 
 La diferencia entre "conquistar" y "controlar" es el eje del atlas. Cada entidad se
-pinta en cuatro intensidades, porque ningún imperio manda igual en todas partes:
+descompone en **zonas nombradas** —provincias, marcas, reinos clientes— y cada zona
+lleva su grado de control, con un índice de 0 a 100 que mide cuánto de lo que el
+centro ordena llega a ejecutarse sobre el terreno:
 
-| Clase | Qué significa |
-|---|---|
-| **Núcleo** | Administración directa, fiscalidad propia, reclutamiento fiable |
-| **Provincia** | Gobernador nombrado, guarnición, impuesto recaudado con coste |
-| **Tributario** *(trama de líneas)* | Élite local intacta a cambio de tributo. Se pierde en cuanto aparece otro postor |
-| **Disputado** *(trama diagonal)* | Ocupación no consolidada: frontera activa, revuelta latente o control estacional |
+| Clase | Índice | Qué significa |
+|---|---|---|
+| **Núcleo** | 92 | Administración directa, fiscalidad propia, reclutamiento fiable |
+| **Provincia** | 74 | Gobernador nombrado, guarnición permanente, impuesto recaudado con coste |
+| **Marca** *(trama de puntos)* | 56 | Franja militarizada bajo mando fronterizo: se sostiene con guarnición, no con administración |
+| **Cliente** *(retícula)* | 40 | Dinastía local reconocida por el centro, que controla su exterior y le deja el interior |
+| **Tributario** *(trama de líneas)* | 27 | Élite local intacta a cambio de tributo. Se pierde en cuanto aparece otro postor |
+| **Disputado** *(trama diagonal)* | 14 | Ocupación no consolidada: frontera activa, revuelta latente o control estacional |
+| **Influencia** *(punteado difuso)* | 8 | Sin administración ni guarnición: hegemonía comercial, naval o diplomática |
 
 El borde discontinuo marca **escenario prospectivo**, no hecho.
+
+Cada zona guarda además cómo se adquirió (conquista, herencia, matrimonio, tratado,
+sumisión, colonización, federación, concesión), en qué año, su guarnición estimada,
+su parte del erario y su riesgo anual de revuelta. Son estimaciones razonadas sobre
+bibliografía estándar, no mediciones, y el atlas lo dice donde las muestra.
+
+### Mando efectivo: comparar imperios sin memorizar colores
+
+La capa **Mando efectivo** deja de colorear por identidad y colorea por solidez: la
+misma rampa para todos, del rojo (una orden que nadie obedece) al verde (una que se
+ejecuta sola). El expediente de cada entidad reparte su extensión en una barra
+apilada y la resume en un número.
+
+Sirve para ver que dos manchas del mismo tamaño pueden ser dos animales distintos:
+Roma en 117 sale en **65**, con dos tercios de su superficie en provincias
+administradas; el imperio mongol de 1279, con más del doble de extensión, sale en
+**51** porque más de la mitad son kanatos que ya no obedecen a nadie; el británico
+de 1920 sale en **47** porque el 58 % son dominios que firmaron Versalles por su
+cuenta.
 
 ### Antes del estado no hay fronteras, hay presencia
 

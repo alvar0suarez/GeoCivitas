@@ -80,26 +80,168 @@ export function instantaneaDe(pol, año) {
   return mejor || pol.snapshots[0] || null;
 }
 
-/** Descompone una instantánea en zonas por grado de control. */
+/**
+ * Descompone una instantánea en zonas por grado de control.
+ *
+ * Una instantánea puede traer hasta siete estratos. Los cuatro primeros nombres
+ * son los históricos del Archivo y se mantienen; `march`, `client` y `sphere`
+ * afinan el escalón entre «provincia» y «nada», que es justo donde se decide si
+ * un imperio es un Estado o una recaudación con bandera.
+ */
 export function zonasDe(snap) {
   const z = [];
-  if (snap.members) z.push({ control: 'provincia', ...pick(snap) });
-  if (snap.tributary) z.push({ control: 'tributario', ...pick(snap.tributary) });
-  if (snap.contested) z.push({ control: 'disputado', ...pick(snap.contested) });
-  if (snap.core) z.push({ control: 'nucleo', ...pick(snap.core) });
+  for (const [clave, control] of ESTRATOS) {
+    // Cuando la instantánea trae provincias nombradas, la lista plana `members`
+    // es sólo su envolvente: pintarla encima borraría el mallado que aporta.
+    if (clave === 'members' && snap.provinces) continue;
+    const bruto = clave === 'members' ? (snap.members ? snap : null) : snap[clave];
+    if (!bruto) continue;
+    for (const parte of Array.isArray(bruto) ? bruto : [bruto]) z.push({ control, ...pick(parte) });
+  }
   return z;
 }
 
-const pick = (o) => ({ members: o.members || [], box: o.box, holes: o.holes, extra: o.extra });
+const ESTRATOS = [
+  ['sphere', 'influencia'],
+  ['contested', 'disputado'],
+  ['tributary', 'tributario'],
+  ['client', 'cliente'],
+  ['march', 'marca'],
+  ['members', 'provincia'],
+  ['provinces', 'provincia'],
+  ['core', 'nucleo'],
+];
 
+const pick = (o) => ({
+  members: o.members || [],
+  box: o.box, boxes: o.boxes, poly: o.poly, holes: o.holes, extra: o.extra,
+  nombre: o.nombre, nota: o.nota, via: o.via, desde: o.desde,
+  guarnicion: o.guarnicion, fiscal: o.fiscal, revuelta: o.revuelta,
+});
+
+/**
+ * Grados de control, del mando directo a la mera hegemonía.
+ *
+ * `idx` es el índice de control efectivo (0–100): cuánto de lo que el centro
+ * ordena llega a ejecutarse sobre el terreno. Permite pintar el mapa por
+ * solidez del mando en lugar de por identidad del imperio, y promediar la
+ * extensión de una entidad en una sola cifra comparable entre siglos.
+ */
 export const CONTROL = {
-  nucleo:     { label: 'Núcleo', desc: 'Administración directa, fiscalidad propia, reclutamiento fiable.', alfa: 0.62, patron: 'solido' },
-  provincia:  { label: 'Provincia', desc: 'Gobernador nombrado, guarnición, impuesto recaudado con coste.', alfa: 0.4, patron: 'solido' },
-  tributario: { label: 'Tributario', desc: 'Élite local intacta a cambio de tributo y auxilio militar. Se pierde en cuanto aparece otro postor.', alfa: 0.26, patron: 'rayado' },
-  disputado:  { label: 'Disputado', desc: 'Ocupación no consolidada: frontera activa, revuelta latente o control estacional.', alfa: 0.22, patron: 'diagonal' },
+  nucleo:     { idx: 92, label: 'Núcleo', desc: 'Administración directa, fiscalidad propia, reclutamiento fiable.', alfa: 0.62, patron: 'solido' },
+  provincia:  { idx: 74, label: 'Provincia', desc: 'Gobernador nombrado, guarnición permanente, impuesto recaudado con coste.', alfa: 0.44, patron: 'solido' },
+  marca:      { idx: 56, label: 'Marca', desc: 'Franja militarizada bajo mando fronterizo: se sostiene con guarnición, no con administración. Fiscalidad simbólica.', alfa: 0.34, patron: 'punteado' },
+  cliente:    { idx: 40, label: 'Cliente', desc: 'Dinastía local reconocida por el centro, que controla su exterior y le deja el interior. Hereda sus propias crisis.', alfa: 0.3, patron: 'malla' },
+  tributario: { idx: 27, label: 'Tributario', desc: 'Élite local intacta a cambio de tributo y auxilio militar. Se pierde en cuanto aparece otro postor.', alfa: 0.26, patron: 'rayado' },
+  disputado:  { idx: 14, label: 'Disputado', desc: 'Ocupación no consolidada: frontera activa, revuelta latente o control estacional.', alfa: 0.22, patron: 'diagonal' },
+  influencia: { idx: 8,  label: 'Influencia', desc: 'Sin administración ni guarnición: hegemonía comercial, naval o diplomática. Se ve en los precios, no en los mapas.', alfa: 0.14, patron: 'niebla' },
 };
 
-export const ORDEN_CONTROL = ['provincia', 'tributario', 'disputado', 'nucleo'];
+/** De abajo a arriba: lo más flojo se pinta primero para que no tape lo firme. */
+export const ORDEN_CONTROL = ['influencia', 'disputado', 'tributario', 'cliente', 'marca', 'provincia', 'nucleo'];
+
+/** Cómo se adquirió una zona. Cambia lo que cuesta conservarla. */
+export const VIA = {
+  conquista:    'Conquista militar',
+  herencia:     'Herencia dinástica',
+  matrimonio:   'Enlace matrimonial',
+  tratado:      'Tratado o compra',
+  sumision:     'Sumisión negociada',
+  colonizacion: 'Colonización de poblamiento',
+  federacion:   'Federación o adhesión',
+  concesion:    'Concesión y factoría',
+};
+
+/**
+ * Superficie aproximada de una zona, en millones de km².
+ *
+ * Basta con que sea proporcional: sólo se usa para pesar el perfil de control,
+ * de modo que una marca inmensa y despoblada no valga lo mismo que un núcleo
+ * pequeño y denso por el mero hecho de ser una entrada de la misma lista.
+ */
+export function areaZona(z) {
+  const cajas = [];
+  if (z.box) cajas.push(z.box);
+  for (const b of z.boxes || []) cajas.push(b);
+  for (const p of z.poly || []) cajas.push(cajaDe(p));
+  let tierra = 0;
+  for (const m of z.members || []) tierra += areaPais(m);
+  if (!cajas.length) return tierra;
+
+  let recorte = 0;
+  for (const c of cajas) recorte += areaCaja(c);
+  for (const h of z.holes || []) recorte -= areaCaja(h) * 0.6;
+
+  // La caja incluye mar y país ajeno; la lista de miembros incluye lo que la
+  // caja deja fuera. Lo gobernado no puede pasar de ninguna de las dos.
+  const a = tierra > 0 ? Math.min(tierra, recorte) : recorte;
+  return Math.max(0.02, a);
+}
+
+const cajaDe = (pts) => {
+  let lo0 = 180, la0 = 90, lo1 = -180, la1 = -90;
+  for (const [x, y] of pts) {
+    if (x < lo0) lo0 = x; if (x > lo1) lo1 = x;
+    if (y < la0) la0 = y; if (y > la1) la1 = y;
+  }
+  return [lo0, la0, lo1, la1];
+};
+
+function areaCaja([lo0, la0, lo1, la1]) {
+  const cos = Math.cos(((la0 + la1) / 2) * Math.PI / 180);
+  return Math.abs(lo1 - lo0) * Math.abs(la1 - la0) * cos * 12321 / 1e6;
+}
+
+const cachePais = new Map();
+function areaPais(nombre) {
+  if (cachePais.has(nombre)) return cachePais.get(nombre);
+  const rings = D.paises.get(nombre);
+  let a = 0;
+  for (const r of rings || []) {
+    const n = r.length >> 1;
+    let s = 0;
+    let latm = 0;
+    for (let i = 0, j = n - 1; i < n; j = i++) {
+      s += r[j * 2] * r[i * 2 + 1] - r[i * 2] * r[j * 2 + 1];
+      latm += r[i * 2 + 1];
+    }
+    a += Math.abs(s / 2) * Math.cos((latm / Math.max(1, n)) * Math.PI / 180);
+  }
+  const v = a * 12321 / 1e6;
+  cachePais.set(nombre, v);
+  return v;
+}
+
+/**
+ * Reparto de la extensión de una instantánea por grado de control, ponderado
+ * por superficie y ordenado de más firme a más flojo.
+ */
+export function perfilControl(snap) {
+  if (!snap) return { partes: [], indice: null, area: 0 };
+  const partes = [];
+  for (const z of zonasDe(snap)) {
+    const area = areaZona(z);
+    const ya = partes.find((p) => p.control === z.control);
+    if (ya) { ya.area += area; ya.zonas.push(z); }
+    else partes.push({ control: z.control, area, zonas: [z] });
+  }
+  const total = partes.reduce((s, p) => s + p.area, 0) || 1;
+  for (const p of partes) p.pct = (p.area / total) * 100;
+  partes.sort((a, b) => CONTROL[b.control].idx - CONTROL[a.control].idx);
+  const indice = partes.reduce((s, p) => s + CONTROL[p.control].idx * p.area, 0) / total;
+  return { partes, indice, area: total };
+}
+
+/** Índice de control efectivo de una entidad en un año, de 0 a 100. */
+export function indiceControl(pol, año) {
+  return perfilControl(instantaneaDe(pol, año)).indice;
+}
+
+/** Centro aproximado de una zona, para encuadrar el mapa al seleccionarla. */
+export function centroDe(z) {
+  const c = z.box || (z.boxes && z.boxes[0]) || (z.poly && cajaDe(z.poly[0]));
+  return c ? [(c[0] + c[2]) / 2, (c[1] + c[3]) / 2] : null;
+}
 
 /* ── prehistoria ───────────────────────────────────────────── */
 
@@ -297,7 +439,20 @@ function construirIndice() {
   const add = (clase, etiqueta, año, texto, sel, at) =>
     indice.push({ clase, etiqueta, año, texto, sel, at, busca: norm(texto + ' ' + etiqueta) });
 
-  for (const p of D.polities) add('ENTIDAD', p.kind, p.snapshots[0].year, p.name, { tipo: 'polity', pol: p }, p.capital);
+  for (const p of D.polities) {
+    add('ENTIDAD', p.kind, p.snapshots[0].year, p.name, { tipo: 'polity', pol: p }, p.capital);
+    // Las zonas nombradas del mallado son consultables por sí mismas: buscar
+    // «Dacia» o «limes renano» debe llevar al año y al encuadre correctos.
+    const vistas = new Set();
+    for (const s of p.snapshots) {
+      for (const z of zonasDe(s)) {
+        if (!z.nombre || vistas.has(z.nombre)) continue;
+        vistas.add(z.nombre);
+        add('ZONA', `${CONTROL[z.control].label} · ${p.short || p.name}`, s.year, z.nombre,
+          { tipo: 'polity', pol: p }, centroDe(z));
+      }
+    }
+  }
   for (const b of D.batallas.batallas) add('BATALLA', b.bandos.join(' vs '), b.year, b.name, { tipo: 'batalla', batalla: b }, b.at);
   for (const i of D.inventos.inventos) add('INVENCIÓN', i.campo, i.year, i.name, { tipo: 'invento', invento: i }, i.at);
   for (const t of D.tecno.tech) add('TECNOMILITAR', t.class, t.year, t.name, { tipo: 'tecno', tecno: t }, t.origin);

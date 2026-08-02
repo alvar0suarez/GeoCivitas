@@ -8,7 +8,7 @@
  * Uso: node tools/build-artifact.mjs [ruta-de-salida]
  *      (esbuild debe estar disponible; se pasa por --esbuild o NODE_PATH)
  */
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -22,8 +22,18 @@ const DATOS = [
   ['choques', 'shocks.json'], ['tecno', 'weapons.json'], ['humanidad', 'humanidad.json'],
   ['geo', 'geografia.json'], ['ciudades', 'ciudades.json'], ['eventos', 'eventos.json'],
   ['batallas', 'batallas.json'], ['inventos', 'inventos.json'], ['lenguas', 'lenguas.json'],
-  ['politica', 'politica.json'],
+  ['politica', 'politica.json'], ['fuentes', 'fuentes.json'],
 ];
+
+// Un archivo de datos que exista pero no se incruste produce un empaquetado que
+// arranca y revienta al abrir la pestaña que lo usa —así se perdió el aparato
+// crítico durante varias versiones—, de modo que aquí se comprueba y se aborta.
+const enDisco = readdirSync(join(raiz, 'data')).filter((f) => f.endsWith('.json'));
+const olvidados = enDisco.filter((f) => !DATOS.some(([, x]) => x === f));
+if (olvidados.length) {
+  console.error(`data/ contiene archivos que no se incrustan: ${olvidados.join(', ')}`);
+  process.exit(1);
+}
 
 const archivo = {};
 for (const [clave, f] of DATOS) archivo[clave] = JSON.parse(readFileSync(join(raiz, 'data', f), 'utf8'));

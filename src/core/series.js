@@ -74,6 +74,8 @@ export const RAMPAS = {
   vida:   rampa([[0, '#331240'], [0.35, '#7e22ce'], [0.7, '#e879f9'], [1, '#fae8ff']]),
   campo:  rampa([[0, '#22380f'], [0.35, '#3f6212'], [0.7, '#a3e635'], [1, '#ecfccb']]),
   riesgo: rampa([[0, '#3a0e1c'], [0.4, '#9f1239'], [0.75, '#fb7185'], [1, '#ffe4e6']]),
+  // Solidez del mando: de la orden que nadie obedece a la que se ejecuta sola.
+  mando:  rampa([[0, '#7f1d1d'], [0.3, '#c2410c'], [0.55, '#f5b642'], [0.8, '#65a30d'], [1, '#bbf7d0']]),
 };
 
 /* ── formato ───────────────────────────────────────────────── */

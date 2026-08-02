@@ -6,7 +6,10 @@
  * sin repetir geometría.
  */
 
-import { Vista, trazarAnillo, trazarLinea, anilloCaja, anilloElipse, cajasSolapan } from '../core/proyeccion.js';
+import {
+  Vista, trazarAnillo, trazarLinea, anilloCaja, anilloElipse, cajasSolapan,
+  anilloPoligono, orientarAnillo as orientar, cajaDePoligono,
+} from '../core/proyeccion.js';
 import {
   D, activas, instantaneaDe, zonasDe, CONTROL, ORDEN_CONTROL, horizonteDe,
   TIPO_BANDA, choquesActivos, tecnoDisponible, difusion, eventosEn,
@@ -127,12 +130,41 @@ export class Atlas {
     const p = new Path2D();
     let algo = false;
     for (const nombre of miembros || []) {
-      const rings = D.paises.get(nombre);
-      if (!rings) continue;
-      for (const r of rings) algo = trazarAnillo(p, r, this.vista) || algo;
+      const hecho = this.paisProyectado(nombre);
+      if (!hecho) continue;
+      p.addPath(hecho);
+      algo = true;
     }
     for (const r of extra || []) algo = trazarAnillo(p, r, this.vista) || algo;
     return algo ? p : null;
+  }
+
+  /**
+   * Geometría de un país ya proyectada, reutilizada dentro del mismo fotograma.
+   *
+   * Con el mallado fino un mismo país aparece en varias zonas —Turquía está en
+   * tres provincias romanas, China en media docena de estratos Han— y volver a
+   * proyectar sus anillos cada vez multiplicaba el coste del arrastre. Aquí se
+   * proyecta una vez por encuadre y luego sólo se copia el trazo.
+   */
+  paisProyectado(nombre) {
+    const clave = this.claveVista();
+    if (!this._paisCache || this._paisCache.clave !== clave) {
+      this._paisCache = { clave, mapa: new Map() };
+    }
+    const { mapa } = this._paisCache;
+    if (mapa.has(nombre)) return mapa.get(nombre);
+
+    const rings = D.paises.get(nombre);
+    let path = null;
+    if (rings) {
+      const p = new Path2D();
+      let algo = false;
+      for (const r of rings) algo = trazarAnillo(p, r, this.vista) || algo;
+      if (algo) path = p;
+    }
+    mapa.set(nombre, path);
+    return path;
   }
 
   /* ── fondo ────────────────────────────────────────────────── */
@@ -404,8 +436,11 @@ export class Atlas {
     const preparado = this.memo('soberania', firma, () => pols.map((pol) => {
       const snap = instantaneaDe(pol, est.año);
       if (!snap) return null;
-      const zonas = zonasDe(snap);
-      const zonasOrd = ORDEN_CONTROL.map((c) => zonas.find((z) => z.control === c)).filter(Boolean);
+      // Todas las zonas, no una por grado: una instantánea mallada trae varias
+      // provincias y varias marcas, y quedarse con la primera de cada clase
+      // borraría el resto del imperio.
+      const zonasOrd = zonasDe(snap)
+        .sort((a, b) => ORDEN_CONTROL.indexOf(a.control) - ORDEN_CONTROL.indexOf(b.control));
       const capas = [];
       for (const z of zonasOrd) {
         const path = this.trazoDePaises(z.members, z.extra);
@@ -415,32 +450,39 @@ export class Atlas {
       return { pol, capas };
     }).filter(Boolean));
 
+    // En modo mando el color deja de decir «quién» y pasa a decir «cuánto»:
+    // la misma rampa para todos los imperios, de la orden que se ejecuta a la
+    // que sólo se firma. Comparar dos imperios deja de exigir memorizar colores.
+    const porMando = !!est.capas.mando;
+
     ctx.save();
     for (const { pol, capas } of preparado) {
       for (const { z, path: p, recorte } of capas) {
         const cfg = CONTROL[z.control];
+        const tinte = porMando ? RAMPAS.mando(cfg.idx / 100) : pol.color;
         ctx.save();
-        if (recorte) ctx.clip(recorte, 'evenodd');
+        if (recorte) ctx.clip(recorte);
 
-        ctx.globalAlpha = cfg.alfa * (est.resaltado === pol.id ? 1.25 : 1) * (pol.speculative ? 0.72 : 1);
-        ctx.fillStyle = pol.color;
+        ctx.globalAlpha = (porMando ? Math.max(0.3, cfg.alfa) : cfg.alfa)
+          * (est.resaltado === pol.id ? 1.25 : 1) * (pol.speculative ? 0.72 : 1);
+        ctx.fillStyle = tinte;
         ctx.fill(p);
 
         if (cfg.patron !== 'solido') {
-          ctx.globalAlpha = 0.85;
-          ctx.fillStyle = this.patron(pol.color, cfg.patron);
+          ctx.globalAlpha = porMando ? 0.5 : 0.85;
+          ctx.fillStyle = this.patron(tinte, cfg.patron);
           ctx.fill(p);
         }
 
         ctx.globalAlpha = z.control === 'nucleo' ? 0.95 : 0.5;
-        ctx.strokeStyle = pol.color;
+        ctx.strokeStyle = tinte;
         ctx.lineWidth = z.control === 'nucleo' ? 1.1 : 0.7;
         if (pol.speculative) ctx.setLineDash([6, 4]);
         if (z.control === 'disputado') ctx.setLineDash([2, 3]);
         ctx.stroke(p);
         ctx.restore();
 
-        this.golpes.push({ tipo: 'polity', path: p, pol, control: z.control });
+        this.golpes.push({ tipo: 'polity', path: p, pol, control: z.control, zona: z });
       }
 
       const c = vista.proyectar(pol.capital[0], pol.capital[1]);
@@ -464,20 +506,36 @@ export class Atlas {
   }
 
   /**
-   * Trazado de recorte: la caja de la zona con sus huecos perforados por la
-   * regla par-impar. Un hueco que no solapa la caja no resta nada — con
-   * par-impar se sumaría —, así que se descarta antes de construirlo.
+   * Trazado de recorte de una zona.
+   *
+   * La forma se compone de varias piezas —cajas y polígonos sueltos— menos sus
+   * huecos. Con la regla par-impar dos piezas que se pisan se anulan justo en
+   * el solape, que es exactamente lo que hace falta evitar cuando una frontera
+   * se describe con varios rectángulos encajados; por eso las piezas se trazan
+   * todas en el mismo sentido, los huecos al revés, y se rellena con no-nula:
+   * las piezas se unen y los huecos restan.
    */
   construirRecorte(z) {
-    if (!z.box && !z.holes) return null;
+    const piezas = [];
+    if (z.box) piezas.push(anilloCaja(z.box, 3));
+    for (const b of z.boxes || []) piezas.push(anilloCaja(b, 3));
+    for (const p of z.poly || []) piezas.push(anilloPoligono(p, 3));
+    if (!piezas.length && !z.holes) return null;
+
+    const cajas = [];
+    if (z.box) cajas.push(z.box);
+    for (const b of z.boxes || []) cajas.push(b);
+    for (const p of z.poly || []) cajas.push(cajaDePoligono(p));
+
     const rec = new Path2D();
-    if (z.box) trazarAnillo(rec, anilloCaja(z.box, 3), this.vista);
+    if (piezas.length) for (const p of piezas) trazarAnillo(rec, orientar(p, 1), this.vista);
     else rec.rect(0, 0, this.vista.w, this.vista.h);
-    if (z.holes) {
-      for (const h of z.holes) {
-        if (z.box && !cajasSolapan(z.box, h)) continue;
-        trazarAnillo(rec, anilloCaja(h, 3), this.vista);
-      }
+
+    for (const h of z.holes || []) {
+      // Un hueco que no toca ninguna pieza no resta nada; trazarlo sólo añade
+      // riesgo de recortar de más si el imperio se describe a trozos.
+      if (cajas.length && !cajas.some((c) => cajasSolapan(c, h))) continue;
+      trazarAnillo(rec, orientar(anilloCaja(h, 3), -1), this.vista);
     }
     return rec;
   }
@@ -485,17 +543,39 @@ export class Atlas {
   patron(color, tipo) {
     const clave = color + tipo;
     if (this.patrones.has(clave)) return this.patrones.get(clave);
-    const s = 7;
+    // La retícula de «cliente» cubre superficies enormes (kanatos, dominios):
+    // con celda pequeña satura la vista, así que se dibuja más abierta y fina.
+    const s = tipo === 'malla' ? 11 : 7;
     const c = document.createElement('canvas');
     c.width = c.height = s;
     const g = c.getContext('2d');
     g.strokeStyle = color;
+    g.fillStyle = color;
     g.lineWidth = 1.4;
     g.globalAlpha = 0.55;
     g.beginPath();
-    if (tipo === 'rayado') { g.moveTo(0, s / 2); g.lineTo(s, s / 2); }
-    else { g.moveTo(-1, s + 1); g.lineTo(s + 1, -1); g.moveTo(-1, 1); g.lineTo(1, -1); g.moveTo(s - 1, s + 1); g.lineTo(s + 1, s - 1); }
-    g.stroke();
+    if (tipo === 'rayado') {
+      g.moveTo(0, s / 2); g.lineTo(s, s / 2);
+      g.stroke();
+    } else if (tipo === 'malla') {
+      g.lineWidth = 0.9;
+      g.globalAlpha = 0.42;
+      g.moveTo(0, s / 2); g.lineTo(s, s / 2);
+      g.moveTo(s / 2, 0); g.lineTo(s / 2, s);
+      g.stroke();
+    } else if (tipo === 'punteado') {
+      g.globalAlpha = 0.75;
+      g.beginPath(); g.arc(s / 2, s / 2, 1.15, 0, TAU); g.fill();
+    } else if (tipo === 'niebla') {
+      g.globalAlpha = 0.4;
+      g.beginPath(); g.arc(1.5, 1.5, 0.75, 0, TAU); g.fill();
+      g.beginPath(); g.arc(s - 2, s - 2.5, 0.65, 0, TAU); g.fill();
+    } else {
+      g.moveTo(-1, s + 1); g.lineTo(s + 1, -1);
+      g.moveTo(-1, 1); g.lineTo(1, -1);
+      g.moveTo(s - 1, s + 1); g.lineTo(s + 1, s - 1);
+      g.stroke();
+    }
     const pat = this.ctx.createPattern(c, 'repeat');
     this.patrones.set(clave, pat);
     return pat;
@@ -539,11 +619,17 @@ export class Atlas {
     // El halo urbano son decenas de degradados radiales compuestos en modo
     // «screen»: caro de rehacer en cada imagen y siempre idéntico mientras no
     // se mueva la cámara. Se cocina una vez en un lienzo aparte y se estampa.
-    const capa = this.memo('densidad', `${this.claveVista()}#${est.año}`, () => {
+    // Mientras la cámara se mueve, el lienzo auxiliar se cocina a media
+    // resolución: son degradados difusos, nadie ve la diferencia en marcha, y
+    // el coste por imagen cae a la cuarta parte. Al soltar vuelve a resolución
+    // completa.
+    const esc = est.moviendo ? 0.5 : 1;
+    const capa = this.memo('densidad', `${this.claveVista()}#${est.año}#${esc}`, () => {
       const off = document.createElement('canvas');
-      off.width = Math.max(1, Math.round(vista.w));
-      off.height = Math.max(1, Math.round(vista.h));
+      off.width = Math.max(1, Math.round(vista.w * esc));
+      off.height = Math.max(1, Math.round(vista.h * esc));
       const g2 = off.getContext('2d');
+      g2.scale(esc, esc);
       for (const { c, v } of ciudades) {
         const xy = vista.proyectar(c.c[0], c.c[1]);
         if (!xy) continue;

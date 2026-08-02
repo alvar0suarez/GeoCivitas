@@ -15,9 +15,18 @@ import * as Panel from './ui/panel.js';
 import { pintarSim, pintarResultado, evaluar } from './ui/sim.js';
 import * as Ana from './ui/analista.js';
 import { aT, aAño, formatoAño, era, pasoNatural, SALTOS, AÑO_MIN, AÑO_MAX } from './core/escala.js';
-import { num, compacto, porFormato, clamp } from './core/series.js';
+import { num, compacto, porFormato, clamp, RAMPAS, rgba } from './core/series.js';
 
 const $ = (s) => document.querySelector(s);
+
+/** Cómo se dibuja cada trama de control en una muestra CSS de la leyenda. */
+const TRAMA = {
+  rayado:   (c) => `repeating-linear-gradient(0deg,${c} 0 1px,transparent 1px 4px)`,
+  diagonal: (c) => `repeating-linear-gradient(45deg,${c} 0 1px,transparent 1px 4px)`,
+  malla:    (c) => `repeating-linear-gradient(0deg,${c} 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,${c} 0 1px,transparent 1px 4px)`,
+  punteado: (c) => `radial-gradient(${c} 0.9px,transparent 1px) 0 0/4px 4px`,
+  niebla:   (c) => `radial-gradient(${c} 0.6px,transparent 1px) 0 0/5px 5px`,
+};
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 /* ── estado ────────────────────────────────────────────────── */
@@ -28,7 +37,7 @@ const est = {
   velocidad: 1,
   tematica: 'ninguna',
   capas: {
-    soberania: true, prehistoria: true, densidad: true, orografia: true,
+    soberania: true, mando: false, prehistoria: true, densidad: true, orografia: true,
     batallas: true, rutas: false, choques: true, tecno: false,
     inventos: false, lenguas: false, eventos: true,
     pasos: false, graticula: true,
@@ -43,6 +52,7 @@ const est = {
 
 const CAPAS = [
   ['soberania',   'SOBERANÍA',    '#22d3ee'],
+  ['mando',       'MANDO EFECTIVO', '#f5b642'],
   ['prehistoria', 'HORIZONTES',   '#e879f9'],
   ['lenguas',     'LENGUAS',      '#38bdf8'],
   ['batallas',    'BATALLAS',     '#fb7185'],
@@ -185,15 +195,13 @@ function refrescarLeyenda() {
   }
 
   if (est.capas.soberania && activas(est.año).length) {
-    html += `<div class="legend__t" style="margin-top:10px">GRADO DE CONTROL</div>`;
+    const mando = est.capas.mando;
+    html += `<div class="legend__t" style="margin-top:10px">GRADO DE CONTROL${mando ? ' · ÍNDICE' : ''}</div>`;
     for (const [k, c] of Object.entries(CONTROL)) {
-      const fondo = k === 'tributario'
-        ? 'repeating-linear-gradient(0deg,#22d3ee 0 1px,transparent 1px 4px)'
-        : k === 'disputado'
-          ? 'repeating-linear-gradient(45deg,#22d3ee 0 1px,transparent 1px 4px)'
-          : `rgba(34,211,238,${c.alfa + 0.15})`;
-      html += `<div class="legend__row"><span class="legend__sw" style="background:${fondo};border:1px solid rgba(34,211,238,.5)"></span>
-        <span class="legend__lb">${esc(c.label)}</span></div>`;
+      const base = mando ? RAMPAS.mando(c.idx / 100) : '#22d3ee';
+      const fondo = TRAMA[c.patron] ? TRAMA[c.patron](base) : rgba(base, mando ? 0.85 : c.alfa + 0.15);
+      html += `<div class="legend__row"><span class="legend__sw" style="background:${fondo};border:1px solid ${rgba(base, 0.5)}"></span>
+        <span class="legend__lb">${esc(c.label)}</span>${mando ? `<span class="legend__nm">${c.idx}</span>` : ''}</div>`;
     }
   }
 
@@ -245,6 +253,13 @@ function construirSaltos() {
 
 function conectar() {
   window.addEventListener('resize', redimensionar);
+
+  // El enlace a una vista es la unidad que se comparte y se cita; si el botón
+  // «atrás» no la restituye, el historial del navegador miente.
+  window.addEventListener('hashchange', () => {
+    if (location.hash.replace(/^#/, '') === serializarEstado()) return;
+    aplicarEstadoDeURL();
+  });
 
   // capas y temáticas
   $('#rail').addEventListener('click', (e) => {
@@ -390,6 +405,15 @@ function conectarLienzo() {
   const tip = $('#tip');
   let arrastrando = false, x0 = 0, y0 = 0, movido = 0, lam0 = 0, phi0 = 0;
 
+  // Las capas caras (el halo urbano) se dibujan en versión ligera mientras la
+  // cámara viaja. El temporizador devuelve la calidad completa al parar.
+  let quieto = null;
+  const enMovimiento = () => {
+    est.moviendo = true;
+    clearTimeout(quieto);
+    quieto = setTimeout(() => { est.moviendo = false; sucio = true; }, 200);
+  };
+
   cv.addEventListener('pointerdown', (e) => {
     arrastrando = true;
     movido = 0;
@@ -407,6 +431,7 @@ function conectarLienzo() {
       const f = 180 / (atlas.vista.k * Math.PI) * 1.6;
       atlas.vista.centro = [lam0 - dx * f, phi0 + dy * f];
       sucio = true;
+      enMovimiento();
       actualizarHash();
       tip.hidden = true;
       return;
@@ -437,6 +462,7 @@ function conectarLienzo() {
     const f = Math.exp(-e.deltaY * 0.0012);
     atlas.vista.k = clamp(atlas.vista.k * f, atlas.ajuste() * 0.55, atlas.ajuste() * 14);
     sucio = true;
+    enMovimiento();
   }, { passive: false });
 
   // pellizco básico
@@ -483,8 +509,14 @@ function clicEnMapa(e) {
 
 function textoTooltip(g) {
   switch (g.tipo) {
-    case 'polity':
-      return `<b>${esc(g.pol.name)}</b><i>${esc(CONTROL[g.control].label)} · ${esc(g.pol.kind)}</i>`;
+    case 'polity': {
+      const c = CONTROL[g.control];
+      const z = g.zona || {};
+      const linea = [`${c.label} · índice ${c.idx}`];
+      if (z.guarnicion != null) linea.push(`${num(z.guarnicion)} efectivos`);
+      if (z.revuelta != null) linea.push(`revuelta ${z.revuelta} %`);
+      return `<b>${esc(g.pol.name)}</b><i>${z.nombre ? esc(z.nombre) + ' · ' : ''}${esc(linea.join(' · '))}</i>`;
+    }
     case 'region':
       return `<b>${esc(g.reg.name)}</b><i>${esc(ESCALAS[est.tematica]?.label ?? '')}: ${porFormato(g.valor, est.tematica === 'ich' ? '0.00' : '0.0')}</i>`;
     case 'choque':
@@ -901,10 +933,23 @@ function pintarAyuda() {
   </div>
 
   <div class="sec">
-    <div class="sec__t">EL COLOR DICE QUÉ TIPO DE DOMINIO ES</div>
-    <p class="txt">Un imperio no manda igual en todas partes. Cada entidad se pinta en cuatro intensidades:</p>
-    ${Object.entries(CONTROL).map(([, c]) => `<div class="kv"><div class="kv__k">${esc(c.label)}</div><div class="kv__v">${esc(c.desc)}</div></div>`).join('')}
-    <p class="txt" style="font-size:11px;color:var(--ink-faint)">Trama de líneas = tributario. Trama diagonal = disputado. Borde discontinuo = escenario prospectivo, no hecho.</p>
+    <div class="sec__t">EL COLOR DICE HASTA DÓNDE MANDA DE VERDAD</div>
+    <p class="txt">Un imperio no manda igual en todas partes, y las entidades grandes están descompuestas en
+    <b>zonas nombradas</b> —provincias, marcas, reinos clientes— cada una con su grado de control, su guarnición estimada,
+    su parte del erario y su riesgo de revuelta. Pasa el cursor por encima para verlo; pincha para abrir el desglose completo.</p>
+    ${Object.entries(CONTROL).map(([, c]) => `<div class="kv"><div class="kv__k">${esc(c.label)} · ${c.idx}</div><div class="kv__v">${esc(c.desc)}</div></div>`).join('')}
+    <p class="txt" style="font-size:11px;color:var(--ink-faint)">La cifra es el <b>índice de control</b>: cuánto de lo que el centro ordena llega a ejecutarse.
+    Trama de puntos = marca. Retícula = cliente. Líneas = tributario. Diagonales = disputado. Borde discontinuo = escenario prospectivo, no hecho.</p>
+  </div>
+
+  <div class="sec">
+    <div class="sec__t">MANDO EFECTIVO</div>
+    <p class="txt">La capa <b>Mando efectivo</b> deja de colorear por identidad y colorea por solidez: la misma rampa para todos,
+    del rojo (una orden que nadie obedece) al verde (una que se ejecuta sola). Sirve para comparar dos imperios sin memorizar colores,
+    y para ver de un vistazo que dos manchas del mismo tamaño pueden ser dos animales completamente distintos.</p>
+    <p class="txt">En el expediente de cada entidad, la barra apilada reparte su extensión por grado y la resume en un número.
+    Roma en 117 sale en 65; el imperio mongol de 1279, con más del doble de superficie, sale en 51 porque más de la mitad
+    son kanatos que ya no obedecen a nadie.</p>
   </div>
 
   <div class="sec">

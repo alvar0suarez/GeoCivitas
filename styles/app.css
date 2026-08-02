@@ -196,6 +196,7 @@ button { cursor: pointer; background: none; border: 0; }
 .legend__row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
 .legend__sw { width: 16px; height: 8px; flex: none; }
 .legend__lb { font-family: var(--mono); font-size: 9px; color: var(--ink-dim); letter-spacing: .04em; }
+.legend__nm { font-family: var(--mono); font-size: 8.5px; color: var(--ink-faint); margin-left: auto; }
 .legend__ramp { height: 8px; width: 100%; margin: 6px 0 4px; }
 .legend__ends { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 8px; color: var(--ink-faint); }
 
@@ -229,10 +230,12 @@ button { cursor: pointer; background: none; border: 0; }
    por debajo para que el último elemento pueda subir por encima de él. */
 .rail__pie {
   position: sticky; bottom: -12px; margin-top: 14px;
-  padding: 14px 0 12px;
-  background: linear-gradient(180deg, transparent, var(--bg) 45%, var(--bg));
+  padding: 20px 0 12px;
+  /* El degradado se vuelve opaco en veinte píxeles: si tarda más, la fila que
+     queda justo detrás se transparenta y parece que la lista está rota. */
+  background: linear-gradient(180deg, transparent 0, var(--bg) 20px, var(--bg));
 }
-.rail { padding-bottom: 122px; }
+.rail { padding-bottom: 132px; }
 .rail__hd:first-child { margin-top: 0; }
 .rail__list { display: flex; flex-direction: column; gap: 1px; }
 
@@ -339,6 +342,27 @@ button { cursor: pointer; background: none; border: 0; }
 
 .bar { height: 4px; background: rgba(90,150,175,.14); margin: 5px 0 2px; overflow: hidden; }
 .bar > i { display: block; height: 100%; background: var(--cy); }
+
+/* ── perfil de mando ─────────────────────────────────────────
+   La barra apilada es el resumen que un mapa no da: qué parte de un
+   imperio se gobierna y qué parte sólo se cobra. */
+.mando__cab { display: flex; align-items: baseline; gap: 9px; margin-bottom: 7px; }
+.mando__num { font-family: var(--mono); font-size: 26px; font-weight: 600; line-height: 1; }
+.mando__leg { font-family: var(--mono); font-size: 8.5px; color: var(--ink-faint); line-height: 1.4; }
+
+.stack { display: flex; height: 9px; background: rgba(90,150,175,.14); margin-bottom: 8px; overflow: hidden; }
+.stack > i { display: block; height: 100%; min-width: 1px; }
+
+.dotc { display: inline-block; width: 6px; height: 6px; margin-right: 5px; vertical-align: middle; }
+
+.zonas { margin-top: 5px; display: flex; flex-direction: column; gap: 4px; }
+.zona {
+  border-left: 2px solid rgba(90,150,175,.28); padding-left: 7px;
+  display: flex; flex-direction: column; gap: 1px;
+}
+.zona__n { font-size: 11px; color: var(--ink); font-weight: 500; }
+.zona__m { font-family: var(--mono); font-size: 8.5px; color: var(--ink-faint); letter-spacing: .04em; }
+.zona__d { font-size: 10.5px; line-height: 1.45; color: var(--ink-dim); }
 
 .empty {
   font-family: var(--mono); font-size: 10px; color: var(--ink-faint);
@@ -608,7 +632,12 @@ button { cursor: pointer; background: none; border: 0; }
     box-shadow: 12px 0 40px rgba(0,0,0,.6); padding-bottom: 130px;
   }
   .rail.is-open { transform: none; }
-  .panel { width: min(340px, 94vw); box-shadow: -12px 0 40px rgba(0,0,0,.6); }
+  /* A pantalla completa el degradado del panel deja el texto sobre el mapa y
+     no hay quien lo lea: aquí el fondo tiene que ser opaco. */
+  .panel {
+    width: min(340px, 94vw); box-shadow: -12px 0 40px rgba(0,0,0,.6);
+    background: rgba(4, 8, 14, .97); backdrop-filter: blur(10px);
+  }
 
   /* las cifras pasan de bloque a franja: dos datos y quién manda */
   .readout {

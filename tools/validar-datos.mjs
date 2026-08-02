@@ -50,6 +50,11 @@ function revisarCaja(donde, caja) {
 
 const pol = leer('polities.json');
 const ids = new Set();
+
+/** Estratos de control admitidos. '' es la envolvente plana `members`. */
+const ESTRATOS = ['', 'core', 'provinces', 'march', 'client', 'tributary', 'contested', 'sphere'];
+const VIAS = new Set(['conquista', 'herencia', 'matrimonio', 'tratado', 'sumision', 'colonizacion', 'federacion', 'concesion']);
+
 for (const p of pol.polities) {
   const q = `polities/${p.id}`;
   if (ids.has(p.id)) err(`${q}: id repetido`);
@@ -67,12 +72,39 @@ for (const p of pol.polities) {
     if (s.year <= ultimo) err(`${r}: instantáneas desordenadas`);
     ultimo = s.year;
     if (s.year < p.from - 1 || s.year > p.to + 1) avi(`${r}: instantánea fuera de la vigencia declarada`);
-    for (const [nombre, z] of [['', s], ['core', s.core], ['tributary', s.tributary], ['contested', s.contested]]) {
-      if (!z) continue;
-      revisarMiembros(nombre ? `${r}.${nombre}` : r, z.members);
-      revisarCaja(nombre ? `${r}.${nombre}` : r, z.box);
-      for (const h of z.holes || []) revisarCaja(`${r}.holes`, h);
+    // Un estrato puede venir suelto o en lista: `provinces` y `march` traen
+    // varias zonas nombradas, que es lo que da grano fino al mallado.
+    let fiscal = 0;
+    for (const clave of ESTRATOS) {
+      const bruto = clave === '' ? s : s[clave];
+      if (!bruto) continue;
+      for (const z of Array.isArray(bruto) ? bruto : [bruto]) {
+        const e = clave ? `${r}.${clave}${z.nombre ? `/${z.nombre}` : ''}` : r;
+        revisarMiembros(e, z.members);
+        revisarCaja(e, z.box);
+        for (const b of z.boxes || []) revisarCaja(`${e}.boxes`, b);
+        for (const h of z.holes || []) revisarCaja(`${e}.holes`, h);
+        for (const pts of z.poly || []) {
+          if (!Array.isArray(pts) || pts.length < 3) err(`${e}: polígono con menos de tres vértices`);
+          else for (const c of pts) if (!coordOk(c)) err(`${e}: vértice fuera de rango`);
+        }
+        if (z.via && !VIAS.has(z.via)) err(`${e}: vía de adquisición desconocida «${z.via}»`);
+        // No se exige que `desde` caiga dentro de la vigencia: una entidad
+        // puede ser una fase de un Estado más antiguo y heredar territorio
+        // conquistado antes de su propia fecha de inicio. Lo que sí es un
+        // error es haber adquirido algo después de la foto.
+        if (z.desde != null && z.desde > s.year) {
+          err(`${e}: adquirida en ${z.desde}, después de la instantánea de ${s.year}`);
+        }
+        for (const [campo, tope] of [['fiscal', 100], ['revuelta', 100]]) {
+          const v = z[campo];
+          if (v != null && (typeof v !== 'number' || v < 0 || v > tope)) err(`${e}: ${campo} fuera de 0–${tope}`);
+        }
+        if (clave !== '') fiscal += z.fiscal || 0;
+      }
     }
+    if (s.provinces && !Array.isArray(s.provinces)) err(`${r}: provinces debe ser una lista`);
+    if (fiscal > 108) avi(`${r}: los rendimientos fiscales suman ${fiscal.toFixed(0)} % del erario`);
   }
 }
 

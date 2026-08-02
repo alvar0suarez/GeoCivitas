@@ -2,7 +2,8 @@
   "meta": {
     "titulo": "Registro de entidades políticas",
     "nota": "Extensiones estilizadas: cada snapshot se compone uniendo geometría moderna y recortándola con cajas de control. Sirve para lectura comparativa a escala continental, no para arbitraje de fronteras.",
-    "escenarios": "Las entidades con speculative=true son proyecciones narrativas del Archivo, no hechos."
+    "escenarios": "Las entidades con speculative=true son proyecciones narrativas del Archivo, no hechos.",
+    "mallado": "Las instantáneas malladas descomponen la extensión en estratos de control (núcleo, provincia, marca, cliente, tributario, disputado, influencia). Guarnición, rendimiento fiscal y riesgo de revuelta son estimaciones razonadas sobre bibliografía estándar, no mediciones."
   },
   "polities": [
     {
@@ -441,55 +442,243 @@
             ]
           ],
           "core": {
+            "nombre": "Persis, Media y Elam",
             "members": [
-              "Iran",
-              "Iraq"
+              "Iran"
             ],
             "box": [
-              40,
-              25,
-              62,
-              40
-            ]
-          },
-          "tributary": {
-            "members": [
-              "Egypt",
-              "Turkey",
-              "Libya",
-              "Bulgaria",
-              "Saudi Arabia"
-            ],
-            "box": [
-              22,
-              22,
-              45,
-              45
-            ],
-            "holes": [
-              [
-                36,
-                22,
-                45,
-                27
-              ]
-            ]
-          },
-          "contested": {
-            "members": [
-              "Pakistan",
-              "Uzbekistan",
-              "Kyrgyzstan",
-              "Tajikistan",
-              "Afghanistan"
-            ],
-            "box": [
+              46,
+              27,
               60,
-              22,
-              78,
-              45
-            ]
-          }
+              38
+            ],
+            "via": "herencia",
+            "fiscal": 0,
+            "revuelta": 1,
+            "guarnicion": 10000,
+            "nota": "Persis no tributa: es la patria del rey. Los Inmortales salen de aquí y de Media."
+          },
+          "tributary": [
+            {
+              "nombre": "Arabia del norte",
+              "members": [
+                "Saudi Arabia",
+                "Kuwait"
+              ],
+              "box": [
+                36,
+                26,
+                48,
+                33
+              ],
+              "via": "sumision",
+              "fiscal": 1,
+              "revuelta": 3,
+              "nota": "No paga tributo: entrega incienso como regalo. La diferencia importa mucho en la corte y nada en el mapa."
+            },
+            {
+              "nombre": "Tracia y Macedonia",
+              "members": [
+                "Bulgaria"
+              ],
+              "box": [
+                22,
+                40,
+                29,
+                44
+              ],
+              "via": "sumision",
+              "desde": -513,
+              "fiscal": 1,
+              "revuelta": 30,
+              "nota": "Sumisión de tierra y agua, sin guarnición estable. Se pierde después de Platea."
+            },
+            {
+              "nombre": "Cirenaica",
+              "members": [
+                "Libya"
+              ],
+              "box": [
+                18,
+                28,
+                26,
+                34
+              ],
+              "via": "sumision",
+              "fiscal": 1,
+              "revuelta": 12
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Escitia y estepa",
+              "members": [
+                "Kazakhstan",
+                "Kyrgyzstan"
+              ],
+              "box": [
+                55,
+                40,
+                75,
+                46
+              ],
+              "revuelta": 60,
+              "nota": "La campaña de Darío contra los escitas termina sin batalla y sin conquista: la estepa no se ocupa, se patrulla."
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Babilonia y Asiria",
+              "members": [
+                "Iraq"
+              ],
+              "box": [
+                39,
+                29,
+                49,
+                37
+              ],
+              "via": "conquista",
+              "desde": -539,
+              "fiscal": 20,
+              "revuelta": 6,
+              "guarnicion": 15000,
+              "nota": "La satrapía más rica: mil talentos de plata al año más el sustento de la corte durante cuatro meses."
+            },
+            {
+              "nombre": "Lidia y Jonia",
+              "members": [
+                "Turkey"
+              ],
+              "box": [
+                26,
+                36,
+                34,
+                42
+              ],
+              "via": "conquista",
+              "desde": -546,
+              "fiscal": 12,
+              "revuelta": 22,
+              "guarnicion": 12000,
+              "nota": "Las ciudades griegas se sublevan en 499. La revuelta jonia es lo que arrastra a Persia hacia Maratón."
+            },
+            {
+              "nombre": "Egipto",
+              "members": [
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                36,
+                32
+              ],
+              "via": "conquista",
+              "desde": -525,
+              "fiscal": 16,
+              "revuelta": 18,
+              "guarnicion": 20000,
+              "nota": "Se rebela cada dos generaciones. Cambises tomó el país; ningún Aqueménida logró que se quedara quieto."
+            },
+            {
+              "nombre": "Siria y Fenicia",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan"
+              ],
+              "box": [
+                33,
+                29,
+                40,
+                37
+              ],
+              "via": "conquista",
+              "desde": -539,
+              "fiscal": 10,
+              "revuelta": 4,
+              "guarnicion": 8000,
+              "nota": "Fenicia aporta la flota: sin sus remeros el imperio no tiene marina."
+            },
+            {
+              "nombre": "Armenia y Cáucaso",
+              "members": [
+                "Armenia",
+                "Azerbaijan",
+                "Georgia"
+              ],
+              "box": [
+                40,
+                38,
+                50,
+                44
+              ],
+              "via": "conquista",
+              "fiscal": 4,
+              "revuelta": 10,
+              "guarnicion": 6000
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Bactria y Sogdiana",
+              "members": [
+                "Afghanistan",
+                "Uzbekistan",
+                "Tajikistan",
+                "Turkmenistan"
+              ],
+              "box": [
+                58,
+                33,
+                72,
+                42
+              ],
+              "via": "conquista",
+              "fiscal": 6,
+              "revuelta": 14,
+              "guarnicion": 15000,
+              "nota": "Satrapías de frontera gobernadas por príncipes de la casa real. Son las que más veces se rebelan contra el propio rey."
+            },
+            {
+              "nombre": "Gandhara e Indo",
+              "members": [
+                "Pakistan"
+              ],
+              "box": [
+                66,
+                24,
+                74,
+                35
+              ],
+              "via": "conquista",
+              "desde": -515,
+              "fiscal": 12,
+              "revuelta": 12,
+              "guarnicion": 8000,
+              "nota": "Heródoto le atribuye trescientos sesenta talentos de oro: la satrapía nominalmente más rica y la peor documentada."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Cilicia y reinos de Anatolia",
+              "members": [
+                "Turkey"
+              ],
+              "box": [
+                32,
+                36,
+                42,
+                41
+              ],
+              "via": "sumision",
+              "fiscal": 3,
+              "revuelta": 5
+            }
+          ]
         }
       ]
     },
@@ -558,6 +747,163 @@
               74,
               26
             ]
+          ],
+          "core": {
+            "nombre": "Macedonia y Grecia",
+            "members": [
+              "Greece",
+              "Macedonia",
+              "Albania",
+              "Bulgaria"
+            ],
+            "box": [
+              19,
+              35,
+              29,
+              43
+            ],
+            "via": "herencia",
+            "fiscal": 8,
+            "revuelta": 12,
+            "guarnicion": 15000,
+            "nota": "La patria está en manos de Antípatro y a punto de rebelarse en cuanto llegue la noticia de Babilonia."
+          },
+          "provinces": [
+            {
+              "nombre": "Anatolia y Levante",
+              "members": [
+                "Turkey",
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan",
+                "Cyprus"
+              ],
+              "box": [
+                26,
+                29,
+                44,
+                42
+              ],
+              "via": "conquista",
+              "desde": -333,
+              "fiscal": 20,
+              "revuelta": 8,
+              "guarnicion": 25000
+            },
+            {
+              "nombre": "Egipto",
+              "members": [
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                36,
+                32
+              ],
+              "via": "conquista",
+              "desde": -332,
+              "fiscal": 18,
+              "revuelta": 4,
+              "guarnicion": 12000,
+              "nota": "Ni un asedio: los sátrapas persas entregan el país. Alejandría se funda antes de que empiece la campaña oriental."
+            },
+            {
+              "nombre": "Babilonia y Persia",
+              "members": [
+                "Iraq",
+                "Iran"
+              ],
+              "box": [
+                40,
+                25,
+                60,
+                38
+              ],
+              "via": "conquista",
+              "desde": -331,
+              "fiscal": 30,
+              "revuelta": 10,
+              "guarnicion": 30000,
+              "nota": "El tesoro de Persépolis y Susa: ciento ochenta mil talentos capturados de golpe, la mayor transferencia de metal de la Antigüedad."
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Bactria y Sogdiana",
+              "members": [
+                "Afghanistan",
+                "Uzbekistan",
+                "Tajikistan",
+                "Turkmenistan"
+              ],
+              "box": [
+                58,
+                33,
+                72,
+                42
+              ],
+              "via": "conquista",
+              "desde": -329,
+              "fiscal": 3,
+              "revuelta": 35,
+              "guarnicion": 23000,
+              "nota": "Dos años de guerra de guerrillas contra Espitamenes: la campaña más larga y más costosa de todas. Se sostiene con colonias militares, no con administración."
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Panyab",
+              "members": [
+                "Pakistan"
+              ],
+              "box": [
+                67,
+                26,
+                76,
+                35
+              ],
+              "via": "conquista",
+              "desde": -326,
+              "revuelta": 55,
+              "guarnicion": 8000,
+              "nota": "Ganada en el Hidaspes y perdida en el motín del Hífasis. Cuando Alejandro muere, el ejército ya se ha ido."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Reino de Poros",
+              "members": [
+                "Pakistan"
+              ],
+              "box": [
+                72,
+                28,
+                76,
+                33
+              ],
+              "via": "sumision",
+              "desde": -326,
+              "nota": "Derrotado y repuesto en su trono el mismo día: el modelo que Alejandro intenta aplicar a todo Oriente."
+            },
+            {
+              "nombre": "Cáucaso y Armenia",
+              "members": [
+                "Armenia",
+                "Azerbaijan",
+                "Georgia"
+              ],
+              "box": [
+                40,
+                38,
+                50,
+                44
+              ],
+              "via": "sumision",
+              "revuelta": 15
+            }
           ]
         }
       ]
@@ -607,42 +953,143 @@
             ]
           ],
           "core": {
-            "members": [
-              "India",
-              "Bangladesh"
-            ],
-            "box": [
-              72,
-              18,
-              93,
-              32
-            ]
-          },
-          "tributary": {
-            "members": [
-              "Pakistan",
-              "Afghanistan",
-              "Nepal",
-              "Bhutan"
-            ],
-            "box": [
-              60,
-              22,
-              93,
-              37
-            ]
-          },
-          "contested": {
+            "nombre": "Magadha y el Ganges",
             "members": [
               "India"
             ],
             "box": [
-              72,
-              8,
-              90,
-              18
-            ]
-          }
+              77,
+              22,
+              89,
+              29
+            ],
+            "via": "herencia",
+            "fiscal": 40,
+            "revuelta": 2,
+            "guarnicion": 60000,
+            "nota": "La llanura aluvial que sostiene el ejército más grande del mundo conocido y el aparato fiscal que describe el Arthashastra."
+          },
+          "tributary": [
+            {
+              "nombre": "Reinos del Decán y bosques tribales",
+              "members": [
+                "India"
+              ],
+              "box": [
+                73,
+                10,
+                84,
+                18
+              ],
+              "via": "sumision",
+              "fiscal": 4,
+              "revuelta": 15,
+              "nota": "Los edictos los llaman «los pueblos del bosque»: se les advierte, no se les administra."
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Ujjain y el Decán norte",
+              "members": [
+                "India"
+              ],
+              "box": [
+                72,
+                16,
+                82,
+                24
+              ],
+              "via": "conquista",
+              "fiscal": 16,
+              "revuelta": 5,
+              "guarnicion": 20000
+            },
+            {
+              "nombre": "Taxila y el Indo",
+              "members": [
+                "Pakistan"
+              ],
+              "box": [
+                67,
+                24,
+                76,
+                35
+              ],
+              "via": "tratado",
+              "desde": -303,
+              "fiscal": 12,
+              "revuelta": 8,
+              "guarnicion": 25000,
+              "nota": "Cedida por Seleuco a cambio de quinientos elefantes de guerra. El tratado decide la batalla de Ipso a cuatro mil kilómetros."
+            },
+            {
+              "nombre": "Kalinga",
+              "members": [
+                "India"
+              ],
+              "box": [
+                82,
+                17,
+                88,
+                22
+              ],
+              "via": "conquista",
+              "desde": -261,
+              "fiscal": 6,
+              "revuelta": 20,
+              "guarnicion": 15000,
+              "nota": "Cien mil muertos según el propio edicto de Ashoka. La única conquista de la que un emperador dejó escrito que se arrepentía."
+            },
+            {
+              "nombre": "Bengala y Assam",
+              "members": [
+                "Bangladesh"
+              ],
+              "box": [
+                88,
+                21,
+                93,
+                27
+              ],
+              "via": "conquista",
+              "fiscal": 6,
+              "revuelta": 6
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Gedrosia y Aracosia",
+              "members": [
+                "Afghanistan"
+              ],
+              "box": [
+                60,
+                29,
+                70,
+                36
+              ],
+              "via": "tratado",
+              "fiscal": 2,
+              "revuelta": 12,
+              "guarnicion": 10000,
+              "nota": "Aquí están los edictos bilingües en griego y arameo: el imperio habla el idioma de sus fronteras."
+            },
+            {
+              "nombre": "Piedemonte himalayo",
+              "members": [
+                "Nepal",
+                "Bhutan"
+              ],
+              "box": [
+                80,
+                26,
+                92,
+                30
+              ],
+              "fiscal": 2,
+              "revuelta": 8
+            }
+          ]
         }
       ]
     },
@@ -851,6 +1298,144 @@
               104,
               43
             ]
+          ],
+          "core": {
+            "nombre": "Llanura Central",
+            "members": [
+              "China"
+            ],
+            "box": [
+              106,
+              30,
+              122,
+              40
+            ],
+            "via": "herencia",
+            "fiscal": 55,
+            "revuelta": 2,
+            "guarnicion": 60000,
+            "nota": "Comandancias administradas directamente por funcionarios examinados. El censo del año 2 cuenta aquí a la mayoría de los cincuenta y siete millones del imperio."
+          },
+          "provinces": [
+            {
+              "nombre": "Sur del Yangtsé",
+              "members": [
+                "China"
+              ],
+              "box": [
+                106,
+                22,
+                122,
+                30
+              ],
+              "via": "conquista",
+              "fiscal": 14,
+              "revuelta": 5,
+              "guarnicion": 20000
+            },
+            {
+              "nombre": "Sichuan",
+              "members": [
+                "China"
+              ],
+              "box": [
+                100,
+                26,
+                108,
+                33
+              ],
+              "via": "conquista",
+              "desde": -316,
+              "fiscal": 9,
+              "revuelta": 4
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Corredor de Hexi",
+              "members": [
+                "China"
+              ],
+              "box": [
+                94,
+                36,
+                106,
+                42
+              ],
+              "via": "conquista",
+              "desde": -121,
+              "fiscal": 2,
+              "revuelta": 10,
+              "guarnicion": 40000,
+              "nota": "Cuatro comandancias abiertas a golpe de caballería para separar a los xiongnu de los qiang. Es el pasillo por el que sale la Ruta de la Seda."
+            },
+            {
+              "nombre": "Frontera norte",
+              "members": [
+                "China",
+                "Mongolia"
+              ],
+              "box": [
+                106,
+                40,
+                126,
+                44
+              ],
+              "fiscal": 1,
+              "revuelta": 12,
+              "guarnicion": 80000,
+              "nota": "Colonias militares agrícolas: soldados-labradores que se alimentan solos porque abastecerlos desde el sur costaría más que la guerra."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Comandancias de Corea",
+              "members": [
+                "North Korea"
+              ],
+              "box": [
+                124,
+                37,
+                128,
+                41
+              ],
+              "via": "conquista",
+              "desde": -108,
+              "fiscal": 1,
+              "revuelta": 15
+            },
+            {
+              "nombre": "Nanyue y el delta del Rojo",
+              "members": [
+                "Vietnam"
+              ],
+              "box": [
+                102,
+                18,
+                110,
+                24
+              ],
+              "via": "conquista",
+              "desde": -111,
+              "fiscal": 3,
+              "revuelta": 18
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Cuenca del Tarim",
+              "members": [
+                "China"
+              ],
+              "box": [
+                73,
+                36,
+                94,
+                43
+              ],
+              "revuelta": 45,
+              "nota": "Las ciudades-oasis cambian de bando según qué ejército esté más cerca ese año. Se pierden y se recuperan tres veces en dos siglos."
+            }
           ]
         },
         {
@@ -868,6 +1453,135 @@
             18,
             128,
             44
+          ],
+          "core": {
+            "nombre": "Llanura Central",
+            "members": [
+              "China"
+            ],
+            "box": [
+              106,
+              30,
+              122,
+              40
+            ],
+            "fiscal": 52,
+            "revuelta": 3,
+            "guarnicion": 50000
+          },
+          "provinces": [
+            {
+              "nombre": "Sur del Yangtsé",
+              "members": [
+                "China"
+              ],
+              "box": [
+                106,
+                21,
+                122,
+                30
+              ],
+              "fiscal": 18,
+              "revuelta": 5,
+              "nota": "La gran migración hacia el sur ya ha empezado: el arroz gana peso frente al mijo en el censo."
+            },
+            {
+              "nombre": "Sichuan",
+              "members": [
+                "China"
+              ],
+              "box": [
+                100,
+                26,
+                108,
+                33
+              ],
+              "fiscal": 9,
+              "revuelta": 4
+            },
+            {
+              "nombre": "Comandancias de Corea",
+              "members": [
+                "North Korea",
+                "South Korea"
+              ],
+              "box": [
+                124,
+                35,
+                129,
+                41
+              ],
+              "fiscal": 2,
+              "revuelta": 12
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Corredor de Hexi",
+              "members": [
+                "China"
+              ],
+              "box": [
+                94,
+                36,
+                106,
+                42
+              ],
+              "fiscal": 2,
+              "revuelta": 8,
+              "guarnicion": 30000
+            },
+            {
+              "nombre": "Protectorado de las Regiones Occidentales",
+              "members": [
+                "China"
+              ],
+              "box": [
+                73,
+                36,
+                96,
+                44
+              ],
+              "via": "sumision",
+              "desde": 74,
+              "fiscal": 1,
+              "revuelta": 25,
+              "guarnicion": 5000,
+              "nota": "Ban Chao somete cincuenta reinos con menos de mil hombres: el protectorado es diplomacia armada, no ocupación."
+            },
+            {
+              "nombre": "Jiaozhi",
+              "members": [
+                "Vietnam"
+              ],
+              "box": [
+                102,
+                18,
+                110,
+                24
+              ],
+              "fiscal": 3,
+              "revuelta": 20,
+              "nota": "La revuelta de las hermanas Trung (40-43) obliga a reconquistar el delta entero."
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Ferganá y Sogdiana",
+              "members": [
+                "Kyrgyzstan",
+                "Tajikistan"
+              ],
+              "box": [
+                68,
+                38,
+                75,
+                43
+              ],
+              "fiscal": 0,
+              "revuelta": 30,
+              "nota": "Tributo de caballos «que sudan sangre». Lo que Han quiere de Asia Central es cría equina, no territorio."
+            }
           ]
         }
       ]
@@ -945,6 +1659,280 @@
               33,
               25
             ]
+          ],
+          "core": {
+            "nombre": "Italia y las islas",
+            "members": [
+              "Italy"
+            ],
+            "box": [
+              6,
+              36,
+              19,
+              47
+            ],
+            "via": "herencia",
+            "fiscal": 20,
+            "revuelta": 1,
+            "guarnicion": 14000,
+            "nota": "Exenta del tributum desde 167 a. C.: la península no paga impuesto directo, lo cobra. Es el privilegio que define el sistema."
+          },
+          "provinces": [
+            {
+              "nombre": "Hispania",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "box": [
+                -10,
+                36,
+                3,
+                44
+              ],
+              "via": "conquista",
+              "desde": -197,
+              "fiscal": 12,
+              "revuelta": 3,
+              "guarnicion": 18000,
+              "nota": "Doscientos años desde el desembarco hasta las guerras cántabras: la conquista más larga y cara de la República."
+            },
+            {
+              "nombre": "Gallia",
+              "members": [
+                "France"
+              ],
+              "box": [
+                -5,
+                42,
+                8,
+                51
+              ],
+              "via": "conquista",
+              "desde": -51,
+              "fiscal": 11,
+              "revuelta": 7,
+              "guarnicion": 24000,
+              "nota": "Recién pacificada. La élite gala se compra con ciudadanía antes que con guarniciones."
+            },
+            {
+              "nombre": "África proconsular",
+              "members": [
+                "Tunisia",
+                "Libya",
+                "Algeria"
+              ],
+              "box": [
+                2,
+                29,
+                25,
+                37
+              ],
+              "via": "conquista",
+              "desde": -146,
+              "fiscal": 9,
+              "revuelta": 3,
+              "guarnicion": 5000,
+              "nota": "Cereal y aceite. Una legión basta porque el desierto hace de frontera."
+            },
+            {
+              "nombre": "Macedonia y Acaya",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania",
+                "Bulgaria"
+              ],
+              "box": [
+                19,
+                36,
+                29,
+                43
+              ],
+              "via": "conquista",
+              "desde": -146,
+              "fiscal": 5,
+              "revuelta": 1,
+              "guarnicion": 2000,
+              "nota": "Provincia sin tropas: Grecia está desmilitarizada desde Corinto."
+            },
+            {
+              "nombre": "Asia",
+              "members": [
+                "Turkey"
+              ],
+              "box": [
+                26,
+                36,
+                33,
+                42
+              ],
+              "via": "herencia",
+              "desde": -133,
+              "fiscal": 13,
+              "revuelta": 2,
+              "guarnicion": 3000,
+              "nota": "Legada por testamento por Átalo III. La provincia más rica del imperio llegó sin batalla."
+            },
+            {
+              "nombre": "Siria",
+              "members": [
+                "Syria",
+                "Lebanon"
+              ],
+              "box": [
+                33,
+                32,
+                40,
+                37
+              ],
+              "via": "conquista",
+              "desde": -64,
+              "fiscal": 8,
+              "revuelta": 5,
+              "guarnicion": 20000
+            },
+            {
+              "nombre": "Aegyptus",
+              "members": [
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                36,
+                32
+              ],
+              "via": "conquista",
+              "desde": -30,
+              "fiscal": 15,
+              "revuelta": 4,
+              "guarnicion": 12000,
+              "nota": "Dominio personal del príncipe: ningún senador puede entrar sin permiso. El grano de Alejandría alimenta la ciudad de Roma."
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Ilírico",
+              "members": [
+                "Croatia",
+                "Slovenia",
+                "Bosnia and Herz.",
+                "Serbia",
+                "Montenegro"
+              ],
+              "box": [
+                13,
+                42,
+                21,
+                47
+              ],
+              "via": "conquista",
+              "desde": -33,
+              "fiscal": 1,
+              "revuelta": 18,
+              "guarnicion": 15000,
+              "nota": "Frontera abierta: Octaviano llegó a Siscia en las campañas de 35-33 a. C. y ahí se paró. La gran revuelta panonia de 6-9 d. C. aún está por llegar."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Mauretania de Juba II",
+              "members": [
+                "Morocco"
+              ],
+              "box": [
+                -10,
+                30,
+                -1,
+                36
+              ],
+              "via": "sumision",
+              "fiscal": 1,
+              "revuelta": 4,
+              "nota": "Rey educado en Roma, casado con la hija de Cleopatra. Gobierna como quiere mientras no mire al mar equivocado."
+            },
+            {
+              "nombre": "Judea de Herodes",
+              "members": [
+                "Israel",
+                "Palestine"
+              ],
+              "box": [
+                34,
+                30,
+                36,
+                34
+              ],
+              "via": "sumision",
+              "fiscal": 2,
+              "revuelta": 12
+            },
+            {
+              "nombre": "Nabatea",
+              "members": [
+                "Jordan",
+                "Saudi Arabia"
+              ],
+              "box": [
+                34,
+                28,
+                39,
+                33
+              ],
+              "via": "sumision",
+              "fiscal": 2,
+              "revuelta": 3,
+              "nota": "Controla la ruta del incienso. Roma prefiere cobrarle el peaje a administrarle el desierto."
+            },
+            {
+              "nombre": "Reinos de Anatolia interior",
+              "members": [
+                "Turkey"
+              ],
+              "box": [
+                33,
+                37,
+                42,
+                42
+              ],
+              "via": "sumision",
+              "fiscal": 2,
+              "revuelta": 4
+            },
+            {
+              "nombre": "Tracia",
+              "members": [
+                "Bulgaria"
+              ],
+              "box": [
+                22,
+                41,
+                29,
+                44
+              ],
+              "via": "sumision",
+              "fiscal": 1,
+              "revuelta": 8
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Germania cisrenana",
+              "members": [
+                "Germany"
+              ],
+              "box": [
+                6,
+                47,
+                12,
+                52
+              ],
+              "via": "conquista",
+              "revuelta": 40,
+              "guarnicion": 20000,
+              "nota": "Campañas de Druso y Tiberio. Veintisiete años antes de Teutoburgo, Roma cree que Germania será una provincia más."
+            }
           ]
         },
         {
@@ -1038,60 +2026,364 @@
             ]
           ],
           "core": {
+            "nombre": "Italia y las islas",
             "members": [
-              "Italy",
-              "Spain",
-              "Portugal",
-              "France",
-              "Greece",
-              "Tunisia",
-              "Turkey"
+              "Italy"
             ],
             "box": [
-              -10,
-              30,
-              42,
-              50
+              6,
+              36,
+              19,
+              47
             ],
-            "holes": [
-              [
-                -10,
+            "via": "herencia",
+            "fiscal": 13,
+            "revuelta": 0.5,
+            "guarnicion": 15000,
+            "nota": "Sigue exenta del impuesto directo, pero ya no es el centro demográfico ni militar: las legiones están todas en la periferia."
+          },
+          "contested": [
+            {
+              "nombre": "Mesopotamia y Asiria",
+              "members": [
+                "Iraq"
+              ],
+              "box": [
+                39,
                 30,
-                10,
+                48,
+                37
+              ],
+              "via": "conquista",
+              "desde": 116,
+              "fiscal": 0,
+              "revuelta": 65,
+              "guarnicion": 50000,
+              "nota": "Conquistada hace un año, en revuelta general ahora mismo, evacuada por Adriano el año que viene. La máxima extensión del imperio dura veinticuatro meses."
+            },
+            {
+              "nombre": "Armenia",
+              "members": [
+                "Armenia"
+              ],
+              "box": [
+                40,
+                38,
+                47,
+                42
+              ],
+              "via": "conquista",
+              "desde": 114,
+              "fiscal": 0,
+              "revuelta": 55,
+              "guarnicion": 12000,
+              "nota": "Provincia sobre el papel, campamento militar sobre el terreno. Vuelve a ser reino cliente en 118."
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Hispania",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "box": [
+                -10,
+                36,
+                3,
+                44
+              ],
+              "via": "conquista",
+              "desde": -197,
+              "fiscal": 9,
+              "revuelta": 0.5,
+              "guarnicion": 6000,
+              "nota": "Una sola legión para toda la península: la marca de una provincia digerida. Trajano y Adriano nacen aquí."
+            },
+            {
+              "nombre": "Las Galias",
+              "members": [
+                "France",
+                "Belgium"
+              ],
+              "box": [
+                -5,
+                42,
+                8,
+                51
+              ],
+              "via": "conquista",
+              "desde": -51,
+              "fiscal": 11,
+              "revuelta": 1,
+              "guarnicion": 2000,
+              "nota": "Sin guarnición interior. En siglo y medio la provincia más rebelde se ha vuelto la más rentable."
+            },
+            {
+              "nombre": "Grecia, Macedonia e Iliria",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania",
+                "Bosnia and Herz.",
+                "Montenegro",
+                "Kosovo",
+                "Croatia",
+                "Slovenia"
+              ],
+              "box": [
+                13,
+                36,
+                27,
+                46
+              ],
+              "via": "conquista",
+              "desde": -146,
+              "fiscal": 5,
+              "revuelta": 0.5,
+              "guarnicion": 1000
+            },
+            {
+              "nombre": "Asia y Anatolia",
+              "members": [
+                "Turkey",
+                "Cyprus"
+              ],
+              "box": [
+                26,
+                35,
+                40,
+                42
+              ],
+              "via": "herencia",
+              "desde": -133,
+              "fiscal": 12,
+              "revuelta": 3,
+              "guarnicion": 10000,
+              "nota": "La revuelta judía de Kitos (115-117) arde en Chipre y Cirenaica mientras el emperador está en Mesopotamia."
+            },
+            {
+              "nombre": "Siria",
+              "members": [
+                "Syria",
+                "Lebanon"
+              ],
+              "box": [
+                33,
+                32,
+                42,
+                38
+              ],
+              "via": "conquista",
+              "desde": -64,
+              "fiscal": 8,
+              "revuelta": 4,
+              "guarnicion": 40000,
+              "nota": "Cuatro legiones: la mayor concentración de fuerza del imperio, apuntando a Partia."
+            },
+            {
+              "nombre": "Aegyptus",
+              "members": [
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                36,
                 32
               ],
-              [
+              "via": "conquista",
+              "desde": -30,
+              "fiscal": 13,
+              "revuelta": 11,
+              "guarnicion": 12000,
+              "nota": "En revuelta abierta este mismo año. El granero del imperio es también su provincia más inflamable."
+            },
+            {
+              "nombre": "África y Numidia",
+              "members": [
+                "Libya",
+                "Tunisia",
+                "Algeria"
+              ],
+              "box": [
+                2,
+                28,
                 25,
+                37
+              ],
+              "via": "conquista",
+              "desde": -146,
+              "fiscal": 10,
+              "revuelta": 2,
+              "guarnicion": 5500
+            },
+            {
+              "nombre": "Arabia Pétrea",
+              "members": [
+                "Jordan",
+                "Saudi Arabia"
+              ],
+              "box": [
+                34,
+                28,
+                40,
+                32
+              ],
+              "via": "conquista",
+              "desde": 106,
+              "fiscal": 3,
+              "revuelta": 3,
+              "guarnicion": 5000,
+              "nota": "Anexión del reino nabateo. La vía Nova Traiana convierte la ruta del incienso en carretera imperial."
+            },
+            {
+              "nombre": "Judea",
+              "members": [
+                "Israel",
+                "Palestine"
+              ],
+              "box": [
+                34,
                 30,
-                42,
-                35
-              ]
-            ]
-          },
-          "contested": {
-            "members": [
-              "United Kingdom",
-              "Germany",
-              "Romania",
-              "Iraq",
-              "Armenia",
-              "Morocco"
-            ],
-            "box": [
-              -11,
-              23,
-              48,
-              56
-            ],
-            "holes": [
-              [
-                -11,
-                31,
-                25,
+                36,
+                34
+              ],
+              "via": "conquista",
+              "desde": 6,
+              "fiscal": 2,
+              "revuelta": 14,
+              "guarnicion": 11000,
+              "nota": "Cuarenta y siete años después de la destrucción del Templo y dieciséis antes de Bar Kojba."
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Britania",
+              "members": [
+                "United Kingdom"
+              ],
+              "box": [
+                -6,
+                50,
+                2,
                 56
-              ]
-            ]
-          }
+              ],
+              "via": "conquista",
+              "desde": 43,
+              "fiscal": 2,
+              "revuelta": 9,
+              "guarnicion": 45000,
+              "nota": "Tres legiones para una isla que no cubre su coste. Se conserva por prestigio; veinte años después Adriano levanta el muro y renuncia al norte."
+            },
+            {
+              "nombre": "Limes renano",
+              "members": [
+                "Germany",
+                "Netherlands",
+                "Switzerland"
+              ],
+              "box": [
+                4,
+                46,
+                11,
+                53
+              ],
+              "via": "conquista",
+              "desde": -12,
+              "fiscal": 2,
+              "revuelta": 4,
+              "guarnicion": 45000,
+              "nota": "Cuatro legiones y la flota fluvial. El Rin no es una frontera cultural: es una línea de abastecimiento."
+            },
+            {
+              "nombre": "Nórico, Recia y Panonia",
+              "members": [
+                "Austria",
+                "Hungary"
+              ],
+              "box": [
+                9,
+                44,
+                22,
+                50
+              ],
+              "via": "conquista",
+              "desde": -9,
+              "fiscal": 3,
+              "revuelta": 5,
+              "guarnicion": 40000
+            },
+            {
+              "nombre": "Mesia",
+              "members": [
+                "Serbia",
+                "Bulgaria"
+              ],
+              "box": [
+                19,
+                41,
+                30,
+                45
+              ],
+              "via": "conquista",
+              "desde": -29,
+              "fiscal": 3,
+              "revuelta": 6,
+              "guarnicion": 30000
+            },
+            {
+              "nombre": "Dacia",
+              "members": [
+                "Romania"
+              ],
+              "box": [
+                20,
+                43,
+                27,
+                48
+              ],
+              "via": "conquista",
+              "desde": 106,
+              "fiscal": 4,
+              "revuelta": 12,
+              "guarnicion": 25000,
+              "nota": "Única conquista al norte del Danubio. Su oro paga las termas de Trajano; se abandona en 271."
+            },
+            {
+              "nombre": "Mauretania Tingitana",
+              "members": [
+                "Morocco"
+              ],
+              "box": [
+                -10,
+                30,
+                -1,
+                36
+              ],
+              "via": "conquista",
+              "desde": 44,
+              "fiscal": 1,
+              "revuelta": 10,
+              "guarnicion": 8000,
+              "nota": "Control de la franja costera y poco más: el interior nunca deja de ser tribu armada."
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Barbaricum",
+              "members": [
+                "Germany"
+              ],
+              "box": [
+                7,
+                50,
+                18,
+                56
+              ],
+              "nota": "Más allá del limes: subsidios a los jefes suevos y marcomanos, comercio vigilado y ninguna administración. La frontera real es el dinero, no el río."
+            }
+          ]
         },
         {
           "year": 395,
@@ -1159,6 +2451,172 @@
               3,
               61
             ]
+          ],
+          "core": {
+            "nombre": "Italia y Constantinopla",
+            "members": [
+              "Italy",
+              "Turkey"
+            ],
+            "box": [
+              11,
+              36,
+              30,
+              47
+            ],
+            "fiscal": 22,
+            "revuelta": 2,
+            "guarnicion": 30000,
+            "nota": "El imperio ya tiene dos cabezas y una sola de ellas seguirá viva en un siglo."
+          },
+          "provinces": [
+            {
+              "nombre": "Prefectura de Oriente",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan",
+                "Egypt",
+                "Cyprus"
+              ],
+              "box": [
+                24,
+                22,
+                42,
+                38
+              ],
+              "fiscal": 34,
+              "revuelta": 4,
+              "guarnicion": 100000,
+              "nota": "Tres cuartas partes del ingreso imperial y casi toda la población urbana. Aquí no hay crisis del siglo III."
+            },
+            {
+              "nombre": "Prefectura de Iliria",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania",
+                "Bulgaria",
+                "Serbia",
+                "Montenegro",
+                "Kosovo",
+                "Bosnia and Herz.",
+                "Croatia"
+              ],
+              "box": [
+                13,
+                35,
+                30,
+                47
+              ],
+              "fiscal": 9,
+              "revuelta": 15,
+              "guarnicion": 40000,
+              "nota": "Dieciséis años después de Adrianópolis. Los godos ya no son invasores: son federados acantonados dentro."
+            },
+            {
+              "nombre": "África",
+              "members": [
+                "Libya",
+                "Tunisia",
+                "Algeria"
+              ],
+              "box": [
+                2,
+                28,
+                25,
+                37
+              ],
+              "fiscal": 15,
+              "revuelta": 6,
+              "guarnicion": 20000,
+              "nota": "El grano de Roma. Cuarenta y cuatro años después lo tienen los vándalos y Occidente pierde su tesorería."
+            },
+            {
+              "nombre": "Hispania",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "box": [
+                -10,
+                36,
+                3,
+                44
+              ],
+              "fiscal": 8,
+              "revuelta": 4,
+              "guarnicion": 10000
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Galia y Rin",
+              "members": [
+                "France",
+                "Belgium",
+                "Switzerland"
+              ],
+              "box": [
+                -5,
+                42,
+                9,
+                52
+              ],
+              "fiscal": 8,
+              "revuelta": 12,
+              "guarnicion": 40000,
+              "nota": "Quince años antes de que el Rin se cruce helado y no se vuelva a cerrar."
+            },
+            {
+              "nombre": "Britania",
+              "members": [
+                "United Kingdom"
+              ],
+              "box": [
+                -6,
+                50,
+                2,
+                56
+              ],
+              "fiscal": 1,
+              "revuelta": 20,
+              "guarnicion": 12000,
+              "nota": "Guarnición ya desguazada para tapar huecos continentales. En 410 Honorio le dice a las ciudades que se defiendan solas."
+            },
+            {
+              "nombre": "Danubio medio",
+              "members": [
+                "Austria",
+                "Hungary"
+              ],
+              "box": [
+                9,
+                44,
+                22,
+                49
+              ],
+              "fiscal": 2,
+              "revuelta": 25,
+              "guarnicion": 25000
+            },
+            {
+              "nombre": "Mauretania",
+              "members": [
+                "Morocco"
+              ],
+              "box": [
+                -10,
+                30,
+                -1,
+                36
+              ],
+              "fiscal": 1,
+              "revuelta": 18,
+              "guarnicion": 5000
+            }
           ]
         }
       ]
@@ -1487,6 +2945,164 @@
               25,
               36.5
             ]
+          ],
+          "core": {
+            "nombre": "Anatolia y Constantinopla",
+            "members": [
+              "Turkey",
+              "Cyprus"
+            ],
+            "box": [
+              26,
+              35,
+              42,
+              43
+            ],
+            "fiscal": 30,
+            "revuelta": 2,
+            "guarnicion": 40000,
+            "nota": "La meseta anatolia es la reserva de hombres y caballos que permitirá sobrevivir a la pérdida de todo lo demás."
+          },
+          "provinces": [
+            {
+              "nombre": "Egipto",
+              "members": [
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                36,
+                32
+              ],
+              "fiscal": 22,
+              "revuelta": 8,
+              "nota": "Grano y disputa monofisita. Se pierde en 641 y con él un tercio del presupuesto."
+            },
+            {
+              "nombre": "Siria y Palestina",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan"
+              ],
+              "box": [
+                33,
+                29,
+                42,
+                38
+              ],
+              "fiscal": 16,
+              "revuelta": 7
+            },
+            {
+              "nombre": "Grecia y Egeo",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania"
+              ],
+              "box": [
+                19,
+                35,
+                29,
+                42
+              ],
+              "fiscal": 7,
+              "revuelta": 6
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Exarcado de Rávena",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                7,
+                38,
+                19,
+                46
+              ],
+              "via": "conquista",
+              "desde": 554,
+              "fiscal": 4,
+              "revuelta": 25,
+              "guarnicion": 20000,
+              "nota": "Veinte años de guerra gótica para recuperar Italia y tres años después de esta instantánea llegan los lombardos. La reconquista más cara y más breve de la historia romana."
+            },
+            {
+              "nombre": "África",
+              "members": [
+                "Tunisia",
+                "Libya",
+                "Algeria"
+              ],
+              "box": [
+                2,
+                28,
+                25,
+                37
+              ],
+              "via": "conquista",
+              "desde": 534,
+              "fiscal": 7,
+              "revuelta": 20
+            },
+            {
+              "nombre": "Balcanes danubianos",
+              "members": [
+                "Bulgaria",
+                "Serbia",
+                "Croatia",
+                "Bosnia and Herz.",
+                "Montenegro"
+              ],
+              "box": [
+                16,
+                41,
+                30,
+                46
+              ],
+              "fiscal": 2,
+              "revuelta": 40,
+              "nota": "Frontera nominal: los ávaros y los eslavos ya la cruzan a voluntad. En dos generaciones no queda nada al norte de Tesalónica."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Spania",
+              "members": [
+                "Spain"
+              ],
+              "box": [
+                -6,
+                36,
+                0,
+                39
+              ],
+              "via": "conquista",
+              "desde": 552,
+              "fiscal": 1,
+              "revuelta": 30,
+              "nota": "Franja costera bética tomada aprovechando una guerra civil visigoda. Se pierde en 624."
+            },
+            {
+              "nombre": "Armenia",
+              "members": [
+                "Armenia"
+              ],
+              "box": [
+                40,
+                38,
+                47,
+                42
+              ],
+              "fiscal": 1,
+              "revuelta": 25
+            }
           ]
         },
         {
@@ -1509,6 +3125,143 @@
             34,
             47,
             46
+          ],
+          "core": {
+            "nombre": "Anatolia y Constantinopla",
+            "members": [
+              "Turkey"
+            ],
+            "box": [
+              26,
+              36,
+              42,
+              42
+            ],
+            "fiscal": 45,
+            "revuelta": 1,
+            "guarnicion": 60000,
+            "nota": "El sistema de themas convierte cada provincia en un cuerpo de ejército que se paga con tierra. Es el punto más alto del Estado bizantino."
+          },
+          "provinces": [
+            {
+              "nombre": "Grecia y Egeo",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania"
+              ],
+              "box": [
+                19,
+                35,
+                29,
+                42
+              ],
+              "fiscal": 18,
+              "revuelta": 2
+            },
+            {
+              "nombre": "Bulgaria",
+              "members": [
+                "Bulgaria",
+                "Serbia",
+                "Montenegro",
+                "Kosovo"
+              ],
+              "box": [
+                19,
+                41,
+                29,
+                45
+              ],
+              "via": "conquista",
+              "desde": 1018,
+              "fiscal": 8,
+              "revuelta": 15,
+              "guarnicion": 20000,
+              "nota": "Basilio II cierra cuarenta años de guerra. Cegó a quince mil prisioneros y el zar búlgaro murió al verlos volver."
+            },
+            {
+              "nombre": "Sur de Italia",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                14,
+                38,
+                19,
+                42
+              ],
+              "fiscal": 5,
+              "revuelta": 12,
+              "nota": "Catepanato de Bari. Los mercenarios normandos que acaban de llegar se lo quedarán en cincuenta años."
+            },
+            {
+              "nombre": "Antioquía y Cilicia",
+              "members": [
+                "Turkey",
+                "Syria",
+                "Lebanon"
+              ],
+              "box": [
+                33,
+                34,
+                40,
+                38
+              ],
+              "via": "conquista",
+              "desde": 969,
+              "fiscal": 8,
+              "revuelta": 8
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Armenia y Cáucaso",
+              "members": [
+                "Armenia"
+              ],
+              "box": [
+                40,
+                38,
+                47,
+                43
+              ],
+              "via": "tratado",
+              "fiscal": 2,
+              "revuelta": 12,
+              "guarnicion": 15000,
+              "nota": "Anexionar los reinos armenios elimina el colchón que separaba al imperio de la estepa. Cuarenta y seis años después, Manzikert."
+            },
+            {
+              "nombre": "Crimea y Quersoneso",
+              "members": [
+                "Ukraine"
+              ],
+              "box": [
+                32,
+                44,
+                37,
+                46
+              ],
+              "fiscal": 1,
+              "revuelta": 10
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Rus de Kiev y Balcanes serbios",
+              "members": [
+                "Ukraine",
+                "Serbia"
+              ],
+              "box": [
+                19,
+                42,
+                34,
+                52
+              ],
+              "nota": "Cristianización, matrimonio imperial y comercio: la hegemonía que no cuesta guarnición."
+            }
           ]
         },
         {
@@ -1562,6 +3315,141 @@
             18,
             128,
             48
+          ],
+          "core": {
+            "nombre": "Guanzhong y Llanura Central",
+            "members": [
+              "China"
+            ],
+            "box": [
+              104,
+              30,
+              122,
+              41
+            ],
+            "fiscal": 58,
+            "revuelta": 2,
+            "guarnicion": 80000,
+            "nota": "Changan es la ciudad más poblada del mundo. El sistema de campos iguales reparte tierra estatal a cambio de grano, tela y trabajo."
+          },
+          "provinces": [
+            {
+              "nombre": "Sur del Yangtsé",
+              "members": [
+                "China"
+              ],
+              "box": [
+                104,
+                21,
+                122,
+                30
+              ],
+              "fiscal": 22,
+              "revuelta": 3,
+              "nota": "El Gran Canal, terminado por los Sui, es la arteria que lleva el arroz del sur a los ejércitos del norte."
+            },
+            {
+              "nombre": "Sichuan",
+              "members": [
+                "China"
+              ],
+              "box": [
+                98,
+                26,
+                108,
+                33
+              ],
+              "fiscal": 8,
+              "revuelta": 3
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Protectorado de Anxi",
+              "members": [
+                "China",
+                "Kyrgyzstan"
+              ],
+              "box": [
+                73,
+                36,
+                96,
+                45
+              ],
+              "via": "conquista",
+              "desde": 640,
+              "fiscal": 1,
+              "revuelta": 30,
+              "guarnicion": 24000,
+              "nota": "Las Cuatro Guarniciones del Tarim. Se sostienen con veinticuatro mil hombres a tres mil kilómetros de la capital: la definición misma de sobreextensión."
+            },
+            {
+              "nombre": "Protectorado de Anbei",
+              "members": [
+                "Mongolia"
+              ],
+              "box": [
+                96,
+                41,
+                120,
+                48
+              ],
+              "fiscal": 0,
+              "revuelta": 45,
+              "nota": "El kanato turco oriental se ha reconstituido en 682. El protectorado existe sobre todo en el organigrama."
+            },
+            {
+              "nombre": "Annam",
+              "members": [
+                "Vietnam"
+              ],
+              "box": [
+                102,
+                18,
+                110,
+                24
+              ],
+              "fiscal": 3,
+              "revuelta": 20
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Sogdiana y Ferganá",
+              "members": [
+                "Uzbekistan",
+                "Tajikistan"
+              ],
+              "box": [
+                64,
+                37,
+                74,
+                43
+              ],
+              "via": "sumision",
+              "fiscal": 1,
+              "revuelta": 25,
+              "nota": "Los príncipes sogdianos aceptan sellos chinos y siguen haciendo lo que quieren. Cincuenta años después Talas cierra la cuestión."
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Corea y Manchuria",
+              "members": [
+                "North Korea"
+              ],
+              "box": [
+                124,
+                38,
+                131,
+                43
+              ],
+              "via": "sumision",
+              "desde": 668,
+              "fiscal": 1,
+              "revuelta": 20,
+              "nota": "Silla unifica Corea con ayuda Tang y acto seguido expulsa a los Tang. El protectorado dura ocho años."
+            }
           ]
         }
       ]
@@ -1693,76 +3581,221 @@
             ]
           ],
           "core": {
+            "nombre": "Irak y Yazira",
             "members": [
-              "Syria",
-              "Iraq",
-              "Lebanon",
-              "Israel",
-              "Palestine",
-              "Jordan",
-              "Egypt",
-              "Saudi Arabia"
+              "Iraq"
             ],
             "box": [
-              25,
-              12,
-              50,
+              38,
+              29,
+              48,
               38
             ],
-            "holes": [
-              [
-                38,
-                12,
-                50,
-                20
-              ]
-            ]
+            "via": "conquista",
+            "fiscal": 26,
+            "revuelta": 8,
+            "guarnicion": 40000,
+            "nota": "La revolución abasí acaba de trasladar aquí el centro de gravedad. Bagdad se funda dentro de catorce años."
           },
-          "tributary": {
-            "members": [
-              "Iran",
-              "Morocco",
-              "Algeria",
-              "Tunisia",
-              "Libya",
-              "Spain",
-              "Portugal",
-              "W. Sahara"
-            ],
-            "box": [
-              -10,
-              20,
-              62,
-              45
-            ],
-            "holes": [
-              [
-                -10,
+          "contested": [
+            {
+              "nombre": "Al-Ándalus",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "box": [
+                -9,
+                36,
+                3,
+                43
+              ],
+              "revuelta": 90,
+              "nota": "Abd al-Rahman I desembarca en 755 y funda un emirato independiente. El califato pierde la punta occidental cinco años después de esta instantánea."
+            },
+            {
+              "nombre": "Magreb occidental",
+              "members": [
+                "Morocco",
+                "W. Sahara"
+              ],
+              "box": [
+                -13,
+                27,
+                -1,
+                36
+              ],
+              "revuelta": 60
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Siria y Palestina",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan"
+              ],
+              "box": [
+                33,
+                29,
                 42,
-                4,
-                45
-              ]
-            ]
-          },
-          "contested": {
-            "members": [
-              "Afghanistan",
-              "Uzbekistan",
-              "Turkmenistan",
-              "Tajikistan",
-              "Pakistan",
-              "Turkey",
-              "Georgia",
-              "Armenia",
-              "Azerbaijan"
-            ],
-            "box": [
-              36,
-              22,
-              74,
-              45
-            ]
-          }
+                38
+              ],
+              "via": "conquista",
+              "desde": 636,
+              "fiscal": 12,
+              "revuelta": 20,
+              "nota": "La antigua capital omeya recién derrotada: provincia rica y políticamente sospechosa a la vez."
+            },
+            {
+              "nombre": "Egipto",
+              "members": [
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                36,
+                32
+              ],
+              "via": "conquista",
+              "desde": 641,
+              "fiscal": 18,
+              "revuelta": 10,
+              "nota": "Mayoría copta durante otros dos siglos: la conquista es fiscal mucho antes que religiosa."
+            },
+            {
+              "nombre": "Irán y Jorasán",
+              "members": [
+                "Iran"
+              ],
+              "box": [
+                44,
+                25,
+                62,
+                40
+              ],
+              "via": "conquista",
+              "desde": 651,
+              "fiscal": 20,
+              "revuelta": 12,
+              "guarnicion": 30000,
+              "nota": "De Jorasán sale el ejército que derriba a los omeyas. La periferia decide quién manda en el centro."
+            },
+            {
+              "nombre": "Arabia y Hiyaz",
+              "members": [
+                "Saudi Arabia",
+                "Yemen",
+                "Oman",
+                "Kuwait",
+                "Qatar",
+                "United Arab Emirates"
+              ],
+              "box": [
+                34,
+                12,
+                60,
+                32
+              ],
+              "via": "herencia",
+              "fiscal": 4,
+              "revuelta": 8,
+              "nota": "Prestigio máximo, rendimiento fiscal mínimo. La Meca legitima; Irak paga."
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Transoxiana",
+              "members": [
+                "Uzbekistan",
+                "Turkmenistan",
+                "Tajikistan"
+              ],
+              "box": [
+                58,
+                36,
+                72,
+                43
+              ],
+              "via": "conquista",
+              "desde": 712,
+              "fiscal": 4,
+              "revuelta": 25,
+              "guarnicion": 20000,
+              "nota": "Talas se libra el año pasado contra los Tang. La frontera del islam y la del papel se cruzan aquí."
+            },
+            {
+              "nombre": "Ifriqiya",
+              "members": [
+                "Tunisia",
+                "Libya",
+                "Algeria"
+              ],
+              "box": [
+                2,
+                28,
+                25,
+                37
+              ],
+              "via": "conquista",
+              "desde": 698,
+              "fiscal": 6,
+              "revuelta": 30,
+              "nota": "La gran revuelta bereber de 740 ha demostrado que el impuesto sobre musulmanes no árabes no se sostiene."
+            },
+            {
+              "nombre": "Cáucaso y Armenia",
+              "members": [
+                "Armenia",
+                "Azerbaijan",
+                "Georgia"
+              ],
+              "box": [
+                40,
+                38,
+                50,
+                44
+              ],
+              "fiscal": 2,
+              "revuelta": 22
+            },
+            {
+              "nombre": "Sind",
+              "members": [
+                "Pakistan"
+              ],
+              "box": [
+                66,
+                23,
+                72,
+                30
+              ],
+              "via": "conquista",
+              "desde": 712,
+              "fiscal": 2,
+              "revuelta": 15
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Rutas del Índico",
+              "members": [
+                "Oman",
+                "Yemen"
+              ],
+              "box": [
+                52,
+                12,
+                60,
+                26
+              ],
+              "nota": "Sin territorio: dinar, crédito y monzón. La hegemonía comercial llega hasta Cantón mucho antes que cualquier ejército."
+            }
+          ]
         },
         {
           "year": 900,
@@ -1996,6 +4029,149 @@
               18,
               48.5
             ]
+          ],
+          "core": {
+            "nombre": "Austrasia y Neustria",
+            "members": [
+              "France",
+              "Belgium",
+              "Netherlands",
+              "Luxembourg",
+              "Germany"
+            ],
+            "box": [
+              1,
+              46,
+              10,
+              52
+            ],
+            "via": "herencia",
+            "fiscal": 45,
+            "revuelta": 4,
+            "nota": "Aquisgrán y el valle del Mosa. El imperio no tiene capital fiscal: tiene los dominios personales del rey, y se gobierna viajando entre ellos."
+          },
+          "provinces": [
+            {
+              "nombre": "Aquitania y Borgoña",
+              "members": [
+                "France"
+              ],
+              "box": [
+                -2,
+                42,
+                7,
+                48
+              ],
+              "fiscal": 18,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Italia lombarda",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                7,
+                42,
+                14,
+                47
+              ],
+              "via": "conquista",
+              "desde": 774,
+              "fiscal": 15,
+              "revuelta": 12
+            },
+            {
+              "nombre": "Baviera y Alamania",
+              "members": [
+                "Germany",
+                "Austria",
+                "Switzerland"
+              ],
+              "box": [
+                7,
+                46,
+                14,
+                50
+              ],
+              "via": "conquista",
+              "desde": 788,
+              "fiscal": 10,
+              "revuelta": 10
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Marca Hispánica",
+              "members": [
+                "Spain"
+              ],
+              "box": [
+                0,
+                41,
+                3,
+                43
+              ],
+              "via": "conquista",
+              "desde": 801,
+              "fiscal": 1,
+              "revuelta": 20,
+              "nota": "Barcelona tomada en 801. Es la franja que separa al imperio de al-Ándalus y el germen de los condados catalanes."
+            },
+            {
+              "nombre": "Sajonia",
+              "members": [
+                "Germany"
+              ],
+              "box": [
+                7,
+                51,
+                12,
+                54
+              ],
+              "via": "conquista",
+              "desde": 804,
+              "fiscal": 2,
+              "revuelta": 40,
+              "guarnicion": 10000,
+              "nota": "Treinta y tres años de guerra y conversión forzosa. Es la conquista más larga y más sangrienta del reinado."
+            },
+            {
+              "nombre": "Marca del Este y Panonia",
+              "members": [
+                "Austria",
+                "Slovenia",
+                "Croatia",
+                "Czechia"
+              ],
+              "box": [
+                13,
+                45,
+                19,
+                50
+              ],
+              "via": "conquista",
+              "desde": 796,
+              "fiscal": 2,
+              "revuelta": 25,
+              "nota": "El tesoro ávaro capturado aquí financia una década de donaciones imperiales."
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Eslavos del Elba y Bohemia",
+              "members": [
+                "Czechia",
+                "Germany"
+              ],
+              "box": [
+                9,
+                48,
+                18,
+                54
+              ],
+              "nota": "Tributo irregular y expediciones de castigo. Ninguna administración cruza el Elba."
+            }
           ]
         }
       ]
@@ -2394,6 +4570,99 @@
             30,
             128,
             56
+          ],
+          "core": {
+            "nombre": "Mongolia y Gobi",
+            "members": [
+              "Mongolia"
+            ],
+            "box": [
+              88,
+              41,
+              120,
+              52
+            ],
+            "via": "conquista",
+            "fiscal": 2,
+            "revuelta": 1,
+            "guarnicion": 100000,
+            "nota": "El núcleo no es una economía: es un depósito de caballos y jinetes. Todo lo demás se cobra fuera."
+          },
+          "provinces": [
+            {
+              "nombre": "Xi Xia y Gansu",
+              "members": [
+                "China"
+              ],
+              "box": [
+                96,
+                35,
+                110,
+                42
+              ],
+              "via": "conquista",
+              "desde": 1227,
+              "fiscal": 6,
+              "revuelta": 25,
+              "nota": "Aniquilado el mismo año de la muerte de Gengis. La destrucción es deliberada y documentada."
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Norte de Jin",
+              "members": [
+                "China"
+              ],
+              "box": [
+                110,
+                33,
+                124,
+                42
+              ],
+              "via": "conquista",
+              "desde": 1215,
+              "fiscal": 12,
+              "revuelta": 30,
+              "guarnicion": 60000,
+              "nota": "Pekín tomada y arrasada. Se discute en la corte si convertir la llanura en pasto; un consejero kitán convence de que cobrar impuestos rinde más."
+            },
+            {
+              "nombre": "Asia Central",
+              "members": [
+                "Kazakhstan",
+                "Uzbekistan",
+                "Turkmenistan",
+                "Kyrgyzstan",
+                "Tajikistan"
+              ],
+              "box": [
+                55,
+                36,
+                80,
+                50
+              ],
+              "via": "conquista",
+              "desde": 1221,
+              "fiscal": 8,
+              "revuelta": 20,
+              "nota": "Campaña contra Corasmia: Merv, Nishapur y Bujará destruidas. Los sistemas de regadío no se recuperan en siglos."
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Estepa póntica",
+              "members": [
+                "Russia",
+                "Kazakhstan"
+              ],
+              "box": [
+                45,
+                44,
+                60,
+                56
+              ],
+              "revuelta": 40
+            }
           ]
         },
         {
@@ -2442,60 +4711,171 @@
             ]
           ],
           "core": {
+            "nombre": "Mongolia y China del norte",
             "members": [
               "Mongolia",
               "China"
             ],
             "box": [
-              85,
-              30,
-              128,
-              56
-            ]
+              100,
+              33,
+              124,
+              50
+            ],
+            "fiscal": 20,
+            "revuelta": 5,
+            "guarnicion": 120000,
+            "nota": "Kublai ya reina como emperador chino: la capital está en Dadu y la corte se ha vuelto sedentaria. Los kanatos occidentales no lo reconocen."
           },
-          "tributary": {
-            "members": [
-              "Russia",
-              "Ukraine",
-              "Belarus",
-              "North Korea",
-              "South Korea",
-              "Iran",
-              "Iraq",
-              "Turkey",
-              "Georgia",
-              "Armenia",
-              "Azerbaijan",
-              "Moldova"
-            ],
-            "box": [
-              25,
-              30,
-              135,
-              62
-            ],
-            "holes": [
-              [
-                85,
+          "tributary": [
+            {
+              "nombre": "Rus de los principados",
+              "members": [
+                "Russia",
+                "Belarus",
+                "Ukraine"
+              ],
+              "box": [
+                28,
+                48,
+                45,
+                60
+              ],
+              "via": "sumision",
+              "desde": 1240,
+              "fiscal": 2,
+              "revuelta": 10,
+              "nota": "El yugo tártaro es sobre todo un censo y una recaudación: los príncipes rusos conservan el trono y viajan a Sarái a besar la mano."
+            },
+            {
+              "nombre": "Cáucaso y Anatolia selyúcida",
+              "members": [
+                "Turkey",
+                "Georgia",
+                "Armenia",
+                "Azerbaijan"
+              ],
+              "box": [
+                32,
+                36,
+                50,
+                44
+              ],
+              "fiscal": 2,
+              "revuelta": 20
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Birmania y Dai Viet",
+              "members": [
+                "Myanmar"
+              ],
+              "box": [
+                92,
+                20,
+                101,
+                28
+              ],
+              "revuelta": 60,
+              "nota": "Pagan cae en 1287 pero la ocupación no se sostiene: el clima y la logística hacen lo que no hicieron los ejércitos."
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "China Song del sur",
+              "members": [
+                "China"
+              ],
+              "box": [
+                104,
+                20,
+                123,
+                33
+              ],
+              "via": "conquista",
+              "desde": 1279,
+              "fiscal": 40,
+              "revuelta": 22,
+              "guarnicion": 100000,
+              "nota": "Recién conquistada este año en Yamen. Es la mitad rica del imperio y la que jamás acepta la dinastía extranjera."
+            },
+            {
+              "nombre": "Corea",
+              "members": [
+                "North Korea",
+                "South Korea"
+              ],
+              "box": [
+                124,
+                34,
+                131,
+                43
+              ],
+              "via": "sumision",
+              "desde": 1259,
+              "fiscal": 3,
+              "revuelta": 12
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Ilkanato de Persia",
+              "members": [
+                "Iran",
+                "Iraq",
+                "Afghanistan",
+                "Turkmenistan"
+              ],
+              "box": [
+                40,
+                25,
+                66,
+                40
+              ],
+              "via": "conquista",
+              "desde": 1258,
+              "fiscal": 0,
+              "revuelta": 15,
+              "nota": "Bagdad saqueada en 1258 y el califato abasí liquidado. Reconoce al Gran Kan de boquilla y hace su propia política exterior."
+            },
+            {
+              "nombre": "Horda de Oro",
+              "members": [
+                "Russia",
+                "Ukraine",
+                "Belarus",
+                "Kazakhstan"
+              ],
+              "box": [
                 30,
-                128,
-                56
-              ]
-            ]
-          },
-          "contested": {
-            "members": [
-              "Myanmar",
-              "Afghanistan",
-              "Turkmenistan"
-            ],
-            "box": [
-              50,
-              20,
-              110,
-              40
-            ]
-          }
+                44,
+                80,
+                60
+              ],
+              "via": "conquista",
+              "desde": 1240,
+              "fiscal": 0,
+              "revuelta": 20,
+              "nota": "Ya en guerra abierta con el Ilkanato por el Cáucaso. El imperio mongol se ha partido antes de terminar de conquistar."
+            },
+            {
+              "nombre": "Kanato de Chagatai",
+              "members": [
+                "Uzbekistan",
+                "Kyrgyzstan",
+                "Tajikistan",
+                "Kazakhstan"
+              ],
+              "box": [
+                58,
+                36,
+                88,
+                48
+              ],
+              "revuelta": 25
+            }
+          ]
         }
       ]
     },
@@ -2763,6 +5143,154 @@
               50,
               28
             ]
+          ],
+          "core": {
+            "nombre": "Rumelia y Anatolia",
+            "members": [
+              "Turkey",
+              "Greece",
+              "Bulgaria",
+              "Macedonia"
+            ],
+            "box": [
+              22,
+              36,
+              44,
+              43
+            ],
+            "fiscal": 45,
+            "revuelta": 3,
+            "guarnicion": 90000,
+            "nota": "Las dos mitades del corazón otomano, unidas por Estambul. El sistema de timar entrega tierra a cambio de caballería, no de dinero."
+          },
+          "provinces": [
+            {
+              "nombre": "Balcanes",
+              "members": [
+                "Serbia",
+                "Bosnia and Herz.",
+                "Albania",
+                "Montenegro",
+                "Kosovo",
+                "Romania"
+              ],
+              "box": [
+                16,
+                40,
+                30,
+                47
+              ],
+              "via": "conquista",
+              "fiscal": 12,
+              "revuelta": 10,
+              "nota": "El devşirme recluta aquí a los niños que serán jenízaros y grandes visires. La periferia gobierna el centro por diseño."
+            },
+            {
+              "nombre": "Siria y Egipto",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan",
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                42,
+                38
+              ],
+              "via": "conquista",
+              "desde": 1517,
+              "fiscal": 28,
+              "revuelta": 12,
+              "guarnicion": 25000,
+              "nota": "Arrebatados a los mamelucos hace tres años. Con ellos llegan La Meca, Medina y el título de guardián de los santos lugares."
+            },
+            {
+              "nombre": "Irak",
+              "members": [
+                "Iraq"
+              ],
+              "box": [
+                40,
+                30,
+                48,
+                37
+              ],
+              "fiscal": 6,
+              "revuelta": 18
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Frontera húngara",
+              "members": [
+                "Serbia",
+                "Romania"
+              ],
+              "box": [
+                18,
+                44,
+                26,
+                48
+              ],
+              "fiscal": 1,
+              "revuelta": 20,
+              "guarnicion": 20000,
+              "nota": "Solimán sube al trono este año. En seis asalta Mohács y el reino de Hungría desaparece."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Crimea",
+              "members": [
+                "Ukraine"
+              ],
+              "box": [
+                32,
+                44,
+                38,
+                47
+              ],
+              "via": "sumision",
+              "desde": 1478,
+              "fiscal": 1,
+              "revuelta": 5,
+              "nota": "El kanato provee caballería ligera y esclavos del norte. Es vasallo, no provincia, durante trescientos años."
+            },
+            {
+              "nombre": "Hiyaz",
+              "members": [
+                "Saudi Arabia"
+              ],
+              "box": [
+                36,
+                20,
+                44,
+                30
+              ],
+              "fiscal": 0,
+              "revuelta": 5
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Principados danubianos",
+              "members": [
+                "Romania"
+              ],
+              "box": [
+                22,
+                43,
+                30,
+                48
+              ],
+              "via": "sumision",
+              "fiscal": 3,
+              "revuelta": 15
+            }
           ]
         },
         {
@@ -2826,80 +5354,184 @@
             ]
           ],
           "core": {
+            "nombre": "Rumelia y Anatolia",
             "members": [
               "Turkey",
               "Greece",
               "Bulgaria",
-              "Macedonia",
-              "Albania",
-              "Serbia",
-              "Kosovo",
-              "Bosnia and Herz.",
-              "Montenegro"
+              "Macedonia"
             ],
             "box": [
-              18,
-              34,
-              45,
-              46
-            ]
-          },
-          "tributary": {
-            "members": [
-              "Egypt",
-              "Libya",
-              "Tunisia",
-              "Algeria",
-              "Saudi Arabia",
-              "Iraq",
-              "Moldova",
-              "Romania",
-              "Ukraine",
-              "Yemen",
-              "Kuwait"
-            ],
-            "box": [
-              3,
-              12,
-              50,
-              49
-            ],
-            "holes": [
-              [
-                10,
-                20,
-                28,
-                30
-              ],
-              [
-                3,
-                20,
-                12,
-                34
-              ],
-              [
-                38,
-                20,
-                50,
-                26
-              ]
-            ]
-          },
-          "contested": {
-            "members": [
-              "Hungary",
-              "Croatia",
-              "Ukraine",
-              "Georgia",
-              "Armenia"
-            ],
-            "box": [
-              14,
+              22,
+              36,
               44,
-              50,
-              49
-            ]
-          }
+              43
+            ],
+            "fiscal": 42,
+            "revuelta": 6,
+            "guarnicion": 100000,
+            "nota": "El timar se ha vendido y convertido en arriendo fiscal: el Estado cobra por adelantado y pierde el control de la recaudación."
+          },
+          "tributary": [
+            {
+              "nombre": "Regencias berberiscas",
+              "members": [
+                "Algeria",
+                "Tunisia",
+                "Libya"
+              ],
+              "box": [
+                2,
+                28,
+                25,
+                37
+              ],
+              "via": "sumision",
+              "fiscal": 2,
+              "revuelta": 30,
+              "nota": "Argel, Túnez y Trípoli nombran a sus propios deys y hacen su propia guerra de corso. La soberanía otomana es una fórmula del jueves."
+            },
+            {
+              "nombre": "Yemen",
+              "members": [
+                "Yemen"
+              ],
+              "box": [
+                43,
+                12,
+                53,
+                18
+              ],
+              "fiscal": 1,
+              "revuelta": 40
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Balcanes y Hungría",
+              "members": [
+                "Serbia",
+                "Bosnia and Herz.",
+                "Albania",
+                "Montenegro",
+                "Kosovo",
+                "Croatia",
+                "Hungary",
+                "Romania"
+              ],
+              "box": [
+                16,
+                40,
+                30,
+                49
+              ],
+              "fiscal": 14,
+              "revuelta": 18,
+              "guarnicion": 60000,
+              "nota": "El sitio de Viena fracasa este mismo año. En dieciséis años Karlowitz devuelve Hungría: es la primera vez que el imperio cede territorio por tratado."
+            },
+            {
+              "nombre": "Siria, Egipto y Arabia",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan",
+                "Egypt",
+                "Saudi Arabia"
+              ],
+              "box": [
+                24,
+                15,
+                46,
+                38
+              ],
+              "fiscal": 26,
+              "revuelta": 14
+            },
+            {
+              "nombre": "Irak",
+              "members": [
+                "Iraq",
+                "Kuwait"
+              ],
+              "box": [
+                40,
+                29,
+                49,
+                37
+              ],
+              "fiscal": 6,
+              "revuelta": 20
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Cáucaso",
+              "members": [
+                "Armenia",
+                "Georgia"
+              ],
+              "box": [
+                40,
+                38,
+                47,
+                44
+              ],
+              "fiscal": 2,
+              "revuelta": 25
+            },
+            {
+              "nombre": "Podolia y Ucrania",
+              "members": [
+                "Ukraine",
+                "Moldova"
+              ],
+              "box": [
+                25,
+                45,
+                34,
+                50
+              ],
+              "via": "conquista",
+              "desde": 1672,
+              "fiscal": 1,
+              "revuelta": 35,
+              "nota": "La última conquista otomana en Europa. Se devuelve a Polonia en 1699."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Crimea",
+              "members": [
+                "Ukraine"
+              ],
+              "box": [
+                32,
+                44,
+                38,
+                47
+              ],
+              "fiscal": 1,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Principados danubianos",
+              "members": [
+                "Romania",
+                "Moldova"
+              ],
+              "box": [
+                22,
+                43,
+                30,
+                48
+              ],
+              "fiscal": 4,
+              "revuelta": 18
+            }
+          ]
         },
         {
           "year": 1800,
@@ -2971,6 +5603,93 @@
               49,
               30
             ]
+          ],
+          "core": {
+            "nombre": "Anatolia y Estambul",
+            "members": [
+              "Turkey"
+            ],
+            "box": [
+              26,
+              36,
+              44,
+              42
+            ],
+            "fiscal": 60,
+            "revuelta": 8,
+            "guarnicion": 200000,
+            "nota": "Lo que queda tras perder los Balcanes en 1913. El imperio multiétnico se está convirtiendo, a la fuerza, en un Estado nacional turco."
+          },
+          "provinces": [
+            {
+              "nombre": "Siria y Palestina",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan"
+              ],
+              "box": [
+                33,
+                29,
+                42,
+                38
+              ],
+              "fiscal": 18,
+              "revuelta": 15,
+              "nota": "El ferrocarril del Hiyaz acorta de cuarenta días a cinco el viaje a Medina. La modernización llega justo a tiempo de perderlo todo."
+            },
+            {
+              "nombre": "Irak",
+              "members": [
+                "Iraq"
+              ],
+              "box": [
+                40,
+                29,
+                49,
+                37
+              ],
+              "fiscal": 10,
+              "revuelta": 20,
+              "nota": "El petróleo de Mosul ya está en los contratos europeos antes de estar en los pozos."
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Cáucaso oriental",
+              "members": [
+                "Armenia"
+              ],
+              "box": [
+                40,
+                38,
+                45,
+                42
+              ],
+              "fiscal": 2,
+              "revuelta": 35
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Hiyaz y Arabia",
+              "members": [
+                "Saudi Arabia",
+                "Yemen",
+                "Kuwait"
+              ],
+              "box": [
+                34,
+                12,
+                52,
+                32
+              ],
+              "fiscal": 2,
+              "revuelta": 45,
+              "nota": "El jerife de La Meca negocia con los británicos desde 1914. La revuelta árabe estalla en dos años."
+            }
           ]
         }
       ]
@@ -3180,36 +5899,103 @@
             22
           ],
           "core": {
+            "nombre": "Cuenca de México",
             "members": [
               "Mexico"
             ],
             "box": [
-              -100,
-              18,
-              -97,
-              21
-            ]
+              -99.6,
+              19,
+              -98.5,
+              20
+            ],
+            "fiscal": 30,
+            "revuelta": 1,
+            "guarnicion": 20000,
+            "nota": "Tenochtitlan, Texcoco y Tlacopan: la Triple Alianza reparte el tributo tres-dos-uno. Doscientos mil habitantes sobre una laguna."
           },
-          "tributary": {
-            "members": [
-              "Mexico",
-              "Guatemala"
-            ],
-            "box": [
-              -104,
-              14,
-              -92,
-              22
-            ],
-            "holes": [
-              [
-                -100,
-                18,
-                -97,
+          "tributary": [
+            {
+              "nombre": "Costa del Golfo",
+              "members": [
+                "Mexico"
+              ],
+              "box": [
+                -98,
+                17,
+                -94,
+                22
+              ],
+              "via": "conquista",
+              "fiscal": 18,
+              "revuelta": 20,
+              "nota": "Cacao, algodón y plumas. Los totonacas de Cempoala se pasan a Cortés en cuanto tienen ocasión: el tributo compra obediencia, no lealtad."
+            },
+            {
+              "nombre": "Oaxaca y Soconusco",
+              "members": [
+                "Mexico",
+                "Guatemala"
+              ],
+              "box": [
+                -98,
+                14,
+                -92,
+                18
+              ],
+              "via": "conquista",
+              "fiscal": 15,
+              "revuelta": 18,
+              "nota": "Enclave a setecientos kilómetros del centro, sin continuidad territorial. El imperio azteca es una red de recaudación, no una mancha."
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Valles centrales",
+              "members": [
+                "Mexico"
+              ],
+              "box": [
+                -101,
+                17,
+                -96,
                 21
-              ]
-            ]
-          }
+              ],
+              "via": "conquista",
+              "fiscal": 35,
+              "revuelta": 8
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Frontera tlaxcalteca",
+              "members": [
+                "Mexico"
+              ],
+              "box": [
+                -99,
+                18.5,
+                -97,
+                20
+              ],
+              "revuelta": 70,
+              "nota": "Enclave independiente rodeado y estrangulado por las guerras floridas. Aporta los cien mil aliados que tumban Tenochtitlan en 1521."
+            },
+            {
+              "nombre": "Frontera tarasca",
+              "members": [
+                "Mexico"
+              ],
+              "box": [
+                -103,
+                18,
+                -100,
+                21
+              ],
+              "revuelta": 60,
+              "nota": "Los purépechas derrotan a los mexicas en 1478 y conservan la metalurgia del bronce que sus vecinos no tienen."
+            }
+          ]
         }
       ]
     },
@@ -3264,44 +6050,121 @@
             ]
           ],
           "core": {
+            "nombre": "Cuzco y el Collao",
             "members": [
-              "Peru"
+              "Peru",
+              "Bolivia"
             ],
             "box": [
-              -79,
+              -74,
               -18,
-              -68,
-              -8
-            ]
+              -66,
+              -11
+            ],
+            "fiscal": 40,
+            "revuelta": 2,
+            "guarnicion": 30000,
+            "nota": "El ombligo del mundo. Los cuatro suyus se miden desde la plaza de Cuzco y el sistema decimal de tributo de trabajo arranca aquí."
           },
-          "contested": {
-            "members": [
-              "Ecuador",
-              "Colombia",
-              "Chile",
-              "Argentina"
-            ],
-            "box": [
-              -82,
-              -36,
-              -63,
-              2
-            ],
-            "holes": [
-              [
-                -79,
-                -18,
-                -68,
+          "provinces": [
+            {
+              "nombre": "Chinchaysuyu",
+              "members": [
+                "Peru",
+                "Ecuador"
+              ],
+              "box": [
+                -81,
+                -12,
+                -75,
+                0
+              ],
+              "via": "conquista",
+              "fiscal": 25,
+              "revuelta": 8,
+              "nota": "La costa norte, con el reino chimú absorbido en 1470. Quito es la segunda capital y la razón de la guerra civil que empieza ahora."
+            },
+            {
+              "nombre": "Collasuyu",
+              "members": [
+                "Bolivia",
+                "Chile",
+                "Argentina"
+              ],
+              "box": [
+                -71,
+                -35,
+                -63,
+                -16
+              ],
+              "fiscal": 20,
+              "revuelta": 6
+            },
+            {
+              "nombre": "Antisuyu y Cuntisuyu",
+              "members": [
+                "Peru"
+              ],
+              "box": [
+                -78,
+                -16,
+                -70,
                 -8
               ],
-              [
+              "fiscal": 8,
+              "revuelta": 5
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Frontera araucana",
+              "members": [
+                "Chile"
+              ],
+              "box": [
+                -73,
+                -38,
+                -70,
+                -33
+              ],
+              "fiscal": 0,
+              "revuelta": 40,
+              "nota": "El río Maule marca el límite: los mapuches paran al Tahuantinsuyu igual que pararán a los españoles durante trescientos años."
+            },
+            {
+              "nombre": "Frontera amazónica",
+              "members": [
+                "Peru",
+                "Bolivia"
+              ],
+              "box": [
                 -72,
-                -36,
-                -63,
-                -8
-              ]
-            ]
-          }
+                -14,
+                -66,
+                -6
+              ],
+              "fiscal": 0,
+              "revuelta": 30
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Pasto y sur de Colombia",
+              "members": [
+                "Colombia"
+              ],
+              "box": [
+                -78,
+                -1,
+                -75,
+                2
+              ],
+              "via": "conquista",
+              "desde": 1500,
+              "fiscal": 2,
+              "revuelta": 25
+            }
+          ]
         }
       ]
     },
@@ -3430,6 +6293,176 @@
               2,
               45
             ]
+          ],
+          "core": {
+            "nombre": "Castilla y Aragón",
+            "members": [
+              "Spain",
+              "Portugal"
+            ],
+            "box": [
+              -10,
+              36,
+              3,
+              44
+            ],
+            "via": "herencia",
+            "fiscal": 30,
+            "revuelta": 3,
+            "guarnicion": 30000,
+            "nota": "Portugal se incorpora este mismo año por herencia dinástica: los dos imperios oceánicos quedan bajo una corona durante sesenta años."
+          },
+          "provinces": [
+            {
+              "nombre": "Virreinato de Nueva España",
+              "members": [
+                "Mexico",
+                "Guatemala",
+                "Honduras",
+                "El Salvador",
+                "Nicaragua",
+                "Costa Rica",
+                "Panama"
+              ],
+              "box": [
+                -118,
+                7,
+                -86,
+                32
+              ],
+              "via": "conquista",
+              "desde": 1521,
+              "fiscal": 14,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Virreinato del Perú",
+              "members": [
+                "Peru",
+                "Bolivia",
+                "Ecuador",
+                "Chile",
+                "Colombia",
+                "Argentina",
+                "Paraguay",
+                "Uruguay"
+              ],
+              "box": [
+                -82,
+                -40,
+                -58,
+                12
+              ],
+              "via": "conquista",
+              "desde": 1533,
+              "fiscal": 26,
+              "revuelta": 10,
+              "nota": "El cerro de Potosí sostiene la política europea de los Austrias. La plata sale de aquí, se funde en Sevilla y se gasta en Flandes."
+            },
+            {
+              "nombre": "Reinos de Italia",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                7,
+                36,
+                19,
+                46
+              ],
+              "via": "herencia",
+              "fiscal": 12,
+              "revuelta": 5,
+              "nota": "Nápoles, Sicilia y Milán: no son colonias, son reinos con sus cortes propias que aportan tercios y dinero."
+            },
+            {
+              "nombre": "Islas del Caribe",
+              "members": [
+                "Cuba",
+                "Dominican Rep.",
+                "Haiti",
+                "Puerto Rico"
+              ],
+              "box": [
+                -85,
+                17,
+                -65,
+                24
+              ],
+              "fiscal": 3,
+              "revuelta": 6
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Países Bajos",
+              "members": [
+                "Netherlands",
+                "Belgium",
+                "Luxembourg"
+              ],
+              "box": [
+                2,
+                49,
+                8,
+                54
+              ],
+              "via": "herencia",
+              "fiscal": 6,
+              "revuelta": 60,
+              "guarnicion": 60000,
+              "nota": "Doce años de guerra ya y ochenta por delante. El Ejército de Flandes se come más plata de la que produce América."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Filipinas",
+              "members": [
+                "Philippines"
+              ],
+              "box": [
+                117,
+                5,
+                127,
+                19
+              ],
+              "via": "conquista",
+              "desde": 1565,
+              "fiscal": 1,
+              "revuelta": 12,
+              "nota": "Se sostiene con el galeón de Manila: plata americana a cambio de seda china. La colonia menos rentable y la mejor conectada."
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Enclaves atlánticos",
+              "members": [
+                "Angola",
+                "Mozambique",
+                "Brazil"
+              ],
+              "nota": "Factorías portuguesas que llegan con la unión de coronas: Luanda, la costa de Mozambique y las capitanías del Brasil. Presencia costera, ninguna administración del interior.",
+              "boxes": [
+                [
+                  11,
+                  -13,
+                  15,
+                  -6
+                ],
+                [
+                  33,
+                  -22,
+                  41,
+                  -14
+                ],
+                [
+                  -46,
+                  -24,
+                  -34,
+                  -2
+                ]
+              ]
+            }
           ]
         },
         {
@@ -3479,75 +6512,126 @@
             ]
           ],
           "core": {
+            "nombre": "España peninsular",
             "members": [
-              "Spain",
-              "Mexico",
-              "Peru",
-              "Cuba"
+              "Spain"
             ],
             "box": [
-              -118,
-              -20,
-              5,
-              45
+              -10,
+              36,
+              3,
+              44
             ],
-            "holes": [
-              [
+            "fiscal": 35,
+            "revuelta": 2,
+            "guarnicion": 50000
+          },
+          "provinces": [
+            {
+              "nombre": "Nueva España",
+              "members": [
+                "Mexico",
+                "Guatemala",
+                "Honduras",
+                "El Salvador",
+                "Nicaragua",
+                "Costa Rica",
+                "Panama"
+              ],
+              "box": [
                 -118,
-                33,
+                7,
+                -86,
+                37
+              ],
+              "fiscal": 30,
+              "revuelta": 8,
+              "nota": "Las reformas borbónicas suben la presión fiscal y crean el resentimiento criollo que estalla en 1810."
+            },
+            {
+              "nombre": "Perú y Río de la Plata",
+              "members": [
+                "Peru",
+                "Bolivia",
+                "Chile",
+                "Argentina",
+                "Paraguay",
+                "Uruguay"
+              ],
+              "box": [
+                -82,
+                -56,
+                -53,
+                0
+              ],
+              "fiscal": 18,
+              "revuelta": 14,
+              "nota": "La gran rebelión de Túpac Amaru II (1780-83) acaba de costar cien mil muertos."
+            },
+            {
+              "nombre": "Nueva Granada",
+              "members": [
+                "Colombia",
+                "Venezuela",
+                "Ecuador"
+              ],
+              "box": [
                 -80,
-                45
-              ]
-            ]
-          },
-          "tributary": {
-            "members": [
-              "Guatemala",
-              "Honduras",
-              "El Salvador",
-              "Nicaragua",
-              "Costa Rica",
-              "Panama",
-              "Colombia",
-              "Venezuela",
-              "Ecuador",
-              "Bolivia",
-              "Chile",
-              "Argentina",
-              "Paraguay",
-              "Uruguay",
-              "Dominican Rep.",
-              "Puerto Rico",
-              "Philippines"
-            ],
-            "box": [
-              -126,
-              -56,
-              128,
-              45
-            ]
-          },
-          "contested": {
-            "members": [
-              "United States of America",
-              "Argentina",
-              "Chile"
-            ],
-            "box": [
-              -126,
-              -56,
-              -60,
-              50
-            ],
-            "holes": [
-              [
-                -118,
-                -20,
+                -5,
                 -60,
-                33
-              ]
-            ]
-          }
+                13
+              ],
+              "fiscal": 8,
+              "revuelta": 12
+            },
+            {
+              "nombre": "Antillas",
+              "members": [
+                "Cuba",
+                "Dominican Rep.",
+                "Puerto Rico"
+              ],
+              "box": [
+                -85,
+                17,
+                -65,
+                24
+              ],
+              "fiscal": 5,
+              "revuelta": 5
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Provincias internas y California",
+              "members": [
+                "United States of America"
+              ],
+              "box": [
+                -124,
+                28,
+                -94,
+                42
+              ],
+              "fiscal": 0,
+              "revuelta": 20,
+              "nota": "Misiones y presidios sin poblamiento. Se cede a México en 1821 y a Estados Unidos en 1848 sin que España lo llegue a controlar."
+            },
+            {
+              "nombre": "Filipinas",
+              "members": [
+                "Philippines"
+              ],
+              "box": [
+                117,
+                5,
+                127,
+                19
+              ],
+              "fiscal": 2,
+              "revuelta": 12
+            }
+          ]
         },
         {
           "year": 1898,
@@ -3670,28 +6754,123 @@
             36
           ],
           "core": {
+            "nombre": "Indostán y Panyab",
             "members": [
               "India",
               "Pakistan"
             ],
             "box": [
-              70,
-              22,
-              88,
-              33
-            ]
-          },
-          "contested": {
-            "members": [
-              "India"
-            ],
-            "box": [
               72,
-              8,
-              86,
-              20
-            ]
-          }
+              24,
+              85,
+              33
+            ],
+            "fiscal": 45,
+            "revuelta": 6,
+            "guarnicion": 200000,
+            "nota": "El sistema mansabdari asigna rango, tropas y renta de la tierra en un solo número. Funciona mientras haya tierra nueva que repartir."
+          },
+          "contested": [
+            {
+              "nombre": "Confederación marata",
+              "members": [
+                "India"
+              ],
+              "box": [
+                73,
+                15,
+                80,
+                21
+              ],
+              "revuelta": 80,
+              "nota": "Ni provincia ni tributario: un Estado rival dentro del imperio que cobra su propio impuesto, el chauth, en territorio mogol."
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Bengala",
+              "members": [
+                "Bangladesh",
+                "India"
+              ],
+              "box": [
+                85,
+                21,
+                93,
+                27
+              ],
+              "fiscal": 25,
+              "revuelta": 8,
+              "nota": "La provincia más rica del imperio y la que más pronto se independiza de hecho. Cincuenta y siete años después de esta instantánea, Plassey."
+            },
+            {
+              "nombre": "Guyarat y Malwa",
+              "members": [
+                "India"
+              ],
+              "box": [
+                68,
+                20,
+                78,
+                26
+              ],
+              "fiscal": 12,
+              "revuelta": 20
+            },
+            {
+              "nombre": "Cachemira y Kabul",
+              "members": [
+                "Afghanistan",
+                "Pakistan"
+              ],
+              "box": [
+                66,
+                30,
+                76,
+                37
+              ],
+              "fiscal": 3,
+              "revuelta": 15
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Decán",
+              "members": [
+                "India"
+              ],
+              "box": [
+                73,
+                12,
+                84,
+                21
+              ],
+              "via": "conquista",
+              "desde": 1687,
+              "fiscal": 8,
+              "revuelta": 55,
+              "guarnicion": 150000,
+              "nota": "Veintisiete años de guerra contra los maratas consumen el tesoro y el ejército. Aurangzeb muere aquí en 1707 sin haber ganado."
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Rajputana",
+              "members": [
+                "India"
+              ],
+              "box": [
+                70,
+                23,
+                78,
+                30
+              ],
+              "via": "sumision",
+              "fiscal": 5,
+              "revuelta": 25,
+              "nota": "Alianza matrimonial y militar con los rajás. Akbar la construyó; Aurangzeb la rompió al restablecer el impuesto sobre no musulmanes."
+            }
+          ]
         }
       ]
     },
@@ -3788,6 +6967,75 @@
             44,
             160,
             78
+          ],
+          "core": {
+            "nombre": "Moscovia",
+            "members": [
+              "Russia"
+            ],
+            "box": [
+              30,
+              50,
+              50,
+              62
+            ],
+            "via": "herencia",
+            "fiscal": 60,
+            "revuelta": 6,
+            "guarnicion": 80000,
+            "nota": "La servidumbre se ha cerrado legalmente en 1649: el campesino está atado a la tierra y el Estado cobra por almas, no por hectáreas."
+          },
+          "provinces": [
+            {
+              "nombre": "Norte y Volga",
+              "members": [
+                "Russia"
+              ],
+              "box": [
+                35,
+                50,
+                60,
+                68
+              ],
+              "fiscal": 20,
+              "revuelta": 8
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Siberia",
+              "members": [
+                "Russia"
+              ],
+              "box": [
+                60,
+                50,
+                160,
+                72
+              ],
+              "via": "conquista",
+              "desde": 1582,
+              "fiscal": 12,
+              "revuelta": 5,
+              "guarnicion": 12000,
+              "nota": "Doce millones de kilómetros cuadrados tomados en un siglo por compañías de cosacos. El motivo es la piel de marta: el yasak es un impuesto en pieles."
+            },
+            {
+              "nombre": "Frontera esteparia",
+              "members": [
+                "Russia",
+                "Ukraine"
+              ],
+              "box": [
+                30,
+                44,
+                55,
+                52
+              ],
+              "fiscal": 3,
+              "revuelta": 25,
+              "nota": "Líneas de fortines contra las incursiones tártaras de Crimea, que aún se llevan esclavos todos los años."
+            }
           ]
         },
         {
@@ -3818,52 +7066,150 @@
             82
           ],
           "core": {
+            "nombre": "Rusia europea",
             "members": [
               "Russia",
               "Belarus",
-              "Ukraine",
-              "Estonia",
-              "Latvia",
-              "Lithuania"
+              "Ukraine"
             ],
             "box": [
-              19,
+              22,
               44,
-              130,
-              72
-            ]
-          },
-          "tributary": {
-            "members": [
-              "Finland",
-              "Poland",
-              "Kazakhstan",
-              "Georgia",
-              "Armenia",
-              "Azerbaijan",
-              "Moldova"
+              60,
+              68
             ],
-            "box": [
-              14,
-              35,
-              90,
-              71
-            ]
+            "fiscal": 62,
+            "revuelta": 5,
+            "guarnicion": 400000,
+            "nota": "La emancipación de los siervos es de 1861: veintitrés millones de personas cambian de estatuto legal y casi ninguna de situación material."
           },
-          "contested": {
-            "members": [
-              "Uzbekistan",
-              "Turkmenistan",
-              "Kyrgyzstan",
-              "Tajikistan"
-            ],
-            "box": [
-              45,
-              35,
-              80,
-              72
-            ]
-          }
+          "provinces": [
+            {
+              "nombre": "Bálticas y Finlandia",
+              "members": [
+                "Estonia",
+                "Latvia",
+                "Lithuania",
+                "Finland"
+              ],
+              "box": [
+                20,
+                54,
+                32,
+                70
+              ],
+              "via": "conquista",
+              "desde": 1721,
+              "fiscal": 8,
+              "revuelta": 6,
+              "nota": "Finlandia es Gran Ducado con dieta y moneda propias: el imperio sabe gobernar por estatutos distintos cuando le conviene."
+            },
+            {
+              "nombre": "Cáucaso",
+              "members": [
+                "Georgia",
+                "Armenia",
+                "Azerbaijan"
+              ],
+              "box": [
+                40,
+                38,
+                50,
+                45
+              ],
+              "via": "conquista",
+              "fiscal": 4,
+              "revuelta": 22,
+              "nota": "La guerra del Cáucaso acaba en 1864 tras cuarenta y siete años y la expulsión de gran parte de la población circasiana."
+            },
+            {
+              "nombre": "Siberia",
+              "members": [
+                "Russia"
+              ],
+              "box": [
+                60,
+                48,
+                190,
+                75
+              ],
+              "fiscal": 6,
+              "revuelta": 3
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Polonia del Congreso",
+              "members": [
+                "Poland"
+              ],
+              "box": [
+                17,
+                49,
+                25,
+                55
+              ],
+              "via": "conquista",
+              "desde": 1815,
+              "fiscal": 9,
+              "revuelta": 40,
+              "nota": "Tras el levantamiento de 1863 pierde hasta el nombre: pasa a llamarse Territorio del Vístula y se rusifica por decreto."
+            },
+            {
+              "nombre": "Turkestán",
+              "members": [
+                "Kazakhstan",
+                "Uzbekistan",
+                "Turkmenistan",
+                "Kyrgyzstan",
+                "Tajikistan"
+              ],
+              "box": [
+                50,
+                35,
+                80,
+                55
+              ],
+              "via": "conquista",
+              "desde": 1865,
+              "fiscal": 2,
+              "revuelta": 30,
+              "guarnicion": 40000,
+              "nota": "Taskent cae el año pasado. El algodón centroasiático empieza a sustituir al americano cortado por la guerra civil."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Kanatos de Jiva y Bujará",
+              "members": [
+                "Uzbekistan",
+                "Turkmenistan"
+              ],
+              "box": [
+                56,
+                37,
+                68,
+                44
+              ],
+              "via": "sumision",
+              "fiscal": 1,
+              "revuelta": 15
+            },
+            {
+              "nombre": "Besarabia y Moldavia",
+              "members": [
+                "Moldova"
+              ],
+              "box": [
+                26,
+                45,
+                30,
+                49
+              ],
+              "fiscal": 1,
+              "revuelta": 12
+            }
+          ]
         },
         {
           "year": 1945,
@@ -3889,6 +7235,123 @@
             35,
             190,
             82
+          ],
+          "core": {
+            "nombre": "RSFS de Rusia",
+            "members": [
+              "Russia"
+            ],
+            "box": [
+              20,
+              42,
+              190,
+              78
+            ],
+            "fiscal": 58,
+            "revuelta": 3,
+            "guarnicion": 3000000
+          },
+          "provinces": [
+            {
+              "nombre": "Repúblicas occidentales",
+              "members": [
+                "Ukraine",
+                "Belarus",
+                "Moldova"
+              ],
+              "box": [
+                22,
+                44,
+                42,
+                56
+              ],
+              "fiscal": 22,
+              "revuelta": 12,
+              "nota": "Arrasadas dos veces en cuatro años. La insurgencia nacionalista en Ucrania occidental y los bálticos dura hasta los años cincuenta."
+            },
+            {
+              "nombre": "Bálticas",
+              "members": [
+                "Estonia",
+                "Latvia",
+                "Lithuania"
+              ],
+              "box": [
+                20,
+                54,
+                29,
+                60
+              ],
+              "via": "conquista",
+              "desde": 1940,
+              "fiscal": 3,
+              "revuelta": 30,
+              "nota": "Anexión no reconocida por buena parte del mundo durante cincuenta y un años."
+            },
+            {
+              "nombre": "Asia Central y Cáucaso",
+              "members": [
+                "Kazakhstan",
+                "Uzbekistan",
+                "Turkmenistan",
+                "Kyrgyzstan",
+                "Tajikistan",
+                "Georgia",
+                "Armenia",
+                "Azerbaijan"
+              ],
+              "box": [
+                45,
+                35,
+                88,
+                56
+              ],
+              "fiscal": 12,
+              "revuelta": 6
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Kaliningrado y Carelia",
+              "members": [
+                "Russia",
+                "Poland"
+              ],
+              "box": [
+                19,
+                54,
+                32,
+                70
+              ],
+              "via": "conquista",
+              "desde": 1945,
+              "fiscal": 1,
+              "revuelta": 8
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Europa del Este ocupada",
+              "members": [
+                "Poland",
+                "Germany",
+                "Czechia",
+                "Hungary",
+                "Romania",
+                "Bulgaria"
+              ],
+              "box": [
+                11,
+                41,
+                27,
+                55
+              ],
+              "via": "conquista",
+              "desde": 1945,
+              "fiscal": 4,
+              "revuelta": 25,
+              "nota": "Ocupación militar que se convertirá en bloque en tres años. Todavía hay elecciones plurales en varios de estos países."
+            }
           ]
         }
       ]
@@ -4013,6 +7476,111 @@
             -12,
             95,
             72
+          ],
+          "core": {
+            "nombre": "Islas Británicas",
+            "members": [
+              "United Kingdom"
+            ],
+            "box": [
+              -8,
+              50,
+              2,
+              59
+            ],
+            "fiscal": 70,
+            "revuelta": 3,
+            "guarnicion": 45000,
+            "nota": "La deuda de la Guerra de los Siete Años es lo que empuja a gravar las colonias americanas. El imperio se rompe por su propia contabilidad."
+          },
+          "provinces": [
+            {
+              "nombre": "Irlanda",
+              "members": [
+                "Ireland"
+              ],
+              "box": [
+                -11,
+                51,
+                -5,
+                56
+              ],
+              "via": "conquista",
+              "fiscal": 8,
+              "revuelta": 25,
+              "nota": "Parlamento propio desde 1782 y unión forzada en 1801. Colonia interior con estatuto de reino."
+            },
+            {
+              "nombre": "Canadá y Terranova",
+              "members": [
+                "Canada"
+              ],
+              "box": [
+                -140,
+                42,
+                -52,
+                70
+              ],
+              "via": "tratado",
+              "desde": 1763,
+              "fiscal": 2,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Antillas azucareras",
+              "members": [
+                "Jamaica",
+                "Bahamas",
+                "Belize",
+                "Guyana"
+              ],
+              "box": [
+                -80,
+                5,
+                -58,
+                27
+              ],
+              "fiscal": 14,
+              "revuelta": 20,
+              "nota": "Las islas del azúcar valen más que Canadá en las cuentas de Londres, y funcionan con trabajo esclavo."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Bengala y la Compañía",
+              "members": [
+                "India",
+                "Bangladesh"
+              ],
+              "box": [
+                77,
+                19,
+                93,
+                28
+              ],
+              "via": "conquista",
+              "desde": 1757,
+              "fiscal": 4,
+              "revuelta": 15,
+              "nota": "No gobierna la Corona: gobierna una sociedad anónima con ejército propio. El diwani le da la recaudación de treinta millones de personas."
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Trece Colonias",
+              "members": [
+                "United States of America"
+              ],
+              "box": [
+                -88,
+                25,
+                -67,
+                47
+              ],
+              "revuelta": 95,
+              "guarnicion": 40000,
+              "nota": "En plena guerra de independencia con Francia y España del otro lado. Se pierden tres años después."
+            }
           ]
         },
         {
@@ -4078,58 +7646,208 @@
             84
           ],
           "core": {
+            "nombre": "Islas Británicas",
             "members": [
-              "United Kingdom",
-              "Canada",
-              "Australia",
-              "New Zealand",
-              "South Africa"
+              "United Kingdom"
             ],
             "box": [
-              -142,
-              -50,
-              180,
-              72
-            ]
+              -8,
+              50,
+              2,
+              59
+            ],
+            "fiscal": 62,
+            "revuelta": 8,
+            "guarnicion": 200000,
+            "nota": "Máxima extensión territorial y primer año de contracción real: Irlanda está en guerra y la deuda de 1914-18 ha hipotecado el siglo."
           },
-          "tributary": {
-            "members": [
-              "Egypt",
-              "Iraq",
-              "Jordan",
-              "Kuwait",
-              "Oman",
-              "Qatar",
-              "United Arab Emirates",
-              "Yemen",
-              "Nepal",
-              "Sudan",
-              "S. Sudan"
-            ],
-            "box": [
-              25,
-              10,
-              92,
-              40
-            ]
-          },
-          "contested": {
-            "members": [
-              "Ireland",
-              "India",
-              "Myanmar",
-              "Palestine",
-              "Israel",
-              "Somalia",
-              "Somaliland"
-            ],
-            "box": [
-              -12,
-              -5,
-              100,
-              56
-            ]
-          }
+          "tributary": [
+            {
+              "nombre": "Estados de la Tregua y Golfo",
+              "members": [
+                "Kuwait",
+                "Oman",
+                "United Arab Emirates",
+                "Qatar",
+                "Yemen"
+              ],
+              "box": [
+                46,
+                12,
+                60,
+                30
+              ],
+              "via": "tratado",
+              "fiscal": 0,
+              "revuelta": 8,
+              "nota": "Tratados que ceden a Londres la política exterior y dejan el interior a los emires. Coste de administración: casi cero."
+            },
+            {
+              "nombre": "Nepal y Estados principescos",
+              "members": [
+                "Nepal"
+              ],
+              "box": [
+                80,
+                26,
+                89,
+                31
+              ],
+              "via": "tratado",
+              "fiscal": 0,
+              "revuelta": 5
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "India británica",
+              "members": [
+                "India",
+                "Pakistan",
+                "Bangladesh",
+                "Myanmar",
+                "Sri Lanka"
+              ],
+              "box": [
+                60,
+                5,
+                98,
+                37
+              ],
+              "via": "conquista",
+              "desde": 1858,
+              "fiscal": 20,
+              "revuelta": 22,
+              "guarnicion": 250000,
+              "nota": "La joya de la corona y también su mayor ejército. La matanza de Amritsar es del año pasado; el primer movimiento de no cooperación empieza este."
+            },
+            {
+              "nombre": "África oriental y austral",
+              "members": [
+                "South Africa",
+                "Kenya",
+                "Uganda",
+                "Tanzania",
+                "Zimbabwe",
+                "Zambia",
+                "Malawi",
+                "Botswana",
+                "Namibia",
+                "Lesotho",
+                "eSwatini"
+              ],
+              "box": [
+                11,
+                -35,
+                42,
+                6
+              ],
+              "fiscal": 5,
+              "revuelta": 12
+            },
+            {
+              "nombre": "África occidental",
+              "members": [
+                "Nigeria",
+                "Ghana",
+                "Sierra Leone",
+                "Gambia"
+              ],
+              "box": [
+                -17,
+                4,
+                15,
+                14
+              ],
+              "fiscal": 3,
+              "revuelta": 10,
+              "nota": "Administración indirecta de Lugard: se gobierna a través de los emires y jefes existentes porque no hay funcionarios para otra cosa."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Dominios",
+              "members": [
+                "Canada",
+                "Australia",
+                "New Zealand",
+                "South Africa"
+              ],
+              "box": [
+                -141,
+                -47,
+                179,
+                72
+              ],
+              "via": "federacion",
+              "fiscal": 0,
+              "revuelta": 2,
+              "nota": "Firmaron Versalles por separado. Son ya Estados soberanos que comparten monarca; el Estatuto de Westminster de 1931 sólo lo pone por escrito."
+            },
+            {
+              "nombre": "Egipto y Sudán",
+              "members": [
+                "Egypt",
+                "Sudan",
+                "S. Sudan"
+              ],
+              "box": [
+                22,
+                3,
+                38,
+                32
+              ],
+              "via": "conquista",
+              "desde": 1882,
+              "fiscal": 4,
+              "revuelta": 35,
+              "nota": "Protectorado en revolución desde 1919. Se le concede independencia nominal en 1922 y el canal se conserva hasta 1956."
+            },
+            {
+              "nombre": "Mandatos de Oriente Medio",
+              "members": [
+                "Iraq",
+                "Israel",
+                "Palestine",
+                "Jordan"
+              ],
+              "box": [
+                33,
+                29,
+                49,
+                38
+              ],
+              "via": "tratado",
+              "desde": 1920,
+              "fiscal": 1,
+              "revuelta": 45,
+              "nota": "Mandatos concedidos este año por la Sociedad de Naciones. La revuelta iraquí estalla inmediatamente y se sofoca desde el aire."
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Rutas y carboneras",
+              "members": [
+                "Cyprus",
+                "Somalia",
+                "Somaliland",
+                "Malaysia",
+                "Brunei",
+                "Fiji",
+                "Solomon Is.",
+                "Papua New Guinea",
+                "Trinidad and Tobago",
+                "Falkland Is."
+              ],
+              "box": [
+                -62,
+                -53,
+                180,
+                36
+              ],
+              "nota": "El imperio real no es el área pintada: es la cadena de puertos, cables submarinos y depósitos de carbón que la sostiene."
+            }
+          ]
         }
       ]
     },
@@ -4209,40 +7927,131 @@
             54
           ],
           "core": {
+            "nombre": "China interior",
             "members": [
               "China"
             ],
             "box": [
-              98,
-              18,
-              126,
-              45
-            ]
-          },
-          "tributary": {
-            "members": [
-              "Mongolia",
-              "North Korea",
-              "Taiwan"
+              100,
+              20,
+              123,
+              42
             ],
-            "box": [
-              87,
-              18,
-              135,
-              54
-            ]
+            "via": "conquista",
+            "desde": 1644,
+            "fiscal": 82,
+            "revuelta": 4,
+            "guarnicion": 600000,
+            "nota": "Dieciocho provincias administradas por letrados han; la conquista manchú se sostiene sobre el sistema de exámenes que heredó intacto."
           },
-          "contested": {
-            "members": [
-              "China"
-            ],
-            "box": [
-              73,
-              27,
-              98,
-              50
-            ]
-          }
+          "tributary": [
+            {
+              "nombre": "Corea y Vietnam",
+              "members": [
+                "North Korea"
+              ],
+              "box": [
+                124,
+                37,
+                131,
+                43
+              ],
+              "via": "sumision",
+              "fiscal": 0,
+              "revuelta": 3,
+              "nota": "El sistema tributario no cobra: reparte más en regalos de lo que recibe. Lo que compra es jerarquía reconocida y comercio ordenado."
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Manchuria",
+              "members": [
+                "China",
+                "North Korea"
+              ],
+              "box": [
+                118,
+                40,
+                135,
+                54
+              ],
+              "via": "herencia",
+              "fiscal": 3,
+              "revuelta": 2,
+              "nota": "Patria dinástica cerrada por ley a la colonización han hasta el siglo XIX."
+            },
+            {
+              "nombre": "Taiwán",
+              "members": [
+                "Taiwan"
+              ],
+              "box": [
+                119,
+                21,
+                123,
+                26
+              ],
+              "via": "conquista",
+              "desde": 1683,
+              "fiscal": 2,
+              "revuelta": 15
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Xinjiang",
+              "members": [
+                "China"
+              ],
+              "box": [
+                73,
+                34,
+                96,
+                50
+              ],
+              "via": "conquista",
+              "desde": 1759,
+              "fiscal": 1,
+              "revuelta": 25,
+              "guarnicion": 30000,
+              "nota": "Conquistado el año pasado con la destrucción del kanato dzúngaro, uno de los últimos grandes imperios esteparios. La palabra significa «frontera nueva»."
+            },
+            {
+              "nombre": "Mongolia",
+              "members": [
+                "Mongolia"
+              ],
+              "box": [
+                88,
+                41,
+                120,
+                52
+              ],
+              "via": "sumision",
+              "fiscal": 1,
+              "revuelta": 5,
+              "nota": "Gobernada por su propia nobleza bajo el Lifan Yuan, no por la burocracia provincial."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Tíbet",
+              "members": [
+                "China"
+              ],
+              "box": [
+                78,
+                28,
+                99,
+                37
+              ],
+              "via": "sumision",
+              "desde": 1720,
+              "fiscal": 0,
+              "revuelta": 12,
+              "nota": "Dos residentes imperiales y una guarnición pequeña junto al Dalái Lama: protectorado, no provincia."
+            }
+          ]
         },
         {
           "year": 1900,
@@ -4256,6 +8065,102 @@
             18,
             135,
             50
+          ],
+          "core": {
+            "nombre": "China interior",
+            "members": [
+              "China"
+            ],
+            "box": [
+              100,
+              20,
+              123,
+              42
+            ],
+            "fiscal": 78,
+            "revuelta": 25,
+            "guarnicion": 400000,
+            "nota": "Levantamiento de los bóxers y ocupación de Pekín por ocho ejércitos extranjeros. La indemnización de 1901 equivale a varios años de ingresos del Estado."
+          },
+          "provinces": [
+            {
+              "nombre": "Manchuria",
+              "members": [
+                "China"
+              ],
+              "box": [
+                118,
+                40,
+                135,
+                54
+              ],
+              "fiscal": 4,
+              "revuelta": 40,
+              "nota": "Ocupada por tropas rusas este año. En cuatro será el campo de batalla de una guerra entre Rusia y Japón librada en suelo chino."
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Xinjiang",
+              "members": [
+                "China"
+              ],
+              "box": [
+                73,
+                34,
+                96,
+                50
+              ],
+              "fiscal": 1,
+              "revuelta": 20
+            },
+            {
+              "nombre": "Mongolia",
+              "members": [
+                "Mongolia"
+              ],
+              "box": [
+                88,
+                41,
+                120,
+                52
+              ],
+              "fiscal": 0,
+              "revuelta": 25
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Tíbet",
+              "members": [
+                "China"
+              ],
+              "box": [
+                78,
+                28,
+                99,
+                37
+              ],
+              "fiscal": 0,
+              "revuelta": 25
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Concesiones y esferas extranjeras",
+              "members": [
+                "China"
+              ],
+              "box": [
+                112,
+                21,
+                123,
+                41
+              ],
+              "via": "tratado",
+              "revuelta": 50,
+              "nota": "Puertos de tratado con extraterritorialidad, aduanas dirigidas por un británico y esferas de influencia repartidas. La soberanía existe en el papel y no en los tribunales."
+            }
           ]
         }
       ]
@@ -4342,6 +8247,95 @@
             5,
             -60,
             72
+          ],
+          "core": {
+            "nombre": "Estados de la Unión",
+            "members": [
+              "United States of America"
+            ],
+            "box": [
+              -125,
+              25,
+              -67,
+              49
+            ],
+            "fiscal": 96,
+            "revuelta": 1,
+            "nota": "La frontera interior se declaró cerrada en 1890. En treinta años el país pasa de reconstrucción a primera potencia industrial del mundo."
+          },
+          "client": [
+            {
+              "nombre": "Cuba ocupada",
+              "members": [
+                "Cuba"
+              ],
+              "box": [
+                -85,
+                19,
+                -74,
+                24
+              ],
+              "via": "conquista",
+              "desde": 1898,
+              "revuelta": 25,
+              "nota": "La enmienda Platt concede la independencia y se reserva el derecho de intervención y la base de Guantánamo."
+            },
+            {
+              "nombre": "Puerto Rico y Hawái",
+              "members": [
+                "Puerto Rico"
+              ],
+              "box": [
+                -68,
+                17,
+                -65,
+                19
+              ],
+              "via": "conquista",
+              "desde": 1898,
+              "revuelta": 8
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Filipinas",
+              "members": [
+                "Philippines"
+              ],
+              "box": [
+                117,
+                5,
+                127,
+                19
+              ],
+              "via": "conquista",
+              "desde": 1899,
+              "revuelta": 80,
+              "guarnicion": 70000,
+              "nota": "Guerra filipino-estadounidense en su segundo año: entre doscientos mil y un millón de muertos civiles. El primer imperio ultramarino de una república antiimperialista."
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Caribe y Centroamérica",
+              "members": [
+                "Mexico",
+                "Guatemala",
+                "Honduras",
+                "Nicaragua",
+                "Costa Rica",
+                "Panama",
+                "Dominican Rep.",
+                "Haiti"
+              ],
+              "box": [
+                -95,
+                7,
+                -68,
+                25
+              ],
+              "nota": "Doctrina Monroe convertida en práctica: intervención financiera y militar sin anexión. El canal de Panamá se abre catorce años después."
+            }
           ]
         },
         {
@@ -4354,6 +8348,43 @@
             15,
             -60,
             72
+          ],
+          "core": {
+            "nombre": "Estados Unidos",
+            "members": [
+              "United States of America"
+            ],
+            "box": [
+              -170,
+              18,
+              -66,
+              72
+            ],
+            "fiscal": 100,
+            "revuelta": 0.5
+          },
+          "sphere": [
+            {
+              "nombre": "Red de alianzas y bases",
+              "members": [
+                "Germany",
+                "Japan",
+                "South Korea",
+                "United Kingdom",
+                "Italy",
+                "Turkey",
+                "Kuwait",
+                "Qatar",
+                "Saudi Arabia"
+              ],
+              "box": [
+                -12,
+                24,
+                146,
+                60
+              ],
+              "nota": "Ochocientas instalaciones militares en unos ochenta países, más el dólar como moneda de reserva. Es hegemonía sin territorio: el modelo imperial que no necesita pintar el mapa."
+            }
           ]
         }
       ]
@@ -4404,50 +8435,164 @@
             58
           ],
           "core": {
+            "nombre": "Francia imperial",
             "members": [
               "France",
               "Belgium",
-              "Netherlands",
-              "Luxembourg",
-              "Italy"
+              "Luxembourg"
             ],
             "box": [
-              -6,
-              40,
-              19,
-              54
-            ]
-          },
-          "tributary": {
-            "members": [
-              "Germany",
-              "Poland",
-              "Switzerland",
-              "Denmark",
-              "Austria",
-              "Czechia",
-              "Croatia",
-              "Slovenia"
-            ],
-            "box": [
-              4,
+              -5,
               42,
-              24,
-              58
-            ]
-          },
-          "contested": {
-            "members": [
-              "Spain",
-              "Portugal"
+              8,
+              51
             ],
-            "box": [
-              -10,
-              35,
-              4,
-              44
-            ]
-          }
+            "fiscal": 52,
+            "revuelta": 3,
+            "guarnicion": 200000,
+            "nota": "Departamentos con código civil, catastro y conscripción. Es el Estado administrativo más eficaz de Europa y el modelo que copiarán todos."
+          },
+          "contested": [
+            {
+              "nombre": "España y Portugal",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "box": [
+                -10,
+                36,
+                3,
+                44
+              ],
+              "via": "conquista",
+              "desde": 1808,
+              "fiscal": 0,
+              "revuelta": 85,
+              "guarnicion": 250000,
+              "nota": "La úlcera española: cuatro años de guerrilla que retienen a un cuarto del ejército imperial mientras se invade Rusia."
+            },
+            {
+              "nombre": "Austria vencida",
+              "members": [
+                "Austria",
+                "Czechia"
+              ],
+              "box": [
+                9,
+                46,
+                19,
+                50
+              ],
+              "via": "tratado",
+              "revuelta": 30
+            }
+          ],
+          "provinces": [
+            {
+              "nombre": "Departamentos anexionados",
+              "members": [
+                "Netherlands",
+                "Germany",
+                "Italy"
+              ],
+              "box": [
+                4,
+                43,
+                14,
+                54
+              ],
+              "via": "conquista",
+              "fiscal": 20,
+              "revuelta": 12,
+              "nota": "Holanda, la costa alemana del mar del Norte y el noroeste italiano gobernados directamente desde París. Aquí el bloqueo continental se hace cumplir con gendarmes."
+            },
+            {
+              "nombre": "Iliria",
+              "members": [
+                "Slovenia",
+                "Croatia"
+              ],
+              "box": [
+                13,
+                42,
+                19,
+                47
+              ],
+              "via": "conquista",
+              "desde": 1809,
+              "fiscal": 3,
+              "revuelta": 20
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Reino de Italia y Nápoles",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                7,
+                36,
+                19,
+                47
+              ],
+              "via": "conquista",
+              "fiscal": 10,
+              "revuelta": 15,
+              "nota": "Coronas repartidas entre parientes: un hijastro en Milán, un cuñado en Nápoles. El nepotismo como sistema de gobierno internacional."
+            },
+            {
+              "nombre": "Confederación del Rin",
+              "members": [
+                "Germany"
+              ],
+              "box": [
+                6,
+                47,
+                14,
+                54
+              ],
+              "via": "tratado",
+              "desde": 1806,
+              "fiscal": 8,
+              "revuelta": 18,
+              "nota": "Dieciséis Estados alemanes que aportan contingentes. La disolución del Sacro Imperio se firma aquí, no en Viena."
+            },
+            {
+              "nombre": "Ducado de Varsovia",
+              "members": [
+                "Poland"
+              ],
+              "box": [
+                16,
+                49,
+                24,
+                55
+              ],
+              "via": "conquista",
+              "desde": 1807,
+              "fiscal": 3,
+              "revuelta": 8,
+              "nota": "La única clientela genuinamente entusiasta: los polacos aportan cien mil hombres a la campaña de Rusia."
+            },
+            {
+              "nombre": "Suiza y Dinamarca",
+              "members": [
+                "Switzerland",
+                "Denmark"
+              ],
+              "box": [
+                5,
+                45,
+                13,
+                58
+              ],
+              "via": "tratado",
+              "fiscal": 2,
+              "revuelta": 5
+            }
+          ]
         }
       ]
     },

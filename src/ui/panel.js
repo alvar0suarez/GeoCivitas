@@ -1,12 +1,13 @@
 /** Construcción del panel lateral: expediente, mundo y archivo. */
 
 import {
-  D, CONTROL, activas, instantaneaDe, choquesActivos, tecnoDisponible,
+  D, CONTROL, VIA, perfilControl, indiceControl, areaZona,
+  activas, instantaneaDe, choquesActivos, tecnoDisponible,
   difusion, eventosEn, regional, ich, COMPONENTES_ICH, global as gGlobal,
   horizonteDe, TIPO_BANDA, ciudadesActivas, batallasEn, inventosEn,
   regimenesEn, institucionesEn, poblacionCiudad, debatesDe, NIVEL_CONFIANZA,
 } from '../core/datos.js';
-import { porFormato, num, compacto, clamp } from '../core/series.js';
+import { porFormato, num, compacto, clamp, RAMPAS, rgba } from '../core/series.js';
 import { formatoAño, era } from '../core/escala.js';
 import { ESCALAS } from '../render/atlas.js';
 
@@ -96,8 +97,8 @@ function notaDelAño(año) {
 
 function fichaPolity(pol, est) {
   const snap = instantaneaDe(pol, est.año);
-  const zonas = snap ? Object.entries({ core: 'nucleo', members: 'provincia', tributary: 'tributario', contested: 'disputado' })
-    .filter(([k]) => snap[k]).map(([, v]) => v) : [];
+  const perfil = perfilControl(snap);
+  const clases = perfil.partes.map((p) => p.control);
   const dur = pol.to - pol.from;
   const trans = clamp((est.año - pol.from) / Math.max(1, dur), 0, 1);
 
@@ -105,15 +106,18 @@ function fichaPolity(pol, est) {
   <div class="sec">
     <div class="sub" style="color:${pol.color}">${esc(pol.kind)}${pol.speculative ? ' · escenario' : ''}</div>
     <h2 class="ttl">${esc(pol.name)}</h2>
-    <div>${zonas.map((z) => `<span class="chip chip--on" title="${esc(CONTROL[z].desc)}">${esc(CONTROL[z].label)}</span>`).join('')}
+    <div>${clases.map((z) => `<span class="chip chip--on" title="${esc(CONTROL[z].desc)}">${esc(CONTROL[z].label)}</span>`).join('')}
       ${pol.speculative ? '<span class="chip chip--spec">PROSPECTIVO</span>' : ''}</div>
   </div>
+
+  ${bloqueMando(pol, perfil, est)}
 
   <div class="sec">
     <div class="sec__t">TRAYECTORIA</div>
     <div class="kv"><div class="kv__k">Vigencia</div><div class="kv__v">${esc(formatoAño(pol.from))} — ${esc(formatoAño(pol.to))} · ${num(dur)} años</div></div>
     <div class="kv"><div class="kv__k">Sede</div><div class="kv__v">${esc(pol.seat)}</div></div>
     <div class="kv"><div class="kv__k">Instantánea</div><div class="kv__v">${snap ? esc(formatoAño(snap.year)) : '—'}</div></div>
+    ${serieMando(pol, est)}
     <div class="bar"><i style="width:${(trans * 100).toFixed(1)}%;background:${pol.color}"></i></div>
     <div class="sub" style="margin:4px 0 0">${(trans * 100).toFixed(0)} % de su vida transcurrida</div>
   </div>
@@ -126,15 +130,75 @@ function fichaPolity(pol, est) {
     <div class="kv"><div class="kv__k">Colapso</div><div class="kv__v">${esc(pol.dossier.colapso)}</div></div>
   </div>
 
-  <div class="sec">
-    <div class="sec__t">CLASES DE CONTROL</div>
-    ${Object.entries(CONTROL).map(([k, c]) => `
-      <div class="kv"><div class="kv__k" style="color:${zonas.includes(k) ? pol.color : ''}">${esc(c.label)}</div>
-      <div class="kv__v" style="opacity:${zonas.includes(k) ? 1 : 0.45}">${esc(c.desc)}</div></div>`).join('')}
-  </div>
-
   ${avisoDebate('polities', pol.id)}
   <button class="railbtn" data-sim="${esc(pol.id)}">SIMULAR CAMPAÑA DESDE AQUÍ</button>`;
+}
+
+/**
+ * Perfil de mando: cómo se reparte la extensión por grado de control.
+ *
+ * Es la cifra que separa dos imperios que en un mapa plano ocupan lo mismo.
+ * Un 80 % de superficie en tributarios y un 80 % en provincias son dos
+ * animales distintos: el primero se evapora en una generación.
+ */
+function bloqueMando(pol, perfil, est) {
+  if (!perfil.partes.length) return '';
+  const idx = perfil.indice;
+  const col = RAMPAS.mando(idx / 100);
+
+  const barra = perfil.partes.map((p) => {
+    const c = CONTROL[p.control];
+    return `<i style="width:${p.pct.toFixed(2)}%;background:${RAMPAS.mando(c.idx / 100)}"
+      title="${esc(c.label)}: ${p.pct.toFixed(1)} % de la extensión"></i>`;
+  }).join('');
+
+  const filas = perfil.partes.map((p) => {
+    const c = CONTROL[p.control];
+    return `<div class="kv">
+      <div class="kv__k"><span class="dotc" style="background:${RAMPAS.mando(c.idx / 100)}"></span>${esc(c.label)}</div>
+      <div class="kv__v"><b style="font-family:var(--mono)">${p.pct.toFixed(0)} %</b>
+        <span style="color:var(--ink-faint);font-size:10px"> · ${num(p.area, 1)} M km² · índice ${c.idx}</span>
+        ${detalleZonas(p.zonas)}</div></div>`;
+  }).join('');
+
+  return `<div class="sec">
+    <div class="sec__t">MANDO EFECTIVO</div>
+    <div class="mando__cab">
+      <b class="mando__num" style="color:${col}">${idx.toFixed(0)}</b>
+      <span class="mando__leg">índice de control sobre 100 · ${num(perfil.area, 1)} M km² gobernados nominalmente</span>
+    </div>
+    <div class="stack">${barra}</div>
+    ${filas}
+    <p class="txt" style="font-size:10px;color:var(--ink-faint)">El índice pondera cada grado por la superficie que ocupa. No mide poder: mide cuánto de lo que el centro ordena llega a ejecutarse.</p>
+  </div>`;
+}
+
+function detalleZonas(zonas) {
+  const con = zonas.filter((z) => z.nombre || z.nota || z.via || z.guarnicion != null || z.fiscal != null || z.revuelta != null);
+  if (!con.length) return '';
+  return `<div class="zonas">${con.map((z) => {
+    const marcas = [];
+    if (z.via && VIA[z.via]) marcas.push(esc(VIA[z.via]));
+    if (z.desde != null) marcas.push(`desde ${esc(formatoAño(z.desde))}`);
+    if (z.guarnicion != null) marcas.push(`guarnición ${num(z.guarnicion)}`);
+    if (z.fiscal != null) marcas.push(`rinde ${z.fiscal} %`);
+    if (z.revuelta != null) marcas.push(`revuelta ${z.revuelta} %`);
+    return `<div class="zona">
+      ${z.nombre ? `<b class="zona__n">${esc(z.nombre)}</b>` : ''}
+      ${marcas.length ? `<span class="zona__m">${marcas.join(' · ')}</span>` : ''}
+      ${z.nota ? `<span class="zona__d">${esc(z.nota)}</span>` : ''}</div>`;
+  }).join('')}</div>`;
+}
+
+/** Evolución del índice de mando a lo largo de la vida de la entidad. */
+function serieMando(pol, est) {
+  if (pol.snapshots.length < 2) return '';
+  const años = pol.snapshots.map((s) => s.year);
+  const vals = años.map((y) => indiceControl(pol, clamp(y, pol.from, pol.to)) ?? 0);
+  if (vals.every((v) => Math.abs(v - vals[0]) < 0.5)) return '';
+  return `<div class="kv"><div class="kv__k">Mando</div>
+    <div class="kv__v">${chispa(años, vals, est.año, '#f5b642')}
+    <span style="color:var(--ink-faint);font-size:10px">${vals.map((v) => v.toFixed(0)).join(' → ')}</span></div></div>`;
 }
 
 function fichaRegion(reg, est) {
