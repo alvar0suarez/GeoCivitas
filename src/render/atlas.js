@@ -11,7 +11,7 @@ import {
   anilloPoligono, orientarAnillo as orientar, cajaDePoligono,
 } from '../core/proyeccion.js';
 import {
-  D, activas, instantaneaDe, zonasDe, CONTROL, ORDEN_CONTROL, horizonteDe,
+  D, activas, instantaneaDe, extensionDe, CONTROL, ORDEN_CONTROL, horizonteDe,
   TIPO_BANDA, choquesActivos, tecnoDisponible, difusion, eventosEn,
   regional, ich, ciudadesActivas, expansionDe, inventosEn, batallasEn,
 } from '../core/datos.js';
@@ -428,26 +428,25 @@ export class Atlas {
     const { ctx, vista } = this;
     const pols = activas(est.año);
 
-    // La firma incluye qué instantánea está activa de cada entidad, no el año:
-    // arrastrar la línea temporal dentro de un mismo periodo no reproyecta nada.
-    const firma = this.claveVista() + '#' +
-      pols.map((p) => `${p.id}@${instantaneaDe(p, est.año)?.year}`).join(',');
+    // Ahora la frontera se mueve con cada año, así que la firma lleva el año:
+    // dentro del mismo año no se reproyecta nada, y al cambiarlo la geometría
+    // se rehace sobre los trazos de país ya cacheados.
+    const firma = `${this.claveVista()}#${est.año}`;
 
     const preparado = this.memo('soberania', firma, () => pols.map((pol) => {
-      const snap = instantaneaDe(pol, est.año);
-      if (!snap) return null;
       // Todas las zonas, no una por grado: una instantánea mallada trae varias
       // provincias y varias marcas, y quedarse con la primera de cada clase
       // borraría el resto del imperio.
-      const zonasOrd = zonasDe(snap)
+      const zonasOrd = extensionDe(pol, est.año)
         .sort((a, b) => ORDEN_CONTROL.indexOf(a.control) - ORDEN_CONTROL.indexOf(b.control));
+      if (!zonasOrd.length) return null;
       const capas = [];
       for (const z of zonasOrd) {
         const path = this.trazoDePaises(z.members, z.extra);
         if (!path) continue;
         capas.push({ z, path, recorte: this.construirRecorte(z) });
       }
-      return { pol, capas };
+      return capas.length ? { pol, capas } : null;
     }).filter(Boolean));
 
     // En modo mando el color deja de decir «quién» y pasa a decir «cuánto»:
@@ -459,11 +458,14 @@ export class Atlas {
     for (const { pol, capas } of preparado) {
       for (const { z, path: p, recorte } of capas) {
         const cfg = CONTROL[z.control];
-        const tinte = porMando ? RAMPAS.mando(cfg.idx / 100) : pol.color;
+        // El índice ya viene interpolado: en mando efectivo el color de una
+        // provincia que se degrada a tributaria recorre la rampa, no salta.
+        const tinte = porMando ? RAMPAS.mando((z.idx ?? cfg.idx) / 100) : pol.color;
         ctx.save();
         if (recorte) ctx.clip(recorte);
 
         ctx.globalAlpha = (porMando ? Math.max(0.3, cfg.alfa) : cfg.alfa)
+          * (z.peso ?? 1)
           * (est.resaltado === pol.id ? 1.25 : 1) * (pol.speculative ? 0.72 : 1);
         ctx.fillStyle = tinte;
         ctx.fill(p);
@@ -474,7 +476,7 @@ export class Atlas {
           ctx.fill(p);
         }
 
-        ctx.globalAlpha = z.control === 'nucleo' ? 0.95 : 0.5;
+        ctx.globalAlpha = (z.control === 'nucleo' ? 0.95 : 0.5) * (z.peso ?? 1);
         ctx.strokeStyle = tinte;
         ctx.lineWidth = z.control === 'nucleo' ? 1.1 : 0.7;
         if (pol.speculative) ctx.setLineDash([6, 4]);

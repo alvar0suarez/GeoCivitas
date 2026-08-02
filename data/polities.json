@@ -39,6 +39,31 @@
           ]
         },
         {
+          "year": -2200,
+          "members": [
+            "Egypt"
+          ],
+          "box": [
+            24,
+            22,
+            34,
+            31
+          ]
+        },
+        {
+          "year": -1900,
+          "members": [
+            "Egypt",
+            "Sudan"
+          ],
+          "box": [
+            24,
+            19,
+            35,
+            32
+          ]
+        },
+        {
           "year": -1450,
           "members": [
             "Egypt",
@@ -68,6 +93,18 @@
               39,
               21
             ]
+          ]
+        },
+        {
+          "year": -1100,
+          "members": [
+            "Egypt"
+          ],
+          "box": [
+            24,
+            22,
+            35,
+            32
           ]
         },
         {
@@ -154,6 +191,30 @@
           ]
         },
         {
+          "year": -1300,
+          "members": [
+            "Iraq"
+          ],
+          "box": [
+            42,
+            30,
+            47,
+            34
+          ]
+        },
+        {
+          "year": -1000,
+          "members": [
+            "Iraq"
+          ],
+          "box": [
+            43,
+            30,
+            47,
+            33.5
+          ]
+        },
+        {
           "year": -580,
           "members": [
             "Iraq",
@@ -193,6 +254,18 @@
         "colapso": "Colapso del Bronce hacia 1180 a. C.: sequía, corte de rutas y Pueblos del Mar. Hattusa se abandona sin asedio."
       },
       "snapshots": [
+        {
+          "year": -1500,
+          "members": [
+            "Turkey"
+          ],
+          "box": [
+            30,
+            37,
+            39,
+            41
+          ]
+        },
         {
           "year": -1300,
           "members": [
@@ -242,6 +315,30 @@
             14,
             38,
             32
+          ]
+        },
+        {
+          "year": -300,
+          "members": [
+            "Sudan"
+          ],
+          "box": [
+            30,
+            15,
+            36,
+            22
+          ]
+        },
+        {
+          "year": -100,
+          "members": [
+            "Sudan"
+          ],
+          "box": [
+            30,
+            13,
+            36,
+            22
           ]
         },
         {
@@ -336,36 +433,474 @@
       },
       "snapshots": [
         {
-          "year": -264,
-          "members": [
-            "Tunisia",
-            "Algeria",
-            "Libya",
-            "Morocco",
-            "Spain",
-            "Italy",
-            "Malta"
-          ],
-          "box": [
-            -9,
-            30,
-            15,
-            40
-          ],
-          "holes": [
-            [
-              -9,
-              36,
-              5,
-              40
+          "year": -650,
+          "core": {
+            "nombre": "Cartago y el cabo Bon",
+            "members": [
+              "Tunisia"
             ],
-            [
-              8,
-              30,
-              15,
-              33
-            ]
+            "box": [
+              9,
+              33,
+              11.5,
+              37.5
+            ],
+            "via": "colonizacion",
+            "fiscal": 60,
+            "revuelta": 1,
+            "nota": "Colonia tiria convertida en ciudad independiente. Todavía no controla territorio africano: vive del mar y paga tributo a los libios por el suelo que ocupa."
+          },
+          "sphere": [
+            {
+              "nombre": "Red de factorías fenicias",
+              "members": [
+                "Tunisia",
+                "Algeria",
+                "Libya",
+                "Morocco",
+                "Spain",
+                "Italy"
+              ],
+              "box": [
+                -9,
+                30,
+                15,
+                39
+              ],
+              "fiscal": 40,
+              "nota": "Gadir, Útica, Motia, Palermo: escalas de un día de navegación, no provincias. La talasocracia púnica es una lista de puertos."
+            }
           ]
+        },
+        {
+          "year": -480,
+          "core": {
+            "nombre": "Cartago y el país líbico",
+            "members": [
+              "Tunisia"
+            ],
+            "box": [
+              8,
+              32,
+              12,
+              37.5
+            ],
+            "fiscal": 50,
+            "revuelta": 4,
+            "guarnicion": 15000,
+            "nota": "Tras Hímera empieza la expansión hacia el interior: el latifundio cerealista sustituye al comercio como base fiscal."
+          },
+          "march": [
+            {
+              "nombre": "Sicilia púnica",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                12,
+                37,
+                14,
+                39
+              ],
+              "via": "conquista",
+              "fiscal": 12,
+              "revuelta": 30,
+              "guarnicion": 20000,
+              "nota": "El tercio occidental de la isla. Los otros dos tercios son griegos y la frontera se mueve cada generación."
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Libios y númidas",
+              "members": [
+                "Tunisia",
+                "Algeria",
+                "Libya"
+              ],
+              "box": [
+                4,
+                30,
+                15,
+                36
+              ],
+              "via": "sumision",
+              "fiscal": 20,
+              "revuelta": 25,
+              "nota": "Pagan en grano y en soldados. Se sublevan en cuanto Cartago pierde una guerra, y en la de los Mercenarios casi acaban con ella."
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Factorías atlánticas e ibéricas",
+              "members": [
+                "Spain",
+                "Portugal",
+                "Morocco"
+              ],
+              "box": [
+                -9,
+                30,
+                0,
+                39
+              ],
+              "fiscal": 18,
+              "nota": "Gadir y las escalas del estaño. Presencia comercial en la costa; el interior ibérico no reconoce a nadie."
+            }
+          ]
+        },
+        {
+          "year": -264,
+          "core": {
+            "nombre": "Cartago y el país líbico",
+            "members": [
+              "Tunisia"
+            ],
+            "box": [
+              8,
+              32,
+              12,
+              37.5
+            ],
+            "fiscal": 48,
+            "revuelta": 5,
+            "guarnicion": 20000
+          },
+          "march": [
+            {
+              "nombre": "Sicilia púnica",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                12,
+                37,
+                14,
+                39
+              ],
+              "via": "conquista",
+              "fiscal": 10,
+              "revuelta": 35,
+              "guarnicion": 25000,
+              "hasta": -241,
+              "nota": "Primera Guerra Púnica: se pierde entera en 241 y con ella la razón de ser de la flota."
+            },
+            {
+              "nombre": "Cerdeña y Córcega",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                8,
+                38.5,
+                10,
+                43
+              ],
+              "via": "conquista",
+              "fiscal": 6,
+              "revuelta": 25,
+              "hasta": -238,
+              "nota": "Arrebatadas por Roma en 238 aprovechando la guerra de los mercenarios. El agravio que Amílcar transmite a su hijo."
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Libios y númidas",
+              "members": [
+                "Tunisia",
+                "Algeria",
+                "Libya"
+              ],
+              "box": [
+                4,
+                30,
+                15,
+                36
+              ],
+              "via": "sumision",
+              "fiscal": 24,
+              "revuelta": 30
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Factorías ibéricas",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "box": [
+                -9,
+                36,
+                -4,
+                38
+              ],
+              "fiscal": 12
+            }
+          ]
+        },
+        {
+          "year": -218,
+          "core": {
+            "nombre": "Cartago y el país líbico",
+            "members": [
+              "Tunisia"
+            ],
+            "box": [
+              8,
+              32,
+              12,
+              37.5
+            ],
+            "fiscal": 40,
+            "revuelta": 6,
+            "guarnicion": 20000,
+            "nota": "Sin Sicilia ni Cerdeña. El imperio se ha reconstruido entero al otro lado del mar."
+          },
+          "provinces": [
+            {
+              "nombre": "Hispania bárcida",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "via": "conquista",
+              "desde": -237,
+              "fiscal": 35,
+              "revuelta": 12,
+              "guarnicion": 50000,
+              "nota": "Veinte años de conquista de Amílcar, Asdrúbal y Aníbal. Las minas de plata de Cartagena pagan la guerra que empieza este año; el ejército que cruza los Alpes se recluta aquí.",
+              "poly": [
+                [
+                  [
+                    -9,
+                    36.9
+                  ],
+                  [
+                    -6.2,
+                    36.2
+                  ],
+                  [
+                    -5.3,
+                    36
+                  ],
+                  [
+                    -4.3,
+                    36.6
+                  ],
+                  [
+                    -2,
+                    36.8
+                  ],
+                  [
+                    -0.5,
+                    38.4
+                  ],
+                  [
+                    0.5,
+                    40
+                  ],
+                  [
+                    0.9,
+                    40.9
+                  ],
+                  [
+                    0.2,
+                    41
+                  ],
+                  [
+                    -1.5,
+                    40.2
+                  ],
+                  [
+                    -3.5,
+                    39.6
+                  ],
+                  [
+                    -5.5,
+                    39.2
+                  ],
+                  [
+                    -7.2,
+                    39
+                  ],
+                  [
+                    -8.8,
+                    38.5
+                  ]
+                ]
+              ]
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Libios y númidas",
+              "members": [
+                "Tunisia",
+                "Algeria",
+                "Libya"
+              ],
+              "box": [
+                4,
+                30,
+                15,
+                36
+              ],
+              "via": "sumision",
+              "fiscal": 20,
+              "revuelta": 28
+            }
+          ]
+        },
+        {
+          "year": -216,
+          "core": {
+            "nombre": "Cartago y el país líbico",
+            "members": [
+              "Tunisia"
+            ],
+            "box": [
+              8,
+              32,
+              12,
+              37.5
+            ],
+            "fiscal": 40,
+            "revuelta": 6,
+            "guarnicion": 20000,
+            "nota": "Aníbal acaba de aniquilar ocho legiones en Cannas. Es el momento de máxima ventaja cartaginesa y no sirve de nada: las ciudades latinas no se pasan de bando."
+          },
+          "provinces": [
+            {
+              "nombre": "Hispania bárcida",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "via": "conquista",
+              "desde": -237,
+              "fiscal": 35,
+              "revuelta": 12,
+              "guarnicion": 50000,
+              "nota": "Veinte años de conquista de Amílcar, Asdrúbal y Aníbal. Las minas de plata de Cartagena pagan la guerra que empieza este año; el ejército que cruza los Alpes se recluta aquí.",
+              "poly": [
+                [
+                  [
+                    -9,
+                    36.9
+                  ],
+                  [
+                    -6.2,
+                    36.2
+                  ],
+                  [
+                    -5.3,
+                    36
+                  ],
+                  [
+                    -4.3,
+                    36.6
+                  ],
+                  [
+                    -2,
+                    36.8
+                  ],
+                  [
+                    -0.5,
+                    38.4
+                  ],
+                  [
+                    0.5,
+                    40
+                  ],
+                  [
+                    0.9,
+                    40.9
+                  ],
+                  [
+                    0.2,
+                    41
+                  ],
+                  [
+                    -1.5,
+                    40.2
+                  ],
+                  [
+                    -3.5,
+                    39.6
+                  ],
+                  [
+                    -5.5,
+                    39.2
+                  ],
+                  [
+                    -7.2,
+                    39
+                  ],
+                  [
+                    -8.8,
+                    38.5
+                  ]
+                ]
+              ]
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Libios y númidas",
+              "members": [
+                "Tunisia",
+                "Algeria",
+                "Libya"
+              ],
+              "box": [
+                4,
+                30,
+                15,
+                36
+              ],
+              "via": "sumision",
+              "fiscal": 20,
+              "revuelta": 28
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Italia de Aníbal",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                12,
+                38,
+                18,
+                43
+              ],
+              "via": "conquista",
+              "desde": -216,
+              "hasta": -203,
+              "revuelta": 70,
+              "guarnicion": 40000,
+              "nota": "Quince años acampado en el sur de Italia tras Cannas, sin poder tomar Roma ni recibir refuerzos. Ocupación sin conquista."
+            }
+          ]
+        },
+        {
+          "year": -201,
+          "core": {
+            "nombre": "Cartago y su territorio",
+            "members": [
+              "Tunisia"
+            ],
+            "box": [
+              9,
+              33,
+              11.5,
+              37
+            ],
+            "fiscal": 100,
+            "revuelta": 4,
+            "nota": "Tras Zama: sin flota, sin Hispania, sin derecho a hacer la guerra sin permiso de Roma, y diez mil talentos a pagar en cincuenta años. La ciudad se hace más rica que nunca y por eso la destruyen."
+          }
         }
       ]
     },
@@ -2386,6 +2921,465 @@
           ]
         },
         {
+          "year": 200,
+          "core": {
+            "nombre": "Italia y las islas",
+            "members": [
+              "Italy"
+            ],
+            "box": [
+              6,
+              36,
+              19,
+              47
+            ],
+            "fiscal": 12,
+            "revuelta": 2,
+            "guarnicion": 15000,
+            "nota": "Septimio Severo ha duplicado la paga de las legiones y aconseja a sus hijos enriquecer a los soldados y despreciar a los demás. La fórmula del siglo siguiente."
+          },
+          "provinces": [
+            {
+              "nombre": "Hispania",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "box": [
+                -10,
+                36,
+                3,
+                44
+              ],
+              "fiscal": 9,
+              "revuelta": 2,
+              "guarnicion": 6000
+            },
+            {
+              "nombre": "Las Galias",
+              "members": [
+                "France",
+                "Belgium"
+              ],
+              "box": [
+                -5,
+                42,
+                8,
+                51
+              ],
+              "fiscal": 11,
+              "revuelta": 5,
+              "guarnicion": 4000
+            },
+            {
+              "nombre": "Grecia, Macedonia e Iliria",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania",
+                "Bosnia and Herz.",
+                "Montenegro",
+                "Kosovo",
+                "Croatia",
+                "Slovenia"
+              ],
+              "box": [
+                13,
+                36,
+                27,
+                46
+              ],
+              "fiscal": 6,
+              "revuelta": 3
+            },
+            {
+              "nombre": "Asia y Anatolia",
+              "members": [
+                "Turkey",
+                "Cyprus"
+              ],
+              "box": [
+                26,
+                35,
+                40,
+                42
+              ],
+              "fiscal": 13,
+              "revuelta": 3,
+              "guarnicion": 12000
+            },
+            {
+              "nombre": "Siria y Mesopotamia",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Iraq"
+              ],
+              "box": [
+                33,
+                30,
+                44,
+                38
+              ],
+              "via": "conquista",
+              "desde": 198,
+              "fiscal": 10,
+              "revuelta": 12,
+              "guarnicion": 45000,
+              "nota": "Severo anexiona Mesopotamia donde Trajano fracasó. Dura hasta el siglo siguiente y convierte la guerra con Persia en permanente."
+            },
+            {
+              "nombre": "Aegyptus",
+              "members": [
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                36,
+                32
+              ],
+              "fiscal": 13,
+              "revuelta": 6,
+              "guarnicion": 12000
+            },
+            {
+              "nombre": "África y Numidia",
+              "members": [
+                "Libya",
+                "Tunisia",
+                "Algeria"
+              ],
+              "box": [
+                2,
+                28,
+                25,
+                37
+              ],
+              "fiscal": 12,
+              "revuelta": 3,
+              "guarnicion": 6000,
+              "nota": "El emperador es africano de Leptis Magna. La provincia vive su siglo de oro monumental."
+            },
+            {
+              "nombre": "Judea y Arabia",
+              "members": [
+                "Israel",
+                "Palestine",
+                "Jordan"
+              ],
+              "box": [
+                34,
+                28,
+                40,
+                34
+              ],
+              "fiscal": 4,
+              "revuelta": 6
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Britania",
+              "members": [
+                "United Kingdom"
+              ],
+              "box": [
+                -6,
+                50,
+                2,
+                56
+              ],
+              "fiscal": 2,
+              "revuelta": 12,
+              "guarnicion": 40000,
+              "nota": "Severo muere en York en 211 tras una campaña fallida contra Caledonia. La isla nunca deja de costar más de lo que rinde."
+            },
+            {
+              "nombre": "Limes renano",
+              "members": [
+                "Germany",
+                "Netherlands",
+                "Switzerland"
+              ],
+              "box": [
+                4,
+                46,
+                11,
+                53
+              ],
+              "fiscal": 2,
+              "revuelta": 6,
+              "guarnicion": 40000
+            },
+            {
+              "nombre": "Nórico, Recia y Panonia",
+              "members": [
+                "Austria",
+                "Hungary"
+              ],
+              "box": [
+                9,
+                44,
+                22,
+                50
+              ],
+              "fiscal": 3,
+              "revuelta": 7,
+              "guarnicion": 45000
+            },
+            {
+              "nombre": "Mesia",
+              "members": [
+                "Serbia",
+                "Bulgaria"
+              ],
+              "box": [
+                19,
+                41,
+                30,
+                45
+              ],
+              "fiscal": 3,
+              "revuelta": 8,
+              "guarnicion": 35000
+            },
+            {
+              "nombre": "Dacia",
+              "members": [
+                "Romania"
+              ],
+              "box": [
+                20,
+                43,
+                27,
+                48
+              ],
+              "fiscal": 3,
+              "revuelta": 20,
+              "guarnicion": 25000,
+              "hasta": 271,
+              "nota": "Aureliano la evacúa en 271 y traslada a la población al sur del Danubio. Primera provincia abandonada por decisión propia."
+            },
+            {
+              "nombre": "Mauretania Tingitana",
+              "members": [
+                "Morocco"
+              ],
+              "box": [
+                -10,
+                30,
+                -1,
+                36
+              ],
+              "fiscal": 1,
+              "revuelta": 12,
+              "guarnicion": 8000
+            }
+          ]
+        },
+        {
+          "year": 280,
+          "core": {
+            "nombre": "Italia y las islas",
+            "members": [
+              "Italy"
+            ],
+            "box": [
+              6,
+              36,
+              19,
+              47
+            ],
+            "fiscal": 14,
+            "revuelta": 6,
+            "guarnicion": 20000,
+            "nota": "Fin de la crisis del siglo III: cincuenta años de guerra civil, peste, inflación y dos secesiones. El imperio sale entero pero irreconocible."
+          },
+          "provinces": [
+            {
+              "nombre": "Hispania",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "box": [
+                -10,
+                36,
+                3,
+                44
+              ],
+              "fiscal": 9,
+              "revuelta": 5
+            },
+            {
+              "nombre": "Las Galias",
+              "members": [
+                "France",
+                "Belgium"
+              ],
+              "box": [
+                -5,
+                42,
+                8,
+                51
+              ],
+              "fiscal": 10,
+              "revuelta": 15,
+              "nota": "Reintegrada en 274 tras catorce años como Imperio Galo independiente, con sus propios cónsules y su propia moneda."
+            },
+            {
+              "nombre": "Grecia, Macedonia e Iliria",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania",
+                "Bosnia and Herz.",
+                "Montenegro",
+                "Kosovo",
+                "Croatia",
+                "Slovenia"
+              ],
+              "box": [
+                13,
+                36,
+                27,
+                46
+              ],
+              "fiscal": 7,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Asia y Anatolia",
+              "members": [
+                "Turkey",
+                "Cyprus"
+              ],
+              "box": [
+                26,
+                35,
+                40,
+                42
+              ],
+              "fiscal": 14,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Siria",
+              "members": [
+                "Syria",
+                "Lebanon"
+              ],
+              "box": [
+                33,
+                32,
+                42,
+                38
+              ],
+              "fiscal": 10,
+              "revuelta": 18,
+              "nota": "Recuperada en 272 de manos de Zenobia de Palmira, que llegó a gobernar de Egipto a Anatolia en su propio nombre."
+            },
+            {
+              "nombre": "Aegyptus",
+              "members": [
+                "Egypt"
+              ],
+              "box": [
+                24,
+                22,
+                36,
+                32
+              ],
+              "fiscal": 14,
+              "revuelta": 12
+            },
+            {
+              "nombre": "África y Numidia",
+              "members": [
+                "Libya",
+                "Tunisia",
+                "Algeria"
+              ],
+              "box": [
+                2,
+                28,
+                25,
+                37
+              ],
+              "fiscal": 12,
+              "revuelta": 6
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Britania",
+              "members": [
+                "United Kingdom"
+              ],
+              "box": [
+                -6,
+                50,
+                2,
+                56
+              ],
+              "fiscal": 1,
+              "revuelta": 20,
+              "guarnicion": 25000
+            },
+            {
+              "nombre": "Limes renano",
+              "members": [
+                "Germany",
+                "Netherlands",
+                "Switzerland"
+              ],
+              "box": [
+                4,
+                46,
+                10,
+                52
+              ],
+              "fiscal": 2,
+              "revuelta": 20,
+              "guarnicion": 40000,
+              "nota": "Los Campos Decumates entre Rin y Danubio se han abandonado hacia 260. La frontera vuelve a los ríos."
+            },
+            {
+              "nombre": "Danubio",
+              "members": [
+                "Austria",
+                "Hungary",
+                "Serbia",
+                "Bulgaria"
+              ],
+              "box": [
+                9,
+                41,
+                30,
+                50
+              ],
+              "fiscal": 4,
+              "revuelta": 22,
+              "guarnicion": 70000
+            },
+            {
+              "nombre": "Mauretania",
+              "members": [
+                "Morocco"
+              ],
+              "box": [
+                -10,
+                30,
+                -1,
+                36
+              ],
+              "fiscal": 1,
+              "revuelta": 18
+            }
+          ]
+        },
+        {
           "year": 395,
           "members": [
             "Italy",
@@ -2694,6 +3688,32 @@
             48,
             20
           ]
+        },
+        {
+          "year": 550,
+          "members": [
+            "Ethiopia",
+            "Eritrea"
+          ],
+          "box": [
+            36,
+            8,
+            42,
+            17
+          ]
+        },
+        {
+          "year": 750,
+          "members": [
+            "Ethiopia",
+            "Eritrea"
+          ],
+          "box": [
+            37,
+            9,
+            41,
+            16
+          ]
         }
       ]
     },
@@ -2776,6 +3796,21 @@
       },
       "snapshots": [
         {
+          "year": 450,
+          "members": [
+            "Guatemala",
+            "Mexico",
+            "Belize",
+            "Honduras"
+          ],
+          "box": [
+            -92,
+            14,
+            -87,
+            21
+          ]
+        },
+        {
           "year": 700,
           "members": [
             "Guatemala",
@@ -2787,6 +3822,22 @@
           "box": [
             -94,
             14,
+            -86,
+            22
+          ]
+        },
+        {
+          "year": 800,
+          "members": [
+            "Guatemala",
+            "Mexico",
+            "Belize",
+            "Honduras",
+            "El Salvador"
+          ],
+          "box": [
+            -93,
+            13,
             -86,
             22
           ]
@@ -2814,6 +3865,19 @@
       },
       "snapshots": [
         {
+          "year": 700,
+          "members": [
+            "Mali",
+            "Mauritania"
+          ],
+          "box": [
+            -12,
+            13,
+            -3,
+            19
+          ]
+        },
+        {
           "year": 1000,
           "members": [
             "Mauritania",
@@ -2827,6 +3891,20 @@
             11,
             -2,
             19
+          ]
+        },
+        {
+          "year": 1150,
+          "members": [
+            "Mali",
+            "Mauritania",
+            "Senegal"
+          ],
+          "box": [
+            -14,
+            12,
+            -2,
+            18
           ]
         }
       ]
@@ -3106,6 +4184,127 @@
           ]
         },
         {
+          "year": 650,
+          "core": {
+            "nombre": "Anatolia y Constantinopla",
+            "members": [
+              "Turkey"
+            ],
+            "box": [
+              26,
+              36,
+              42,
+              42
+            ],
+            "fiscal": 62,
+            "revuelta": 6,
+            "guarnicion": 50000,
+            "nota": "En una década se han perdido Siria, Palestina y Egipto ante los árabes. Lo que queda es Anatolia, y el Estado se reorganiza entero en torno a defenderla."
+          },
+          "provinces": [
+            {
+              "nombre": "Grecia y Egeo",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania"
+              ],
+              "box": [
+                19,
+                35,
+                29,
+                42
+              ],
+              "fiscal": 14,
+              "revuelta": 20
+            },
+            {
+              "nombre": "Exarcado de Cartago",
+              "members": [
+                "Tunisia",
+                "Algeria",
+                "Libya"
+              ],
+              "box": [
+                2,
+                30,
+                22,
+                37
+              ],
+              "fiscal": 12,
+              "revuelta": 25,
+              "hasta": 698,
+              "nota": "Cae en 698 con la toma de Cartago. África deja de ser romana después de ochocientos cuarenta años."
+            },
+            {
+              "nombre": "Exarcado de Rávena",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                10,
+                39,
+                19,
+                46
+              ],
+              "fiscal": 8,
+              "revuelta": 25
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Cilicia y frontera del Tauro",
+              "members": [
+                "Turkey"
+              ],
+              "box": [
+                32,
+                36,
+                40,
+                39
+              ],
+              "fiscal": 2,
+              "revuelta": 45,
+              "guarnicion": 25000,
+              "nota": "Tierra quemada a propósito entre el Tauro y el califato: cada verano pasa una aceifa y cada otoño se retira."
+            },
+            {
+              "nombre": "Crimea y Quersoneso",
+              "members": [
+                "Ukraine"
+              ],
+              "box": [
+                32,
+                44,
+                37,
+                46
+              ],
+              "fiscal": 1,
+              "revuelta": 20
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Balcanes eslavizados",
+              "members": [
+                "Bulgaria",
+                "Serbia",
+                "Croatia",
+                "Bosnia and Herz.",
+                "Montenegro"
+              ],
+              "box": [
+                16,
+                41,
+                30,
+                46
+              ],
+              "revuelta": 85,
+              "nota": "Del Danubio a Grecia central el control imperial ha desaparecido. Constantinopla conserva las costas y poco más."
+            }
+          ]
+        },
+        {
           "year": 1025,
           "members": [
             "Turkey",
@@ -3265,6 +4464,130 @@
           ]
         },
         {
+          "year": 1090,
+          "core": {
+            "nombre": "Constantinopla y las costas",
+            "members": [
+              "Turkey"
+            ],
+            "box": [
+              26,
+              39,
+              32,
+              42
+            ],
+            "fiscal": 55,
+            "revuelta": 12,
+            "guarnicion": 20000,
+            "nota": "Diecinueve años después de Manzikert. Los turcos han llegado al mar de Mármara y Alejo Comneno pide ayuda a Occidente: la carta que desencadena la Primera Cruzada."
+          },
+          "provinces": [
+            {
+              "nombre": "Grecia y Egeo",
+              "members": [
+                "Greece",
+                "Macedonia",
+                "Albania"
+              ],
+              "box": [
+                19,
+                35,
+                29,
+                42
+              ],
+              "fiscal": 30,
+              "revuelta": 10
+            },
+            {
+              "nombre": "Bulgaria",
+              "members": [
+                "Bulgaria",
+                "Serbia",
+                "Montenegro",
+                "Kosovo"
+              ],
+              "box": [
+                19,
+                41,
+                29,
+                45
+              ],
+              "fiscal": 15,
+              "revuelta": 25
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Anatolia turcomana",
+              "members": [
+                "Turkey"
+              ],
+              "box": [
+                28,
+                36,
+                42,
+                41
+              ],
+              "revuelta": 80,
+              "nota": "La meseta que sostenía el ejército temático está en manos de bandas turcomanas. El imperio pierde a la vez su reserva de hombres y su caballería."
+            }
+          ]
+        },
+        {
+          "year": 1204,
+          "core": {
+            "nombre": "Nicea y las costas de Asia",
+            "members": [
+              "Turkey"
+            ],
+            "box": [
+              26,
+              38,
+              32,
+              41
+            ],
+            "fiscal": 70,
+            "revuelta": 15,
+            "guarnicion": 15000,
+            "nota": "La Cuarta Cruzada acaba de saquear Constantinopla y repartirse el imperio. El Estado sobrevive en el exilio de Nicea y recupera la capital en 1261, ya sin recursos."
+          },
+          "provinces": [
+            {
+              "nombre": "Epiro y Tesalia",
+              "members": [
+                "Greece",
+                "Albania"
+              ],
+              "box": [
+                19,
+                38,
+                24,
+                41
+              ],
+              "fiscal": 18,
+              "revuelta": 30
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Imperio latino y ducados francos",
+              "members": [
+                "Greece",
+                "Turkey",
+                "Bulgaria"
+              ],
+              "box": [
+                21,
+                36,
+                30,
+                42
+              ],
+              "revuelta": 70,
+              "nota": "Venecia se queda las islas y tres octavos de la ciudad; los barones, los ducados de Atenas y Acaya. El comercio del Egeo no vuelve a manos griegas."
+            }
+          ]
+        },
+        {
           "year": 1350,
           "members": [
             "Greece",
@@ -3275,6 +4598,42 @@
             35,
             32,
             42
+          ]
+        },
+        {
+          "year": 1430,
+          "core": {
+            "nombre": "Constantinopla",
+            "members": [
+              "Turkey"
+            ],
+            "box": [
+              26.5,
+              40.5,
+              29.5,
+              41.5
+            ],
+            "fiscal": 80,
+            "revuelta": 10,
+            "guarnicion": 7000,
+            "nota": "Una ciudad amurallada de cincuenta mil habitantes rodeada de territorio otomano, que paga tributo al sultán. En 1453 la defienden siete mil hombres contra ochenta mil."
+          },
+          "provinces": [
+            {
+              "nombre": "Despotado de Morea",
+              "members": [
+                "Greece"
+              ],
+              "box": [
+                21,
+                36,
+                23.5,
+                38.5
+              ],
+              "fiscal": 20,
+              "revuelta": 20,
+              "nota": "Mistra: el último foco cultural bizantino, donde enseña Gemisto Pletón. Cae en 1460, siete años después que la capital."
+            }
           ]
         }
       ]
@@ -3865,6 +5224,19 @@
             118,
             8
           ]
+        },
+        {
+          "year": 1100,
+          "members": [
+            "Indonesia",
+            "Malaysia"
+          ],
+          "box": [
+            95,
+            -6,
+            112,
+            6
+          ]
         }
       ]
     },
@@ -3889,6 +5261,19 @@
       },
       "snapshots": [
         {
+          "year": 1100,
+          "members": [
+            "Chad",
+            "Niger"
+          ],
+          "box": [
+            12,
+            12,
+            20,
+            18
+          ]
+        },
+        {
           "year": 1500,
           "members": [
             "Chad",
@@ -3902,6 +5287,21 @@
             10,
             22,
             22
+          ]
+        },
+        {
+          "year": 1700,
+          "members": [
+            "Chad",
+            "Niger",
+            "Nigeria",
+            "Cameroon"
+          ],
+          "box": [
+            10,
+            10,
+            22,
+            17
           ]
         }
       ]
@@ -3927,44 +5327,1661 @@
       },
       "snapshots": [
         {
-          "year": 750,
-          "members": [
-            "Spain",
-            "Portugal",
-            "France"
+          "year": 711,
+          "core": {
+            "nombre": "Cabeza de puente",
+            "members": [
+              "Spain"
+            ],
+            "via": "conquista",
+            "desde": 711,
+            "fiscal": 100,
+            "revuelta": 20,
+            "guarnicion": 12000,
+            "nota": "Tariq desembarca en julio con siete mil hombres. Guadalete decide la batalla; la conquista del resto tarda siete años más.",
+            "poly": [
+              [
+                [
+                  -6.5,
+                  36
+                ],
+                [
+                  -5.3,
+                  36
+                ],
+                [
+                  -4.3,
+                  36.6
+                ],
+                [
+                  -4,
+                  37.4
+                ],
+                [
+                  -5.2,
+                  37.6
+                ],
+                [
+                  -6.3,
+                  37.3
+                ]
+              ]
+            ]
+          },
+          "contested": [
+            {
+              "nombre": "Reino visigodo en descomposición",
+              "members": [
+                "Spain",
+                "Portugal"
+              ],
+              "revuelta": 80,
+              "nota": "La élite goda se rinde, pacta o huye ciudad por ciudad. Teodomiro conserva Murcia por tratado firmado en 713.",
+              "poly": [
+                [
+                  [
+                    -9.3,
+                    37
+                  ],
+                  [
+                    -6.2,
+                    36.1
+                  ],
+                  [
+                    -5.3,
+                    36
+                  ],
+                  [
+                    -2,
+                    36.8
+                  ],
+                  [
+                    -0.3,
+                    38.5
+                  ],
+                  [
+                    0.9,
+                    40.9
+                  ],
+                  [
+                    3.2,
+                    41.9
+                  ],
+                  [
+                    1,
+                    42.4
+                  ],
+                  [
+                    -1,
+                    42.7
+                  ],
+                  [
+                    -3,
+                    42.5
+                  ],
+                  [
+                    -5,
+                    42.3
+                  ],
+                  [
+                    -7,
+                    41.9
+                  ],
+                  [
+                    -8.9,
+                    41.5
+                  ],
+                  [
+                    -9.5,
+                    39
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "year": 756,
+          "core": {
+            "nombre": "Emirato de Córdoba",
+            "members": [
+              "Spain"
+            ],
+            "via": "conquista",
+            "fiscal": 62,
+            "revuelta": 15,
+            "guarnicion": 30000,
+            "nota": "Abd al-Rahman I, superviviente de la matanza de los omeyas, funda un emirato independiente de Bagdad. Es el primer Estado árabe que rompe con el califato.",
+            "poly": [
+              [
+                [
+                  -7.4,
+                  37.3
+                ],
+                [
+                  -6.9,
+                  36.8
+                ],
+                [
+                  -6.2,
+                  36.2
+                ],
+                [
+                  -5.3,
+                  36
+                ],
+                [
+                  -4.3,
+                  36.6
+                ],
+                [
+                  -3,
+                  36.7
+                ],
+                [
+                  -2,
+                  36.8
+                ],
+                [
+                  -0.8,
+                  37.5
+                ],
+                [
+                  -0.5,
+                  38.4
+                ],
+                [
+                  -1.4,
+                  38.9
+                ],
+                [
+                  -2.9,
+                  38.9
+                ],
+                [
+                  -4.3,
+                  38.6
+                ],
+                [
+                  -5.8,
+                  38.4
+                ],
+                [
+                  -6.9,
+                  38.2
+                ]
+              ],
+              [
+                [
+                  -0.5,
+                  38.3
+                ],
+                [
+                  -0.1,
+                  38.4
+                ],
+                [
+                  0.2,
+                  38.9
+                ],
+                [
+                  0.5,
+                  39.8
+                ],
+                [
+                  0.8,
+                  40.7
+                ],
+                [
+                  0.2,
+                  40.85
+                ],
+                [
+                  -0.7,
+                  40.2
+                ],
+                [
+                  -1.3,
+                  39.4
+                ],
+                [
+                  -1.4,
+                  38.8
+                ]
+              ]
+            ]
+          },
+          "provinces": [
+            {
+              "nombre": "Marca Superior y valle del Ebro",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 18,
+              "revuelta": 35,
+              "nota": "Zaragoza y los muladíes Banu Qasi: obedecen a Córdoba cuando les conviene y pactan con francos y asturianos cuando no.",
+              "poly": [
+                [
+                  [
+                    -2.6,
+                    41.4
+                  ],
+                  [
+                    -1.6,
+                    41
+                  ],
+                  [
+                    -0.4,
+                    40.9
+                  ],
+                  [
+                    0.5,
+                    40.8
+                  ],
+                  [
+                    1.1,
+                    41.4
+                  ],
+                  [
+                    0.9,
+                    42.1
+                  ],
+                  [
+                    -0.5,
+                    42.4
+                  ],
+                  [
+                    -1.7,
+                    42.4
+                  ],
+                  [
+                    -2.5,
+                    42
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Gharb al-Andalus",
+              "members": [
+                "Portugal"
+              ],
+              "fiscal": 12,
+              "revuelta": 12,
+              "poly": [
+                [
+                  [
+                    -9.5,
+                    37
+                  ],
+                  [
+                    -7.4,
+                    37.2
+                  ],
+                  [
+                    -7,
+                    38.2
+                  ],
+                  [
+                    -7,
+                    39.2
+                  ],
+                  [
+                    -7.3,
+                    40
+                  ],
+                  [
+                    -8.3,
+                    40.5
+                  ],
+                  [
+                    -9,
+                    39.4
+                  ],
+                  [
+                    -9.5,
+                    38.7
+                  ]
+                ]
+              ]
+            }
           ],
-          "box": [
-            -10,
-            36,
-            4,
-            43.5
+          "march": [
+            {
+              "nombre": "Marca Media",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 6,
+              "revuelta": 30,
+              "guarnicion": 10000,
+              "nota": "Toledo y el Duero: tierra de nadie despoblada a propósito entre el emirato y los reinos del norte.",
+              "poly": [
+                [
+                  [
+                    -7.2,
+                    39.2
+                  ],
+                  [
+                    -5.6,
+                    38.9
+                  ],
+                  [
+                    -4.2,
+                    38.9
+                  ],
+                  [
+                    -2.9,
+                    38.9
+                  ],
+                  [
+                    -1.7,
+                    39.2
+                  ],
+                  [
+                    -1.6,
+                    40.3
+                  ],
+                  [
+                    -3,
+                    40.8
+                  ],
+                  [
+                    -4.6,
+                    40.7
+                  ],
+                  [
+                    -6.1,
+                    40.3
+                  ],
+                  [
+                    -7.3,
+                    40
+                  ]
+                ]
+              ]
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Septimania y los Pirineos",
+              "members": [
+                "France",
+                "Spain"
+              ],
+              "box": [
+                0,
+                42,
+                4,
+                44
+              ],
+              "hasta": 759,
+              "revuelta": 70,
+              "nota": "Poitiers fue en 732; Narbona se pierde en 759. El límite norte se estabiliza en la cordillera."
+            }
+          ]
+        },
+        {
+          "year": 929,
+          "core": {
+            "nombre": "Califato de Córdoba",
+            "members": [
+              "Spain"
+            ],
+            "fiscal": 60,
+            "revuelta": 4,
+            "guarnicion": 50000,
+            "nota": "Abd al-Rahman III se proclama califa. Córdoba tiene cien mil habitantes y una biblioteca de cuatrocientos mil volúmenes cuando París tiene veinte mil vecinos.",
+            "poly": [
+              [
+                [
+                  -7.4,
+                  37.3
+                ],
+                [
+                  -6.9,
+                  36.8
+                ],
+                [
+                  -6.2,
+                  36.2
+                ],
+                [
+                  -5.3,
+                  36
+                ],
+                [
+                  -4.3,
+                  36.6
+                ],
+                [
+                  -3,
+                  36.7
+                ],
+                [
+                  -2,
+                  36.8
+                ],
+                [
+                  -0.8,
+                  37.5
+                ],
+                [
+                  -0.5,
+                  38.4
+                ],
+                [
+                  -1.4,
+                  38.9
+                ],
+                [
+                  -2.9,
+                  38.9
+                ],
+                [
+                  -4.3,
+                  38.6
+                ],
+                [
+                  -5.8,
+                  38.4
+                ],
+                [
+                  -6.9,
+                  38.2
+                ]
+              ],
+              [
+                [
+                  -0.5,
+                  38.3
+                ],
+                [
+                  -0.1,
+                  38.4
+                ],
+                [
+                  0.2,
+                  38.9
+                ],
+                [
+                  0.5,
+                  39.8
+                ],
+                [
+                  0.8,
+                  40.7
+                ],
+                [
+                  0.2,
+                  40.85
+                ],
+                [
+                  -0.7,
+                  40.2
+                ],
+                [
+                  -1.3,
+                  39.4
+                ],
+                [
+                  -1.4,
+                  38.8
+                ]
+              ]
+            ]
+          },
+          "provinces": [
+            {
+              "nombre": "Marca Superior",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 14,
+              "revuelta": 12,
+              "poly": [
+                [
+                  [
+                    -2.6,
+                    41.4
+                  ],
+                  [
+                    -1.6,
+                    41
+                  ],
+                  [
+                    -0.4,
+                    40.9
+                  ],
+                  [
+                    0.5,
+                    40.8
+                  ],
+                  [
+                    1.1,
+                    41.4
+                  ],
+                  [
+                    0.9,
+                    42.1
+                  ],
+                  [
+                    -0.5,
+                    42.4
+                  ],
+                  [
+                    -1.7,
+                    42.4
+                  ],
+                  [
+                    -2.5,
+                    42
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Gharb al-Andalus",
+              "members": [
+                "Portugal"
+              ],
+              "fiscal": 14,
+              "revuelta": 8,
+              "poly": [
+                [
+                  [
+                    -9.5,
+                    37
+                  ],
+                  [
+                    -7.4,
+                    37.2
+                  ],
+                  [
+                    -7,
+                    38.2
+                  ],
+                  [
+                    -7,
+                    39.2
+                  ],
+                  [
+                    -7.3,
+                    40
+                  ],
+                  [
+                    -8.3,
+                    40.5
+                  ],
+                  [
+                    -9,
+                    39.4
+                  ],
+                  [
+                    -9.5,
+                    38.7
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Marca Media",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 8,
+              "revuelta": 15,
+              "poly": [
+                [
+                  [
+                    -7.2,
+                    39.2
+                  ],
+                  [
+                    -5.6,
+                    38.9
+                  ],
+                  [
+                    -4.2,
+                    38.9
+                  ],
+                  [
+                    -2.9,
+                    38.9
+                  ],
+                  [
+                    -1.7,
+                    39.2
+                  ],
+                  [
+                    -1.6,
+                    40.3
+                  ],
+                  [
+                    -3,
+                    40.8
+                  ],
+                  [
+                    -4.6,
+                    40.7
+                  ],
+                  [
+                    -6.1,
+                    40.3
+                  ],
+                  [
+                    -7.3,
+                    40
+                  ]
+                ]
+              ]
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Reinos cristianos del norte",
+              "members": [
+                "Spain"
+              ],
+              "via": "sumision",
+              "fiscal": 4,
+              "revuelta": 45,
+              "nota": "León, Navarra y los condados catalanes pagan parias y reciben aceifas. La relación se invierte por completo en siglo y medio.",
+              "poly": [
+                [
+                  [
+                    -9,
+                    41.6
+                  ],
+                  [
+                    -7,
+                    42
+                  ],
+                  [
+                    -5,
+                    42.4
+                  ],
+                  [
+                    -3,
+                    42.6
+                  ],
+                  [
+                    -1,
+                    42.8
+                  ],
+                  [
+                    1,
+                    42.5
+                  ],
+                  [
+                    3.2,
+                    42.4
+                  ],
+                  [
+                    3,
+                    43.3
+                  ],
+                  [
+                    0,
+                    43.6
+                  ],
+                  [
+                    -3,
+                    43.6
+                  ],
+                  [
+                    -6,
+                    43.6
+                  ],
+                  [
+                    -8.9,
+                    43.4
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Magreb",
+              "members": [
+                "Morocco",
+                "Algeria"
+              ],
+              "box": [
+                -10,
+                30,
+                2,
+                36
+              ],
+              "fiscal": 6,
+              "revuelta": 30,
+              "nota": "Ceuta, Melilla y clientelas bereberes: el califato compra la orilla sur para que no la compre el fatimí."
+            }
           ]
         },
         {
           "year": 1000,
-          "members": [
-            "Spain",
-            "Portugal",
-            "Morocco"
+          "core": {
+            "nombre": "Califato bajo Almanzor",
+            "members": [
+              "Spain"
+            ],
+            "fiscal": 58,
+            "revuelta": 6,
+            "guarnicion": 60000,
+            "nota": "Almanzor gobierna en nombre de un califa recluido y lanza cincuenta y siete campañas en veinte años, hasta Santiago de Compostela. Al morir en 1002 el edificio se derrumba en veintinueve años.",
+            "poly": [
+              [
+                [
+                  -7.4,
+                  37.3
+                ],
+                [
+                  -6.9,
+                  36.8
+                ],
+                [
+                  -6.2,
+                  36.2
+                ],
+                [
+                  -5.3,
+                  36
+                ],
+                [
+                  -4.3,
+                  36.6
+                ],
+                [
+                  -3,
+                  36.7
+                ],
+                [
+                  -2,
+                  36.8
+                ],
+                [
+                  -0.8,
+                  37.5
+                ],
+                [
+                  -0.5,
+                  38.4
+                ],
+                [
+                  -1.4,
+                  38.9
+                ],
+                [
+                  -2.9,
+                  38.9
+                ],
+                [
+                  -4.3,
+                  38.6
+                ],
+                [
+                  -5.8,
+                  38.4
+                ],
+                [
+                  -6.9,
+                  38.2
+                ]
+              ],
+              [
+                [
+                  -0.5,
+                  38.3
+                ],
+                [
+                  -0.1,
+                  38.4
+                ],
+                [
+                  0.2,
+                  38.9
+                ],
+                [
+                  0.5,
+                  39.8
+                ],
+                [
+                  0.8,
+                  40.7
+                ],
+                [
+                  0.2,
+                  40.85
+                ],
+                [
+                  -0.7,
+                  40.2
+                ],
+                [
+                  -1.3,
+                  39.4
+                ],
+                [
+                  -1.4,
+                  38.8
+                ]
+              ]
+            ]
+          },
+          "provinces": [
+            {
+              "nombre": "Marca Superior",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 14,
+              "revuelta": 10,
+              "poly": [
+                [
+                  [
+                    -2.6,
+                    41.4
+                  ],
+                  [
+                    -1.6,
+                    41
+                  ],
+                  [
+                    -0.4,
+                    40.9
+                  ],
+                  [
+                    0.5,
+                    40.8
+                  ],
+                  [
+                    1.1,
+                    41.4
+                  ],
+                  [
+                    0.9,
+                    42.1
+                  ],
+                  [
+                    -0.5,
+                    42.4
+                  ],
+                  [
+                    -1.7,
+                    42.4
+                  ],
+                  [
+                    -2.5,
+                    42
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Gharb al-Andalus",
+              "members": [
+                "Portugal"
+              ],
+              "fiscal": 14,
+              "revuelta": 8,
+              "poly": [
+                [
+                  [
+                    -9.5,
+                    37
+                  ],
+                  [
+                    -7.4,
+                    37.2
+                  ],
+                  [
+                    -7,
+                    38.2
+                  ],
+                  [
+                    -7,
+                    39.2
+                  ],
+                  [
+                    -7.3,
+                    40
+                  ],
+                  [
+                    -8.3,
+                    40.5
+                  ],
+                  [
+                    -9,
+                    39.4
+                  ],
+                  [
+                    -9.5,
+                    38.7
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Marca Media",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 8,
+              "revuelta": 12,
+              "poly": [
+                [
+                  [
+                    -7.2,
+                    39.2
+                  ],
+                  [
+                    -5.6,
+                    38.9
+                  ],
+                  [
+                    -4.2,
+                    38.9
+                  ],
+                  [
+                    -2.9,
+                    38.9
+                  ],
+                  [
+                    -1.7,
+                    39.2
+                  ],
+                  [
+                    -1.6,
+                    40.3
+                  ],
+                  [
+                    -3,
+                    40.8
+                  ],
+                  [
+                    -4.6,
+                    40.7
+                  ],
+                  [
+                    -6.1,
+                    40.3
+                  ],
+                  [
+                    -7.3,
+                    40
+                  ]
+                ]
+              ]
+            }
           ],
-          "box": [
-            -10,
-            30,
-            1,
-            42
+          "tributary": [
+            {
+              "nombre": "Reinos cristianos del norte",
+              "members": [
+                "Spain"
+              ],
+              "via": "sumision",
+              "fiscal": 3,
+              "revuelta": 50,
+              "nota": "León saqueada en 988, Santiago en 997. Es el momento de mayor presión andalusí y el último.",
+              "poly": [
+                [
+                  [
+                    -9,
+                    41.6
+                  ],
+                  [
+                    -7,
+                    42
+                  ],
+                  [
+                    -5,
+                    42.4
+                  ],
+                  [
+                    -3,
+                    42.6
+                  ],
+                  [
+                    -1,
+                    42.8
+                  ],
+                  [
+                    1,
+                    42.5
+                  ],
+                  [
+                    3.2,
+                    42.4
+                  ],
+                  [
+                    3,
+                    43.3
+                  ],
+                  [
+                    0,
+                    43.6
+                  ],
+                  [
+                    -3,
+                    43.6
+                  ],
+                  [
+                    -6,
+                    43.6
+                  ],
+                  [
+                    -8.9,
+                    43.4
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Magreb",
+              "members": [
+                "Morocco",
+                "Algeria"
+              ],
+              "box": [
+                -10,
+                30,
+                2,
+                36
+              ],
+              "fiscal": 3,
+              "revuelta": 35
+            }
           ]
         },
         {
-          "year": 1300,
-          "members": [
-            "Spain"
+          "year": 1031,
+          "core": {
+            "nombre": "Taifas del sur",
+            "members": [
+              "Spain"
+            ],
+            "fiscal": 55,
+            "revuelta": 40,
+            "guarnicion": 20000,
+            "nota": "El califato se desintegra en más de treinta taifas. Cada una mantiene corte, poeta y astrónomo, y ninguna un ejército.",
+            "poly": [
+              [
+                [
+                  -7.4,
+                  37.3
+                ],
+                [
+                  -6.9,
+                  36.8
+                ],
+                [
+                  -6.2,
+                  36.2
+                ],
+                [
+                  -5.3,
+                  36
+                ],
+                [
+                  -4.3,
+                  36.6
+                ],
+                [
+                  -3,
+                  36.7
+                ],
+                [
+                  -2,
+                  36.8
+                ],
+                [
+                  -0.8,
+                  37.5
+                ],
+                [
+                  -0.5,
+                  38.4
+                ],
+                [
+                  -1.4,
+                  38.9
+                ],
+                [
+                  -2.9,
+                  38.9
+                ],
+                [
+                  -4.3,
+                  38.6
+                ],
+                [
+                  -5.8,
+                  38.4
+                ],
+                [
+                  -6.9,
+                  38.2
+                ]
+              ]
+            ]
+          },
+          "provinces": [
+            {
+              "nombre": "Taifas del Levante",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 20,
+              "revuelta": 35,
+              "poly": [
+                [
+                  [
+                    -0.5,
+                    38.3
+                  ],
+                  [
+                    -0.1,
+                    38.4
+                  ],
+                  [
+                    0.2,
+                    38.9
+                  ],
+                  [
+                    0.5,
+                    39.8
+                  ],
+                  [
+                    0.8,
+                    40.7
+                  ],
+                  [
+                    0.2,
+                    40.85
+                  ],
+                  [
+                    -0.7,
+                    40.2
+                  ],
+                  [
+                    -1.3,
+                    39.4
+                  ],
+                  [
+                    -1.4,
+                    38.8
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Taifa de Toledo",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 12,
+              "revuelta": 45,
+              "hasta": 1085,
+              "nota": "Cae en 1085 ante Alfonso VI. La pérdida de Toledo es lo que hace llamar a los almorávides.",
+              "poly": [
+                [
+                  [
+                    -7.2,
+                    39.2
+                  ],
+                  [
+                    -5.6,
+                    38.9
+                  ],
+                  [
+                    -4.2,
+                    38.9
+                  ],
+                  [
+                    -2.9,
+                    38.9
+                  ],
+                  [
+                    -1.7,
+                    39.2
+                  ],
+                  [
+                    -1.6,
+                    40.3
+                  ],
+                  [
+                    -3,
+                    40.8
+                  ],
+                  [
+                    -4.6,
+                    40.7
+                  ],
+                  [
+                    -6.1,
+                    40.3
+                  ],
+                  [
+                    -7.3,
+                    40
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Taifa de Badajoz y el Gharb",
+              "members": [
+                "Portugal",
+                "Spain"
+              ],
+              "fiscal": 13,
+              "revuelta": 35,
+              "poly": [
+                [
+                  [
+                    -9.5,
+                    37
+                  ],
+                  [
+                    -7.4,
+                    37.2
+                  ],
+                  [
+                    -7,
+                    38.2
+                  ],
+                  [
+                    -7,
+                    39.2
+                  ],
+                  [
+                    -7.3,
+                    40
+                  ],
+                  [
+                    -8.3,
+                    40.5
+                  ],
+                  [
+                    -9,
+                    39.4
+                  ],
+                  [
+                    -9.5,
+                    38.7
+                  ]
+                ]
+              ]
+            }
           ],
-          "box": [
-            -6,
-            36,
-            -2,
-            38
+          "march": [
+            {
+              "nombre": "Taifa de Zaragoza",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 0,
+              "revuelta": 55,
+              "nota": "La taifa más expuesta y la más culta: aquí escribe Avempace y aquí sirve el Cid a un rey musulmán.",
+              "poly": [
+                [
+                  [
+                    -2.6,
+                    41.4
+                  ],
+                  [
+                    -1.6,
+                    41
+                  ],
+                  [
+                    -0.4,
+                    40.9
+                  ],
+                  [
+                    0.5,
+                    40.8
+                  ],
+                  [
+                    1.1,
+                    41.4
+                  ],
+                  [
+                    0.9,
+                    42.1
+                  ],
+                  [
+                    -0.5,
+                    42.4
+                  ],
+                  [
+                    -1.7,
+                    42.4
+                  ],
+                  [
+                    -2.5,
+                    42
+                  ]
+                ]
+              ]
+            }
           ]
+        },
+        {
+          "year": 1150,
+          "core": {
+            "nombre": "Al-Ándalus almohade",
+            "members": [
+              "Spain"
+            ],
+            "via": "conquista",
+            "desde": 1147,
+            "fiscal": 70,
+            "revuelta": 20,
+            "guarnicion": 40000,
+            "nota": "Segunda unificación desde el Magreb. Los almohades traen doctrina rigorista y un ejército africano; el país que gobiernan ya no es el mismo que el del califato.",
+            "poly": [
+              [
+                [
+                  -7.4,
+                  37.3
+                ],
+                [
+                  -6.9,
+                  36.8
+                ],
+                [
+                  -6.2,
+                  36.2
+                ],
+                [
+                  -5.3,
+                  36
+                ],
+                [
+                  -4.3,
+                  36.6
+                ],
+                [
+                  -3,
+                  36.7
+                ],
+                [
+                  -2,
+                  36.8
+                ],
+                [
+                  -0.8,
+                  37.5
+                ],
+                [
+                  -0.5,
+                  38.4
+                ],
+                [
+                  -1.4,
+                  38.9
+                ],
+                [
+                  -2.9,
+                  38.9
+                ],
+                [
+                  -4.3,
+                  38.6
+                ],
+                [
+                  -5.8,
+                  38.4
+                ],
+                [
+                  -6.9,
+                  38.2
+                ]
+              ]
+            ]
+          },
+          "provinces": [
+            {
+              "nombre": "Levante",
+              "members": [
+                "Spain"
+              ],
+              "fiscal": 18,
+              "revuelta": 25,
+              "poly": [
+                [
+                  [
+                    -0.5,
+                    38.3
+                  ],
+                  [
+                    -0.1,
+                    38.4
+                  ],
+                  [
+                    0.2,
+                    38.9
+                  ],
+                  [
+                    0.5,
+                    39.8
+                  ],
+                  [
+                    0.8,
+                    40.7
+                  ],
+                  [
+                    0.2,
+                    40.85
+                  ],
+                  [
+                    -0.7,
+                    40.2
+                  ],
+                  [
+                    -1.3,
+                    39.4
+                  ],
+                  [
+                    -1.4,
+                    38.8
+                  ]
+                ]
+              ]
+            },
+            {
+              "nombre": "Gharb",
+              "members": [
+                "Portugal"
+              ],
+              "fiscal": 12,
+              "revuelta": 40,
+              "nota": "Lo que queda del Gharb tras la caída de Lisboa en 1147 ante Alfonso Enríquez con cruzados ingleses de paso hacia Tierra Santa: Alentejo y Algarve, que resisten hasta 1249.",
+              "poly": [
+                [
+                  [
+                    -9.2,
+                    37
+                  ],
+                  [
+                    -7.4,
+                    37.2
+                  ],
+                  [
+                    -7,
+                    38.3
+                  ],
+                  [
+                    -7.6,
+                    38.9
+                  ],
+                  [
+                    -8.7,
+                    38.6
+                  ],
+                  [
+                    -9.2,
+                    38
+                  ]
+                ]
+              ]
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Frontera del Tajo y La Mancha",
+              "members": [
+                "Spain"
+              ],
+              "revuelta": 70,
+              "nota": "Tierra de órdenes militares y castillos que cambian de mano cada década. Las Navas de Tolosa (1212) la rompe definitivamente.",
+              "poly": [
+                [
+                  [
+                    -6.6,
+                    38.6
+                  ],
+                  [
+                    -4.3,
+                    38.6
+                  ],
+                  [
+                    -2.9,
+                    38.7
+                  ],
+                  [
+                    -1.9,
+                    39.1
+                  ],
+                  [
+                    -2.6,
+                    39.9
+                  ],
+                  [
+                    -4.4,
+                    39.9
+                  ],
+                  [
+                    -6.2,
+                    39.5
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "year": 1250,
+          "core": {
+            "nombre": "Reino nazarí de Granada",
+            "members": [
+              "Spain"
+            ],
+            "via": "tratado",
+            "desde": 1238,
+            "fiscal": 100,
+            "revuelta": 8,
+            "guarnicion": 15000,
+            "nota": "Lo que queda tras la gran ofensiva de Fernando III: Córdoba cayó en 1236 y Sevilla en 1248. Granada sobrevive dos siglos y medio pagando parias a Castilla y vendiéndole seda.",
+            "poly": [
+              [
+                [
+                  -5.6,
+                  36.1
+                ],
+                [
+                  -4.4,
+                  36.6
+                ],
+                [
+                  -3.4,
+                  36.7
+                ],
+                [
+                  -2.4,
+                  36.7
+                ],
+                [
+                  -1.7,
+                  37.3
+                ],
+                [
+                  -2.3,
+                  37.8
+                ],
+                [
+                  -3.3,
+                  37.9
+                ],
+                [
+                  -4.4,
+                  37.6
+                ],
+                [
+                  -5.4,
+                  37.2
+                ],
+                [
+                  -5.7,
+                  36.6
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "year": 1480,
+          "core": {
+            "nombre": "Granada",
+            "members": [
+              "Spain"
+            ],
+            "fiscal": 100,
+            "revuelta": 30,
+            "guarnicion": 20000,
+            "nota": "Guerra civil entre el emir y su hijo Boabdil justo cuando Castilla y Aragón acaban de unirse. La guerra de Granada dura diez años y termina el 2 de enero de 1492.",
+            "poly": [
+              [
+                [
+                  -5.1,
+                  36.3
+                ],
+                [
+                  -4.3,
+                  36.6
+                ],
+                [
+                  -3.4,
+                  36.7
+                ],
+                [
+                  -2.6,
+                  36.7
+                ],
+                [
+                  -2,
+                  37.2
+                ],
+                [
+                  -2.6,
+                  37.5
+                ],
+                [
+                  -3.5,
+                  37.6
+                ],
+                [
+                  -4.3,
+                  37.4
+                ],
+                [
+                  -4.9,
+                  36.9
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -4197,6 +7214,19 @@
       },
       "snapshots": [
         {
+          "year": 900,
+          "members": [
+            "Cambodia",
+            "Thailand"
+          ],
+          "box": [
+            101,
+            11,
+            107,
+            15
+          ]
+        },
+        {
           "year": 1150,
           "members": [
             "Cambodia",
@@ -4209,6 +7239,20 @@
             9,
             109,
             20
+          ]
+        },
+        {
+          "year": 1300,
+          "members": [
+            "Cambodia",
+            "Thailand",
+            "Laos"
+          ],
+          "box": [
+            100,
+            10,
+            108,
+            16
           ]
         }
       ]
@@ -4361,6 +7405,32 @@
             131,
             43
           ]
+        },
+        {
+          "year": 1600,
+          "members": [
+            "South Korea",
+            "North Korea"
+          ],
+          "box": [
+            124,
+            34,
+            130,
+            43
+          ]
+        },
+        {
+          "year": 1850,
+          "members": [
+            "South Korea",
+            "North Korea"
+          ],
+          "box": [
+            124,
+            34,
+            130,
+            43
+          ]
         }
       ]
     },
@@ -4385,6 +7455,18 @@
       },
       "snapshots": [
         {
+          "year": 1100,
+          "members": [
+            "Vietnam"
+          ],
+          "box": [
+            103,
+            18,
+            108,
+            23
+          ]
+        },
+        {
           "year": 1400,
           "members": [
             "Vietnam"
@@ -4394,6 +7476,18 @@
             15,
             110,
             24
+          ]
+        },
+        {
+          "year": 1700,
+          "members": [
+            "Vietnam"
+          ],
+          "box": [
+            102,
+            9,
+            110,
+            23
           ]
         }
       ]
@@ -4482,6 +7576,39 @@
           "box": [
             3,
             41,
+            19,
+            55
+          ]
+        },
+        {
+          "year": 1400,
+          "members": [
+            "Germany",
+            "Austria",
+            "Czechia",
+            "Switzerland",
+            "Netherlands",
+            "Belgium",
+            "Slovenia",
+            "Italy"
+          ],
+          "box": [
+            4,
+            43,
+            19,
+            55
+          ]
+        },
+        {
+          "year": 1650,
+          "members": [
+            "Germany",
+            "Austria",
+            "Czechia"
+          ],
+          "box": [
+            6,
+            46,
             19,
             55
           ]
@@ -4900,6 +8027,18 @@
       },
       "snapshots": [
         {
+          "year": 1250,
+          "members": [
+            "Zimbabwe"
+          ],
+          "box": [
+            28,
+            -22,
+            33,
+            -17
+          ]
+        },
+        {
           "year": 1350,
           "members": [
             "Zimbabwe",
@@ -4937,6 +8076,20 @@
       },
       "snapshots": [
         {
+          "year": 1250,
+          "members": [
+            "Mali",
+            "Senegal",
+            "Guinea"
+          ],
+          "box": [
+            -13,
+            10,
+            -4,
+            17
+          ]
+        },
+        {
           "year": 1350,
           "members": [
             "Mali",
@@ -4954,6 +8107,21 @@
             9,
             4,
             20
+          ]
+        },
+        {
+          "year": 1450,
+          "members": [
+            "Mali",
+            "Senegal",
+            "Guinea",
+            "Mauritania"
+          ],
+          "box": [
+            -14,
+            11,
+            -1,
+            17
           ]
         }
       ]
@@ -5033,6 +8201,19 @@
           ]
         },
         {
+          "year": 1700,
+          "members": [
+            "Ethiopia",
+            "Eritrea"
+          ],
+          "box": [
+            36,
+            7,
+            41,
+            15
+          ]
+        },
+        {
           "year": 1900,
           "members": [
             "Ethiopia",
@@ -5107,6 +8288,100 @@
         "colapso": "Deuda externa, nacionalismos balcánicos y la apuesta de 1914."
       },
       "snapshots": [
+        {
+          "year": 1453,
+          "core": {
+            "nombre": "Rumelia y Anatolia occidental",
+            "members": [
+              "Turkey",
+              "Greece",
+              "Bulgaria",
+              "Macedonia"
+            ],
+            "box": [
+              22,
+              37,
+              40,
+              43
+            ],
+            "via": "conquista",
+            "desde": 1453,
+            "fiscal": 60,
+            "revuelta": 8,
+            "guarnicion": 60000,
+            "nota": "Constantinopla cae el 29 de mayo tras cincuenta y tres días de asedio y bombardas de siete metros. El imperio pasa de tener dos mitades separadas a tener capital en medio."
+          },
+          "provinces": [
+            {
+              "nombre": "Balcanes",
+              "members": [
+                "Serbia",
+                "Bosnia and Herz.",
+                "Albania",
+                "Montenegro",
+                "Kosovo"
+              ],
+              "box": [
+                16,
+                40,
+                25,
+                46
+              ],
+              "fiscal": 22,
+              "revuelta": 25
+            },
+            {
+              "nombre": "Anatolia oriental",
+              "members": [
+                "Turkey"
+              ],
+              "box": [
+                33,
+                37,
+                44,
+                42
+              ],
+              "fiscal": 12,
+              "revuelta": 20
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Albania de Skanderbeg",
+              "members": [
+                "Albania",
+                "Montenegro"
+              ],
+              "box": [
+                19,
+                39.5,
+                21,
+                42.5
+              ],
+              "hasta": 1479,
+              "revuelta": 85,
+              "nota": "Veinticinco años resistiendo en las montañas con apoyo veneciano y papal. Cae en 1479, once años después de la muerte de su jefe."
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Principados danubianos y Crimea",
+              "members": [
+                "Romania",
+                "Moldova",
+                "Ukraine"
+              ],
+              "box": [
+                22,
+                43,
+                38,
+                48
+              ],
+              "fiscal": 6,
+              "revuelta": 20
+            }
+          ]
+        },
         {
           "year": 1520,
           "members": [
@@ -5290,6 +8565,146 @@
               "via": "sumision",
               "fiscal": 3,
               "revuelta": 15
+            }
+          ]
+        },
+        {
+          "year": 1566,
+          "core": {
+            "nombre": "Rumelia y Anatolia",
+            "members": [
+              "Turkey",
+              "Greece",
+              "Bulgaria",
+              "Macedonia"
+            ],
+            "box": [
+              22,
+              36,
+              44,
+              43
+            ],
+            "fiscal": 44,
+            "revuelta": 3,
+            "guarnicion": 100000,
+            "nota": "Muere Solimán ante Szigetvár tras cuarenta y seis años de reinado. El imperio está en su punto de mayor coherencia administrativa y militar."
+          },
+          "provinces": [
+            {
+              "nombre": "Balcanes y Hungría",
+              "members": [
+                "Serbia",
+                "Bosnia and Herz.",
+                "Albania",
+                "Montenegro",
+                "Kosovo",
+                "Croatia",
+                "Hungary",
+                "Romania"
+              ],
+              "box": [
+                16,
+                40,
+                30,
+                48
+              ],
+              "via": "conquista",
+              "desde": 1541,
+              "fiscal": 14,
+              "revuelta": 15,
+              "guarnicion": 50000,
+              "nota": "Buda es otomana desde 1541. Hungría queda partida en tres: otomana, habsbúrgica y el principado de Transilvania."
+            },
+            {
+              "nombre": "Siria, Egipto y Arabia",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan",
+                "Egypt",
+                "Saudi Arabia"
+              ],
+              "box": [
+                24,
+                15,
+                46,
+                38
+              ],
+              "fiscal": 28,
+              "revuelta": 10
+            },
+            {
+              "nombre": "Irak",
+              "members": [
+                "Iraq",
+                "Kuwait"
+              ],
+              "box": [
+                40,
+                29,
+                49,
+                37
+              ],
+              "via": "conquista",
+              "desde": 1534,
+              "fiscal": 8,
+              "revuelta": 18,
+              "nota": "Bagdad tomada a los safávidas. La frontera con Persia queda donde sigue estando hoy la de Irán con Irak."
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Yemen y mar Rojo",
+              "members": [
+                "Yemen"
+              ],
+              "box": [
+                42,
+                12,
+                54,
+                19
+              ],
+              "fiscal": 2,
+              "revuelta": 35,
+              "nota": "La flota otomana llega hasta Adén y Diu disputando el Índico a Portugal. Es la única potencia mediterránea que lo intenta."
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Regencias berberiscas",
+              "members": [
+                "Algeria",
+                "Tunisia",
+                "Libya"
+              ],
+              "box": [
+                2,
+                28,
+                25,
+                37
+              ],
+              "via": "sumision",
+              "fiscal": 3,
+              "revuelta": 20,
+              "nota": "Barbarroja entrega Argel al sultán a cambio de jenízaros. El corso norteafricano se vuelve política exterior otomana."
+            },
+            {
+              "nombre": "Crimea y principados",
+              "members": [
+                "Ukraine",
+                "Romania",
+                "Moldova"
+              ],
+              "box": [
+                22,
+                43,
+                38,
+                48
+              ],
+              "fiscal": 4,
+              "revuelta": 12
             }
           ]
         },
@@ -5534,6 +8949,118 @@
           ]
         },
         {
+          "year": 1699,
+          "core": {
+            "nombre": "Rumelia y Anatolia",
+            "members": [
+              "Turkey",
+              "Greece",
+              "Bulgaria",
+              "Macedonia"
+            ],
+            "box": [
+              22,
+              36,
+              44,
+              43
+            ],
+            "fiscal": 45,
+            "revuelta": 10,
+            "guarnicion": 90000,
+            "nota": "Karlowitz: por primera vez el sultán firma un tratado como parte vencida y cede Hungría, Transilvania y Morea. El imperio deja de expandirse y empieza a negociar."
+          },
+          "provinces": [
+            {
+              "nombre": "Balcanes",
+              "members": [
+                "Serbia",
+                "Bosnia and Herz.",
+                "Albania",
+                "Montenegro",
+                "Kosovo",
+                "Romania"
+              ],
+              "box": [
+                16,
+                40,
+                30,
+                46
+              ],
+              "fiscal": 13,
+              "revuelta": 22
+            },
+            {
+              "nombre": "Siria, Egipto y Arabia",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan",
+                "Egypt",
+                "Saudi Arabia"
+              ],
+              "box": [
+                24,
+                15,
+                46,
+                38
+              ],
+              "fiscal": 27,
+              "revuelta": 16
+            },
+            {
+              "nombre": "Irak",
+              "members": [
+                "Iraq",
+                "Kuwait"
+              ],
+              "box": [
+                40,
+                29,
+                49,
+                37
+              ],
+              "fiscal": 6,
+              "revuelta": 22
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Crimea y principados",
+              "members": [
+                "Ukraine",
+                "Romania",
+                "Moldova"
+              ],
+              "box": [
+                22,
+                43,
+                38,
+                48
+              ],
+              "fiscal": 5,
+              "revuelta": 20
+            },
+            {
+              "nombre": "Regencias berberiscas",
+              "members": [
+                "Algeria",
+                "Tunisia",
+                "Libya"
+              ],
+              "box": [
+                2,
+                28,
+                25,
+                37
+              ],
+              "fiscal": 2,
+              "revuelta": 30
+            }
+          ]
+        },
+        {
           "year": 1800,
           "members": [
             "Turkey",
@@ -5576,6 +9103,112 @@
               50,
               27
             ]
+          ]
+        },
+        {
+          "year": 1878,
+          "core": {
+            "nombre": "Anatolia y Rumelia oriental",
+            "members": [
+              "Turkey",
+              "Bulgaria"
+            ],
+            "box": [
+              24,
+              36,
+              44,
+              43
+            ],
+            "fiscal": 58,
+            "revuelta": 12,
+            "guarnicion": 200000,
+            "nota": "El Congreso de Berlín reconoce la independencia de Serbia, Montenegro y Rumanía y crea Bulgaria. El imperio pierde en un verano dos quintas partes de su territorio europeo."
+          },
+          "provinces": [
+            {
+              "nombre": "Siria y Palestina",
+              "members": [
+                "Syria",
+                "Lebanon",
+                "Israel",
+                "Palestine",
+                "Jordan"
+              ],
+              "box": [
+                33,
+                29,
+                42,
+                38
+              ],
+              "fiscal": 18,
+              "revuelta": 12
+            },
+            {
+              "nombre": "Irak",
+              "members": [
+                "Iraq"
+              ],
+              "box": [
+                40,
+                29,
+                49,
+                37
+              ],
+              "fiscal": 9,
+              "revuelta": 18
+            },
+            {
+              "nombre": "Macedonia y Albania",
+              "members": [
+                "Macedonia",
+                "Albania",
+                "Kosovo",
+                "Greece"
+              ],
+              "box": [
+                19,
+                39,
+                24,
+                42.5
+              ],
+              "fiscal": 6,
+              "revuelta": 35,
+              "nota": "Lo último que queda en Europa, y donde se concentran todas las reivindicaciones nacionales a la vez. Se pierde en 1913."
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Egipto autónomo",
+              "members": [
+                "Egypt",
+                "Sudan"
+              ],
+              "box": [
+                24,
+                15,
+                37,
+                32
+              ],
+              "fiscal": 3,
+              "revuelta": 30,
+              "hasta": 1882,
+              "nota": "Tributario nominal desde 1805 y ocupado por Gran Bretaña en 1882. La soberanía otomana dura sobre el papel hasta 1914."
+            },
+            {
+              "nombre": "Hiyaz y Arabia",
+              "members": [
+                "Saudi Arabia",
+                "Yemen"
+              ],
+              "box": [
+                34,
+                12,
+                52,
+                32
+              ],
+              "fiscal": 2,
+              "revuelta": 35
+            }
           ]
         },
         {
@@ -6229,6 +9862,119 @@
       },
       "snapshots": [
         {
+          "year": 1492,
+          "core": {
+            "nombre": "Castilla y Aragón",
+            "members": [
+              "Spain",
+              "Portugal"
+            ],
+            "via": "matrimonio",
+            "fiscal": 92,
+            "revuelta": 8,
+            "guarnicion": 40000,
+            "nota": "Dos coronas con el mismo matrimonio y cortes, moneda y aduanas separadas. Granada cae en enero, la expulsión de los judíos se firma en marzo, Colón zarpa en agosto.",
+            "poly": [
+              [
+                [
+                  -9.5,
+                  36.9
+                ],
+                [
+                  -6.2,
+                  36.1
+                ],
+                [
+                  -5.3,
+                  36
+                ],
+                [
+                  -2,
+                  36.8
+                ],
+                [
+                  -0.3,
+                  38.5
+                ],
+                [
+                  0.9,
+                  40.9
+                ],
+                [
+                  3.3,
+                  41.9
+                ],
+                [
+                  3.2,
+                  42.5
+                ],
+                [
+                  1,
+                  42.6
+                ],
+                [
+                  -1,
+                  43.4
+                ],
+                [
+                  -4,
+                  43.6
+                ],
+                [
+                  -7,
+                  43.7
+                ],
+                [
+                  -8.9,
+                  43.3
+                ],
+                [
+                  -9.5,
+                  41
+                ],
+                [
+                  -9.3,
+                  38.5
+                ]
+              ]
+            ]
+          },
+          "provinces": [
+            {
+              "nombre": "Sicilia, Cerdeña y Nápoles",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                8,
+                36,
+                18,
+                42
+              ],
+              "via": "herencia",
+              "fiscal": 8,
+              "revuelta": 10,
+              "nota": "La herencia mediterránea de la Corona de Aragón, anterior en dos siglos a cualquier presencia en América."
+            }
+          ],
+          "sphere": [
+            {
+              "nombre": "Canarias y costa africana",
+              "members": [
+                "Morocco",
+                "W. Sahara"
+              ],
+              "box": [
+                -18,
+                27,
+                -9,
+                33
+              ],
+              "nota": "Las Canarias se acaban de someter tras noventa años. Son la escala que hace posible la ruta atlántica."
+            }
+          ]
+        },
+        {
           "year": 1580,
           "members": [
             "Spain",
@@ -6466,6 +10212,302 @@
           ]
         },
         {
+          "year": 1650,
+          "core": {
+            "nombre": "España peninsular",
+            "members": [
+              "Spain"
+            ],
+            "box": [
+              -9.5,
+              36,
+              3,
+              43.8
+            ],
+            "fiscal": 34,
+            "revuelta": 25,
+            "guarnicion": 70000,
+            "nota": "Cataluña lleva diez años sublevada y Portugal se ha independizado en 1640. La monarquía se rompe por donde Olivares intentó unirla: el reparto del coste militar."
+          },
+          "provinces": [
+            {
+              "nombre": "Nueva España",
+              "members": [
+                "Mexico",
+                "Guatemala",
+                "Honduras",
+                "El Salvador",
+                "Nicaragua",
+                "Costa Rica",
+                "Panama"
+              ],
+              "box": [
+                -118,
+                7,
+                -86,
+                32
+              ],
+              "fiscal": 16,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Perú y Alto Perú",
+              "members": [
+                "Peru",
+                "Bolivia",
+                "Chile",
+                "Argentina",
+                "Paraguay",
+                "Uruguay",
+                "Ecuador"
+              ],
+              "box": [
+                -82,
+                -56,
+                -53,
+                2
+              ],
+              "fiscal": 24,
+              "revuelta": 10,
+              "nota": "La producción de Potosí ha entrado en declive. El imperio sigue gastando como si no."
+            },
+            {
+              "nombre": "Nueva Granada",
+              "members": [
+                "Colombia",
+                "Venezuela"
+              ],
+              "box": [
+                -80,
+                -5,
+                -60,
+                13
+              ],
+              "fiscal": 6,
+              "revuelta": 10
+            },
+            {
+              "nombre": "Reinos de Italia",
+              "members": [
+                "Italy"
+              ],
+              "box": [
+                8,
+                36,
+                19,
+                46
+              ],
+              "fiscal": 10,
+              "revuelta": 25,
+              "nota": "Nápoles se subleva en 1647 con Masaniello. Las revueltas de 1640-52 son simultáneas y por el mismo motivo: los impuestos de la guerra."
+            },
+            {
+              "nombre": "Antillas",
+              "members": [
+                "Cuba",
+                "Dominican Rep.",
+                "Puerto Rico"
+              ],
+              "box": [
+                -85,
+                17,
+                -65,
+                24
+              ],
+              "fiscal": 4,
+              "revuelta": 8
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Flandes español",
+              "members": [
+                "Belgium",
+                "Luxembourg"
+              ],
+              "box": [
+                2,
+                49,
+                6.5,
+                51.5
+              ],
+              "fiscal": 3,
+              "revuelta": 40,
+              "guarnicion": 60000,
+              "nota": "Westfalia reconoce en 1648 la independencia de las Provincias Unidas tras ochenta años. Queda la mitad sur, que sigue costando lo mismo."
+            },
+            {
+              "nombre": "Filipinas",
+              "members": [
+                "Philippines"
+              ],
+              "box": [
+                117,
+                5,
+                127,
+                19
+              ],
+              "fiscal": 2,
+              "revuelta": 12
+            }
+          ],
+          "contested": [
+            {
+              "nombre": "Cataluña sublevada",
+              "members": [
+                "Spain"
+              ],
+              "box": [
+                0,
+                40.5,
+                3.3,
+                42.9
+              ],
+              "desde": 1640,
+              "hasta": 1652,
+              "revuelta": 85,
+              "nota": "La Guerra dels Segadors: Cataluña se ofrece a Luis XIII y vuelve a Felipe IV en 1652 conservando sus fueros."
+            },
+            {
+              "nombre": "Portugal en guerra",
+              "members": [
+                "Portugal"
+              ],
+              "box": [
+                -9.5,
+                37,
+                -6,
+                42
+              ],
+              "desde": 1640,
+              "revuelta": 95,
+              "nota": "Se independiza en 1640 y España no lo reconoce hasta 1668. Con Portugal se va también Brasil."
+            }
+          ]
+        },
+        {
+          "year": 1714,
+          "core": {
+            "nombre": "España borbónica",
+            "members": [
+              "Spain"
+            ],
+            "box": [
+              -9.5,
+              36,
+              3,
+              43.8
+            ],
+            "fiscal": 55,
+            "revuelta": 12,
+            "guarnicion": 80000,
+            "nota": "Los Decretos de Nueva Planta suprimen los fueros de la Corona de Aragón tras la Guerra de Sucesión. Por primera vez hay un solo Estado peninsular con una sola administración."
+          },
+          "provinces": [
+            {
+              "nombre": "Nueva España",
+              "members": [
+                "Mexico",
+                "Guatemala",
+                "Honduras",
+                "El Salvador",
+                "Nicaragua",
+                "Costa Rica",
+                "Panama"
+              ],
+              "box": [
+                -118,
+                7,
+                -86,
+                34
+              ],
+              "fiscal": 18,
+              "revuelta": 6
+            },
+            {
+              "nombre": "Perú",
+              "members": [
+                "Peru",
+                "Bolivia",
+                "Chile",
+                "Argentina",
+                "Paraguay",
+                "Uruguay",
+                "Ecuador"
+              ],
+              "box": [
+                -82,
+                -56,
+                -53,
+                2
+              ],
+              "fiscal": 18,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Nueva Granada",
+              "members": [
+                "Colombia",
+                "Venezuela"
+              ],
+              "box": [
+                -80,
+                -5,
+                -60,
+                13
+              ],
+              "fiscal": 6,
+              "revuelta": 8
+            },
+            {
+              "nombre": "Antillas",
+              "members": [
+                "Cuba",
+                "Dominican Rep.",
+                "Puerto Rico"
+              ],
+              "box": [
+                -85,
+                17,
+                -65,
+                24
+              ],
+              "fiscal": 3,
+              "revuelta": 6
+            }
+          ],
+          "march": [
+            {
+              "nombre": "Filipinas",
+              "members": [
+                "Philippines"
+              ],
+              "box": [
+                117,
+                5,
+                127,
+                19
+              ],
+              "fiscal": 2,
+              "revuelta": 12
+            },
+            {
+              "nombre": "Provincias internas",
+              "members": [
+                "United States of America"
+              ],
+              "box": [
+                -124,
+                28,
+                -94,
+                38
+              ],
+              "fiscal": 0,
+              "revuelta": 20
+            }
+          ]
+        },
+        {
           "year": 1790,
           "members": [
             "Spain",
@@ -6629,6 +10671,57 @@
                 19
               ],
               "fiscal": 2,
+              "revuelta": 12
+            }
+          ]
+        },
+        {
+          "year": 1830,
+          "core": {
+            "nombre": "España peninsular",
+            "members": [
+              "Spain"
+            ],
+            "box": [
+              -9.5,
+              36,
+              3,
+              43.8
+            ],
+            "fiscal": 78,
+            "revuelta": 20,
+            "guarnicion": 60000,
+            "nota": "Ayacucho (1824) cerró la América continental. En veinte años el imperio pasa de dos continentes a tres islas, y la deuda de la guerra se queda entera."
+          },
+          "provinces": [
+            {
+              "nombre": "Cuba y Puerto Rico",
+              "members": [
+                "Cuba",
+                "Puerto Rico"
+              ],
+              "box": [
+                -85,
+                17,
+                -65,
+                24
+              ],
+              "fiscal": 18,
+              "revuelta": 15,
+              "nota": "El azúcar cubano con trabajo esclavo se convierte en la primera fuente de ingresos coloniales. La esclavitud se abolirá allí en 1886."
+            },
+            {
+              "nombre": "Filipinas",
+              "members": [
+                "Philippines"
+              ],
+              "box": [
+                117,
+                5,
+                127,
+                19
+              ],
+              "fiscal": 4,
               "revuelta": 12
             }
           ]
@@ -8662,6 +12755,30 @@
             -34,
             -33,
             6
+          ]
+        },
+        {
+          "year": 1900,
+          "members": [
+            "Brazil"
+          ],
+          "box": [
+            -74,
+            -34,
+            -34,
+            5
+          ]
+        },
+        {
+          "year": 2000,
+          "members": [
+            "Brazil"
+          ],
+          "box": [
+            -74,
+            -34,
+            -34,
+            5
           ]
         }
       ]

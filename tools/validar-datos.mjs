@@ -96,6 +96,14 @@ for (const p of pol.polities) {
         if (z.desde != null && z.desde > s.year) {
           err(`${e}: adquirida en ${z.desde}, después de la instantánea de ${s.year}`);
         }
+        // `hasta` marca cuándo se pierde la zona durante el tramo siguiente:
+        // tiene que caer por delante de la foto en la que aparece.
+        if (z.hasta != null && z.hasta < s.year) {
+          err(`${e}: perdida en ${z.hasta}, antes de la instantánea de ${s.year}`);
+        }
+        if (z.hasta != null && z.desde != null && z.hasta <= z.desde) {
+          err(`${e}: se pierde en ${z.hasta} antes de ganarse en ${z.desde}`);
+        }
         for (const [campo, tope] of [['fiscal', 100], ['revuelta', 100]]) {
           const v = z[campo];
           if (v != null && (typeof v !== 'number' || v < 0 || v > tope)) err(`${e}: ${campo} fuera de 0–${tope}`);

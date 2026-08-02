@@ -1,7 +1,7 @@
 /** Construcción del panel lateral: expediente, mundo y archivo. */
 
 import {
-  D, CONTROL, VIA, perfilControl, indiceControl, areaZona,
+  D, CONTROL, VIA, perfilDe, indiceControl, areaZona,
   activas, instantaneaDe, choquesActivos, tecnoDisponible,
   difusion, eventosEn, regional, ich, COMPONENTES_ICH, global as gGlobal,
   horizonteDe, TIPO_BANDA, ciudadesActivas, batallasEn, inventosEn,
@@ -97,7 +97,7 @@ function notaDelAño(año) {
 
 function fichaPolity(pol, est) {
   const snap = instantaneaDe(pol, est.año);
-  const perfil = perfilControl(snap);
+  const perfil = perfilDe(pol, est.año);
   const clases = perfil.partes.map((p) => p.control);
   const dur = pol.to - pol.from;
   const trans = clamp((est.año - pol.from) / Math.max(1, dur), 0, 1);
@@ -174,17 +174,34 @@ function bloqueMando(pol, perfil, est) {
 }
 
 function detalleZonas(zonas) {
-  const con = zonas.filter((z) => z.nombre || z.nota || z.via || z.guarnicion != null || z.fiscal != null || z.revuelta != null);
-  if (!con.length) return '';
-  return `<div class="zonas">${con.map((z) => {
+  // Una zona a medio absorber llega partida en trozos —lo que ya estaba, lo que
+  // entra, lo que se va—; en el desglose es una sola línea, con su transición.
+  const porNombre = new Map();
+  for (const z of zonas) {
+    if (!(z.nombre || z.nota || z.via || z.guarnicion != null || z.fiscal != null || z.revuelta != null)) continue;
+    const clave = z.nombre || JSON.stringify(z.box || z.members);
+    const ya = porNombre.get(clave);
+    if (!ya) porNombre.set(clave, { ...z, mueve: z.transitoria || null });
+    else {
+      ya.mueve = ya.mueve || z.transitoria || null;
+      if ((z.peso ?? 1) > (ya.peso ?? 1)) Object.assign(ya, { peso: z.peso });
+    }
+  }
+  if (!porNombre.size) return '';
+
+  return `<div class="zonas">${[...porNombre.values()].map((z) => {
     const marcas = [];
     if (z.via && VIA[z.via]) marcas.push(esc(VIA[z.via]));
     if (z.desde != null) marcas.push(`desde ${esc(formatoAño(z.desde))}`);
+    if (z.hasta != null) marcas.push(`hasta ${esc(formatoAño(z.hasta))}`);
     if (z.guarnicion != null) marcas.push(`guarnición ${num(z.guarnicion)}`);
-    if (z.fiscal != null) marcas.push(`rinde ${z.fiscal} %`);
-    if (z.revuelta != null) marcas.push(`revuelta ${z.revuelta} %`);
+    if (z.fiscal != null) marcas.push(`rinde ${z.fiscal} % del erario`);
+    if (z.revuelta != null) marcas.push(`revuelta ${z.revuelta} %/año`);
+    const mov = z.mueve === 'entra' ? 'incorporándose'
+      : z.mueve === 'sale' ? 'perdiéndose'
+        : (z.peso ?? 1) < 0.97 ? 'en transición' : null;
     return `<div class="zona">
-      ${z.nombre ? `<b class="zona__n">${esc(z.nombre)}</b>` : ''}
+      ${z.nombre ? `<b class="zona__n">${esc(z.nombre)}${mov ? `<span class="zona__t">${mov}</span>` : ''}</b>` : ''}
       ${marcas.length ? `<span class="zona__m">${marcas.join(' · ')}</span>` : ''}
       ${z.nota ? `<span class="zona__d">${esc(z.nota)}</span>` : ''}</div>`;
   }).join('')}</div>`;

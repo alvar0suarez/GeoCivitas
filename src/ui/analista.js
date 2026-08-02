@@ -13,7 +13,7 @@
  */
 
 import {
-  D, activas, instantaneaDe, perfilControl, CONTROL, VIA,
+  D, activas, instantaneaDe, perfilDe, CONTROL, VIA,
   choquesActivos, batallasEn, inventosEn,
   tecnoDisponible, eventosEn, regional, ich, regimenesEn, debatesDe,
   global as gGlobal,
@@ -60,7 +60,7 @@ export function construirContexto(est) {
 
   ctx.entidades = activas(a).map((p) => {
     const s = instantaneaDe(p, a);
-    const perfil = perfilControl(s);
+    const perfil = perfilDe(p, a);
     return {
       nombre: p.name, tipo: p.kind, vigencia: `${formatoAño(p.from)} — ${formatoAño(p.to)}`,
       sede: p.seat, instantanea: s ? formatoAño(s.year) : null,

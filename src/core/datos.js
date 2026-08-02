@@ -81,6 +81,179 @@ export function instantaneaDe(pol, año) {
 }
 
 /**
+ * Las dos instantáneas que enmarcan un año, y en qué punto entre ellas cae.
+ *
+ * Devuelve `[A, B, t]`: A es la última foto tomada, B la siguiente, y t la
+ * fracción recorrida. Con B nulo el imperio está fuera de sus fotos —antes de
+ * la primera o después de la última— y no hay nada que interpolar.
+ */
+export function tramoDe(pol, año) {
+  if (año < pol.from || año > pol.to) return [null, null, 0];
+  const s = pol.snapshots;
+  if (!s.length) return [null, null, 0];
+  let i = -1;
+  for (let k = 0; k < s.length; k++) if (s[k].year <= año) i = k;
+  if (i < 0) return [s[0], null, 0];
+  if (i >= s.length - 1) return [s[i], null, 1];
+  const A = s[i];
+  const B = s[i + 1];
+  return [A, B, clamp((año - A.year) / (B.year - A.year), 0, 1)];
+}
+
+/**
+ * Extensión de una entidad en un año concreto, con la frontera interpolada.
+ *
+ * Una instantánea cada varios siglos deja el mapa congelado: Cartago aparecía
+ * con Hispania seiscientos años seguidos porque su única foto era del 264 a. C.
+ * Aquí las zonas de dos fotos consecutivas se emparejan por nombre y se mezclan:
+ * las cajas de recorte se desplazan punto a punto, los países que entran o salen
+ * del imperio lo hacen con un peso que va de cero a uno, y el grado de control
+ * recorre su índice en vez de saltar. El resultado se mueve con cada año.
+ *
+ * Cada zona devuelta lleva `peso` (cuánta presencia tiene ahora, de 0 a 1) e
+ * `idx` (índice de control ya interpolado).
+ */
+export function extensionDe(pol, año) {
+  const [A, B, t] = tramoDe(pol, año);
+  if (!A) return [];
+  const za = zonasDe(A);
+  if (!B) return za.map((z) => ({ ...z, peso: 1, idx: CONTROL[z.control].idx }));
+
+  const zb = zonasDe(B);
+  const emparejadas = new Set();
+  const out = [];
+
+  for (const b of zb) {
+    const a = pareja(b, za, emparejadas);
+    if (a) emparejadas.add(a);
+    out.push(...mezclar(a, b, t, año));
+  }
+  for (const a of za) if (!emparejadas.has(a)) out.push(...mezclar(a, null, t, año));
+
+  return out.filter((z) => z.peso > 0.04 && (z.members.length || z.extra));
+}
+
+/**
+ * Empareja una zona con su equivalente en la otra foto.
+ *
+ * El nombre manda cuando coincide, pero las zonas se renombran —el «Limes
+ * renano» del 117 es la «Galia y Rin» del 395— y emparejar por orden de lista
+ * hace que Britania se transforme en el Rin y aparezcan transiciones absurdas.
+ * Cuando no hay nombre común se puntúa por territorio: qué países comparten y
+ * cuánto se solapan sus cajas. Por debajo del umbral es preferible no emparejar
+ * y que una zona muera y otra nazca.
+ */
+function pareja(z, candidatas, usadas) {
+  let mejor = null;
+  let mejorNota = 0;
+  for (const c of candidatas) {
+    if (usadas.has(c)) continue;
+    if (z.nombre && c.nombre === z.nombre) return c;
+    const nota = parecido(z, c) + (c.control === z.control ? 0.25 : 0);
+    if (nota > mejorNota) { mejorNota = nota; mejor = c; }
+  }
+  return mejorNota >= 0.5 ? mejor : null;
+}
+
+function parecido(a, b) {
+  const ma = new Set(a.members || []);
+  const mb = new Set(b.members || []);
+  let comunes = 0;
+  for (const m of ma) if (mb.has(m)) comunes++;
+  const union = new Set([...ma, ...mb]).size;
+  const jaccard = union ? comunes / union : 0;
+
+  const ca = a.box || (a.boxes && a.boxes[0]);
+  const cb = b.box || (b.boxes && b.boxes[0]);
+  let solape = 0;
+  if (ca && cb) {
+    const w = Math.min(ca[2], cb[2]) - Math.max(ca[0], cb[0]);
+    const h = Math.min(ca[3], cb[3]) - Math.max(ca[1], cb[1]);
+    if (w > 0 && h > 0) {
+      const inter = w * h;
+      const areaA = (ca[2] - ca[0]) * (ca[3] - ca[1]);
+      const areaB = (cb[2] - cb[0]) * (cb[3] - cb[1]);
+      solape = inter / Math.max(1e-6, areaA + areaB - inter);
+    }
+  }
+  return jaccard * 0.65 + solape * 0.55;
+}
+
+function mezclar(a, b, t, año) {
+  // Zona que desaparece. Si sabe cuándo se perdió, se pierde ese año exacto;
+  // si no, se desvanece a lo largo del tramo.
+  if (!b) {
+    const peso = a.hasta != null ? (año <= a.hasta ? 1 : 0) : 1 - t;
+    return [{ ...a, peso, idx: CONTROL[a.control].idx }];
+  }
+  // Zona que aparece. Con fecha de adquisición entra de golpe ese año.
+  if (!a) {
+    const peso = b.desde != null ? (año >= b.desde ? 1 : 0) : t;
+    return [{ ...b, peso, idx: CONTROL[b.control].idx }];
+  }
+
+  const dominante = t < 0.5 ? a : b;
+  const geom = geometriaMezclada(a, b, t);
+  const idx = CONTROL[a.control].idx + (CONTROL[b.control].idx - CONTROL[a.control].idx) * t;
+  const base = { ...dominante, ...geom, idx };
+
+  const ma = new Set(a.members || []);
+  const mb = new Set(b.members || []);
+  const estables = [...ma].filter((m) => mb.has(m));
+  const entrando = [...mb].filter((m) => !ma.has(m));
+  const saliendo = [...ma].filter((m) => !mb.has(m));
+
+  // La superficie se mide una vez sobre la zona entera y se reparte entre los
+  // trozos. Midiendo cada trozo por separado, el recorte —que es el mismo para
+  // los tres— pone su tope a cada uno y la zona partida abulta el doble.
+  const areaBase = areaZona({ ...base, members: [...new Set([...ma, ...mb])] });
+  const tierra = (lista) => lista.reduce((s, m) => s + areaPais(m), 0);
+  const totalTierra = tierra([...ma, ...mb]) || 1;
+  const trozo = (members, peso, transitoria) => ({
+    ...base, members, peso, transitoria,
+    extra: transitoria ? null : base.extra,
+    areaBase, areaFrac: members.length ? tierra(members) / totalTierra : 1,
+  });
+
+  const piezas = [];
+  if (estables.length || base.extra) piezas.push(trozo(estables, 1, null));
+  if (entrando.length) piezas.push(trozo(entrando, b.desde != null ? (año >= b.desde ? 1 : 0) : t, 'entra'));
+  if (saliendo.length) piezas.push(trozo(saliendo, a.hasta != null ? (año <= a.hasta ? 1 : 0) : 1 - t, 'sale'));
+  return piezas.length ? piezas : [trozo([], 1, null)];
+}
+
+/**
+ * Recorte intermedio entre dos zonas.
+ *
+ * Sólo se puede interpolar lo que tiene la misma forma a ambos lados: dos cajas,
+ * dos listas de cajas de igual longitud, dos polígonos con los mismos vértices.
+ * En cuanto la descripción cambia de tipo se toma la del lado dominante, porque
+ * mezclar un rectángulo con un polígono de once puntos da basura.
+ */
+function geometriaMezclada(a, b, t) {
+  const dom = t < 0.5 ? a : b;
+  const g = { box: dom.box, boxes: dom.boxes, poly: dom.poly, holes: dom.holes };
+
+  if (a.box && b.box) g.box = lerpCaja(a.box, b.box, t);
+  if (a.boxes && b.boxes && a.boxes.length === b.boxes.length) {
+    g.boxes = a.boxes.map((c, i) => lerpCaja(c, b.boxes[i], t));
+  }
+  if (a.poly && b.poly && a.poly.length === b.poly.length) {
+    g.poly = a.poly.map((p, i) => {
+      const q = b.poly[i];
+      return p.length === q.length ? p.map((v, j) => [lerp(v[0], q[j][0], t), lerp(v[1], q[j][1], t)]) : dom.poly[i];
+    });
+  }
+  if (a.holes && b.holes && a.holes.length === b.holes.length) {
+    g.holes = a.holes.map((h, i) => lerpCaja(h, b.holes[i], t));
+  }
+  return g;
+}
+
+const lerp = (x, y, t) => x + (y - x) * t;
+const lerpCaja = (c, d, t) => [lerp(c[0], d[0], t), lerp(c[1], d[1], t), lerp(c[2], d[2], t), lerp(c[3], d[3], t)];
+
+/**
  * Descompone una instantánea en zonas por grado de control.
  *
  * Una instantánea puede traer hasta siete estratos. Los cuatro primeros nombres
@@ -163,12 +336,15 @@ export function areaZona(z) {
   const cajas = [];
   if (z.box) cajas.push(z.box);
   for (const b of z.boxes || []) cajas.push(b);
-  for (const p of z.poly || []) cajas.push(cajaDe(p));
+  // Un polígono se mide por su superficie real, no por su caja envolvente: la
+  // de Andalucía triplicaría lo que ocupa la propia Andalucía.
+  let deLosPoligonos = 0;
+  for (const p of z.poly || []) deLosPoligonos += areaPoligono(p);
   let tierra = 0;
   for (const m of z.members || []) tierra += areaPais(m);
-  if (!cajas.length) return tierra;
+  if (!cajas.length && !deLosPoligonos) return tierra;
 
-  let recorte = 0;
+  let recorte = deLosPoligonos;
   for (const c of cajas) recorte += areaCaja(c);
   for (const h of z.holes || []) recorte -= areaCaja(h) * 0.6;
 
@@ -187,13 +363,25 @@ const cajaDe = (pts) => {
   return [lo0, la0, lo1, la1];
 };
 
+/** Superficie de un polígono lon/lat, en millones de km². */
+function areaPoligono(pts) {
+  const n = pts.length;
+  let s = 0;
+  let lat = 0;
+  for (let i = 0, j = n - 1; i < n; j = i++) {
+    s += pts[j][0] * pts[i][1] - pts[i][0] * pts[j][1];
+    lat += pts[i][1];
+  }
+  return Math.abs(s / 2) * Math.cos((lat / Math.max(1, n)) * Math.PI / 180) * 12321 / 1e6;
+}
+
 function areaCaja([lo0, la0, lo1, la1]) {
   const cos = Math.cos(((la0 + la1) / 2) * Math.PI / 180);
   return Math.abs(lo1 - lo0) * Math.abs(la1 - la0) * cos * 12321 / 1e6;
 }
 
 const cachePais = new Map();
-function areaPais(nombre) {
+export function areaPais(nombre) {
   if (cachePais.has(nombre)) return cachePais.get(nombre);
   const rings = D.paises.get(nombre);
   let a = 0;
@@ -216,11 +404,14 @@ function areaPais(nombre) {
  * Reparto de la extensión de una instantánea por grado de control, ponderado
  * por superficie y ordenado de más firme a más flojo.
  */
-export function perfilControl(snap) {
-  if (!snap) return { partes: [], indice: null, area: 0 };
+export function perfilControl(zonas) {
+  if (!zonas || !zonas.length) return { partes: [], indice: null, area: 0 };
   const partes = [];
-  for (const z of zonasDe(snap)) {
-    const area = areaZona(z);
+  for (const z of zonas) {
+    // Una zona a medio entrar cuenta a medias: si no, el imperio salta de
+    // tamaño el año en que cruza el punto medio entre dos instantáneas.
+    const area = (z.areaBase ?? areaZona(z)) * (z.areaFrac ?? 1) * (z.peso ?? 1);
+    if (area <= 0) continue;
     const ya = partes.find((p) => p.control === z.control);
     if (ya) { ya.area += area; ya.zonas.push(z); }
     else partes.push({ control: z.control, area, zonas: [z] });
@@ -228,13 +419,19 @@ export function perfilControl(snap) {
   const total = partes.reduce((s, p) => s + p.area, 0) || 1;
   for (const p of partes) p.pct = (p.area / total) * 100;
   partes.sort((a, b) => CONTROL[b.control].idx - CONTROL[a.control].idx);
-  const indice = partes.reduce((s, p) => s + CONTROL[p.control].idx * p.area, 0) / total;
+  const indice = partes.reduce((s, p) => s + p.zonas.reduce(
+    (q, z) => q + (z.idx ?? CONTROL[z.control].idx) * (z.areaBase ?? areaZona(z)) * (z.areaFrac ?? 1) * (z.peso ?? 1), 0), 0) / total;
   return { partes, indice, area: total };
+}
+
+/** Perfil de mando de una entidad en un año, ya con la frontera interpolada. */
+export function perfilDe(pol, año) {
+  return perfilControl(extensionDe(pol, año));
 }
 
 /** Índice de control efectivo de una entidad en un año, de 0 a 100. */
 export function indiceControl(pol, año) {
-  return perfilControl(instantaneaDe(pol, año)).indice;
+  return perfilDe(pol, año).indice;
 }
 
 /** Centro aproximado de una zona, para encuadrar el mapa al seleccionarla. */

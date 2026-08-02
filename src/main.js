@@ -943,6 +943,16 @@ function pintarAyuda() {
   </div>
 
   <div class="sec">
+    <div class="sec__t">LA FRONTERA SE MUEVE CON CADA AÑO</div>
+    <p class="txt">El Archivo guarda instantáneas fechadas, pero no las enseña a saltos: entre dos fotos consecutivas
+    las zonas se emparejan y se mezclan, de modo que mover la línea del tiempo un año mueve la frontera un año.
+    Cuando una zona sabe la fecha exacta en que se ganó o se perdió, aparece o desaparece ese año en vez de desvanecerse.</p>
+    <p class="txt">Prueba a arrastrar el tiempo del 711 al 1492 con la península en el centro: es la Reconquista
+    completa, de 0,40 millones de km² a 0,02. En el expediente, una zona a medio absorber se marca como
+    <b>incorporándose</b> o <b>perdiéndose</b>.</p>
+  </div>
+
+  <div class="sec">
     <div class="sec__t">MANDO EFECTIVO</div>
     <p class="txt">La capa <b>Mando efectivo</b> deja de colorear por identidad y colorea por solidez: la misma rampa para todos,
     del rojo (una orden que nadie obedece) al verde (una que se ejecuta sola). Sirve para comparar dos imperios sin memorizar colores,

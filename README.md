@@ -44,6 +44,29 @@ sumisión, colonización, federación, concesión), en qué año, su guarnición
 su parte del erario y su riesgo anual de revuelta. Son estimaciones razonadas sobre
 bibliografía estándar, no mediciones, y el atlas lo dice donde las muestra.
 
+### La frontera se mueve con cada año
+
+El atlas guarda instantáneas fechadas, pero no las muestra a saltos: entre dos
+fotos consecutivas las zonas se emparejan —por nombre, y si el nombre cambió,
+por territorio compartido— y se mezclan. Las cajas y polígonos de recorte se
+desplazan punto a punto, los países que entran o salen del imperio lo hacen con
+un peso que va de 0 a 1, y el grado de control recorre su índice en vez de
+saltar de golpe. Mover la línea del tiempo un año mueve la frontera un año.
+
+Cuando una zona sabe la fecha exacta en que se ganó o se perdió (`desde`,
+`hasta`), no se desvanece: aparece o desaparece ese año. Sicilia se pierde en
+241 a. C., no gradualmente entre el 264 y el 218.
+
+La Reconquista es el caso que mejor lo enseña. Al-Ándalus pasa de 0,40 M km² en
+756 a 1,12 en el año 1000 con Almanzor, se hunde a 0,33 en 1031 con las taifas,
+0,27 en 1150, 0,11 tras Las Navas y 0,03 cuando sólo queda Granada. Ocho
+snapshots, ochocientos años de línea bajando.
+
+Donde la frontera es un río y no un paralelo, se traza como tal: las zonas
+ibéricas se recortan con polígonos sobre el Duero, el Tajo, el Ebro y Sierra
+Morena, no con rectángulos. El resto del mundo sigue usando cajas, que a escala
+continental pasan por frontera y de cerca no.
+
 ### Mando efectivo: comparar imperios sin memorizar colores
 
 La capa **Mando efectivo** deja de colorear por identidad y colorea por solidez: la
