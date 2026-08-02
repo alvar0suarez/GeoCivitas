@@ -62,10 +62,18 @@ La Reconquista es el caso que mejor lo enseña. Al-Ándalus pasa de 0,40 M km² 
 0,27 en 1150, 0,11 tras Las Navas y 0,03 cuando sólo queda Granada. Ocho
 snapshots, ochocientos años de línea bajando.
 
-Donde la frontera es un río y no un paralelo, se traza como tal: las zonas
-ibéricas se recortan con polígonos sobre el Duero, el Tajo, el Ebro y Sierra
-Morena, no con rectángulos. El resto del mundo sigue usando cajas, que a escala
-continental pasan por frontera y de cerca no.
+Donde la frontera es un río y no un paralelo, se traza como tal. Las zonas se
+recortan con polígonos sobre las líneas que de verdad organizaron el territorio
+—el Duero, el Tajo, el Ebro y Sierra Morena en Iberia; el Rin, el Danubio y el
+muro de Adriano en el limes romano; el Huai, el Yangtsé y la Gran Muralla en
+China; el Ganges, el Indo y el Decán en la India; el Tauro y el Éufrates en
+Anatolia y Mesopotamia—. Quedan cajas donde la costa ya hace de recorte y la
+diferencia no se ve.
+
+Las superficies se miden por intersección real entre el recorte y el territorio
+de los países miembros, contando celdas de medio grado. El mínimo entre ambas
+cifras, que es lo que se usaba antes, contaba el Sáhara entero como provincia
+romana.
 
 ### Mando efectivo: comparar imperios sin memorizar colores
 

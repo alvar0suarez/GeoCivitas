@@ -206,13 +206,17 @@ function mezclar(a, b, t, año) {
   // La superficie se mide una vez sobre la zona entera y se reparte entre los
   // trozos. Midiendo cada trozo por separado, el recorte —que es el mismo para
   // los tres— pone su tope a cada uno y la zona partida abulta el doble.
-  const areaBase = areaZona({ ...base, members: [...new Set([...ma, ...mb])] });
-  const tierra = (lista) => lista.reduce((s, m) => s + areaPais(m), 0);
-  const totalTierra = tierra([...ma, ...mb]) || 1;
+  // Cómo medir la zona entera: con la geometría de la foto dominante, no con
+  // la interpolada. Medir la interpolada obligaría a rehacer el muestreo cada
+  // año, y el reparto entre trozos no cambia por que la caja se desplace.
+  const medir = {
+    members: [...new Set([...ma, ...mb])],
+    box: dominante.box, boxes: dominante.boxes, poly: dominante.poly, holes: dominante.holes,
+  };
   const trozo = (members, peso, transitoria) => ({
     ...base, members, peso, transitoria,
     extra: transitoria ? null : base.extra,
-    areaBase, areaFrac: members.length ? tierra(members) / totalTierra : 1,
+    medir,
   });
 
   const piezas = [];
@@ -344,14 +348,87 @@ export function areaZona(z) {
   for (const m of z.members || []) tierra += areaPais(m);
   if (!cajas.length && !deLosPoligonos) return tierra;
 
-  let recorte = deLosPoligonos;
-  for (const c of cajas) recorte += areaCaja(c);
-  for (const h of z.holes || []) recorte -= areaCaja(h) * 0.6;
+  if (!z.members || !z.members.length) {
+    let recorte = deLosPoligonos;
+    for (const c of cajas) recorte += areaCaja(c);
+    return Math.max(0.02, recorte);
+  }
+  return Math.max(0.02, areaMuestreada(z, cajas));
+}
 
-  // La caja incluye mar y país ajeno; la lista de miembros incluye lo que la
-  // caja deja fuera. Lo gobernado no puede pasar de ninguna de las dos.
-  const a = tierra > 0 ? Math.min(tierra, recorte) : recorte;
-  return Math.max(0.02, a);
+/**
+ * Superficie de la intersección entre el recorte y los países miembros.
+ *
+ * El mínimo entre ambas cifras no es la intersección y se equivoca por exceso
+ * en cuanto el recorte pisa mar o país ajeno: la franja mediterránea del
+ * Magreb medía como si Roma administrase también el Sáhara. Se resuelve
+ * contando celdas de medio grado que caigan a la vez dentro del recorte y
+ * dentro de algún miembro. El resultado se memoriza por zona porque la
+ * interpolación vuelve a pedirlo cada año.
+ */
+const cacheArea = new Map();
+function areaMuestreada(z, cajas) {
+  const firma = JSON.stringify([z.members, z.box, z.boxes, z.poly, z.holes]);
+  if (cacheArea.has(firma)) return cacheArea.get(firma);
+
+  const sobres = [...cajas];
+  for (const p of z.poly || []) sobres.push(cajaDe(p));
+  let lo0 = 180, la0 = 90, lo1 = -180, la1 = -90;
+  for (const c of sobres) {
+    lo0 = Math.min(lo0, c[0]); la0 = Math.min(la0, c[1]);
+    lo1 = Math.max(lo1, c[2]); la1 = Math.max(la1, c[3]);
+  }
+
+  const paso = 0.5;
+  const anillos = [];
+  for (const m of z.members || []) for (const r of D.paises.get(m) || []) anillos.push(r);
+
+  let km2 = 0;
+  for (let la = la0 + paso / 2; la < la1; la += paso) {
+    const celda = paso * paso * 12321 * Math.cos(la * Math.PI / 180) / 1e6;
+    for (let lo = lo0 + paso / 2; lo < lo1; lo += paso) {
+      if (!dentroDelRecorte(lo, la, z, cajas)) continue;
+      if (!enAlgunAnillo(lo, la, anillos)) continue;
+      km2 += celda;
+    }
+  }
+
+  const v = km2;
+  cacheArea.set(firma, v);
+  return v;
+}
+
+function dentroDelRecorte(lo, la, z, cajas) {
+  let dentro = false;
+  for (const c of cajas) if (lo >= c[0] && lo <= c[2] && la >= c[1] && la <= c[3]) { dentro = true; break; }
+  if (!dentro) for (const p of z.poly || []) if (enPoligono(lo, la, p)) { dentro = true; break; }
+  if (!dentro) return false;
+  for (const h of z.holes || []) if (lo >= h[0] && lo <= h[2] && la >= h[1] && la <= h[3]) return false;
+  return true;
+}
+
+function enPoligono(x, y, pts) {
+  let dentro = false;
+  for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+    const [xi, yi] = pts[i];
+    const [xj, yj] = pts[j];
+    if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) dentro = !dentro;
+  }
+  return dentro;
+}
+
+/** Anillos planos [lon,lat,lon,lat,…]: cuenta cruces sobre todos a la vez. */
+function enAlgunAnillo(x, y, anillos) {
+  let dentro = false;
+  for (const r of anillos) {
+    const n = r.length >> 1;
+    for (let i = 0, j = n - 1; i < n; j = i++) {
+      const xi = r[i * 2], yi = r[i * 2 + 1];
+      const xj = r[j * 2], yj = r[j * 2 + 1];
+      if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) dentro = !dentro;
+    }
+  }
+  return dentro;
 }
 
 const cajaDe = (pts) => {
@@ -410,7 +487,7 @@ export function perfilControl(zonas) {
   for (const z of zonas) {
     // Una zona a medio entrar cuenta a medias: si no, el imperio salta de
     // tamaño el año en que cruza el punto medio entre dos instantáneas.
-    const area = (z.areaBase ?? areaZona(z)) * (z.areaFrac ?? 1) * (z.peso ?? 1);
+    const area = areaEfectiva(z) * (z.peso ?? 1);
     if (area <= 0) continue;
     const ya = partes.find((p) => p.control === z.control);
     if (ya) { ya.area += area; ya.zonas.push(z); }
@@ -420,8 +497,24 @@ export function perfilControl(zonas) {
   for (const p of partes) p.pct = (p.area / total) * 100;
   partes.sort((a, b) => CONTROL[b.control].idx - CONTROL[a.control].idx);
   const indice = partes.reduce((s, p) => s + p.zonas.reduce(
-    (q, z) => q + (z.idx ?? CONTROL[z.control].idx) * (z.areaBase ?? areaZona(z)) * (z.areaFrac ?? 1) * (z.peso ?? 1), 0), 0) / total;
+    (q, z) => q + (z.idx ?? CONTROL[z.control].idx) * areaEfectiva(z) * (z.peso ?? 1), 0), 0) / total;
   return { partes, indice, area: total };
+}
+
+/**
+ * Superficie de un trozo de zona interpolada.
+ *
+ * La zona entera se mide una vez —muestrear es caro— y el resultado se reparte
+ * entre sus trozos según la tierra que aporta cada uno. Se calcula sólo cuando
+ * alguien pide el perfil; al dibujar no hace falta y hacerlo allí hundía la
+ * reproducción de la línea del tiempo.
+ */
+export function areaEfectiva(z) {
+  if (!z.medir) return areaZona(z);
+  const tierra = (l) => l.reduce((s, m) => s + areaPais(m), 0);
+  const total = tierra(z.medir.members);
+  const parte = tierra(z.members || []);
+  return areaZona(z.medir) * (total > 0 ? parte / total : 1);
 }
 
 /** Perfil de mando de una entidad en un año, ya con la frontera interpolada. */
