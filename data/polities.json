@@ -1136,17 +1136,20 @@
       "snapshots": [
         {
           "year": -2300,
-          "members": [
-            "Iraq",
-            "Syria",
-            "Kuwait"
-          ],
-          "box": [
-            38,
-            29,
-            49,
-            38
-          ]
+          "core": {
+            "nombre": "Akkad",
+            "members": [
+              "Iraq",
+              "Syria",
+              "Kuwait"
+            ],
+            "box": [
+              38,
+              29,
+              49,
+              38
+            ]
+          }
         }
       ]
     },
@@ -1368,30 +1371,36 @@
       "snapshots": [
         {
           "year": -1500,
-          "members": [
-            "Turkey"
-          ],
-          "box": [
-            30,
-            37,
-            39,
-            41
-          ]
+          "core": {
+            "nombre": "Hatti",
+            "members": [
+              "Turkey"
+            ],
+            "box": [
+              30,
+              37,
+              39,
+              41
+            ]
+          }
         },
         {
           "year": -1300,
-          "members": [
-            "Turkey",
-            "Syria",
-            "Lebanon",
-            "Cyprus"
-          ],
-          "box": [
-            26,
-            34,
-            42,
-            42
-          ]
+          "core": {
+            "nombre": "Hatti",
+            "members": [
+              "Turkey",
+              "Syria",
+              "Lebanon",
+              "Cyprus"
+            ],
+            "box": [
+              26,
+              34,
+              42,
+              42
+            ]
+          }
         }
       ]
     },
@@ -1426,18 +1435,18 @@
               [
                 [
                   29,
-                  15
+                  12
                 ],
                 [
-                  34.5,
-                  15
+                  35,
+                  13
                 ],
                 [
-                  36,
-                  20
+                  37,
+                  18
                 ],
                 [
-                  34,
+                  35,
                   22
                 ],
                 [
@@ -1446,7 +1455,7 @@
                 ],
                 [
                   28,
-                  18
+                  16
                 ]
               ]
             ],
@@ -1501,18 +1510,18 @@
               [
                 [
                   29,
-                  15
+                  12
                 ],
                 [
-                  34.5,
-                  15
+                  35,
+                  13
                 ],
                 [
-                  36,
-                  20
+                  37,
+                  18
                 ],
                 [
-                  34,
+                  35,
                   22
                 ],
                 [
@@ -1521,7 +1530,7 @@
                 ],
                 [
                   28,
-                  18
+                  16
                 ]
               ]
             ],
@@ -1626,11 +1635,33 @@
               "Egypt",
               "Eritrea"
             ],
-            "box": [
-              28,
-              14,
-              38,
-              32
+            "poly": [
+              [
+                [
+                  30,
+                  12
+                ],
+                [
+                  35,
+                  13
+                ],
+                [
+                  36.5,
+                  18
+                ],
+                [
+                  34,
+                  20
+                ],
+                [
+                  31,
+                  19
+                ],
+                [
+                  29,
+                  15
+                ]
+              ]
             ]
           }
         },
@@ -1644,24 +1675,28 @@
             "poly": [
               [
                 [
-                  30,
-                  16
-                ],
-                [
-                  34,
-                  16
+                  29,
+                  12
                 ],
                 [
                   35,
-                  21
+                  13
                 ],
                 [
-                  31,
-                  21
-                ],
-                [
-                  29,
+                  37,
                   18
+                ],
+                [
+                  35,
+                  22
+                ],
+                [
+                  30,
+                  21
+                ],
+                [
+                  28,
+                  16
                 ]
               ]
             ],
@@ -1677,11 +1712,33 @@
             "members": [
               "Sudan"
             ],
-            "box": [
-              30,
-              15,
-              36,
-              22
+            "poly": [
+              [
+                [
+                  30,
+                  12
+                ],
+                [
+                  35,
+                  13
+                ],
+                [
+                  36.5,
+                  18
+                ],
+                [
+                  34,
+                  20
+                ],
+                [
+                  31,
+                  19
+                ],
+                [
+                  29,
+                  15
+                ]
+              ]
             ]
           }
         },
@@ -1695,24 +1752,28 @@
             "poly": [
               [
                 [
-                  31,
-                  13
+                  30,
+                  12
                 ],
                 [
                   35,
-                  14
+                  13
                 ],
                 [
-                  36,
-                  19
+                  36.5,
+                  18
                 ],
                 [
-                  33,
+                  34,
                   20
                 ],
                 [
                   31,
-                  18
+                  19
+                ],
+                [
+                  29,
+                  15
                 ]
               ]
             ],
@@ -1728,11 +1789,33 @@
             "members": [
               "Sudan"
             ],
-            "box": [
-              30,
-              13,
-              36,
-              22
+            "poly": [
+              [
+                [
+                  30,
+                  12
+                ],
+                [
+                  35,
+                  13
+                ],
+                [
+                  36.5,
+                  18
+                ],
+                [
+                  34,
+                  20
+                ],
+                [
+                  31,
+                  19
+                ],
+                [
+                  29,
+                  15
+                ]
+              ]
             ]
           }
         },
@@ -1744,11 +1827,33 @@
               "Sudan",
               "S. Sudan"
             ],
-            "box": [
-              28,
-              10,
-              38,
-              22
+            "poly": [
+              [
+                [
+                  30,
+                  12
+                ],
+                [
+                  35,
+                  13
+                ],
+                [
+                  36.5,
+                  18
+                ],
+                [
+                  34,
+                  20
+                ],
+                [
+                  31,
+                  19
+                ],
+                [
+                  29,
+                  15
+                ]
+              ]
             ]
           }
         },
@@ -1762,24 +1867,28 @@
             "poly": [
               [
                 [
-                  31,
-                  13
+                  30,
+                  12
                 ],
                 [
                   35,
-                  14
+                  13
                 ],
                 [
-                  36,
-                  19
+                  36.5,
+                  18
                 ],
                 [
-                  33,
+                  34,
                   20
                 ],
                 [
                   31,
-                  18
+                  19
+                ],
+                [
+                  29,
+                  15
                 ]
               ]
             ],
@@ -1812,37 +1921,40 @@
       "snapshots": [
         {
           "year": -700,
-          "members": [
-            "Iraq",
-            "Syria",
-            "Lebanon",
-            "Israel",
-            "Palestine",
-            "Jordan",
-            "Turkey",
-            "Iran",
-            "Egypt"
-          ],
-          "box": [
-            28,
-            24,
-            50,
-            39
-          ],
-          "holes": [
-            [
-              44,
-              24,
-              50,
-              31
+          "core": {
+            "nombre": "Asiria",
+            "members": [
+              "Iraq",
+              "Syria",
+              "Lebanon",
+              "Israel",
+              "Palestine",
+              "Jordan",
+              "Turkey",
+              "Iran",
+              "Egypt"
             ],
-            [
+            "box": [
               28,
               24,
-              33,
-              29
+              50,
+              39
+            ],
+            "holes": [
+              [
+                44,
+                24,
+                50,
+                31
+              ],
+              [
+                28,
+                24,
+                33,
+                29
+              ]
             ]
-          ]
+          }
         }
       ]
     },
@@ -1873,16 +1985,30 @@
             "members": [
               "Tunisia"
             ],
-            "box": [
-              9,
-              33,
-              11.5,
-              37.5
-            ],
             "via": "colonizacion",
             "fiscal": 60,
             "revuelta": 1,
-            "nota": "Colonia tiria convertida en ciudad independiente. Todavía no controla territorio africano: vive del mar y paga tributo a los libios por el suelo que ocupa."
+            "nota": "Colonia tiria convertida en ciudad independiente. Todavía no controla territorio africano: vive del mar y paga tributo a los libios por el suelo que ocupa.",
+            "poly": [
+              [
+                [
+                  9,
+                  33
+                ],
+                [
+                  11.5,
+                  33
+                ],
+                [
+                  11.5,
+                  37.3
+                ],
+                [
+                  9,
+                  37.3
+                ]
+              ]
+            ]
           },
           "sphere": [
             {
@@ -1895,14 +2021,86 @@
                 "Spain",
                 "Italy"
               ],
-              "box": [
-                -9,
-                30,
-                15,
-                39
-              ],
               "fiscal": 40,
-              "nota": "Gadir, Útica, Motia, Palermo: escalas de un día de navegación, no provincias. La talasocracia púnica es una lista de puertos."
+              "nota": "Gadir, Útica, Motia, Palermo: escalas de un día de navegación, no provincias. La talasocracia púnica es una lista de puertos.",
+              "poly": [
+                [
+                  [
+                    -2,
+                    33.5
+                  ],
+                  [
+                    3,
+                    34
+                  ],
+                  [
+                    8,
+                    33.5
+                  ],
+                  [
+                    11,
+                    32
+                  ],
+                  [
+                    15,
+                    29.5
+                  ],
+                  [
+                    20,
+                    29.5
+                  ],
+                  [
+                    25,
+                    29.5
+                  ],
+                  [
+                    25,
+                    33
+                  ],
+                  [
+                    20,
+                    33
+                  ],
+                  [
+                    15,
+                    33
+                  ],
+                  [
+                    11,
+                    37.5
+                  ],
+                  [
+                    5,
+                    38
+                  ],
+                  [
+                    0,
+                    37
+                  ],
+                  [
+                    -2,
+                    36
+                  ]
+                ],
+                [
+                  [
+                    -9,
+                    36
+                  ],
+                  [
+                    -4,
+                    36
+                  ],
+                  [
+                    -4,
+                    38
+                  ],
+                  [
+                    -9,
+                    38
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -1913,16 +2111,48 @@
             "members": [
               "Tunisia"
             ],
-            "box": [
-              8,
-              32,
-              12,
-              37.5
-            ],
             "fiscal": 50,
             "revuelta": 4,
             "guarnicion": 15000,
-            "nota": "Tras Hímera empieza la expansión hacia el interior: el latifundio cerealista sustituye al comercio como base fiscal."
+            "nota": "Tras Hímera empieza la expansión hacia el interior: el latifundio cerealista sustituye al comercio como base fiscal.",
+            "poly": [
+              [
+                [
+                  9,
+                  33
+                ],
+                [
+                  11.5,
+                  33
+                ],
+                [
+                  11.5,
+                  37.3
+                ],
+                [
+                  9,
+                  37.3
+                ]
+              ],
+              [
+                [
+                  8,
+                  32
+                ],
+                [
+                  12,
+                  32
+                ],
+                [
+                  12,
+                  35
+                ],
+                [
+                  8,
+                  35
+                ]
+              ]
+            ]
           },
           "march": [
             {
@@ -1951,16 +2181,38 @@
                 "Algeria",
                 "Libya"
               ],
-              "box": [
-                4,
-                30,
-                15,
-                36
-              ],
               "via": "sumision",
               "fiscal": 20,
               "revuelta": 25,
-              "nota": "Pagan en grano y en soldados. Se sublevan en cuanto Cartago pierde una guerra, y en la de los Mercenarios casi acaban con ella."
+              "nota": "Pagan en grano y en soldados. Se sublevan en cuanto Cartago pierde una guerra, y en la de los Mercenarios casi acaban con ella.",
+              "poly": [
+                [
+                  [
+                    -2,
+                    33.5
+                  ],
+                  [
+                    4,
+                    34
+                  ],
+                  [
+                    8,
+                    33.5
+                  ],
+                  [
+                    8,
+                    37
+                  ],
+                  [
+                    3,
+                    37
+                  ],
+                  [
+                    -2,
+                    36
+                  ]
+                ]
+              ]
             }
           ],
           "sphere": [
@@ -1971,14 +2223,46 @@
                 "Portugal",
                 "Morocco"
               ],
-              "box": [
-                -9,
-                30,
-                0,
-                39
-              ],
               "fiscal": 18,
-              "nota": "Gadir y las escalas del estaño. Presencia comercial en la costa; el interior ibérico no reconoce a nadie."
+              "nota": "Gadir y las escalas del estaño. Presencia comercial en la costa; el interior ibérico no reconoce a nadie.",
+              "poly": [
+                [
+                  [
+                    -10,
+                    30
+                  ],
+                  [
+                    -6,
+                    30
+                  ],
+                  [
+                    -6,
+                    36
+                  ],
+                  [
+                    -10,
+                    36
+                  ]
+                ],
+                [
+                  [
+                    -9,
+                    36
+                  ],
+                  [
+                    -4,
+                    36
+                  ],
+                  [
+                    -4,
+                    38
+                  ],
+                  [
+                    -9,
+                    38
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -1989,15 +2273,47 @@
             "members": [
               "Tunisia"
             ],
-            "box": [
-              8,
-              32,
-              12,
-              37.5
-            ],
             "fiscal": 48,
             "revuelta": 5,
-            "guarnicion": 20000
+            "guarnicion": 20000,
+            "poly": [
+              [
+                [
+                  9,
+                  33
+                ],
+                [
+                  11.5,
+                  33
+                ],
+                [
+                  11.5,
+                  37.3
+                ],
+                [
+                  9,
+                  37.3
+                ]
+              ],
+              [
+                [
+                  8,
+                  32
+                ],
+                [
+                  12,
+                  32
+                ],
+                [
+                  12,
+                  35
+                ],
+                [
+                  8,
+                  35
+                ]
+              ]
+            ]
           },
           "march": [
             {
@@ -2044,15 +2360,37 @@
                 "Algeria",
                 "Libya"
               ],
-              "box": [
-                4,
-                30,
-                15,
-                36
-              ],
               "via": "sumision",
               "fiscal": 24,
-              "revuelta": 30
+              "revuelta": 30,
+              "poly": [
+                [
+                  [
+                    -2,
+                    33.5
+                  ],
+                  [
+                    4,
+                    34
+                  ],
+                  [
+                    8,
+                    33.5
+                  ],
+                  [
+                    8,
+                    37
+                  ],
+                  [
+                    3,
+                    37
+                  ],
+                  [
+                    -2,
+                    36
+                  ]
+                ]
+              ]
             }
           ],
           "sphere": [
@@ -2079,16 +2417,48 @@
             "members": [
               "Tunisia"
             ],
-            "box": [
-              8,
-              32,
-              12,
-              37.5
-            ],
             "fiscal": 40,
             "revuelta": 6,
             "guarnicion": 20000,
-            "nota": "Sin Sicilia ni Cerdeña. El imperio se ha reconstruido entero al otro lado del mar."
+            "nota": "Sin Sicilia ni Cerdeña. El imperio se ha reconstruido entero al otro lado del mar.",
+            "poly": [
+              [
+                [
+                  9,
+                  33
+                ],
+                [
+                  11.5,
+                  33
+                ],
+                [
+                  11.5,
+                  37.3
+                ],
+                [
+                  9,
+                  37.3
+                ]
+              ],
+              [
+                [
+                  8,
+                  32
+                ],
+                [
+                  12,
+                  32
+                ],
+                [
+                  12,
+                  35
+                ],
+                [
+                  8,
+                  35
+                ]
+              ]
+            ]
           },
           "provinces": [
             {
@@ -2173,15 +2543,37 @@
                 "Algeria",
                 "Libya"
               ],
-              "box": [
-                4,
-                30,
-                15,
-                36
-              ],
               "via": "sumision",
               "fiscal": 20,
-              "revuelta": 28
+              "revuelta": 28,
+              "poly": [
+                [
+                  [
+                    -2,
+                    33.5
+                  ],
+                  [
+                    4,
+                    34
+                  ],
+                  [
+                    8,
+                    33.5
+                  ],
+                  [
+                    8,
+                    37
+                  ],
+                  [
+                    3,
+                    37
+                  ],
+                  [
+                    -2,
+                    36
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -2192,16 +2584,48 @@
             "members": [
               "Tunisia"
             ],
-            "box": [
-              8,
-              32,
-              12,
-              37.5
-            ],
             "fiscal": 40,
             "revuelta": 6,
             "guarnicion": 20000,
-            "nota": "Aníbal acaba de aniquilar ocho legiones en Cannas. Es el momento de máxima ventaja cartaginesa y no sirve de nada: las ciudades latinas no se pasan de bando."
+            "nota": "Aníbal acaba de aniquilar ocho legiones en Cannas. Es el momento de máxima ventaja cartaginesa y no sirve de nada: las ciudades latinas no se pasan de bando.",
+            "poly": [
+              [
+                [
+                  9,
+                  33
+                ],
+                [
+                  11.5,
+                  33
+                ],
+                [
+                  11.5,
+                  37.3
+                ],
+                [
+                  9,
+                  37.3
+                ]
+              ],
+              [
+                [
+                  8,
+                  32
+                ],
+                [
+                  12,
+                  32
+                ],
+                [
+                  12,
+                  35
+                ],
+                [
+                  8,
+                  35
+                ]
+              ]
+            ]
           },
           "provinces": [
             {
@@ -2286,15 +2710,37 @@
                 "Algeria",
                 "Libya"
               ],
-              "box": [
-                4,
-                30,
-                15,
-                36
-              ],
               "via": "sumision",
               "fiscal": 20,
-              "revuelta": 28
+              "revuelta": 28,
+              "poly": [
+                [
+                  [
+                    -2,
+                    33.5
+                  ],
+                  [
+                    4,
+                    34
+                  ],
+                  [
+                    8,
+                    33.5
+                  ],
+                  [
+                    8,
+                    37
+                  ],
+                  [
+                    3,
+                    37
+                  ],
+                  [
+                    -2,
+                    36
+                  ]
+                ]
+              ]
             }
           ],
           "contested": [
@@ -2325,15 +2771,29 @@
             "members": [
               "Tunisia"
             ],
-            "box": [
-              9,
-              33,
-              11.5,
-              37
-            ],
             "fiscal": 100,
             "revuelta": 4,
-            "nota": "Tras Zama: sin flota, sin Hispania, sin derecho a hacer la guerra sin permiso de Roma, y diez mil talentos a pagar en cincuenta años. La ciudad se hace más rica que nunca y por eso la destruyen."
+            "nota": "Tras Zama: sin flota, sin Hispania, sin derecho a hacer la guerra sin permiso de Roma, y diez mil talentos a pagar en cincuenta años. La ciudad se hace más rica que nunca y por eso la destruyen.",
+            "poly": [
+              [
+                [
+                  9,
+                  33
+                ],
+                [
+                  11.5,
+                  33
+                ],
+                [
+                  11.5,
+                  37.3
+                ],
+                [
+                  9,
+                  37.3
+                ]
+              ]
+            ]
           }
         }
       ]
@@ -3774,27 +4234,30 @@
       "snapshots": [
         {
           "year": -280,
-          "members": [
-            "Turkey",
-            "Syria",
-            "Iraq",
-            "Iran",
-            "Lebanon",
-            "Israel",
-            "Jordan",
-            "Afghanistan",
-            "Turkmenistan",
-            "Uzbekistan",
-            "Tajikistan",
-            "Kuwait",
-            "Armenia"
-          ],
-          "box": [
-            27,
-            25,
-            72,
-            42
-          ]
+          "core": {
+            "nombre": "Seléucidas",
+            "members": [
+              "Turkey",
+              "Syria",
+              "Iraq",
+              "Iran",
+              "Lebanon",
+              "Israel",
+              "Jordan",
+              "Afghanistan",
+              "Turkmenistan",
+              "Uzbekistan",
+              "Tajikistan",
+              "Kuwait",
+              "Armenia"
+            ],
+            "box": [
+              27,
+              25,
+              72,
+              42
+            ]
+          }
         }
       ]
     },
@@ -3820,21 +4283,24 @@
       "snapshots": [
         {
           "year": -270,
-          "members": [
-            "Egypt",
-            "Israel",
-            "Palestine",
-            "Lebanon",
-            "Cyprus",
-            "Libya",
-            "Jordan"
-          ],
-          "box": [
-            19,
-            22,
-            37,
-            36
-          ]
+          "core": {
+            "nombre": "Ptolemeos",
+            "members": [
+              "Egypt",
+              "Israel",
+              "Palestine",
+              "Lebanon",
+              "Cyprus",
+              "Libya",
+              "Jordan"
+            ],
+            "box": [
+              19,
+              22,
+              37,
+              36
+            ]
+          }
         }
       ]
     },
@@ -4431,16 +4897,38 @@
               "members": [
                 "Vietnam"
               ],
-              "box": [
-                102,
-                18,
-                110,
-                24
-              ],
               "via": "conquista",
               "desde": -111,
               "fiscal": 3,
-              "revuelta": 18
+              "revuelta": 18,
+              "poly": [
+                [
+                  [
+                    103.5,
+                    19.5
+                  ],
+                  [
+                    107,
+                    19.5
+                  ],
+                  [
+                    107.5,
+                    21.5
+                  ],
+                  [
+                    106,
+                    23.4
+                  ],
+                  [
+                    103,
+                    22.8
+                  ],
+                  [
+                    102.5,
+                    21
+                  ]
+                ]
+              ]
             }
           ],
           "contested": [
@@ -4784,15 +5272,37 @@
               "members": [
                 "Vietnam"
               ],
-              "box": [
-                102,
-                18,
-                110,
-                24
-              ],
               "fiscal": 3,
               "revuelta": 20,
-              "nota": "La revuelta de las hermanas Trung (40-43) obliga a reconquistar el delta entero."
+              "nota": "La revuelta de las hermanas Trung (40-43) obliga a reconquistar el delta entero.",
+              "poly": [
+                [
+                  [
+                    103.5,
+                    19.5
+                  ],
+                  [
+                    107,
+                    19.5
+                  ],
+                  [
+                    107.5,
+                    21.5
+                  ],
+                  [
+                    106,
+                    23.4
+                  ],
+                  [
+                    103,
+                    22.8
+                  ],
+                  [
+                    102.5,
+                    21
+                  ]
+                ]
+              ]
             }
           ],
           "tributary": [
@@ -8120,19 +8630,22 @@
       "snapshots": [
         {
           "year": 150,
-          "members": [
-            "Afghanistan",
-            "Pakistan",
-            "India",
-            "Tajikistan",
-            "Uzbekistan"
-          ],
-          "box": [
-            62,
-            22,
-            84,
-            40
-          ]
+          "core": {
+            "nombre": "Kushán",
+            "members": [
+              "Afghanistan",
+              "Pakistan",
+              "India",
+              "Tajikistan",
+              "Uzbekistan"
+            ],
+            "box": [
+              62,
+              22,
+              84,
+              40
+            ]
+          }
         }
       ]
     },
@@ -8158,72 +8671,297 @@
       "snapshots": [
         {
           "year": 200,
-          "members": [
-            "Ethiopia",
-            "Eritrea"
-          ],
-          "box": [
-            37,
-            10,
-            41,
-            16
-          ]
+          "core": {
+            "nombre": "Axum",
+            "members": [
+              "Ethiopia",
+              "Eritrea"
+            ],
+            "poly": [
+              [
+                [
+                  37.2,
+                  10
+                ],
+                [
+                  38.4,
+                  9.6
+                ],
+                [
+                  39.4,
+                  10.6
+                ],
+                [
+                  39.9,
+                  12
+                ],
+                [
+                  39.6,
+                  13.4
+                ],
+                [
+                  39,
+                  14.6
+                ],
+                [
+                  38.2,
+                  15.4
+                ],
+                [
+                  37.4,
+                  15
+                ],
+                [
+                  36.8,
+                  13.6
+                ],
+                [
+                  36.6,
+                  12
+                ],
+                [
+                  36.8,
+                  10.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 350,
-          "members": [
-            "Ethiopia",
-            "Eritrea",
-            "Sudan",
-            "Yemen",
-            "Djibouti"
-          ],
-          "box": [
-            33,
-            8,
-            48,
-            20
-          ]
+          "core": {
+            "nombre": "Axum",
+            "members": [
+              "Ethiopia",
+              "Eritrea",
+              "Sudan",
+              "Yemen",
+              "Djibouti"
+            ],
+            "poly": [
+              [
+                [
+                  37.2,
+                  10
+                ],
+                [
+                  38.4,
+                  9.6
+                ],
+                [
+                  39.4,
+                  10.6
+                ],
+                [
+                  39.9,
+                  12
+                ],
+                [
+                  39.6,
+                  13.4
+                ],
+                [
+                  39,
+                  14.6
+                ],
+                [
+                  38.2,
+                  15.4
+                ],
+                [
+                  37.4,
+                  15
+                ],
+                [
+                  36.8,
+                  13.6
+                ],
+                [
+                  36.6,
+                  12
+                ],
+                [
+                  36.8,
+                  10.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 450,
-          "members": [
-            "Ethiopia",
-            "Eritrea",
-            "Yemen"
-          ],
-          "box": [
-            36,
-            8,
-            45,
-            17
-          ]
+          "core": {
+            "nombre": "Axum",
+            "members": [
+              "Ethiopia",
+              "Eritrea",
+              "Yemen"
+            ],
+            "poly": [
+              [
+                [
+                  37.2,
+                  10
+                ],
+                [
+                  38.4,
+                  9.6
+                ],
+                [
+                  39.4,
+                  10.6
+                ],
+                [
+                  39.9,
+                  12
+                ],
+                [
+                  39.6,
+                  13.4
+                ],
+                [
+                  39,
+                  14.6
+                ],
+                [
+                  38.2,
+                  15.4
+                ],
+                [
+                  37.4,
+                  15
+                ],
+                [
+                  36.8,
+                  13.6
+                ],
+                [
+                  36.6,
+                  12
+                ],
+                [
+                  36.8,
+                  10.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 550,
-          "members": [
-            "Ethiopia",
-            "Eritrea"
-          ],
-          "box": [
-            36,
-            8,
-            42,
-            17
-          ]
+          "core": {
+            "nombre": "Axum",
+            "members": [
+              "Ethiopia",
+              "Eritrea"
+            ],
+            "poly": [
+              [
+                [
+                  37.2,
+                  10
+                ],
+                [
+                  38.4,
+                  9.6
+                ],
+                [
+                  39.4,
+                  10.6
+                ],
+                [
+                  39.9,
+                  12
+                ],
+                [
+                  39.6,
+                  13.4
+                ],
+                [
+                  39,
+                  14.6
+                ],
+                [
+                  38.2,
+                  15.4
+                ],
+                [
+                  37.4,
+                  15
+                ],
+                [
+                  36.8,
+                  13.6
+                ],
+                [
+                  36.6,
+                  12
+                ],
+                [
+                  36.8,
+                  10.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 750,
-          "members": [
-            "Ethiopia",
-            "Eritrea"
-          ],
-          "box": [
-            37,
-            9,
-            41,
-            16
-          ]
+          "core": {
+            "nombre": "Axum",
+            "members": [
+              "Ethiopia",
+              "Eritrea"
+            ],
+            "poly": [
+              [
+                [
+                  37.2,
+                  10
+                ],
+                [
+                  38.4,
+                  9.6
+                ],
+                [
+                  39.4,
+                  10.6
+                ],
+                [
+                  39.9,
+                  12
+                ],
+                [
+                  39.6,
+                  13.4
+                ],
+                [
+                  39,
+                  14.6
+                ],
+                [
+                  38.2,
+                  15.4
+                ],
+                [
+                  37.4,
+                  15
+                ],
+                [
+                  36.8,
+                  13.6
+                ],
+                [
+                  36.6,
+                  12
+                ],
+                [
+                  36.8,
+                  10.8
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -8363,65 +9101,245 @@
       "snapshots": [
         {
           "year": 450,
-          "members": [
-            "Guatemala",
-            "Mexico",
-            "Belize",
-            "Honduras"
-          ],
-          "box": [
-            -92,
-            14,
-            -87,
-            21
-          ]
+          "core": {
+            "nombre": "Maya",
+            "members": [
+              "Guatemala",
+              "Mexico",
+              "Belize",
+              "Honduras"
+            ],
+            "poly": [
+              [
+                [
+                  -92.4,
+                  14.4
+                ],
+                [
+                  -90.6,
+                  13.8
+                ],
+                [
+                  -88.6,
+                  13.6
+                ],
+                [
+                  -87.8,
+                  15.2
+                ],
+                [
+                  -88,
+                  17
+                ],
+                [
+                  -87.6,
+                  18.6
+                ],
+                [
+                  -88.6,
+                  20.6
+                ],
+                [
+                  -90.2,
+                  21.4
+                ],
+                [
+                  -91.6,
+                  20.4
+                ],
+                [
+                  -92.4,
+                  18.4
+                ],
+                [
+                  -92.8,
+                  16.6
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 600,
-          "members": [
-            "Guatemala",
-            "Mexico",
-            "Belize",
-            "Honduras"
-          ],
-          "box": [
-            -92.5,
-            13.5,
-            -86.5,
-            21.5
-          ]
+          "core": {
+            "nombre": "Maya",
+            "members": [
+              "Guatemala",
+              "Mexico",
+              "Belize",
+              "Honduras"
+            ],
+            "poly": [
+              [
+                [
+                  -92.4,
+                  14.4
+                ],
+                [
+                  -90.6,
+                  13.8
+                ],
+                [
+                  -88.6,
+                  13.6
+                ],
+                [
+                  -87.8,
+                  15.2
+                ],
+                [
+                  -88,
+                  17
+                ],
+                [
+                  -87.6,
+                  18.6
+                ],
+                [
+                  -88.6,
+                  20.6
+                ],
+                [
+                  -90.2,
+                  21.4
+                ],
+                [
+                  -91.6,
+                  20.4
+                ],
+                [
+                  -92.4,
+                  18.4
+                ],
+                [
+                  -92.8,
+                  16.6
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 700,
-          "members": [
-            "Guatemala",
-            "Belize",
-            "Mexico",
-            "Honduras",
-            "El Salvador"
-          ],
-          "box": [
-            -94,
-            14,
-            -86,
-            22
-          ]
+          "core": {
+            "nombre": "Maya",
+            "members": [
+              "Guatemala",
+              "Belize",
+              "Mexico",
+              "Honduras",
+              "El Salvador"
+            ],
+            "poly": [
+              [
+                [
+                  -92.4,
+                  14.4
+                ],
+                [
+                  -90.6,
+                  13.8
+                ],
+                [
+                  -88.6,
+                  13.6
+                ],
+                [
+                  -87.8,
+                  15.2
+                ],
+                [
+                  -88,
+                  17
+                ],
+                [
+                  -87.6,
+                  18.6
+                ],
+                [
+                  -88.6,
+                  20.6
+                ],
+                [
+                  -90.2,
+                  21.4
+                ],
+                [
+                  -91.6,
+                  20.4
+                ],
+                [
+                  -92.4,
+                  18.4
+                ],
+                [
+                  -92.8,
+                  16.6
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 800,
-          "members": [
-            "Guatemala",
-            "Mexico",
-            "Belize",
-            "Honduras",
-            "El Salvador"
-          ],
-          "box": [
-            -93,
-            13,
-            -86,
-            22
-          ]
+          "core": {
+            "nombre": "Maya",
+            "members": [
+              "Guatemala",
+              "Mexico",
+              "Belize",
+              "Honduras",
+              "El Salvador"
+            ],
+            "poly": [
+              [
+                [
+                  -92.4,
+                  14.4
+                ],
+                [
+                  -90.6,
+                  13.8
+                ],
+                [
+                  -88.6,
+                  13.6
+                ],
+                [
+                  -87.8,
+                  15.2
+                ],
+                [
+                  -88,
+                  17
+                ],
+                [
+                  -87.6,
+                  18.6
+                ],
+                [
+                  -88.6,
+                  20.6
+                ],
+                [
+                  -90.2,
+                  21.4
+                ],
+                [
+                  -91.6,
+                  20.4
+                ],
+                [
+                  -92.4,
+                  18.4
+                ],
+                [
+                  -92.8,
+                  16.6
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -8447,87 +9365,633 @@
       "snapshots": [
         {
           "year": 500,
-          "members": [
-            "Mali",
-            "Mauritania"
-          ],
-          "box": [
-            -11,
-            14,
-            -4,
-            18
-          ]
+          "core": {
+            "nombre": "Wagadu",
+            "members": [
+              "Mali",
+              "Mauritania"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 700,
-          "members": [
-            "Mali",
-            "Mauritania"
-          ],
-          "box": [
-            -12,
-            13,
-            -3,
-            19
-          ]
+          "core": {
+            "nombre": "Wagadu",
+            "members": [
+              "Mali",
+              "Mauritania"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 900,
-          "members": [
-            "Mali",
-            "Mauritania",
-            "Senegal"
-          ],
-          "box": [
-            -13,
-            13,
-            -3,
-            18
-          ]
+          "core": {
+            "nombre": "Wagadu",
+            "members": [
+              "Mali",
+              "Mauritania",
+              "Senegal"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1000,
-          "members": [
-            "Mauritania",
-            "Mali",
-            "Senegal",
-            "Gambia",
-            "Guinea"
-          ],
-          "box": [
-            -14,
-            11,
-            -2,
-            19
-          ]
+          "core": {
+            "nombre": "Wagadu",
+            "members": [
+              "Mauritania",
+              "Mali",
+              "Senegal",
+              "Gambia",
+              "Guinea"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1100,
-          "members": [
-            "Mali",
-            "Mauritania",
-            "Senegal"
-          ],
-          "box": [
-            -13,
-            12,
-            -3,
-            17
-          ]
+          "core": {
+            "nombre": "Wagadu",
+            "members": [
+              "Mali",
+              "Mauritania",
+              "Senegal"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1150,
-          "members": [
-            "Mali",
-            "Mauritania",
-            "Senegal"
-          ],
-          "box": [
-            -14,
-            12,
-            -2,
-            18
-          ]
+          "core": {
+            "nombre": "Wagadu",
+            "members": [
+              "Mali",
+              "Mauritania",
+              "Senegal"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -8553,18 +10017,21 @@
       "snapshots": [
         {
           "year": 400,
-          "members": [
-            "India",
-            "Bangladesh",
-            "Pakistan",
-            "Nepal"
-          ],
-          "box": [
-            68,
-            15,
-            92,
-            34
-          ]
+          "core": {
+            "nombre": "Gupta",
+            "members": [
+              "India",
+              "Bangladesh",
+              "Pakistan",
+              "Nepal"
+            ],
+            "box": [
+              68,
+              15,
+              92,
+              34
+            ]
+          }
         }
       ]
     },
@@ -10333,14 +11800,36 @@
               "members": [
                 "Vietnam"
               ],
-              "box": [
-                102,
-                18,
-                110,
-                24
-              ],
               "fiscal": 3,
-              "revuelta": 20
+              "revuelta": 20,
+              "poly": [
+                [
+                  [
+                    103.5,
+                    19.5
+                  ],
+                  [
+                    107,
+                    19.5
+                  ],
+                  [
+                    107.5,
+                    21.5
+                  ],
+                  [
+                    106,
+                    23.4
+                  ],
+                  [
+                    103,
+                    22.8
+                  ],
+                  [
+                    102.5,
+                    21
+                  ]
+                ]
+              ]
             }
           ],
           "client": [
@@ -10406,21 +11895,24 @@
       "snapshots": [
         {
           "year": 790,
-          "members": [
-            "China",
-            "Nepal",
-            "Bhutan",
-            "India",
-            "Pakistan",
-            "Kyrgyzstan",
-            "Tajikistan"
-          ],
-          "box": [
-            73,
-            27,
-            104,
-            42
-          ]
+          "core": {
+            "nombre": "Tíbet",
+            "members": [
+              "China",
+              "Nepal",
+              "Bhutan",
+              "India",
+              "Pakistan",
+              "Kyrgyzstan",
+              "Tajikistan"
+            ],
+            "box": [
+              73,
+              27,
+              104,
+              42
+            ]
+          }
         }
       ]
     },
@@ -10819,40 +12311,16 @@
               "poly": [
                 [
                   [
-                    -2,
-                    33.5
-                  ],
-                  [
-                    3,
-                    34
-                  ],
-                  [
-                    8,
-                    33.5
+                    7,
+                    32
                   ],
                   [
                     11,
-                    32
+                    31
                   ],
                   [
                     15,
                     29.5
-                  ],
-                  [
-                    20,
-                    29.5
-                  ],
-                  [
-                    25,
-                    29.5
-                  ],
-                  [
-                    25,
-                    33
-                  ],
-                  [
-                    20,
-                    33
                   ],
                   [
                     15,
@@ -10863,11 +12331,33 @@
                     37.5
                   ],
                   [
-                    5,
-                    38
+                    8,
+                    37.5
                   ],
                   [
-                    0,
+                    6,
+                    35
+                  ]
+                ],
+                [
+                  [
+                    -2,
+                    33.5
+                  ],
+                  [
+                    4,
+                    34
+                  ],
+                  [
+                    8,
+                    33.5
+                  ],
+                  [
+                    8,
+                    37
+                  ],
+                  [
+                    3,
                     37
                   ],
                   [
@@ -11110,32 +12600,142 @@
       "snapshots": [
         {
           "year": 900,
-          "members": [
-            "Indonesia",
-            "Malaysia",
-            "Thailand",
-            "Singapore",
-            "Brunei"
-          ],
-          "box": [
-            95,
-            -7,
-            118,
-            8
-          ]
+          "core": {
+            "nombre": "Srivijaya",
+            "members": [
+              "Indonesia",
+              "Malaysia",
+              "Thailand",
+              "Singapore",
+              "Brunei"
+            ],
+            "poly": [
+              [
+                [
+                  95,
+                  -6
+                ],
+                [
+                  102,
+                  -6
+                ],
+                [
+                  106,
+                  -6.5
+                ],
+                [
+                  106,
+                  -3
+                ],
+                [
+                  101,
+                  1
+                ],
+                [
+                  97.5,
+                  5.5
+                ],
+                [
+                  95,
+                  4
+                ]
+              ],
+              [
+                [
+                  99,
+                  1
+                ],
+                [
+                  104.3,
+                  1.2
+                ],
+                [
+                  104.5,
+                  6
+                ],
+                [
+                  102.5,
+                  8
+                ],
+                [
+                  99.8,
+                  8
+                ],
+                [
+                  98.2,
+                  5
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1100,
-          "members": [
-            "Indonesia",
-            "Malaysia"
-          ],
-          "box": [
-            95,
-            -6,
-            112,
-            6
-          ]
+          "core": {
+            "nombre": "Srivijaya",
+            "members": [
+              "Indonesia",
+              "Malaysia"
+            ],
+            "poly": [
+              [
+                [
+                  95,
+                  -6
+                ],
+                [
+                  102,
+                  -6
+                ],
+                [
+                  106,
+                  -6.5
+                ],
+                [
+                  106,
+                  -3
+                ],
+                [
+                  101,
+                  1
+                ],
+                [
+                  97.5,
+                  5.5
+                ],
+                [
+                  95,
+                  4
+                ]
+              ],
+              [
+                [
+                  99,
+                  1
+                ],
+                [
+                  104.3,
+                  1.2
+                ],
+                [
+                  104.5,
+                  6
+                ],
+                [
+                  102.5,
+                  8
+                ],
+                [
+                  99.8,
+                  8
+                ],
+                [
+                  98.2,
+                  5
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -11161,74 +12761,319 @@
       "snapshots": [
         {
           "year": 900,
-          "members": [
-            "Chad",
-            "Niger"
-          ],
-          "box": [
-            13,
-            13,
-            19,
-            17
-          ]
+          "core": {
+            "nombre": "Kanem",
+            "members": [
+              "Chad",
+              "Niger"
+            ],
+            "poly": [
+              [
+                [
+                  12.4,
+                  10.6
+                ],
+                [
+                  14.2,
+                  10.2
+                ],
+                [
+                  16.2,
+                  10.8
+                ],
+                [
+                  18.4,
+                  12
+                ],
+                [
+                  19.6,
+                  13.8
+                ],
+                [
+                  19.2,
+                  15.8
+                ],
+                [
+                  17.6,
+                  17
+                ],
+                [
+                  15.4,
+                  17.4
+                ],
+                [
+                  13.4,
+                  16.4
+                ],
+                [
+                  11.6,
+                  14.8
+                ],
+                [
+                  10.8,
+                  12.8
+                ],
+                [
+                  11.4,
+                  11.4
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1100,
-          "members": [
-            "Chad",
-            "Niger"
-          ],
-          "box": [
-            12,
-            12,
-            20,
-            18
-          ]
+          "core": {
+            "nombre": "Kanem",
+            "members": [
+              "Chad",
+              "Niger"
+            ],
+            "poly": [
+              [
+                [
+                  12.4,
+                  10.6
+                ],
+                [
+                  14.2,
+                  10.2
+                ],
+                [
+                  16.2,
+                  10.8
+                ],
+                [
+                  18.4,
+                  12
+                ],
+                [
+                  19.6,
+                  13.8
+                ],
+                [
+                  19.2,
+                  15.8
+                ],
+                [
+                  17.6,
+                  17
+                ],
+                [
+                  15.4,
+                  17.4
+                ],
+                [
+                  13.4,
+                  16.4
+                ],
+                [
+                  11.6,
+                  14.8
+                ],
+                [
+                  10.8,
+                  12.8
+                ],
+                [
+                  11.4,
+                  11.4
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1300,
-          "members": [
-            "Chad",
-            "Niger",
-            "Nigeria"
-          ],
-          "box": [
-            11,
-            11,
-            20,
-            17
-          ]
+          "core": {
+            "nombre": "Kanem",
+            "members": [
+              "Chad",
+              "Niger",
+              "Nigeria"
+            ],
+            "poly": [
+              [
+                [
+                  12.4,
+                  10.6
+                ],
+                [
+                  14.2,
+                  10.2
+                ],
+                [
+                  16.2,
+                  10.8
+                ],
+                [
+                  18.4,
+                  12
+                ],
+                [
+                  19.6,
+                  13.8
+                ],
+                [
+                  19.2,
+                  15.8
+                ],
+                [
+                  17.6,
+                  17
+                ],
+                [
+                  15.4,
+                  17.4
+                ],
+                [
+                  13.4,
+                  16.4
+                ],
+                [
+                  11.6,
+                  14.8
+                ],
+                [
+                  10.8,
+                  12.8
+                ],
+                [
+                  11.4,
+                  11.4
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1500,
-          "members": [
-            "Chad",
-            "Niger",
-            "Nigeria",
-            "Cameroon",
-            "Libya"
-          ],
-          "box": [
-            8,
-            10,
-            22,
-            22
-          ]
+          "core": {
+            "nombre": "Kanem",
+            "members": [
+              "Chad",
+              "Niger",
+              "Nigeria",
+              "Cameroon",
+              "Libya"
+            ],
+            "poly": [
+              [
+                [
+                  12.4,
+                  10.6
+                ],
+                [
+                  14.2,
+                  10.2
+                ],
+                [
+                  16.2,
+                  10.8
+                ],
+                [
+                  18.4,
+                  12
+                ],
+                [
+                  19.6,
+                  13.8
+                ],
+                [
+                  19.2,
+                  15.8
+                ],
+                [
+                  17.6,
+                  17
+                ],
+                [
+                  15.4,
+                  17.4
+                ],
+                [
+                  13.4,
+                  16.4
+                ],
+                [
+                  11.6,
+                  14.8
+                ],
+                [
+                  10.8,
+                  12.8
+                ],
+                [
+                  11.4,
+                  11.4
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1700,
-          "members": [
-            "Chad",
-            "Niger",
-            "Nigeria",
-            "Cameroon"
-          ],
-          "box": [
-            10,
-            10,
-            22,
-            17
-          ]
+          "core": {
+            "nombre": "Kanem",
+            "members": [
+              "Chad",
+              "Niger",
+              "Nigeria",
+              "Cameroon"
+            ],
+            "poly": [
+              [
+                [
+                  12.4,
+                  10.6
+                ],
+                [
+                  14.2,
+                  10.2
+                ],
+                [
+                  16.2,
+                  10.8
+                ],
+                [
+                  18.4,
+                  12
+                ],
+                [
+                  19.6,
+                  13.8
+                ],
+                [
+                  19.2,
+                  15.8
+                ],
+                [
+                  17.6,
+                  17
+                ],
+                [
+                  15.4,
+                  17.4
+                ],
+                [
+                  13.4,
+                  16.4
+                ],
+                [
+                  11.6,
+                  14.8
+                ],
+                [
+                  10.8,
+                  12.8
+                ],
+                [
+                  11.4,
+                  11.4
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -13141,58 +14986,236 @@
       "snapshots": [
         {
           "year": 900,
-          "members": [
-            "Cambodia",
-            "Thailand"
-          ],
-          "box": [
-            101,
-            11,
-            107,
-            15
-          ]
+          "core": {
+            "nombre": "Angkor",
+            "members": [
+              "Cambodia",
+              "Thailand"
+            ],
+            "poly": [
+              [
+                [
+                  102.5,
+                  10.5
+                ],
+                [
+                  106.5,
+                  10.5
+                ],
+                [
+                  107.5,
+                  13
+                ],
+                [
+                  106,
+                  14.8
+                ],
+                [
+                  103,
+                  14.5
+                ],
+                [
+                  101.8,
+                  12.5
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1000,
-          "members": [
-            "Cambodia",
-            "Thailand"
-          ],
-          "box": [
-            101,
-            11,
-            106,
-            15
-          ]
+          "core": {
+            "nombre": "Angkor",
+            "members": [
+              "Cambodia",
+              "Thailand"
+            ],
+            "poly": [
+              [
+                [
+                  102.5,
+                  10.5
+                ],
+                [
+                  106.5,
+                  10.5
+                ],
+                [
+                  107.5,
+                  13
+                ],
+                [
+                  106,
+                  14.8
+                ],
+                [
+                  103,
+                  14.5
+                ],
+                [
+                  101.8,
+                  12.5
+                ]
+              ],
+              [
+                [
+                  100.5,
+                  13
+                ],
+                [
+                  105,
+                  13
+                ],
+                [
+                  107.5,
+                  15
+                ],
+                [
+                  105.5,
+                  18.5
+                ],
+                [
+                  102,
+                  18
+                ],
+                [
+                  100,
+                  15.5
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1150,
-          "members": [
-            "Cambodia",
-            "Thailand",
-            "Laos",
-            "Vietnam"
-          ],
-          "box": [
-            98,
-            9,
-            109,
-            20
-          ]
+          "core": {
+            "nombre": "Angkor",
+            "members": [
+              "Cambodia",
+              "Thailand",
+              "Laos",
+              "Vietnam"
+            ],
+            "poly": [
+              [
+                [
+                  102.5,
+                  10.5
+                ],
+                [
+                  106.5,
+                  10.5
+                ],
+                [
+                  107.5,
+                  13
+                ],
+                [
+                  106,
+                  14.8
+                ],
+                [
+                  103,
+                  14.5
+                ],
+                [
+                  101.8,
+                  12.5
+                ]
+              ],
+              [
+                [
+                  100.5,
+                  13
+                ],
+                [
+                  105,
+                  13
+                ],
+                [
+                  107.5,
+                  15
+                ],
+                [
+                  105.5,
+                  18.5
+                ],
+                [
+                  102,
+                  18
+                ],
+                [
+                  100,
+                  15.5
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1300,
-          "members": [
-            "Cambodia",
-            "Thailand",
-            "Laos"
-          ],
-          "box": [
-            100,
-            10,
-            108,
-            16
-          ]
+          "core": {
+            "nombre": "Angkor",
+            "members": [
+              "Cambodia",
+              "Thailand",
+              "Laos"
+            ],
+            "poly": [
+              [
+                [
+                  102.5,
+                  10.5
+                ],
+                [
+                  106.5,
+                  10.5
+                ],
+                [
+                  107.5,
+                  13
+                ],
+                [
+                  106,
+                  14.8
+                ],
+                [
+                  103,
+                  14.5
+                ],
+                [
+                  101.8,
+                  12.5
+                ]
+              ],
+              [
+                [
+                  100.5,
+                  13
+                ],
+                [
+                  105,
+                  13
+                ],
+                [
+                  107.5,
+                  15
+                ],
+                [
+                  105.5,
+                  18.5
+                ],
+                [
+                  102,
+                  18
+                ],
+                [
+                  100,
+                  15.5
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -13363,17 +15386,20 @@
       "snapshots": [
         {
           "year": 1050,
-          "members": [
-            "Ukraine",
-            "Belarus",
-            "Russia"
-          ],
-          "box": [
-            22,
-            46,
-            42,
-            60
-          ]
+          "core": {
+            "nombre": "Rus",
+            "members": [
+              "Ukraine",
+              "Belarus",
+              "Russia"
+            ],
+            "box": [
+              22,
+              46,
+              42,
+              60
+            ]
+          }
         }
       ]
     },
@@ -13399,25 +15425,28 @@
       "snapshots": [
         {
           "year": 1000,
-          "members": [
-            "Egypt",
-            "Libya",
-            "Tunisia",
-            "Algeria",
-            "Israel",
-            "Palestine",
-            "Lebanon",
-            "Syria",
-            "Jordan",
-            "Saudi Arabia",
-            "Sudan"
-          ],
-          "box": [
-            5,
-            15,
-            40,
-            34
-          ]
+          "core": {
+            "nombre": "Fatimíes",
+            "members": [
+              "Egypt",
+              "Libya",
+              "Tunisia",
+              "Algeria",
+              "Israel",
+              "Palestine",
+              "Lebanon",
+              "Syria",
+              "Jordan",
+              "Saudi Arabia",
+              "Sudan"
+            ],
+            "box": [
+              5,
+              15,
+              40,
+              34
+            ]
+          }
         }
       ]
     },
@@ -13585,63 +15614,278 @@
       "snapshots": [
         {
           "year": 1100,
-          "members": [
-            "Vietnam"
-          ],
-          "box": [
-            103,
-            18,
-            108,
-            23
-          ]
+          "core": {
+            "nombre": "Dai Viet",
+            "members": [
+              "Vietnam"
+            ],
+            "poly": [
+              [
+                [
+                  103.5,
+                  19.5
+                ],
+                [
+                  107,
+                  19.5
+                ],
+                [
+                  107.5,
+                  21.5
+                ],
+                [
+                  106,
+                  23.4
+                ],
+                [
+                  103,
+                  22.8
+                ],
+                [
+                  102.5,
+                  21
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1250,
-          "members": [
-            "Vietnam"
-          ],
-          "box": [
-            103,
-            14,
-            109,
-            23
-          ]
+          "core": {
+            "nombre": "Dai Viet",
+            "members": [
+              "Vietnam"
+            ],
+            "poly": [
+              [
+                [
+                  103.5,
+                  19.5
+                ],
+                [
+                  107,
+                  19.5
+                ],
+                [
+                  107.5,
+                  21.5
+                ],
+                [
+                  106,
+                  23.4
+                ],
+                [
+                  103,
+                  22.8
+                ],
+                [
+                  102.5,
+                  21
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1400,
-          "members": [
-            "Vietnam"
-          ],
-          "box": [
-            102,
-            15,
-            110,
-            24
-          ]
+          "core": {
+            "nombre": "Dai Viet",
+            "members": [
+              "Vietnam"
+            ],
+            "poly": [
+              [
+                [
+                  103.5,
+                  19.5
+                ],
+                [
+                  107,
+                  19.5
+                ],
+                [
+                  107.5,
+                  21.5
+                ],
+                [
+                  106,
+                  23.4
+                ],
+                [
+                  103,
+                  22.8
+                ],
+                [
+                  102.5,
+                  21
+                ]
+              ],
+              [
+                [
+                  105.5,
+                  9
+                ],
+                [
+                  109.5,
+                  10.5
+                ],
+                [
+                  109.5,
+                  15
+                ],
+                [
+                  108,
+                  18
+                ],
+                [
+                  105.5,
+                  18.5
+                ],
+                [
+                  105,
+                  14
+                ],
+                [
+                  104.5,
+                  10
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1550,
-          "members": [
-            "Vietnam"
-          ],
-          "box": [
-            102,
-            11,
-            110,
-            23
-          ]
+          "core": {
+            "nombre": "Dai Viet",
+            "members": [
+              "Vietnam"
+            ],
+            "poly": [
+              [
+                [
+                  103.5,
+                  19.5
+                ],
+                [
+                  107,
+                  19.5
+                ],
+                [
+                  107.5,
+                  21.5
+                ],
+                [
+                  106,
+                  23.4
+                ],
+                [
+                  103,
+                  22.8
+                ],
+                [
+                  102.5,
+                  21
+                ]
+              ],
+              [
+                [
+                  105.5,
+                  9
+                ],
+                [
+                  109.5,
+                  10.5
+                ],
+                [
+                  109.5,
+                  15
+                ],
+                [
+                  108,
+                  18
+                ],
+                [
+                  105.5,
+                  18.5
+                ],
+                [
+                  105,
+                  14
+                ],
+                [
+                  104.5,
+                  10
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1700,
-          "members": [
-            "Vietnam"
-          ],
-          "box": [
-            102,
-            9,
-            110,
-            23
-          ]
+          "core": {
+            "nombre": "Dai Viet",
+            "members": [
+              "Vietnam"
+            ],
+            "poly": [
+              [
+                [
+                  103.5,
+                  19.5
+                ],
+                [
+                  107,
+                  19.5
+                ],
+                [
+                  107.5,
+                  21.5
+                ],
+                [
+                  106,
+                  23.4
+                ],
+                [
+                  103,
+                  22.8
+                ],
+                [
+                  102.5,
+                  21
+                ]
+              ],
+              [
+                [
+                  105.5,
+                  9
+                ],
+                [
+                  109.5,
+                  10.5
+                ],
+                [
+                  109.5,
+                  15
+                ],
+                [
+                  108,
+                  18
+                ],
+                [
+                  105.5,
+                  18.5
+                ],
+                [
+                  105,
+                  14
+                ],
+                [
+                  104.5,
+                  10
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -13667,27 +15911,33 @@
       "snapshots": [
         {
           "year": 1000,
-          "members": [
-            "China"
-          ],
-          "box": [
-            104,
-            20,
-            122,
-            41
-          ]
+          "core": {
+            "nombre": "Song",
+            "members": [
+              "China"
+            ],
+            "box": [
+              104,
+              20,
+              122,
+              41
+            ]
+          }
         },
         {
           "year": 1150,
-          "members": [
-            "China"
-          ],
-          "box": [
-            104,
-            20,
-            122,
-            34
-          ]
+          "core": {
+            "nombre": "Song",
+            "members": [
+              "China"
+            ],
+            "box": [
+              104,
+              20,
+              122,
+              34
+            ]
+          }
         }
       ]
     },
@@ -13713,95 +15963,110 @@
       "snapshots": [
         {
           "year": 1050,
-          "members": [
-            "Germany",
-            "Austria",
-            "Czechia",
-            "Switzerland",
-            "Netherlands",
-            "Belgium",
-            "Slovenia",
-            "Italy"
-          ],
-          "box": [
-            4,
-            42,
-            19,
-            55
-          ]
+          "core": {
+            "nombre": "SIRG",
+            "members": [
+              "Germany",
+              "Austria",
+              "Czechia",
+              "Switzerland",
+              "Netherlands",
+              "Belgium",
+              "Slovenia",
+              "Italy"
+            ],
+            "box": [
+              4,
+              42,
+              19,
+              55
+            ]
+          }
         },
         {
           "year": 1200,
-          "members": [
-            "Germany",
-            "Austria",
-            "Czechia",
-            "Switzerland",
-            "Netherlands",
-            "Belgium",
-            "Luxembourg",
-            "Slovenia",
-            "Italy",
-            "Poland",
-            "France"
-          ],
-          "box": [
-            3,
-            41,
-            19,
-            55
-          ]
+          "core": {
+            "nombre": "SIRG",
+            "members": [
+              "Germany",
+              "Austria",
+              "Czechia",
+              "Switzerland",
+              "Netherlands",
+              "Belgium",
+              "Luxembourg",
+              "Slovenia",
+              "Italy",
+              "Poland",
+              "France"
+            ],
+            "box": [
+              3,
+              41,
+              19,
+              55
+            ]
+          }
         },
         {
           "year": 1400,
-          "members": [
-            "Germany",
-            "Austria",
-            "Czechia",
-            "Switzerland",
-            "Netherlands",
-            "Belgium",
-            "Slovenia",
-            "Italy"
-          ],
-          "box": [
-            4,
-            43,
-            19,
-            55
-          ]
+          "core": {
+            "nombre": "SIRG",
+            "members": [
+              "Germany",
+              "Austria",
+              "Czechia",
+              "Switzerland",
+              "Netherlands",
+              "Belgium",
+              "Slovenia",
+              "Italy"
+            ],
+            "box": [
+              4,
+              43,
+              19,
+              55
+            ]
+          }
         },
         {
           "year": 1550,
-          "members": [
-            "Germany",
-            "Austria",
-            "Czechia",
-            "Switzerland",
-            "Netherlands",
-            "Belgium",
-            "Slovenia"
-          ],
-          "box": [
-            4,
-            45,
-            19,
-            55
-          ]
+          "core": {
+            "nombre": "SIRG",
+            "members": [
+              "Germany",
+              "Austria",
+              "Czechia",
+              "Switzerland",
+              "Netherlands",
+              "Belgium",
+              "Slovenia"
+            ],
+            "box": [
+              4,
+              45,
+              19,
+              55
+            ]
+          }
         },
         {
           "year": 1650,
-          "members": [
-            "Germany",
-            "Austria",
-            "Czechia"
-          ],
-          "box": [
-            6,
-            46,
-            19,
-            55
-          ]
+          "core": {
+            "nombre": "SIRG",
+            "members": [
+              "Germany",
+              "Austria",
+              "Czechia"
+            ],
+            "box": [
+              6,
+              46,
+              19,
+              55
+            ]
+          }
         }
       ]
     },
@@ -13827,26 +16092,29 @@
       "snapshots": [
         {
           "year": 1090,
-          "members": [
-            "Iran",
-            "Iraq",
-            "Turkey",
-            "Turkmenistan",
-            "Uzbekistan",
-            "Afghanistan",
-            "Syria",
-            "Azerbaijan",
-            "Armenia",
-            "Georgia",
-            "Kuwait",
-            "Tajikistan"
-          ],
-          "box": [
-            28,
-            25,
-            72,
-            44
-          ]
+          "core": {
+            "nombre": "Selyúcidas",
+            "members": [
+              "Iran",
+              "Iraq",
+              "Turkey",
+              "Turkmenistan",
+              "Uzbekistan",
+              "Afghanistan",
+              "Syria",
+              "Azerbaijan",
+              "Armenia",
+              "Georgia",
+              "Kuwait",
+              "Tajikistan"
+            ],
+            "box": [
+              28,
+              25,
+              72,
+              44
+            ]
+          }
         }
       ]
     },
@@ -14194,14 +16462,36 @@
               "members": [
                 "Myanmar"
               ],
-              "box": [
-                92,
-                20,
-                101,
-                28
-              ],
               "revuelta": 60,
-              "nota": "Pagan cae en 1287 pero la ocupación no se sostiene: el clima y la logística hacen lo que no hicieron los ejércitos."
+              "nota": "Pagan cae en 1287 pero la ocupación no se sostiene: el clima y la logística hacen lo que no hicieron los ejércitos.",
+              "poly": [
+                [
+                  [
+                    93.5,
+                    15.5
+                  ],
+                  [
+                    98,
+                    16
+                  ],
+                  [
+                    99,
+                    21
+                  ],
+                  [
+                    97.5,
+                    25
+                  ],
+                  [
+                    94.5,
+                    25
+                  ],
+                  [
+                    92.8,
+                    21
+                  ]
+                ]
+              ]
             }
           ],
           "provinces": [
@@ -14374,30 +16664,112 @@
       "snapshots": [
         {
           "year": 1250,
-          "members": [
-            "Zimbabwe"
-          ],
-          "box": [
-            28,
-            -22,
-            33,
-            -17
-          ]
+          "core": {
+            "nombre": "Zimbabue",
+            "members": [
+              "Zimbabwe"
+            ],
+            "poly": [
+              [
+                [
+                  26.4,
+                  -21.6
+                ],
+                [
+                  28.6,
+                  -22.2
+                ],
+                [
+                  31,
+                  -22
+                ],
+                [
+                  32.8,
+                  -20.4
+                ],
+                [
+                  33.4,
+                  -18.4
+                ],
+                [
+                  32.2,
+                  -16.4
+                ],
+                [
+                  30.2,
+                  -15.6
+                ],
+                [
+                  28,
+                  -16.4
+                ],
+                [
+                  26.2,
+                  -18
+                ],
+                [
+                  25.4,
+                  -19.8
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1350,
-          "members": [
-            "Zimbabwe",
-            "Mozambique",
-            "Botswana",
-            "South Africa"
-          ],
-          "box": [
-            26,
-            -23,
-            34,
-            -16
-          ]
+          "core": {
+            "nombre": "Zimbabue",
+            "members": [
+              "Zimbabwe",
+              "Mozambique",
+              "Botswana",
+              "South Africa"
+            ],
+            "poly": [
+              [
+                [
+                  26.4,
+                  -21.6
+                ],
+                [
+                  28.6,
+                  -22.2
+                ],
+                [
+                  31,
+                  -22
+                ],
+                [
+                  32.8,
+                  -20.4
+                ],
+                [
+                  33.4,
+                  -18.4
+                ],
+                [
+                  32.2,
+                  -16.4
+                ],
+                [
+                  30.2,
+                  -15.6
+                ],
+                [
+                  28,
+                  -16.4
+                ],
+                [
+                  26.2,
+                  -18
+                ],
+                [
+                  25.4,
+                  -19.8
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -14423,52 +16795,487 @@
       "snapshots": [
         {
           "year": 1250,
-          "members": [
-            "Mali",
-            "Senegal",
-            "Guinea"
-          ],
-          "box": [
-            -13,
-            10,
-            -4,
-            17
-          ]
+          "core": {
+            "nombre": "Malí",
+            "members": [
+              "Mali",
+              "Senegal",
+              "Guinea"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ],
+              [
+                [
+                  -6.4,
+                  11.8
+                ],
+                [
+                  -4.6,
+                  11.4
+                ],
+                [
+                  -2.6,
+                  12
+                ],
+                [
+                  -0.8,
+                  12.8
+                ],
+                [
+                  0.8,
+                  13.6
+                ],
+                [
+                  2.2,
+                  14.6
+                ],
+                [
+                  3.2,
+                  16
+                ],
+                [
+                  2,
+                  17.2
+                ],
+                [
+                  -0.4,
+                  17.4
+                ],
+                [
+                  -2.4,
+                  16.8
+                ],
+                [
+                  -3.6,
+                  15.4
+                ],
+                [
+                  -5,
+                  14
+                ],
+                [
+                  -6.2,
+                  13
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1350,
-          "members": [
-            "Mali",
-            "Senegal",
-            "Gambia",
-            "Guinea",
-            "Guinea-Bissau",
-            "Mauritania",
-            "Burkina Faso",
-            "Niger",
-            "Côte d'Ivoire"
-          ],
-          "box": [
-            -17,
-            9,
-            4,
-            20
-          ]
+          "core": {
+            "nombre": "Malí",
+            "members": [
+              "Mali",
+              "Senegal",
+              "Gambia",
+              "Guinea",
+              "Guinea-Bissau",
+              "Mauritania",
+              "Burkina Faso",
+              "Niger",
+              "Côte d'Ivoire"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ],
+              [
+                [
+                  -6.4,
+                  11.8
+                ],
+                [
+                  -4.6,
+                  11.4
+                ],
+                [
+                  -2.6,
+                  12
+                ],
+                [
+                  -0.8,
+                  12.8
+                ],
+                [
+                  0.8,
+                  13.6
+                ],
+                [
+                  2.2,
+                  14.6
+                ],
+                [
+                  3.2,
+                  16
+                ],
+                [
+                  2,
+                  17.2
+                ],
+                [
+                  -0.4,
+                  17.4
+                ],
+                [
+                  -2.4,
+                  16.8
+                ],
+                [
+                  -3.6,
+                  15.4
+                ],
+                [
+                  -5,
+                  14
+                ],
+                [
+                  -6.2,
+                  13
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1450,
-          "members": [
-            "Mali",
-            "Senegal",
-            "Guinea",
-            "Mauritania"
-          ],
-          "box": [
-            -14,
-            11,
-            -1,
-            17
-          ]
+          "core": {
+            "nombre": "Malí",
+            "members": [
+              "Mali",
+              "Senegal",
+              "Guinea",
+              "Mauritania"
+            ],
+            "poly": [
+              [
+                [
+                  -16.8,
+                  12.4
+                ],
+                [
+                  -14.6,
+                  12.2
+                ],
+                [
+                  -12.4,
+                  12.6
+                ],
+                [
+                  -11.2,
+                  13.8
+                ],
+                [
+                  -11.4,
+                  15.4
+                ],
+                [
+                  -12.6,
+                  16.4
+                ],
+                [
+                  -14.8,
+                  16.6
+                ],
+                [
+                  -16.6,
+                  16
+                ],
+                [
+                  -17.2,
+                  14.2
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ],
+              [
+                [
+                  -6.4,
+                  11.8
+                ],
+                [
+                  -4.6,
+                  11.4
+                ],
+                [
+                  -2.6,
+                  12
+                ],
+                [
+                  -0.8,
+                  12.8
+                ],
+                [
+                  0.8,
+                  13.6
+                ],
+                [
+                  2.2,
+                  14.6
+                ],
+                [
+                  3.2,
+                  16
+                ],
+                [
+                  2,
+                  17.2
+                ],
+                [
+                  -0.4,
+                  17.4
+                ],
+                [
+                  -2.4,
+                  16.8
+                ],
+                [
+                  -3.6,
+                  15.4
+                ],
+                [
+                  -5,
+                  14
+                ],
+                [
+                  -6.2,
+                  13
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -14494,22 +17301,25 @@
       "snapshots": [
         {
           "year": 1300,
-          "members": [
-            "Egypt",
-            "Israel",
-            "Palestine",
-            "Lebanon",
-            "Syria",
-            "Jordan",
-            "Saudi Arabia",
-            "Libya"
-          ],
-          "box": [
-            18,
-            15,
-            42,
-            38
-          ]
+          "core": {
+            "nombre": "Mamelucos",
+            "members": [
+              "Egypt",
+              "Israel",
+              "Palestine",
+              "Lebanon",
+              "Syria",
+              "Jordan",
+              "Saudi Arabia",
+              "Libya"
+            ],
+            "box": [
+              18,
+              15,
+              42,
+              38
+            ]
+          }
         }
       ]
     },
@@ -14535,43 +17345,238 @@
       "snapshots": [
         {
           "year": 1500,
-          "members": [
-            "Ethiopia",
-            "Eritrea"
-          ],
-          "box": [
-            33,
-            5,
-            43,
-            18
-          ]
+          "core": {
+            "nombre": "Abisinia",
+            "members": [
+              "Ethiopia",
+              "Eritrea"
+            ],
+            "poly": [
+              [
+                [
+                  36.2,
+                  7.2
+                ],
+                [
+                  37.5,
+                  6.3
+                ],
+                [
+                  38.8,
+                  6
+                ],
+                [
+                  39.6,
+                  6.8
+                ],
+                [
+                  40.5,
+                  8.2
+                ],
+                [
+                  41.2,
+                  9.6
+                ],
+                [
+                  41.8,
+                  11
+                ],
+                [
+                  40.6,
+                  12.4
+                ],
+                [
+                  39.8,
+                  13.6
+                ],
+                [
+                  39.2,
+                  14.6
+                ],
+                [
+                  38,
+                  14.9
+                ],
+                [
+                  37.2,
+                  14
+                ],
+                [
+                  36.6,
+                  12.6
+                ],
+                [
+                  36,
+                  11.2
+                ],
+                [
+                  35.2,
+                  9.8
+                ],
+                [
+                  35.4,
+                  8.4
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1700,
-          "members": [
-            "Ethiopia",
-            "Eritrea"
-          ],
-          "box": [
-            36,
-            7,
-            41,
-            15
-          ]
+          "core": {
+            "nombre": "Abisinia",
+            "members": [
+              "Ethiopia",
+              "Eritrea"
+            ],
+            "poly": [
+              [
+                [
+                  36.2,
+                  7.2
+                ],
+                [
+                  37.5,
+                  6.3
+                ],
+                [
+                  38.8,
+                  6
+                ],
+                [
+                  39.6,
+                  6.8
+                ],
+                [
+                  40.5,
+                  8.2
+                ],
+                [
+                  41.2,
+                  9.6
+                ],
+                [
+                  41.8,
+                  11
+                ],
+                [
+                  40.6,
+                  12.4
+                ],
+                [
+                  39.8,
+                  13.6
+                ],
+                [
+                  39.2,
+                  14.6
+                ],
+                [
+                  38,
+                  14.9
+                ],
+                [
+                  37.2,
+                  14
+                ],
+                [
+                  36.6,
+                  12.6
+                ],
+                [
+                  36,
+                  11.2
+                ],
+                [
+                  35.2,
+                  9.8
+                ],
+                [
+                  35.4,
+                  8.4
+                ]
+              ]
+            ]
+          }
         },
         {
           "year": 1900,
-          "members": [
-            "Ethiopia",
-            "Eritrea",
-            "Somalia"
-          ],
-          "box": [
-            33,
-            3,
-            45,
-            18
-          ]
+          "core": {
+            "nombre": "Abisinia",
+            "members": [
+              "Ethiopia",
+              "Eritrea",
+              "Somalia"
+            ],
+            "poly": [
+              [
+                [
+                  36.2,
+                  7.2
+                ],
+                [
+                  37.5,
+                  6.3
+                ],
+                [
+                  38.8,
+                  6
+                ],
+                [
+                  39.6,
+                  6.8
+                ],
+                [
+                  40.5,
+                  8.2
+                ],
+                [
+                  41.2,
+                  9.6
+                ],
+                [
+                  41.8,
+                  11
+                ],
+                [
+                  40.6,
+                  12.4
+                ],
+                [
+                  39.8,
+                  13.6
+                ],
+                [
+                  39.2,
+                  14.6
+                ],
+                [
+                  38,
+                  14.9
+                ],
+                [
+                  37.2,
+                  14
+                ],
+                [
+                  36.6,
+                  12.6
+                ],
+                [
+                  36,
+                  11.2
+                ],
+                [
+                  35.2,
+                  9.8
+                ],
+                [
+                  35.4,
+                  8.4
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -14597,20 +17602,75 @@
       "snapshots": [
         {
           "year": 1365,
-          "members": [
-            "Indonesia",
-            "Malaysia",
-            "Brunei",
-            "Singapore",
-            "Timor-Leste",
-            "Philippines"
-          ],
-          "box": [
-            95,
-            -11,
-            128,
-            8
-          ]
+          "core": {
+            "nombre": "Majapahit",
+            "members": [
+              "Indonesia",
+              "Malaysia",
+              "Brunei",
+              "Singapore",
+              "Timor-Leste",
+              "Philippines"
+            ],
+            "poly": [
+              [
+                [
+                  105,
+                  -8.8
+                ],
+                [
+                  114.7,
+                  -8.9
+                ],
+                [
+                  115.8,
+                  -7.5
+                ],
+                [
+                  114,
+                  -6
+                ],
+                [
+                  108,
+                  -5.7
+                ],
+                [
+                  105,
+                  -6
+                ]
+              ],
+              [
+                [
+                  95,
+                  -6
+                ],
+                [
+                  102,
+                  -6
+                ],
+                [
+                  106,
+                  -6.5
+                ],
+                [
+                  106,
+                  -3
+                ],
+                [
+                  101,
+                  1
+                ],
+                [
+                  97.5,
+                  5.5
+                ],
+                [
+                  95,
+                  4
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -15462,15 +18522,37 @@
               "members": [
                 "Yemen"
               ],
-              "box": [
-                42,
-                12,
-                54,
-                19
-              ],
               "fiscal": 2,
               "revuelta": 35,
-              "nota": "La flota otomana llega hasta Adén y Diu disputando el Índico a Portugal. Es la única potencia mediterránea que lo intenta."
+              "nota": "La flota otomana llega hasta Adén y Diu disputando el Índico a Portugal. Es la única potencia mediterránea que lo intenta.",
+              "poly": [
+                [
+                  [
+                    42,
+                    12
+                  ],
+                  [
+                    46,
+                    12
+                  ],
+                  [
+                    53,
+                    14
+                  ],
+                  [
+                    54,
+                    18
+                  ],
+                  [
+                    48,
+                    19
+                  ],
+                  [
+                    43,
+                    17.5
+                  ]
+                ]
+              ]
             }
           ],
           "client": [
@@ -15803,14 +18885,36 @@
               "members": [
                 "Yemen"
               ],
-              "box": [
-                43,
-                12,
-                53,
-                18
-              ],
               "fiscal": 1,
-              "revuelta": 40
+              "revuelta": 40,
+              "poly": [
+                [
+                  [
+                    42,
+                    12
+                  ],
+                  [
+                    46,
+                    12
+                  ],
+                  [
+                    53,
+                    14
+                  ],
+                  [
+                    54,
+                    18
+                  ],
+                  [
+                    48,
+                    19
+                  ],
+                  [
+                    43,
+                    17.5
+                  ]
+                ]
+              ]
             }
           ],
           "provinces": [
@@ -16931,16 +20035,38 @@
             "members": [
               "Thailand"
             ],
-            "box": [
-              98,
-              12,
-              102,
-              18
-            ],
             "fiscal": 85,
             "revuelta": 10,
             "guarnicion": 40000,
-            "nota": "Trailokanat reorganiza el reino con el sakdina, un sistema que asigna a cada súbdito un número de unidades de tierra y con él su rango, su tributo y su obligación militar. Angkor ha caído en 1431 y su corte, sus brahmanes y su ritual se trasladan a Ayutthaya."
+            "nota": "Trailokanat reorganiza el reino con el sakdina, un sistema que asigna a cada súbdito un número de unidades de tierra y con él su rango, su tributo y su obligación militar. Angkor ha caído en 1431 y su corte, sus brahmanes y su ritual se trasladan a Ayutthaya.",
+            "poly": [
+              [
+                [
+                  98.5,
+                  12.5
+                ],
+                [
+                  101.5,
+                  12.8
+                ],
+                [
+                  102,
+                  15.5
+                ],
+                [
+                  101,
+                  18.5
+                ],
+                [
+                  98.5,
+                  18.5
+                ],
+                [
+                  97.8,
+                  15
+                ]
+              ]
+            ]
           },
           "tributary": [
             {
@@ -16949,15 +20075,37 @@
                 "Thailand",
                 "Laos"
               ],
-              "box": [
-                99,
-                15,
-                104,
-                20
-              ],
               "via": "sumision",
               "fiscal": 10,
-              "revuelta": 25
+              "revuelta": 25,
+              "poly": [
+                [
+                  [
+                    100.5,
+                    13
+                  ],
+                  [
+                    105,
+                    13
+                  ],
+                  [
+                    107.5,
+                    15
+                  ],
+                  [
+                    105.5,
+                    18.5
+                  ],
+                  [
+                    102,
+                    18
+                  ],
+                  [
+                    100,
+                    15.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Península malaya",
@@ -16965,16 +20113,38 @@
                 "Malaysia",
                 "Thailand"
               ],
-              "box": [
-                99,
-                5,
-                104,
-                12
-              ],
               "via": "sumision",
               "fiscal": 5,
               "revuelta": 35,
-              "nota": "Malaca se declara independiente y se pasa al islam en la década de 1440: la disputa por el estrecho durará todo el siglo."
+              "nota": "Malaca se declara independiente y se pasa al islam en la década de 1440: la disputa por el estrecho durará todo el siglo.",
+              "poly": [
+                [
+                  [
+                    99,
+                    1
+                  ],
+                  [
+                    104.3,
+                    1.2
+                  ],
+                  [
+                    104.5,
+                    6
+                  ],
+                  [
+                    102.5,
+                    8
+                  ],
+                  [
+                    99.8,
+                    8
+                  ],
+                  [
+                    98.2,
+                    5
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -16989,11 +20159,85 @@
               "Malaysia",
               "Myanmar"
             ],
-            "box": [
-              97,
-              5,
-              106,
-              20
+            "poly": [
+              [
+                [
+                  98.5,
+                  12.5
+                ],
+                [
+                  101.5,
+                  12.8
+                ],
+                [
+                  102,
+                  15.5
+                ],
+                [
+                  101,
+                  18.5
+                ],
+                [
+                  98.5,
+                  18.5
+                ],
+                [
+                  97.8,
+                  15
+                ]
+              ],
+              [
+                [
+                  100.5,
+                  13
+                ],
+                [
+                  105,
+                  13
+                ],
+                [
+                  107.5,
+                  15
+                ],
+                [
+                  105.5,
+                  18.5
+                ],
+                [
+                  102,
+                  18
+                ],
+                [
+                  100,
+                  15.5
+                ]
+              ],
+              [
+                [
+                  99,
+                  1
+                ],
+                [
+                  104.3,
+                  1.2
+                ],
+                [
+                  104.5,
+                  6
+                ],
+                [
+                  102.5,
+                  8
+                ],
+                [
+                  99.8,
+                  8
+                ],
+                [
+                  98.2,
+                  5
+                ]
+              ]
             ]
           }
         },
@@ -17004,16 +20248,38 @@
             "members": [
               "Thailand"
             ],
-            "box": [
-              97,
-              11,
-              103,
-              19
-            ],
             "fiscal": 88,
             "revuelta": 8,
             "guarnicion": 50000,
-            "nota": "Tras la expulsión del aventurero griego Constantino Phaulkon y la revolución de 1688, Ayutthaya cierra la puerta a Francia y deja abierto sólo el comercio chino y holandés. El reino es rico y está a medio siglo de ser arrasado por Birmania."
+            "nota": "Tras la expulsión del aventurero griego Constantino Phaulkon y la revolución de 1688, Ayutthaya cierra la puerta a Francia y deja abierto sólo el comercio chino y holandés. El reino es rico y está a medio siglo de ser arrasado por Birmania.",
+            "poly": [
+              [
+                [
+                  98.5,
+                  12.5
+                ],
+                [
+                  101.5,
+                  12.8
+                ],
+                [
+                  102,
+                  15.5
+                ],
+                [
+                  101,
+                  18.5
+                ],
+                [
+                  98.5,
+                  18.5
+                ],
+                [
+                  97.8,
+                  15
+                ]
+              ]
+            ]
           },
           "tributary": [
             {
@@ -17022,30 +20288,100 @@
                 "Cambodia",
                 "Laos"
               ],
-              "box": [
-                100,
-                10,
-                107,
-                20
-              ],
               "via": "sumision",
               "fiscal": 8,
-              "revuelta": 30
+              "revuelta": 30,
+              "poly": [
+                [
+                  [
+                    102.5,
+                    10.5
+                  ],
+                  [
+                    106.5,
+                    10.5
+                  ],
+                  [
+                    107.5,
+                    13
+                  ],
+                  [
+                    106,
+                    14.8
+                  ],
+                  [
+                    103,
+                    14.5
+                  ],
+                  [
+                    101.8,
+                    12.5
+                  ]
+                ],
+                [
+                  [
+                    100.5,
+                    13
+                  ],
+                  [
+                    105,
+                    13
+                  ],
+                  [
+                    107.5,
+                    15
+                  ],
+                  [
+                    105.5,
+                    18.5
+                  ],
+                  [
+                    102,
+                    18
+                  ],
+                  [
+                    100,
+                    15.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Sultanatos malayos",
               "members": [
                 "Malaysia"
               ],
-              "box": [
-                99,
-                5,
-                104,
-                8
-              ],
               "via": "sumision",
               "fiscal": 4,
-              "revuelta": 40
+              "revuelta": 40,
+              "poly": [
+                [
+                  [
+                    99,
+                    1
+                  ],
+                  [
+                    104.3,
+                    1.2
+                  ],
+                  [
+                    104.5,
+                    6
+                  ],
+                  [
+                    102.5,
+                    8
+                  ],
+                  [
+                    99.8,
+                    8
+                  ],
+                  [
+                    98.2,
+                    5
+                  ]
+                ]
+              ]
             }
           ]
         }
@@ -17073,15 +20409,18 @@
       "snapshots": [
         {
           "year": 1450,
-          "members": [
-            "China"
-          ],
-          "box": [
-            98,
-            18,
-            124,
-            42
-          ]
+          "core": {
+            "nombre": "Ming",
+            "members": [
+              "China"
+            ],
+            "box": [
+              98,
+              18,
+              124,
+              42
+            ]
+          }
         }
       ]
     },
@@ -17107,25 +20446,28 @@
       "snapshots": [
         {
           "year": 1400,
-          "members": [
-            "Uzbekistan",
-            "Turkmenistan",
-            "Tajikistan",
-            "Afghanistan",
-            "Iran",
-            "Iraq",
-            "Pakistan",
-            "Kyrgyzstan",
-            "Azerbaijan",
-            "Armenia",
-            "Georgia"
-          ],
-          "box": [
-            38,
-            24,
-            78,
-            44
-          ]
+          "core": {
+            "nombre": "Timúridas",
+            "members": [
+              "Uzbekistan",
+              "Turkmenistan",
+              "Tajikistan",
+              "Afghanistan",
+              "Iran",
+              "Iraq",
+              "Pakistan",
+              "Kyrgyzstan",
+              "Azerbaijan",
+              "Armenia",
+              "Georgia"
+            ],
+            "box": [
+              38,
+              24,
+              78,
+              44
+            ]
+          }
         }
       ]
     },
@@ -17151,83 +20493,98 @@
       "snapshots": [
         {
           "year": 1450,
-          "members": [
-            "Portugal",
-            "Morocco"
-          ],
-          "box": [
-            -10,
-            30,
-            -6,
-            42
-          ]
+          "core": {
+            "nombre": "Portugal",
+            "members": [
+              "Portugal",
+              "Morocco"
+            ],
+            "box": [
+              -10,
+              30,
+              -6,
+              42
+            ]
+          }
         },
         {
           "year": 1550,
-          "members": [
-            "Portugal",
-            "Brazil",
-            "Angola",
-            "Mozambique",
-            "India",
-            "Indonesia"
-          ],
-          "box": [
-            -50,
-            -30,
-            130,
-            42
-          ]
+          "core": {
+            "nombre": "Portugal",
+            "members": [
+              "Portugal",
+              "Brazil",
+              "Angola",
+              "Mozambique",
+              "India",
+              "Indonesia"
+            ],
+            "box": [
+              -50,
+              -30,
+              130,
+              42
+            ]
+          }
         },
         {
           "year": 1600,
-          "members": [
-            "Portugal",
-            "Brazil",
-            "Angola",
-            "Mozambique",
-            "Guinea-Bissau",
-            "Timor-Leste",
-            "Oman"
-          ],
-          "box": [
-            -52,
-            -30,
-            130,
-            43
-          ]
+          "core": {
+            "nombre": "Portugal",
+            "members": [
+              "Portugal",
+              "Brazil",
+              "Angola",
+              "Mozambique",
+              "Guinea-Bissau",
+              "Timor-Leste",
+              "Oman"
+            ],
+            "box": [
+              -52,
+              -30,
+              130,
+              43
+            ]
+          }
         },
         {
           "year": 1750,
-          "members": [
-            "Portugal",
-            "Brazil",
-            "Angola",
-            "Mozambique",
-            "India"
-          ],
-          "box": [
-            -75,
-            -34,
-            75,
-            42
-          ]
+          "core": {
+            "nombre": "Portugal",
+            "members": [
+              "Portugal",
+              "Brazil",
+              "Angola",
+              "Mozambique",
+              "India"
+            ],
+            "box": [
+              -75,
+              -34,
+              75,
+              42
+            ]
+          }
         },
         {
           "year": 1900,
-          "members": [
-            "Portugal",
-            "Angola",
-            "Mozambique",
-            "Guinea-Bissau",
-            "Timor-Leste"
-          ],
-          "box": [
-            -20,
-            -30,
-            130,
-            43
-          ]
+          "core": {
+            "nombre": "Portugal",
+            "members": [
+              "Portugal",
+              "Angola",
+              "Mozambique",
+              "Guinea-Bissau",
+              "Timor-Leste"
+            ],
+            "box": [
+              -20,
+              -30,
+              130,
+              43
+            ]
+          }
         }
       ]
     },
@@ -17268,16 +20625,30 @@
             "members": [
               "Mexico"
             ],
-            "box": [
-              -99.6,
-              19,
-              -98.5,
-              20
-            ],
             "fiscal": 30,
             "revuelta": 1,
             "guarnicion": 20000,
-            "nota": "Tenochtitlan, Texcoco y Tlacopan: la Triple Alianza reparte el tributo tres-dos-uno. Doscientos mil habitantes sobre una laguna."
+            "nota": "Tenochtitlan, Texcoco y Tlacopan: la Triple Alianza reparte el tributo tres-dos-uno. Doscientos mil habitantes sobre una laguna.",
+            "poly": [
+              [
+                [
+                  -99.6,
+                  19.1
+                ],
+                [
+                  -98.6,
+                  19.1
+                ],
+                [
+                  -98.6,
+                  20.05
+                ],
+                [
+                  -99.6,
+                  20.05
+                ]
+              ]
+            ]
           },
           "tributary": [
             {
@@ -17285,16 +20656,38 @@
               "members": [
                 "Mexico"
               ],
-              "box": [
-                -98,
-                17,
-                -94,
-                22
-              ],
               "via": "conquista",
               "fiscal": 18,
               "revuelta": 20,
-              "nota": "Cacao, algodón y plumas. Los totonacas de Cempoala se pasan a Cortés en cuanto tienen ocasión: el tributo compra obediencia, no lealtad."
+              "nota": "Cacao, algodón y plumas. Los totonacas de Cempoala se pasan a Cortés en cuanto tienen ocasión: el tributo compra obediencia, no lealtad.",
+              "poly": [
+                [
+                  [
+                    -98,
+                    17.6
+                  ],
+                  [
+                    -95.8,
+                    18
+                  ],
+                  [
+                    -94,
+                    18.4
+                  ],
+                  [
+                    -94.4,
+                    20.6
+                  ],
+                  [
+                    -96.6,
+                    21.2
+                  ],
+                  [
+                    -97.6,
+                    20
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Oaxaca y Soconusco",
@@ -17302,16 +20695,38 @@
                 "Mexico",
                 "Guatemala"
               ],
-              "box": [
-                -98,
-                14,
-                -92,
-                18
-              ],
               "via": "conquista",
               "fiscal": 15,
               "revuelta": 18,
-              "nota": "Enclave a setecientos kilómetros del centro, sin continuidad territorial. El imperio azteca es una red de recaudación, no una mancha."
+              "nota": "Enclave a setecientos kilómetros del centro, sin continuidad territorial. El imperio azteca es una red de recaudación, no una mancha.",
+              "poly": [
+                [
+                  [
+                    -98,
+                    15.3
+                  ],
+                  [
+                    -95,
+                    15.2
+                  ],
+                  [
+                    -92.8,
+                    13.9
+                  ],
+                  [
+                    -91.6,
+                    14.4
+                  ],
+                  [
+                    -93.6,
+                    16.6
+                  ],
+                  [
+                    -96.4,
+                    17.5
+                  ]
+                ]
+              ]
             }
           ],
           "provinces": [
@@ -17320,15 +20735,33 @@
               "members": [
                 "Mexico"
               ],
-              "box": [
-                -101,
-                17,
-                -96,
-                21
-              ],
               "via": "conquista",
               "fiscal": 35,
-              "revuelta": 8
+              "revuelta": 8,
+              "poly": [
+                [
+                  [
+                    -100.8,
+                    17.4
+                  ],
+                  [
+                    -97.4,
+                    17.4
+                  ],
+                  [
+                    -96.8,
+                    19.4
+                  ],
+                  [
+                    -98.4,
+                    20.6
+                  ],
+                  [
+                    -100.6,
+                    20.2
+                  ]
+                ]
+              ]
             }
           ],
           "contested": [
@@ -17337,28 +20770,56 @@
               "members": [
                 "Mexico"
               ],
-              "box": [
-                -99,
-                18.5,
-                -97,
-                20
-              ],
               "revuelta": 70,
-              "nota": "Enclave independiente rodeado y estrangulado por las guerras floridas. Aporta los cien mil aliados que tumban Tenochtitlan en 1521."
+              "nota": "Enclave independiente rodeado y estrangulado por las guerras floridas. Aporta los cien mil aliados que tumban Tenochtitlan en 1521.",
+              "poly": [
+                [
+                  [
+                    -98.7,
+                    19
+                  ],
+                  [
+                    -97.5,
+                    18.9
+                  ],
+                  [
+                    -97.3,
+                    19.8
+                  ],
+                  [
+                    -98.5,
+                    19.9
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Frontera tarasca",
               "members": [
                 "Mexico"
               ],
-              "box": [
-                -103,
-                18,
-                -100,
-                21
-              ],
               "revuelta": 60,
-              "nota": "Los purépechas derrotan a los mexicas en 1478 y conservan la metalurgia del bronce que sus vecinos no tienen."
+              "nota": "Los purépechas derrotan a los mexicas en 1478 y conservan la metalurgia del bronce que sus vecinos no tienen.",
+              "poly": [
+                [
+                  [
+                    -103.2,
+                    18.4
+                  ],
+                  [
+                    -100.4,
+                    18.4
+                  ],
+                  [
+                    -99.9,
+                    20.4
+                  ],
+                  [
+                    -102.8,
+                    20.6
+                  ]
+                ]
+              ]
             }
           ]
         }
@@ -17420,16 +20881,42 @@
               "Peru",
               "Bolivia"
             ],
-            "box": [
-              -74,
-              -18,
-              -66,
-              -11
-            ],
             "fiscal": 40,
             "revuelta": 2,
             "guarnicion": 30000,
-            "nota": "El ombligo del mundo. Los cuatro suyus se miden desde la plaza de Cuzco y el sistema decimal de tributo de trabajo arranca aquí."
+            "nota": "El ombligo del mundo. Los cuatro suyus se miden desde la plaza de Cuzco y el sistema decimal de tributo de trabajo arranca aquí.",
+            "poly": [
+              [
+                [
+                  -75,
+                  -17
+                ],
+                [
+                  -71,
+                  -19
+                ],
+                [
+                  -68,
+                  -17.5
+                ],
+                [
+                  -68.5,
+                  -13.5
+                ],
+                [
+                  -71.5,
+                  -11
+                ],
+                [
+                  -74.5,
+                  -12.5
+                ],
+                [
+                  -76,
+                  -15
+                ]
+              ]
+            ]
           },
           "provinces": [
             {
@@ -17438,16 +20925,46 @@
                 "Peru",
                 "Ecuador"
               ],
-              "box": [
-                -81,
-                -12,
-                -75,
-                0
-              ],
               "via": "conquista",
               "fiscal": 25,
               "revuelta": 8,
-              "nota": "La costa norte, con el reino chimú absorbido en 1470. Quito es la segunda capital y la razón de la guerra civil que empieza ahora."
+              "nota": "La costa norte, con el reino chimú absorbido en 1470. Quito es la segunda capital y la razón de la guerra civil que empieza ahora.",
+              "poly": [
+                [
+                  [
+                    -81.5,
+                    -12
+                  ],
+                  [
+                    -76.5,
+                    -13
+                  ],
+                  [
+                    -74,
+                    -8
+                  ],
+                  [
+                    -77,
+                    -4
+                  ],
+                  [
+                    -79,
+                    -1
+                  ],
+                  [
+                    -80.5,
+                    0.5
+                  ],
+                  [
+                    -81.5,
+                    -3
+                  ],
+                  [
+                    -81.5,
+                    -8
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Collasuyu",
@@ -17456,28 +20973,80 @@
                 "Chile",
                 "Argentina"
               ],
-              "box": [
-                -71,
-                -35,
-                -63,
-                -16
-              ],
               "fiscal": 20,
-              "revuelta": 6
+              "revuelta": 6,
+              "poly": [
+                [
+                  [
+                    -71.5,
+                    -35.5
+                  ],
+                  [
+                    -68.5,
+                    -33
+                  ],
+                  [
+                    -65,
+                    -24
+                  ],
+                  [
+                    -66.5,
+                    -19
+                  ],
+                  [
+                    -69,
+                    -16
+                  ],
+                  [
+                    -71.5,
+                    -17.5
+                  ],
+                  [
+                    -72.5,
+                    -25
+                  ],
+                  [
+                    -72,
+                    -31
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Antisuyu y Cuntisuyu",
               "members": [
                 "Peru"
               ],
-              "box": [
-                -78,
-                -16,
-                -70,
-                -8
-              ],
               "fiscal": 8,
-              "revuelta": 5
+              "revuelta": 5,
+              "poly": [
+                [
+                  [
+                    -77.5,
+                    -16
+                  ],
+                  [
+                    -73.5,
+                    -17.5
+                  ],
+                  [
+                    -70.5,
+                    -13
+                  ],
+                  [
+                    -72.5,
+                    -9.5
+                  ],
+                  [
+                    -75.5,
+                    -10.5
+                  ],
+                  [
+                    -77.5,
+                    -13
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -17486,15 +21055,29 @@
               "members": [
                 "Chile"
               ],
-              "box": [
-                -73,
-                -38,
-                -70,
-                -33
-              ],
               "fiscal": 0,
               "revuelta": 40,
-              "nota": "El río Maule marca el límite: los mapuches paran al Tahuantinsuyu igual que pararán a los españoles durante trescientos años."
+              "nota": "El río Maule marca el límite: los mapuches paran al Tahuantinsuyu igual que pararán a los españoles durante trescientos años.",
+              "poly": [
+                [
+                  [
+                    -73.8,
+                    -38.5
+                  ],
+                  [
+                    -70.8,
+                    -37
+                  ],
+                  [
+                    -70.3,
+                    -33.3
+                  ],
+                  [
+                    -73,
+                    -33.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Frontera amazónica",
@@ -17502,14 +21085,36 @@
                 "Peru",
                 "Bolivia"
               ],
-              "box": [
-                -72,
-                -14,
-                -66,
-                -6
-              ],
               "fiscal": 0,
-              "revuelta": 30
+              "revuelta": 30,
+              "poly": [
+                [
+                  [
+                    -73.5,
+                    -13.5
+                  ],
+                  [
+                    -70,
+                    -12
+                  ],
+                  [
+                    -67,
+                    -9
+                  ],
+                  [
+                    -69.5,
+                    -6
+                  ],
+                  [
+                    -72.5,
+                    -7.5
+                  ],
+                  [
+                    -74.5,
+                    -10.5
+                  ]
+                ]
+              ]
             }
           ],
           "client": [
@@ -17518,16 +21123,34 @@
               "members": [
                 "Colombia"
               ],
-              "box": [
-                -78,
-                -1,
-                -75,
-                2
-              ],
               "via": "conquista",
               "desde": 1500,
               "fiscal": 2,
-              "revuelta": 25
+              "revuelta": 25,
+              "poly": [
+                [
+                  [
+                    -78.5,
+                    -1.5
+                  ],
+                  [
+                    -76,
+                    -1
+                  ],
+                  [
+                    -75,
+                    1.5
+                  ],
+                  [
+                    -77.5,
+                    2.2
+                  ],
+                  [
+                    -79,
+                    0.5
+                  ]
+                ]
+              ]
             }
           ]
         }
@@ -17555,21 +21178,128 @@
       "snapshots": [
         {
           "year": 1550,
-          "members": [
-            "Mali",
-            "Niger",
-            "Burkina Faso",
-            "Senegal",
-            "Mauritania",
-            "Nigeria",
-            "Guinea"
-          ],
-          "box": [
-            -16,
-            10,
-            8,
-            21
-          ]
+          "core": {
+            "nombre": "Songhai",
+            "members": [
+              "Mali",
+              "Niger",
+              "Burkina Faso",
+              "Senegal",
+              "Mauritania",
+              "Nigeria",
+              "Guinea"
+            ],
+            "poly": [
+              [
+                [
+                  -6.4,
+                  11.8
+                ],
+                [
+                  -4.6,
+                  11.4
+                ],
+                [
+                  -2.6,
+                  12
+                ],
+                [
+                  -0.8,
+                  12.8
+                ],
+                [
+                  0.8,
+                  13.6
+                ],
+                [
+                  2.2,
+                  14.6
+                ],
+                [
+                  3.2,
+                  16
+                ],
+                [
+                  2,
+                  17.2
+                ],
+                [
+                  -0.4,
+                  17.4
+                ],
+                [
+                  -2.4,
+                  16.8
+                ],
+                [
+                  -3.6,
+                  15.4
+                ],
+                [
+                  -5,
+                  14
+                ],
+                [
+                  -6.2,
+                  13
+                ]
+              ],
+              [
+                [
+                  -12.6,
+                  12.4
+                ],
+                [
+                  -10.2,
+                  11.6
+                ],
+                [
+                  -8,
+                  11.4
+                ],
+                [
+                  -6.2,
+                  12.2
+                ],
+                [
+                  -4.4,
+                  13.2
+                ],
+                [
+                  -3,
+                  14.6
+                ],
+                [
+                  -2.6,
+                  16.2
+                ],
+                [
+                  -3.6,
+                  17.2
+                ],
+                [
+                  -5.6,
+                  17.6
+                ],
+                [
+                  -8,
+                  17.2
+                ],
+                [
+                  -10.4,
+                  16.4
+                ],
+                [
+                  -12.2,
+                  15.2
+                ],
+                [
+                  -13,
+                  13.8
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -17861,14 +21591,36 @@
                 "Haiti",
                 "Puerto Rico"
               ],
-              "box": [
-                -85,
-                17,
-                -65,
-                24
-              ],
               "fiscal": 3,
-              "revuelta": 6
+              "revuelta": 6,
+              "poly": [
+                [
+                  [
+                    -85,
+                    17.5
+                  ],
+                  [
+                    -74,
+                    17.5
+                  ],
+                  [
+                    -64,
+                    17
+                  ],
+                  [
+                    -64,
+                    23
+                  ],
+                  [
+                    -77,
+                    24
+                  ],
+                  [
+                    -85,
+                    23
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -18040,14 +21792,36 @@
                 "Dominican Rep.",
                 "Puerto Rico"
               ],
-              "box": [
-                -85,
-                17,
-                -65,
-                24
-              ],
               "fiscal": 4,
-              "revuelta": 8
+              "revuelta": 8,
+              "poly": [
+                [
+                  [
+                    -85,
+                    17.5
+                  ],
+                  [
+                    -74,
+                    17.5
+                  ],
+                  [
+                    -64,
+                    17
+                  ],
+                  [
+                    -64,
+                    23
+                  ],
+                  [
+                    -77,
+                    24
+                  ],
+                  [
+                    -85,
+                    23
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -18198,14 +21972,36 @@
                 "Dominican Rep.",
                 "Puerto Rico"
               ],
-              "box": [
-                -85,
-                17,
-                -65,
-                24
-              ],
               "fiscal": 3,
-              "revuelta": 6
+              "revuelta": 6,
+              "poly": [
+                [
+                  [
+                    -85,
+                    17.5
+                  ],
+                  [
+                    -74,
+                    17.5
+                  ],
+                  [
+                    -64,
+                    17
+                  ],
+                  [
+                    -64,
+                    23
+                  ],
+                  [
+                    -77,
+                    24
+                  ],
+                  [
+                    -85,
+                    23
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -18228,14 +22024,44 @@
               "members": [
                 "United States of America"
               ],
-              "box": [
-                -124,
-                28,
-                -94,
-                38
-              ],
               "fiscal": 0,
-              "revuelta": 20
+              "revuelta": 20,
+              "poly": [
+                [
+                  [
+                    -123,
+                    32
+                  ],
+                  [
+                    -114,
+                    31
+                  ],
+                  [
+                    -106,
+                    29
+                  ],
+                  [
+                    -97,
+                    26
+                  ],
+                  [
+                    -94,
+                    30
+                  ],
+                  [
+                    -101,
+                    37
+                  ],
+                  [
+                    -110,
+                    38
+                  ],
+                  [
+                    -121,
+                    38
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -18365,14 +22191,36 @@
                 "Dominican Rep.",
                 "Puerto Rico"
               ],
-              "box": [
-                -85,
-                17,
-                -65,
-                24
-              ],
               "fiscal": 5,
-              "revuelta": 5
+              "revuelta": 5,
+              "poly": [
+                [
+                  [
+                    -85,
+                    17.5
+                  ],
+                  [
+                    -74,
+                    17.5
+                  ],
+                  [
+                    -64,
+                    17
+                  ],
+                  [
+                    -64,
+                    23
+                  ],
+                  [
+                    -77,
+                    24
+                  ],
+                  [
+                    -85,
+                    23
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -18381,15 +22229,45 @@
               "members": [
                 "United States of America"
               ],
-              "box": [
-                -124,
-                28,
-                -94,
-                42
-              ],
               "fiscal": 0,
               "revuelta": 20,
-              "nota": "Misiones y presidios sin poblamiento. Se cede a México en 1821 y a Estados Unidos en 1848 sin que España lo llegue a controlar."
+              "nota": "Misiones y presidios sin poblamiento. Se cede a México en 1821 y a Estados Unidos en 1848 sin que España lo llegue a controlar.",
+              "poly": [
+                [
+                  [
+                    -123,
+                    32
+                  ],
+                  [
+                    -114,
+                    31
+                  ],
+                  [
+                    -106,
+                    29
+                  ],
+                  [
+                    -97,
+                    26
+                  ],
+                  [
+                    -94,
+                    30
+                  ],
+                  [
+                    -101,
+                    37
+                  ],
+                  [
+                    -110,
+                    38
+                  ],
+                  [
+                    -121,
+                    38
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Filipinas",
@@ -18432,15 +22310,37 @@
                 "Cuba",
                 "Puerto Rico"
               ],
-              "box": [
-                -85,
-                17,
-                -65,
-                24
-              ],
               "fiscal": 18,
               "revuelta": 15,
-              "nota": "El azúcar cubano con trabajo esclavo se convierte en la primera fuente de ingresos coloniales. La esclavitud se abolirá allí en 1886."
+              "nota": "El azúcar cubano con trabajo esclavo se convierte en la primera fuente de ingresos coloniales. La esclavitud se abolirá allí en 1886.",
+              "poly": [
+                [
+                  [
+                    -85,
+                    17.5
+                  ],
+                  [
+                    -74,
+                    17.5
+                  ],
+                  [
+                    -64,
+                    17
+                  ],
+                  [
+                    -64,
+                    23
+                  ],
+                  [
+                    -77,
+                    24
+                  ],
+                  [
+                    -85,
+                    23
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Filipinas",
@@ -18511,22 +22411,25 @@
       "snapshots": [
         {
           "year": 1600,
-          "members": [
-            "Iran",
-            "Iraq",
-            "Azerbaijan",
-            "Armenia",
-            "Georgia",
-            "Afghanistan",
-            "Turkmenistan",
-            "Pakistan"
-          ],
-          "box": [
-            38,
-            25,
-            68,
-            43
-          ]
+          "core": {
+            "nombre": "Safávidas",
+            "members": [
+              "Iran",
+              "Iraq",
+              "Azerbaijan",
+              "Armenia",
+              "Georgia",
+              "Afghanistan",
+              "Turkmenistan",
+              "Pakistan"
+            ],
+            "box": [
+              38,
+              25,
+              68,
+              43
+            ]
+          }
         }
       ]
     },
@@ -18913,44 +22816,50 @@
       "snapshots": [
         {
           "year": 1700,
-          "members": [
-            "Austria",
-            "Hungary",
-            "Czechia",
-            "Slovakia",
-            "Slovenia",
-            "Croatia",
-            "Belgium"
-          ],
-          "box": [
-            3,
-            44,
-            24,
-            52
-          ]
+          "core": {
+            "nombre": "Austria",
+            "members": [
+              "Austria",
+              "Hungary",
+              "Czechia",
+              "Slovakia",
+              "Slovenia",
+              "Croatia",
+              "Belgium"
+            ],
+            "box": [
+              3,
+              44,
+              24,
+              52
+            ]
+          }
         },
         {
           "year": 1880,
-          "members": [
-            "Austria",
-            "Hungary",
-            "Czechia",
-            "Slovakia",
-            "Slovenia",
-            "Croatia",
-            "Bosnia and Herz.",
-            "Poland",
-            "Ukraine",
-            "Romania",
-            "Serbia",
-            "Italy"
-          ],
-          "box": [
-            9,
-            42,
-            27,
-            51
-          ]
+          "core": {
+            "nombre": "Austria",
+            "members": [
+              "Austria",
+              "Hungary",
+              "Czechia",
+              "Slovakia",
+              "Slovenia",
+              "Croatia",
+              "Bosnia and Herz.",
+              "Poland",
+              "Ukraine",
+              "Romania",
+              "Serbia",
+              "Italy"
+            ],
+            "box": [
+              9,
+              42,
+              27,
+              51
+            ]
+          }
         }
       ]
     },
@@ -19497,22 +23406,25 @@
       "snapshots": [
         {
           "year": 1650,
-          "members": [
-            "Poland",
-            "Lithuania",
-            "Belarus",
-            "Ukraine",
-            "Latvia",
-            "Estonia",
-            "Moldova",
-            "Russia"
-          ],
-          "box": [
-            17,
-            46,
-            34,
-            58
-          ]
+          "core": {
+            "nombre": "Polonia-Lituania",
+            "members": [
+              "Poland",
+              "Lithuania",
+              "Belarus",
+              "Ukraine",
+              "Latvia",
+              "Estonia",
+              "Moldova",
+              "Russia"
+            ],
+            "box": [
+              17,
+              46,
+              34,
+              58
+            ]
+          }
         }
       ]
     },
@@ -19538,21 +23450,24 @@
       "snapshots": [
         {
           "year": 1650,
-          "members": [
-            "Netherlands",
-            "Indonesia",
-            "Suriname",
-            "South Africa",
-            "Sri Lanka",
-            "Guyana",
-            "Taiwan"
-          ],
-          "box": [
-            -60,
-            -36,
-            130,
-            54
-          ]
+          "core": {
+            "nombre": "Holanda",
+            "members": [
+              "Netherlands",
+              "Indonesia",
+              "Suriname",
+              "South Africa",
+              "Sri Lanka",
+              "Guyana",
+              "Taiwan"
+            ],
+            "box": [
+              -60,
+              -36,
+              130,
+              54
+            ]
+          }
         }
       ]
     },
@@ -19634,16 +23549,46 @@
               "members": [
                 "Canada"
               ],
-              "box": [
-                -140,
-                42,
-                -52,
-                70
-              ],
               "via": "tratado",
               "desde": 1763,
               "fiscal": 2,
-              "revuelta": 8
+              "revuelta": 8,
+              "poly": [
+                [
+                  [
+                    -83,
+                    42
+                  ],
+                  [
+                    -74,
+                    44.5
+                  ],
+                  [
+                    -64,
+                    45
+                  ],
+                  [
+                    -53,
+                    47
+                  ],
+                  [
+                    -56,
+                    52
+                  ],
+                  [
+                    -70,
+                    53
+                  ],
+                  [
+                    -80,
+                    50
+                  ],
+                  [
+                    -84,
+                    46
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Antillas azucareras",
@@ -19653,15 +23598,41 @@
                 "Belize",
                 "Guyana"
               ],
-              "box": [
-                -80,
-                5,
-                -58,
-                27
-              ],
               "fiscal": 14,
               "revuelta": 20,
-              "nota": "Las islas del azúcar valen más que Canadá en las cuentas de Londres, y funcionan con trabajo esclavo."
+              "nota": "Las islas del azúcar valen más que Canadá en las cuentas de Londres, y funcionan con trabajo esclavo.",
+              "poly": [
+                [
+                  [
+                    -79,
+                    17
+                  ],
+                  [
+                    -74,
+                    10
+                  ],
+                  [
+                    -58,
+                    5
+                  ],
+                  [
+                    -57,
+                    8
+                  ],
+                  [
+                    -62,
+                    18
+                  ],
+                  [
+                    -72,
+                    21
+                  ],
+                  [
+                    -78,
+                    22
+                  ]
+                ]
+              ]
             }
           ],
           "client": [
@@ -19690,15 +23661,45 @@
               "members": [
                 "United States of America"
               ],
-              "box": [
-                -88,
-                25,
-                -67,
-                47
-              ],
               "revuelta": 95,
               "guarnicion": 40000,
-              "nota": "En plena guerra de independencia con Francia y España del otro lado. Se pierden tres años después."
+              "nota": "En plena guerra de independencia con Francia y España del otro lado. Se pierden tres años después.",
+              "poly": [
+                [
+                  [
+                    -82,
+                    30.5
+                  ],
+                  [
+                    -76.5,
+                    34.5
+                  ],
+                  [
+                    -72,
+                    40
+                  ],
+                  [
+                    -67.5,
+                    45
+                  ],
+                  [
+                    -70,
+                    47
+                  ],
+                  [
+                    -76,
+                    43
+                  ],
+                  [
+                    -81,
+                    38
+                  ],
+                  [
+                    -85,
+                    33
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -19992,22 +23993,25 @@
       "snapshots": [
         {
           "year": 1660,
-          "members": [
-            "Sweden",
-            "Finland",
-            "Estonia",
-            "Latvia",
-            "Norway",
-            "Germany",
-            "Russia",
-            "Poland"
-          ],
-          "box": [
-            8,
-            53,
-            33,
-            70
-          ]
+          "core": {
+            "nombre": "Suecia",
+            "members": [
+              "Sweden",
+              "Finland",
+              "Estonia",
+              "Latvia",
+              "Norway",
+              "Germany",
+              "Russia",
+              "Poland"
+            ],
+            "box": [
+              8,
+              53,
+              33,
+              70
+            ]
+          }
         }
       ]
     },
@@ -20192,16 +24196,34 @@
               "members": [
                 "Taiwan"
               ],
-              "box": [
-                119,
-                21,
-                123,
-                26
-              ],
               "via": "conquista",
               "desde": 1683,
               "fiscal": 2,
-              "revuelta": 15
+              "revuelta": 15,
+              "poly": [
+                [
+                  [
+                    119.9,
+                    21.8
+                  ],
+                  [
+                    122.1,
+                    22.5
+                  ],
+                  [
+                    122.1,
+                    25.4
+                  ],
+                  [
+                    120.5,
+                    25.4
+                  ],
+                  [
+                    119.9,
+                    23.5
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -20662,18 +24684,43 @@
       "snapshots": [
         {
           "year": 1820,
-          "members": [
-            "Ghana",
-            "Côte d'Ivoire",
-            "Togo",
-            "Burkina Faso"
-          ],
-          "box": [
-            -4,
-            5,
-            1,
-            11
-          ]
+          "core": {
+            "nombre": "Ashanti",
+            "members": [
+              "Ghana",
+              "Côte d'Ivoire",
+              "Togo",
+              "Burkina Faso"
+            ],
+            "poly": [
+              [
+                [
+                  -3.5,
+                  5
+                ],
+                [
+                  -0.5,
+                  5
+                ],
+                [
+                  0.5,
+                  7
+                ],
+                [
+                  -0.5,
+                  9.5
+                ],
+                [
+                  -3,
+                  9
+                ],
+                [
+                  -3.5,
+                  7
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -20704,11 +24751,45 @@
             "members": [
               "United States of America"
             ],
-            "box": [
-              -95,
-              24,
-              -66,
-              50
+            "poly": [
+              [
+                [
+                  -91,
+                  29.5
+                ],
+                [
+                  -81,
+                  25.5
+                ],
+                [
+                  -75,
+                  35
+                ],
+                [
+                  -70,
+                  41
+                ],
+                [
+                  -67,
+                  45
+                ],
+                [
+                  -71,
+                  47.5
+                ],
+                [
+                  -83,
+                  45
+                ],
+                [
+                  -90,
+                  42
+                ],
+                [
+                  -92,
+                  34
+                ]
+              ]
             ]
           }
         },
@@ -20780,17 +24861,39 @@
               "members": [
                 "Philippines"
               ],
-              "box": [
-                117,
-                5,
-                127,
-                19
-              ],
               "via": "conquista",
               "desde": 1899,
               "revuelta": 80,
               "guarnicion": 70000,
-              "nota": "Guerra filipino-estadounidense en su segundo año: entre doscientos mil y un millón de muertos civiles. El primer imperio ultramarino de una república antiimperialista."
+              "nota": "Guerra filipino-estadounidense en su segundo año: entre doscientos mil y un millón de muertos civiles. El primer imperio ultramarino de una república antiimperialista.",
+              "poly": [
+                [
+                  [
+                    119.8,
+                    5
+                  ],
+                  [
+                    126.6,
+                    6
+                  ],
+                  [
+                    126.6,
+                    14
+                  ],
+                  [
+                    124,
+                    18.7
+                  ],
+                  [
+                    120,
+                    18.7
+                  ],
+                  [
+                    119.5,
+                    12
+                  ]
+                ]
+              ]
             }
           ],
           "sphere": [
@@ -21096,17 +25199,54 @@
       "snapshots": [
         {
           "year": 1850,
-          "members": [
-            "South Africa",
-            "eSwatini",
-            "Mozambique"
-          ],
-          "box": [
-            28,
-            -31,
-            33,
-            -25
-          ]
+          "core": {
+            "nombre": "Zulú",
+            "members": [
+              "South Africa",
+              "eSwatini",
+              "Mozambique"
+            ],
+            "poly": [
+              [
+                [
+                  28.8,
+                  -30.6
+                ],
+                [
+                  30.2,
+                  -31
+                ],
+                [
+                  31.6,
+                  -30.2
+                ],
+                [
+                  32.6,
+                  -28.8
+                ],
+                [
+                  32.4,
+                  -27.2
+                ],
+                [
+                  31.4,
+                  -26.2
+                ],
+                [
+                  30.2,
+                  -26.4
+                ],
+                [
+                  29.2,
+                  -27.6
+                ],
+                [
+                  28.4,
+                  -29.2
+                ]
+              ]
+            ]
+          }
         }
       ]
     },
@@ -21132,39 +25272,48 @@
       "snapshots": [
         {
           "year": 1830,
-          "members": [
-            "Brazil"
-          ],
-          "box": [
-            -75,
-            -34,
-            -33,
-            6
-          ]
+          "core": {
+            "nombre": "Brasil",
+            "members": [
+              "Brazil"
+            ],
+            "box": [
+              -75,
+              -34,
+              -33,
+              6
+            ]
+          }
         },
         {
           "year": 1900,
-          "members": [
-            "Brazil"
-          ],
-          "box": [
-            -74,
-            -34,
-            -34,
-            5
-          ]
+          "core": {
+            "nombre": "Brasil",
+            "members": [
+              "Brazil"
+            ],
+            "box": [
+              -74,
+              -34,
+              -34,
+              5
+            ]
+          }
         },
         {
           "year": 2000,
-          "members": [
-            "Brazil"
-          ],
-          "box": [
-            -74,
-            -34,
-            -34,
-            5
-          ]
+          "core": {
+            "nombre": "Brasil",
+            "members": [
+              "Brazil"
+            ],
+            "box": [
+              -74,
+              -34,
+              -34,
+              5
+            ]
+          }
         }
       ]
     },
@@ -21319,21 +25468,24 @@
       "snapshots": [
         {
           "year": 1914,
-          "members": [
-            "Germany",
-            "Poland",
-            "France",
-            "Denmark",
-            "Lithuania",
-            "Russia",
-            "Czechia"
-          ],
-          "box": [
-            5,
-            47,
-            23,
-            56
-          ]
+          "core": {
+            "nombre": "Alemania",
+            "members": [
+              "Germany",
+              "Poland",
+              "France",
+              "Denmark",
+              "Lithuania",
+              "Russia",
+              "Czechia"
+            ],
+            "box": [
+              5,
+              47,
+              23,
+              56
+            ]
+          }
         }
       ]
     },
@@ -21359,39 +25511,48 @@
       "snapshots": [
         {
           "year": 1947,
-          "members": [
-            "India"
-          ],
-          "box": [
-            66,
-            6,
-            98,
-            37
-          ]
+          "core": {
+            "nombre": "India",
+            "members": [
+              "India"
+            ],
+            "box": [
+              66,
+              6,
+              98,
+              37
+            ]
+          }
         },
         {
           "year": 2000,
-          "members": [
-            "India"
-          ],
-          "box": [
-            68,
-            6,
-            98,
-            36
-          ]
+          "core": {
+            "nombre": "India",
+            "members": [
+              "India"
+            ],
+            "box": [
+              68,
+              6,
+              98,
+              36
+            ]
+          }
         },
         {
           "year": 2100,
-          "members": [
-            "India"
-          ],
-          "box": [
-            68,
-            6,
-            98,
-            36
-          ]
+          "core": {
+            "nombre": "India",
+            "members": [
+              "India"
+            ],
+            "box": [
+              68,
+              6,
+              98,
+              36
+            ]
+          }
         }
       ]
     },
@@ -21417,52 +25578,64 @@
       "snapshots": [
         {
           "year": 1949,
-          "members": [
-            "China"
-          ],
-          "box": [
-            73,
-            18,
-            135,
-            54
-          ]
+          "core": {
+            "nombre": "RPC",
+            "members": [
+              "China"
+            ],
+            "box": [
+              73,
+              18,
+              135,
+              54
+            ]
+          }
         },
         {
           "year": 1980,
-          "members": [
-            "China",
-            "Mongolia"
-          ],
-          "box": [
-            73,
-            18,
-            135,
-            54
-          ]
+          "core": {
+            "nombre": "RPC",
+            "members": [
+              "China",
+              "Mongolia"
+            ],
+            "box": [
+              73,
+              18,
+              135,
+              54
+            ]
+          }
         },
         {
           "year": 2020,
-          "members": [
-            "China"
-          ],
-          "box": [
-            73,
-            18,
-            135,
-            54
-          ]
+          "core": {
+            "nombre": "RPC",
+            "members": [
+              "China"
+            ],
+            "box": [
+              73,
+              18,
+              135,
+              54
+            ]
+          }
         },
         {
           "year": 2100,
-          "members": [
-            "China"
-          ],
-          "box": [
-            73,
-            18,
-            135,
-            54
-          ]
+          "core": {
+            "nombre": "RPC",
+            "members": [
+              "China"
+            ],
+            "box": [
+              73,
+              18,
+              135,
+              54
+            ]
+          }
         }
       ]
     },
@@ -21488,105 +25661,114 @@
       "snapshots": [
         {
           "year": 1995,
-          "members": [
-            "France",
-            "Germany",
-            "Italy",
-            "Spain",
-            "Portugal",
-            "Belgium",
-            "Netherlands",
-            "Luxembourg",
-            "Denmark",
-            "Ireland",
-            "Greece",
-            "Austria",
-            "Sweden",
-            "Finland",
-            "United Kingdom"
-          ],
-          "box": [
-            -25,
-            34,
-            32,
-            71
-          ]
+          "core": {
+            "nombre": "UE",
+            "members": [
+              "France",
+              "Germany",
+              "Italy",
+              "Spain",
+              "Portugal",
+              "Belgium",
+              "Netherlands",
+              "Luxembourg",
+              "Denmark",
+              "Ireland",
+              "Greece",
+              "Austria",
+              "Sweden",
+              "Finland",
+              "United Kingdom"
+            ],
+            "box": [
+              -25,
+              34,
+              32,
+              71
+            ]
+          }
         },
         {
           "year": 2010,
-          "members": [
-            "France",
-            "Germany",
-            "Italy",
-            "Spain",
-            "Portugal",
-            "Belgium",
-            "Netherlands",
-            "Luxembourg",
-            "Denmark",
-            "Ireland",
-            "Greece",
-            "Austria",
-            "Sweden",
-            "Finland",
-            "Poland",
-            "Czechia",
-            "Slovakia",
-            "Hungary",
-            "Slovenia",
-            "Croatia",
-            "Romania",
-            "Bulgaria",
-            "Estonia",
-            "Latvia",
-            "Lithuania",
-            "Cyprus",
-            "Malta",
-            "United Kingdom"
-          ],
-          "box": [
-            -25,
-            34,
-            32,
-            71
-          ]
+          "core": {
+            "nombre": "UE",
+            "members": [
+              "France",
+              "Germany",
+              "Italy",
+              "Spain",
+              "Portugal",
+              "Belgium",
+              "Netherlands",
+              "Luxembourg",
+              "Denmark",
+              "Ireland",
+              "Greece",
+              "Austria",
+              "Sweden",
+              "Finland",
+              "Poland",
+              "Czechia",
+              "Slovakia",
+              "Hungary",
+              "Slovenia",
+              "Croatia",
+              "Romania",
+              "Bulgaria",
+              "Estonia",
+              "Latvia",
+              "Lithuania",
+              "Cyprus",
+              "Malta",
+              "United Kingdom"
+            ],
+            "box": [
+              -25,
+              34,
+              32,
+              71
+            ]
+          }
         },
         {
           "year": 2021,
-          "members": [
-            "France",
-            "Germany",
-            "Italy",
-            "Spain",
-            "Portugal",
-            "Belgium",
-            "Netherlands",
-            "Luxembourg",
-            "Denmark",
-            "Ireland",
-            "Greece",
-            "Austria",
-            "Sweden",
-            "Finland",
-            "Poland",
-            "Czechia",
-            "Slovakia",
-            "Hungary",
-            "Slovenia",
-            "Croatia",
-            "Romania",
-            "Bulgaria",
-            "Estonia",
-            "Latvia",
-            "Lithuania",
-            "Cyprus"
-          ],
-          "box": [
-            -25,
-            34,
-            32,
-            71
-          ]
+          "core": {
+            "nombre": "UE",
+            "members": [
+              "France",
+              "Germany",
+              "Italy",
+              "Spain",
+              "Portugal",
+              "Belgium",
+              "Netherlands",
+              "Luxembourg",
+              "Denmark",
+              "Ireland",
+              "Greece",
+              "Austria",
+              "Sweden",
+              "Finland",
+              "Poland",
+              "Czechia",
+              "Slovakia",
+              "Hungary",
+              "Slovenia",
+              "Croatia",
+              "Romania",
+              "Bulgaria",
+              "Estonia",
+              "Latvia",
+              "Lithuania",
+              "Cyprus"
+            ],
+            "box": [
+              -25,
+              34,
+              32,
+              71
+            ]
+          }
         }
       ]
     },
@@ -21613,30 +25795,33 @@
       "snapshots": [
         {
           "year": 2044,
-          "members": [
-            "India",
-            "Indonesia",
-            "Malaysia",
-            "Singapore",
-            "Vietnam",
-            "Philippines",
-            "Japan",
-            "South Korea",
-            "Australia",
-            "New Zealand",
-            "Thailand",
-            "Sri Lanka",
-            "Bangladesh",
-            "Brunei",
-            "Papua New Guinea",
-            "Timor-Leste"
-          ],
-          "box": [
-            65,
-            -48,
-            180,
-            48
-          ]
+          "core": {
+            "nombre": "CIP",
+            "members": [
+              "India",
+              "Indonesia",
+              "Malaysia",
+              "Singapore",
+              "Vietnam",
+              "Philippines",
+              "Japan",
+              "South Korea",
+              "Australia",
+              "New Zealand",
+              "Thailand",
+              "Sri Lanka",
+              "Bangladesh",
+              "Brunei",
+              "Papua New Guinea",
+              "Timor-Leste"
+            ],
+            "box": [
+              65,
+              -48,
+              180,
+              48
+            ]
+          }
         }
       ]
     },
@@ -21663,65 +25848,68 @@
       "snapshots": [
         {
           "year": 2061,
-          "members": [
-            "Nigeria",
-            "Ghana",
-            "Kenya",
-            "Ethiopia",
-            "South Africa",
-            "Egypt",
-            "Morocco",
-            "Algeria",
-            "Tunisia",
-            "Libya",
-            "Sudan",
-            "S. Sudan",
-            "Tanzania",
-            "Uganda",
-            "Rwanda",
-            "Burundi",
-            "Dem. Rep. Congo",
-            "Congo",
-            "Angola",
-            "Zambia",
-            "Zimbabwe",
-            "Mozambique",
-            "Botswana",
-            "Namibia",
-            "Senegal",
-            "Mali",
-            "Niger",
-            "Chad",
-            "Cameroon",
-            "Côte d'Ivoire",
-            "Burkina Faso",
-            "Guinea",
-            "Benin",
-            "Togo",
-            "Sierra Leone",
-            "Liberia",
-            "Mauritania",
-            "Somalia",
-            "Somaliland",
-            "Eritrea",
-            "Djibouti",
-            "Madagascar",
-            "Malawi",
-            "Gabon",
-            "Eq. Guinea",
-            "Central African Rep.",
-            "Gambia",
-            "Guinea-Bissau",
-            "Lesotho",
-            "eSwatini",
-            "W. Sahara"
-          ],
-          "box": [
-            -20,
-            -38,
-            55,
-            38
-          ]
+          "core": {
+            "nombre": "FPA",
+            "members": [
+              "Nigeria",
+              "Ghana",
+              "Kenya",
+              "Ethiopia",
+              "South Africa",
+              "Egypt",
+              "Morocco",
+              "Algeria",
+              "Tunisia",
+              "Libya",
+              "Sudan",
+              "S. Sudan",
+              "Tanzania",
+              "Uganda",
+              "Rwanda",
+              "Burundi",
+              "Dem. Rep. Congo",
+              "Congo",
+              "Angola",
+              "Zambia",
+              "Zimbabwe",
+              "Mozambique",
+              "Botswana",
+              "Namibia",
+              "Senegal",
+              "Mali",
+              "Niger",
+              "Chad",
+              "Cameroon",
+              "Côte d'Ivoire",
+              "Burkina Faso",
+              "Guinea",
+              "Benin",
+              "Togo",
+              "Sierra Leone",
+              "Liberia",
+              "Mauritania",
+              "Somalia",
+              "Somaliland",
+              "Eritrea",
+              "Djibouti",
+              "Madagascar",
+              "Malawi",
+              "Gabon",
+              "Eq. Guinea",
+              "Central African Rep.",
+              "Gambia",
+              "Guinea-Bissau",
+              "Lesotho",
+              "eSwatini",
+              "W. Sahara"
+            ],
+            "box": [
+              -20,
+              -38,
+              55,
+              38
+            ]
+          }
         }
       ]
     },
@@ -21748,22 +25936,25 @@
       "snapshots": [
         {
           "year": 2078,
-          "members": [
-            "Russia",
-            "Canada",
-            "Greenland",
-            "Norway",
-            "Iceland",
-            "Finland",
-            "Sweden",
-            "United States of America"
-          ],
-          "box": [
-            -180,
-            62,
-            180,
-            84
-          ]
+          "core": {
+            "nombre": "Ártico",
+            "members": [
+              "Russia",
+              "Canada",
+              "Greenland",
+              "Norway",
+              "Iceland",
+              "Finland",
+              "Sweden",
+              "United States of America"
+            ],
+            "box": [
+              -180,
+              62,
+              180,
+              84
+            ]
+          }
         }
       ]
     }

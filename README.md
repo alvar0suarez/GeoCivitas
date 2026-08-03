@@ -66,13 +66,23 @@ Son **221 instantáneas** para 76 entidades. Ninguna entidad supera los 250 año
 sin recalcular y la mediana del mayor hueco por entidad está en 156 años; en los
 periodos con más registro, en décadas.
 
-Donde la frontera es un río y no un paralelo, se traza como tal. Las zonas se
-recortan con polígonos sobre las líneas que de verdad organizaron el territorio
-—el Duero, el Tajo, el Ebro y Sierra Morena en Iberia; el Rin, el Danubio y el
-muro de Adriano en el limes romano; el Huai, el Yangtsé y la Gran Muralla en
-China; el Ganges, el Indo y el Decán en la India; el Tauro y el Éufrates en
-Anatolia y Mesopotamia—. Quedan cajas donde la costa ya hace de recorte y la
-diferencia no se ve.
+Donde la frontera es un río y no un paralelo, se traza como tal. **328 zonas**
+—el 54 % del total— se recortan con polígonos sobre las líneas que de verdad
+organizaron el territorio:
+
+- **Iberia**: el Duero, el Tajo, el Ebro y Sierra Morena
+- **Limes romano**: el Rin, el Danubio y el muro de Adriano
+- **China**: el Huai, el Yangtsé, el corredor de Hexi y la Gran Muralla
+- **India**: el Ganges, el Indo, Malwa, Rajputana y el Decán
+- **Anatolia y Mesopotamia**: el Tauro y el Éufrates
+- **África**: la curva del Níger, la cuenca del Chad, el altiplano etíope, la
+  franja mediterránea del Magreb y la meseta entre el Zambeze y el Limpopo
+- **América**: los Andes de Quito al Maule —una tira de cinco mil kilómetros
+  entre el Pacífico y la selva—, la cuenca de México y el Petén maya
+- **Sudeste asiático**: el delta del río Rojo, el Tonlé Sap, el Chao Phraya,
+  el estrecho de Malaca y el eje Java-Sumatra
+
+Quedan cajas donde la costa ya hace de recorte y la diferencia no se ve.
 
 Las superficies se miden por intersección real entre el recorte y el territorio
 de los países miembros, contando celdas de medio grado. El mínimo entre ambas
