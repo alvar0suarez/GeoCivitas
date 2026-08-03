@@ -62,6 +62,10 @@ La Reconquista es el caso que mejor lo enseña. Al-Ándalus pasa de 0,40 M km² 
 0,27 en 1150, 0,11 tras Las Navas y 0,03 cuando sólo queda Granada. Ocho
 snapshots, ochocientos años de línea bajando.
 
+Son **221 instantáneas** para 76 entidades. Ninguna entidad supera los 250 años
+sin recalcular y la mediana del mayor hueco por entidad está en 156 años; en los
+periodos con más registro, en décadas.
+
 Donde la frontera es un río y no un paralelo, se traza como tal. Las zonas se
 recortan con polígonos sobre las líneas que de verdad organizaron el territorio
 —el Duero, el Tajo, el Ebro y Sierra Morena en Iberia; el Rin, el Danubio y el

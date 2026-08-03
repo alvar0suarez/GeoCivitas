@@ -13,7 +13,7 @@
       "color": "#fbbf24",
       "kind": "reino fluvial",
       "from": -3100,
-      "to": -30,
+      "to": -332,
       "capital": [
         31.2,
         29.9
@@ -28,14 +28,203 @@
       "snapshots": [
         {
           "year": -3100,
-          "members": [
-            "Egypt"
+          "core": {
+            "nombre": "Kemet",
+            "members": [
+              "Egypt"
+            ],
+            "box": [
+              24,
+              22,
+              36,
+              32
+            ]
+          }
+        },
+        {
+          "year": -2950,
+          "core": {
+            "nombre": "Alto Egipto y Abidos",
+            "members": [
+              "Egypt"
+            ],
+            "poly": [
+              [
+                [
+                  29.5,
+                  23
+                ],
+                [
+                  33.5,
+                  23
+                ],
+                [
+                  34,
+                  28
+                ],
+                [
+                  32.5,
+                  30
+                ],
+                [
+                  30,
+                  29
+                ],
+                [
+                  29,
+                  25
+                ]
+              ]
+            ],
+            "via": "conquista",
+            "fiscal": 90,
+            "revuelta": 15,
+            "guarnicion": 4000,
+            "nota": "Dinastía I. El poder está en el sur, en Abidos, donde los reyes se hacen enterrar con cientos de sirvientes sacrificados; Menfis se funda como capital administrativa en la bisagra entre el valle y el Delta."
+          },
+          "contested": [
+            {
+              "nombre": "Delta en integración",
+              "members": [
+                "Egypt"
+              ],
+              "poly": [
+                [
+                  [
+                    29.3,
+                    29.3
+                  ],
+                  [
+                    32.6,
+                    29.3
+                  ],
+                  [
+                    32.6,
+                    31.7
+                  ],
+                  [
+                    29.3,
+                    31.7
+                  ]
+                ]
+              ],
+              "revuelta": 45,
+              "nota": "La paleta de Narmer celebra la conquista del norte, pero las campañas contra el Delta se repiten durante dos dinastías: la unificación es un proceso de dos siglos, no una batalla."
+            }
+          ]
+        },
+        {
+          "year": -2850,
+          "core": {
+            "nombre": "Las Dos Tierras",
+            "members": [
+              "Egypt"
+            ],
+            "poly": [
+              [
+                [
+                  29,
+                  23
+                ],
+                [
+                  33.5,
+                  23
+                ],
+                [
+                  34.5,
+                  29
+                ],
+                [
+                  34,
+                  31.5
+                ],
+                [
+                  30,
+                  31.7
+                ],
+                [
+                  28.5,
+                  29
+                ]
+              ]
+            ],
+            "via": "conquista",
+            "fiscal": 95,
+            "revuelta": 8,
+            "guarnicion": 6000,
+            "nota": "Período Tinita. La unificación del Alto y el Bajo Egipto todavía se está consolidando por la fuerza: la doble corona es propaganda antes que hecho, y hay una guerra civil documentada en la Segunda Dinastía."
+          },
+          "march": [
+            {
+              "nombre": "Primera catarata y Uauat",
+              "members": [
+                "Egypt",
+                "Sudan"
+              ],
+              "poly": [
+                [
+                  [
+                    30.5,
+                    21
+                  ],
+                  [
+                    33.5,
+                    21
+                  ],
+                  [
+                    34,
+                    24
+                  ],
+                  [
+                    31.5,
+                    24.5
+                  ],
+                  [
+                    30,
+                    23
+                  ]
+                ]
+              ],
+              "via": "conquista",
+              "fiscal": 4,
+              "revuelta": 30,
+              "nota": "Elefantina marca el límite y a la vez es la aduana: más allá empieza Nubia, de donde salen el oro, el marfil y el ébano que el Estado necesita para pagar a su élite."
+            }
           ],
-          "box": [
-            24,
-            22,
-            36,
-            32
+          "sphere": [
+            {
+              "nombre": "Rutas del Sinaí y Biblos",
+              "members": [
+                "Egypt",
+                "Lebanon",
+                "Israel"
+              ],
+              "poly": [
+                [
+                  [
+                    32,
+                    28
+                  ],
+                  [
+                    35.5,
+                    29
+                  ],
+                  [
+                    36,
+                    34.5
+                  ],
+                  [
+                    34,
+                    34
+                  ],
+                  [
+                    32.5,
+                    30
+                  ]
+                ]
+              ],
+              "nota": "Cedro de Biblos y cobre del Sinaí a cambio de grano. La primera red comercial de larga distancia del Mediterráneo oriental no necesita ni un soldado."
+            }
           ]
         },
         {
@@ -155,16 +344,136 @@
           ]
         },
         {
-          "year": -2200,
-          "members": [
-            "Egypt"
-          ],
-          "box": [
-            24,
-            22,
-            34,
-            31
+          "year": -2400,
+          "core": {
+            "nombre": "Valle y Delta",
+            "members": [
+              "Egypt"
+            ],
+            "poly": [
+              [
+                [
+                  28,
+                  21
+                ],
+                [
+                  35,
+                  21
+                ],
+                [
+                  36,
+                  26
+                ],
+                [
+                  34,
+                  31
+                ],
+                [
+                  30,
+                  31.5
+                ],
+                [
+                  27,
+                  29
+                ],
+                [
+                  27,
+                  24
+                ]
+              ]
+            ],
+            "via": "herencia",
+            "fiscal": 78,
+            "revuelta": 4,
+            "guarnicion": 12000,
+            "nota": "Dinastías V y VI. Las pirámides se hacen más pequeñas y los templos solares más grandes, y aparecen los Textos de las Pirámides. El cargo de nomarca empieza a heredarse: la provincia deja de depender de Menfis y en dos siglos el Estado se desmonta por ahí."
+          },
+          "march": [
+            {
+              "nombre": "Baja Nubia y Uauat",
+              "members": [
+                "Sudan",
+                "Egypt"
+              ],
+              "poly": [
+                [
+                  [
+                    30,
+                    20
+                  ],
+                  [
+                    34,
+                    20
+                  ],
+                  [
+                    35,
+                    24
+                  ],
+                  [
+                    32,
+                    24.5
+                  ],
+                  [
+                    30,
+                    22
+                  ]
+                ]
+              ],
+              "via": "conquista",
+              "fiscal": 6,
+              "revuelta": 25,
+              "nota": "Las expediciones de Harjuf a Yam, contadas en su propia tumba, traen incienso, pieles de pantera y un enano bailarín que entusiasma al faraón niño Pepy II."
+            },
+            {
+              "nombre": "Rutas del Sinaí y el Punt",
+              "members": [
+                "Egypt",
+                "Eritrea"
+              ],
+              "poly": [
+                [
+                  [
+                    32,
+                    26
+                  ],
+                  [
+                    39,
+                    13
+                  ],
+                  [
+                    43,
+                    15
+                  ],
+                  [
+                    36,
+                    29
+                  ],
+                  [
+                    33,
+                    30
+                  ]
+                ]
+              ],
+              "fiscal": 4,
+              "revuelta": 15,
+              "nota": "Primeras expediciones documentadas al Punt por el mar Rojo. No hay territorio: hay barcos desmontados que se cargan a lomo por el desierto y se rearman en la costa."
+            }
           ]
+        },
+        {
+          "year": -2200,
+          "core": {
+            "nombre": "Kemet",
+            "members": [
+              "Egypt"
+            ],
+            "box": [
+              24,
+              22,
+              34,
+              31
+            ]
+          }
         },
         {
           "year": -2150,
@@ -205,16 +514,19 @@
         },
         {
           "year": -1900,
-          "members": [
-            "Egypt",
-            "Sudan"
-          ],
-          "box": [
-            24,
-            19,
-            35,
-            32
-          ]
+          "core": {
+            "nombre": "Kemet",
+            "members": [
+              "Egypt",
+              "Sudan"
+            ],
+            "box": [
+              24,
+              19,
+              35,
+              32
+            ]
+          }
         },
         {
           "year": -1850,
@@ -369,35 +681,38 @@
         },
         {
           "year": -1450,
-          "members": [
-            "Egypt",
-            "Israel",
-            "Palestine",
-            "Lebanon",
-            "Syria",
-            "Jordan",
-            "Sudan"
-          ],
-          "box": [
-            24,
-            17,
-            39,
-            36
-          ],
-          "holes": [
-            [
-              37,
-              17,
-              46,
-              30
+          "core": {
+            "nombre": "Kemet",
+            "members": [
+              "Egypt",
+              "Israel",
+              "Palestine",
+              "Lebanon",
+              "Syria",
+              "Jordan",
+              "Sudan"
             ],
-            [
-              30,
+            "box": [
+              24,
               17,
               39,
-              21
+              36
+            ],
+            "holes": [
+              [
+                37,
+                17,
+                46,
+                30
+              ],
+              [
+                30,
+                17,
+                39,
+                21
+              ]
             ]
-          ]
+          }
         },
         {
           "year": -1200,
@@ -529,27 +844,220 @@
         },
         {
           "year": -1100,
-          "members": [
-            "Egypt"
+          "core": {
+            "nombre": "Kemet",
+            "members": [
+              "Egypt"
+            ],
+            "box": [
+              24,
+              22,
+              35,
+              32
+            ]
+          }
+        },
+        {
+          "year": -950,
+          "core": {
+            "nombre": "Tanis y el Bajo Egipto",
+            "members": [
+              "Egypt"
+            ],
+            "poly": [
+              [
+                [
+                  29.3,
+                  29.3
+                ],
+                [
+                  32.6,
+                  29.3
+                ],
+                [
+                  32.6,
+                  31.7
+                ],
+                [
+                  29.3,
+                  31.7
+                ]
+              ]
+            ],
+            "fiscal": 60,
+            "revuelta": 20,
+            "guarnicion": 12000,
+            "nota": "La Dinastía XXI gobierna desde Tanis, en el Delta, mientras los sumos sacerdotes de Amón mandan de hecho en el sur. El país está partido en dos por un acuerdo que nadie llama división."
+          },
+          "client": [
+            {
+              "nombre": "Tebaida de los sumos sacerdotes",
+              "members": [
+                "Egypt"
+              ],
+              "poly": [
+                [
+                  [
+                    30.5,
+                    22
+                  ],
+                  [
+                    34,
+                    22
+                  ],
+                  [
+                    34.5,
+                    27
+                  ],
+                  [
+                    33,
+                    29.5
+                  ],
+                  [
+                    30,
+                    29
+                  ],
+                  [
+                    29.5,
+                    25
+                  ]
+                ]
+              ],
+              "fiscal": 30,
+              "revuelta": 25,
+              "nota": "Los pontífices tebanos se hacen enterrar como reyes, fechan documentos por sus propios años de mandato y casan a sus hijas con la familia de Tanis. Es un condominio, no una provincia."
+            }
           ],
-          "box": [
-            24,
-            22,
-            35,
-            32
+          "march": [
+            {
+              "nombre": "Guarniciones libias",
+              "members": [
+                "Egypt",
+                "Libya"
+              ],
+              "poly": [
+                [
+                  [
+                    24,
+                    26
+                  ],
+                  [
+                    30,
+                    27
+                  ],
+                  [
+                    30,
+                    31
+                  ],
+                  [
+                    25,
+                    31
+                  ]
+                ]
+              ],
+              "fiscal": 5,
+              "revuelta": 35,
+              "nota": "Los jefes meshwesh asentados en el Delta desde Ramsés III acaban dando la Dinastía XXII: el ejército extranjero se convierte en la dinastía."
+            }
+          ]
+        },
+        {
+          "year": -700,
+          "core": {
+            "nombre": "Egipto bajo dominio kushita",
+            "members": [
+              "Egypt"
+            ],
+            "poly": [
+              [
+                [
+                  24,
+                  21.5
+                ],
+                [
+                  33,
+                  21.5
+                ],
+                [
+                  36,
+                  24
+                ],
+                [
+                  35,
+                  28
+                ],
+                [
+                  34.5,
+                  31.5
+                ],
+                [
+                  31,
+                  32
+                ],
+                [
+                  28,
+                  31.5
+                ],
+                [
+                  25,
+                  30
+                ],
+                [
+                  24,
+                  26
+                ]
+              ]
+            ],
+            "fiscal": 70,
+            "revuelta": 40,
+            "guarnicion": 15000,
+            "nota": "La Dinastía XXV es nubia y gobierna de la cuarta catarata al Delta. Restaura templos y arcaísmos de mil años atrás, y se hunde en 671 cuando Asarhadón entra con el ejército asirio."
+          },
+          "contested": [
+            {
+              "nombre": "Principados del Delta",
+              "members": [
+                "Egypt"
+              ],
+              "poly": [
+                [
+                  [
+                    29.3,
+                    29.3
+                  ],
+                  [
+                    32.6,
+                    29.3
+                  ],
+                  [
+                    32.6,
+                    31.7
+                  ],
+                  [
+                    29.3,
+                    31.7
+                  ]
+                ]
+              ],
+              "revuelta": 60,
+              "nota": "Sais, Bubastis, Mendes: una veintena de dinastas libios que pactan con quien convenga. De ellos sale la Dinastía XXVI, que reunifica el país bajo protección asiria."
+            }
           ]
         },
         {
           "year": -600,
-          "members": [
-            "Egypt"
-          ],
-          "box": [
-            24,
-            22,
-            36,
-            32
-          ]
+          "core": {
+            "nombre": "Kemet",
+            "members": [
+              "Egypt"
+            ],
+            "box": [
+              24,
+              22,
+              36,
+              32
+            ]
+          }
         },
         {
           "year": -350,
@@ -664,16 +1172,19 @@
       "snapshots": [
         {
           "year": -1750,
-          "members": [
-            "Iraq",
-            "Kuwait"
-          ],
-          "box": [
-            41,
-            29,
-            48,
-            36
-          ]
+          "core": {
+            "nombre": "Babilonia",
+            "members": [
+              "Iraq",
+              "Kuwait"
+            ],
+            "box": [
+              41,
+              29,
+              48,
+              36
+            ]
+          }
         },
         {
           "year": -1550,
@@ -694,16 +1205,54 @@
           }
         },
         {
-          "year": -1300,
-          "members": [
-            "Iraq"
-          ],
-          "box": [
-            42,
-            30,
-            47,
-            34
+          "year": -1400,
+          "core": {
+            "nombre": "Babilonia casita",
+            "members": [
+              "Iraq"
+            ],
+            "box": [
+              42,
+              30,
+              46.5,
+              34
+            ],
+            "fiscal": 100,
+            "revuelta": 8,
+            "guarnicion": 12000,
+            "nota": "Una de las cinco grandes potencias que se tratan de hermano en las cartas de Amarna, junto a Egipto, Mitanni, Hatti y Asiria. Burna-Buriash II negocia matrimonios y envíos de oro con Akenatón, y se queja por escrito de que el oro egipcio viene mezclado."
+          },
+          "sphere": [
+            {
+              "nombre": "Golfo y Dilmun",
+              "members": [
+                "Kuwait",
+                "Saudi Arabia"
+              ],
+              "box": [
+                46,
+                25,
+                51,
+                30
+              ],
+              "nota": "Control del comercio del golfo hasta Dilmun. Es la vía por la que entra el cobre de Omán."
+            }
           ]
+        },
+        {
+          "year": -1300,
+          "core": {
+            "nombre": "Babilonia",
+            "members": [
+              "Iraq"
+            ],
+            "box": [
+              42,
+              30,
+              47,
+              34
+            ]
+          }
         },
         {
           "year": -1150,
@@ -725,15 +1274,36 @@
         },
         {
           "year": -1000,
-          "members": [
-            "Iraq"
-          ],
-          "box": [
-            43,
-            30,
-            47,
-            33.5
-          ]
+          "core": {
+            "nombre": "Babilonia",
+            "members": [
+              "Iraq"
+            ],
+            "box": [
+              43,
+              30,
+              47,
+              33.5
+            ]
+          }
+        },
+        {
+          "year": -870,
+          "core": {
+            "nombre": "Babilonia entre Asiria y los caldeos",
+            "members": [
+              "Iraq"
+            ],
+            "box": [
+              42.5,
+              30,
+              46.5,
+              34
+            ],
+            "fiscal": 100,
+            "revuelta": 35,
+            "nota": "Reino débil entre dos presiones: Asiria al norte, que la trata como hermana menor y acaba anexionándola, y las tribus caldeas y arameas que se instalan en el sur y de las que saldrá, tres siglos después, Nabucodonosor."
+          }
         },
         {
           "year": -750,
@@ -755,21 +1325,24 @@
         },
         {
           "year": -580,
-          "members": [
-            "Iraq",
-            "Syria",
-            "Israel",
-            "Palestine",
-            "Lebanon",
-            "Jordan",
-            "Kuwait"
-          ],
-          "box": [
-            33,
-            28,
-            49,
-            38
-          ]
+          "core": {
+            "nombre": "Babilonia",
+            "members": [
+              "Iraq",
+              "Syria",
+              "Israel",
+              "Palestine",
+              "Lebanon",
+              "Jordan",
+              "Kuwait"
+            ],
+            "box": [
+              33,
+              28,
+              49,
+              38
+            ]
+          }
         }
       ]
     },
@@ -843,18 +1416,223 @@
       },
       "snapshots": [
         {
-          "year": -700,
-          "members": [
-            "Sudan",
-            "Egypt",
-            "Eritrea"
-          ],
-          "box": [
-            28,
-            14,
-            38,
-            32
+          "year": -900,
+          "core": {
+            "nombre": "Napata",
+            "members": [
+              "Sudan"
+            ],
+            "poly": [
+              [
+                [
+                  29,
+                  15
+                ],
+                [
+                  34.5,
+                  15
+                ],
+                [
+                  36,
+                  20
+                ],
+                [
+                  34,
+                  22
+                ],
+                [
+                  30,
+                  21
+                ],
+                [
+                  28,
+                  18
+                ]
+              ]
+            ],
+            "fiscal": 100,
+            "revuelta": 10,
+            "guarnicion": 5000,
+            "nota": "Egipto se ha retirado de Nubia hacia 1070 y el vacío lo llena una dinastía local que se instala en Gebel Barkal, la montaña sagrada de Amón. Adoptan la religión, la escritura y los títulos del imperio que acaba de irse."
+          },
+          "sphere": [
+            {
+              "nombre": "Rutas del oro y el marfil",
+              "members": [
+                "Sudan",
+                "Eritrea"
+              ],
+              "poly": [
+                [
+                  [
+                    30,
+                    12
+                  ],
+                  [
+                    38,
+                    13
+                  ],
+                  [
+                    39,
+                    20
+                  ],
+                  [
+                    35,
+                    22
+                  ],
+                  [
+                    30,
+                    20
+                  ]
+                ]
+              ],
+              "nota": "El comercio caravanero hacia el mar Rojo y el Nilo egipcio no se administra: se cobra en los vados."
+            }
           ]
+        },
+        {
+          "year": -720,
+          "core": {
+            "nombre": "Napata",
+            "members": [
+              "Sudan"
+            ],
+            "poly": [
+              [
+                [
+                  29,
+                  15
+                ],
+                [
+                  34.5,
+                  15
+                ],
+                [
+                  36,
+                  20
+                ],
+                [
+                  34,
+                  22
+                ],
+                [
+                  30,
+                  21
+                ],
+                [
+                  28,
+                  18
+                ]
+              ]
+            ],
+            "fiscal": 45,
+            "revuelta": 5,
+            "guarnicion": 20000,
+            "nota": "Piye sube el Nilo en 727 y toma Menfis. Kush gobierna Egipto durante casi un siglo: es la Dinastía XXV, la de los llamados faraones negros, y restaura templos y ritos que los propios egipcios habían abandonado."
+          },
+          "provinces": [
+            {
+              "nombre": "Egipto bajo la Dinastía XXV",
+              "members": [
+                "Egypt"
+              ],
+              "poly": [
+                [
+                  [
+                    24,
+                    21.5
+                  ],
+                  [
+                    33,
+                    21.5
+                  ],
+                  [
+                    36,
+                    24
+                  ],
+                  [
+                    35,
+                    28
+                  ],
+                  [
+                    34.5,
+                    31.5
+                  ],
+                  [
+                    31,
+                    32
+                  ],
+                  [
+                    28,
+                    31.5
+                  ],
+                  [
+                    25,
+                    30
+                  ],
+                  [
+                    24,
+                    26
+                  ]
+                ]
+              ],
+              "via": "conquista",
+              "desde": -727,
+              "fiscal": 50,
+              "revuelta": 35,
+              "guarnicion": 25000,
+              "nota": "Dominio real sobre el valle y negociado sobre el Delta, donde los príncipes libios conservan sus ciudades. Asiria lo rompe en 671 y expulsa a los kushitas en 663 con el saqueo de Tebas."
+            }
+          ],
+          "tributary": [
+            {
+              "nombre": "Principados del Delta",
+              "members": [
+                "Egypt"
+              ],
+              "poly": [
+                [
+                  [
+                    29.5,
+                    29.5
+                  ],
+                  [
+                    32.5,
+                    29.5
+                  ],
+                  [
+                    32.5,
+                    31.7
+                  ],
+                  [
+                    29.5,
+                    31.7
+                  ]
+                ]
+              ],
+              "via": "sumision",
+              "fiscal": 5,
+              "revuelta": 55,
+              "nota": "Nunca se someten del todo. Cuando llegan los asirios cambian de bando en bloque, y de ahí sale la Dinastía XXVI de Sais."
+            }
+          ]
+        },
+        {
+          "year": -700,
+          "core": {
+            "nombre": "Kush",
+            "members": [
+              "Sudan",
+              "Egypt",
+              "Eritrea"
+            ],
+            "box": [
+              28,
+              14,
+              38,
+              32
+            ]
+          }
         },
         {
           "year": -500,
@@ -894,15 +1672,18 @@
         },
         {
           "year": -300,
-          "members": [
-            "Sudan"
-          ],
-          "box": [
-            30,
-            15,
-            36,
-            22
-          ]
+          "core": {
+            "nombre": "Kush",
+            "members": [
+              "Sudan"
+            ],
+            "box": [
+              30,
+              15,
+              36,
+              22
+            ]
+          }
         },
         {
           "year": -250,
@@ -942,28 +1723,34 @@
         },
         {
           "year": -100,
-          "members": [
-            "Sudan"
-          ],
-          "box": [
-            30,
-            13,
-            36,
-            22
-          ]
+          "core": {
+            "nombre": "Kush",
+            "members": [
+              "Sudan"
+            ],
+            "box": [
+              30,
+              13,
+              36,
+              22
+            ]
+          }
         },
         {
           "year": 100,
-          "members": [
-            "Sudan",
-            "S. Sudan"
-          ],
-          "box": [
-            28,
-            10,
-            38,
-            22
-          ]
+          "core": {
+            "nombre": "Kush",
+            "members": [
+              "Sudan",
+              "S. Sudan"
+            ],
+            "box": [
+              28,
+              10,
+              38,
+              22
+            ]
+          }
         },
         {
           "year": 250,
@@ -3072,22 +3859,167 @@
       },
       "snapshots": [
         {
-          "year": 1,
-          "members": [
-            "Iran",
-            "Iraq",
-            "Turkmenistan",
-            "Armenia",
-            "Afghanistan",
-            "Azerbaijan",
-            "Kuwait",
-            "Uzbekistan"
+          "year": -100,
+          "core": {
+            "nombre": "Media y Mesopotamia",
+            "members": [
+              "Iran",
+              "Iraq"
+            ],
+            "box": [
+              42,
+              29,
+              56,
+              38
+            ],
+            "fiscal": 70,
+            "revuelta": 8,
+            "guarnicion": 50000,
+            "nota": "Mitrídates II lleva el imperio de Siria a la India y recibe en 121 a. C. a la primera embajada Han: la Ruta de la Seda se abre con Partia cobrando el peaje en el centro. Es también el primer contacto diplomático entre Roma y una potencia iraní."
+          },
+          "march": [
+            {
+              "nombre": "Jorasán y Margiana",
+              "members": [
+                "Turkmenistan",
+                "Afghanistan"
+              ],
+              "box": [
+                56,
+                32,
+                66,
+                40
+              ],
+              "fiscal": 8,
+              "revuelta": 25,
+              "nota": "Frontera con los saka y los yuezhi. El rey Fraates II muere luchando aquí: la presión de la estepa es tan constante como la de Roma."
+            }
           ],
-          "box": [
-            38,
-            25,
-            66,
-            42
+          "client": [
+            {
+              "nombre": "Armenia y Cáucaso",
+              "members": [
+                "Armenia",
+                "Azerbaijan"
+              ],
+              "box": [
+                42,
+                37,
+                49,
+                42
+              ],
+              "via": "sumision",
+              "fiscal": 4,
+              "revuelta": 30,
+              "nota": "Armenia será durante tres siglos el tablero donde Roma y Partia se disputan la influencia sin llegar a anexionarla ninguna de las dos."
+            },
+            {
+              "nombre": "Characene y el golfo",
+              "members": [
+                "Iraq",
+                "Kuwait"
+              ],
+              "box": [
+                46,
+                29,
+                50,
+                32
+              ],
+              "fiscal": 10,
+              "revuelta": 12,
+              "nota": "Reino vasallo en la desembocadura del Tigris que acuña su propia moneda y controla el comercio marítimo con la India."
+            }
+          ]
+        },
+        {
+          "year": 1,
+          "core": {
+            "nombre": "Partia",
+            "members": [
+              "Iran",
+              "Iraq",
+              "Turkmenistan",
+              "Armenia",
+              "Afghanistan",
+              "Azerbaijan",
+              "Kuwait",
+              "Uzbekistan"
+            ],
+            "box": [
+              38,
+              25,
+              66,
+              42
+            ]
+          }
+        },
+        {
+          "year": 150,
+          "core": {
+            "nombre": "Media y Mesopotamia",
+            "members": [
+              "Iran",
+              "Iraq"
+            ],
+            "box": [
+              42,
+              29,
+              56,
+              38
+            ],
+            "fiscal": 68,
+            "revuelta": 20,
+            "guarnicion": 40000,
+            "nota": "Ctesifonte ha sido tomada por Roma en 116 y lo será dos veces más, en 165 y 198. El desgaste de tres saqueos y las guerras dinásticas dejan el trono en manos de una casa que no puede defenderlo: en 224 lo derriba un vasallo persa, Ardacher."
+          },
+          "march": [
+            {
+              "nombre": "Jorasán",
+              "members": [
+                "Turkmenistan",
+                "Afghanistan"
+              ],
+              "box": [
+                56,
+                32,
+                66,
+                40
+              ],
+              "fiscal": 6,
+              "revuelta": 30
+            }
+          ],
+          "client": [
+            {
+              "nombre": "Armenia",
+              "members": [
+                "Armenia"
+              ],
+              "box": [
+                43,
+                38,
+                47,
+                41.5
+              ],
+              "via": "sumision",
+              "fiscal": 2,
+              "revuelta": 45
+            },
+            {
+              "nombre": "Persis",
+              "members": [
+                "Iran"
+              ],
+              "box": [
+                50,
+                27,
+                56,
+                31
+              ],
+              "fiscal": 8,
+              "revuelta": 40,
+              "nota": "El reino vasallo de Persis acuña moneda propia con leyenda en persa medio. De aquí sale la dinastía que acabará con Partia."
+            }
           ]
         }
       ]
@@ -3114,18 +4046,21 @@
       "snapshots": [
         {
           "year": -150,
-          "members": [
-            "Mongolia",
-            "China",
-            "Kazakhstan",
-            "Russia"
-          ],
-          "box": [
-            85,
-            38,
-            125,
-            54
-          ]
+          "core": {
+            "nombre": "Xiongnu",
+            "members": [
+              "Mongolia",
+              "China",
+              "Kazakhstan",
+              "Russia"
+            ],
+            "box": [
+              85,
+              38,
+              125,
+              54
+            ]
+          }
         },
         {
           "year": -60,
@@ -7367,39 +8302,42 @@
         },
         {
           "year": 500,
-          "members": [
-            "Iran",
-            "Iraq",
-            "Armenia",
-            "Azerbaijan",
-            "Turkmenistan",
-            "Afghanistan",
-            "Georgia",
-            "Kuwait",
-            "Uzbekistan",
-            "Pakistan",
-            "Tajikistan"
-          ],
-          "box": [
-            38,
-            24,
-            72,
-            44
-          ],
-          "holes": [
-            [
-              44,
-              24,
-              56,
-              28
+          "core": {
+            "nombre": "Eranshahr",
+            "members": [
+              "Iran",
+              "Iraq",
+              "Armenia",
+              "Azerbaijan",
+              "Turkmenistan",
+              "Afghanistan",
+              "Georgia",
+              "Kuwait",
+              "Uzbekistan",
+              "Pakistan",
+              "Tajikistan"
             ],
-            [
-              64,
+            "box": [
+              38,
               24,
               72,
-              30
+              44
+            ],
+            "holes": [
+              [
+                44,
+                24,
+                56,
+                28
+              ],
+              [
+                64,
+                24,
+                72,
+                30
+              ]
             ]
-          ]
+          }
         }
       ]
     },
@@ -9041,16 +9979,19 @@
         },
         {
           "year": 1350,
-          "members": [
-            "Greece",
-            "Turkey"
-          ],
-          "box": [
-            20,
-            35,
-            32,
-            42
-          ]
+          "core": {
+            "nombre": "Rhomania",
+            "members": [
+              "Greece",
+              "Turkey"
+            ],
+            "box": [
+              20,
+              35,
+              32,
+              42
+            ]
+          }
         },
         {
           "year": 1430,
@@ -9988,34 +10929,37 @@
         },
         {
           "year": 900,
-          "members": [
-            "Saudi Arabia",
-            "Yemen",
-            "Oman",
-            "United Arab Emirates",
-            "Kuwait",
-            "Qatar",
-            "Iraq",
-            "Iran",
-            "Syria",
-            "Lebanon",
-            "Israel",
-            "Palestine",
-            "Jordan",
-            "Egypt",
-            "Afghanistan",
-            "Turkmenistan",
-            "Uzbekistan",
-            "Tajikistan",
-            "Azerbaijan",
-            "Armenia"
-          ],
-          "box": [
-            25,
-            12,
-            72,
-            43
-          ]
+          "core": {
+            "nombre": "Califato",
+            "members": [
+              "Saudi Arabia",
+              "Yemen",
+              "Oman",
+              "United Arab Emirates",
+              "Kuwait",
+              "Qatar",
+              "Iraq",
+              "Iran",
+              "Syria",
+              "Lebanon",
+              "Israel",
+              "Palestine",
+              "Jordan",
+              "Egypt",
+              "Afghanistan",
+              "Turkmenistan",
+              "Uzbekistan",
+              "Tajikistan",
+              "Azerbaijan",
+              "Armenia"
+            ],
+            "box": [
+              25,
+              12,
+              72,
+              43
+            ]
+          }
         },
         {
           "year": 1000,
@@ -12273,17 +13217,126 @@
       },
       "snapshots": [
         {
+          "year": 900,
+          "core": {
+            "nombre": "Tanjavur y el Kaveri",
+            "members": [
+              "India"
+            ],
+            "poly": [
+              [
+                [
+                  78,
+                  9
+                ],
+                [
+                  80.5,
+                  9.5
+                ],
+                [
+                  80.5,
+                  12.5
+                ],
+                [
+                  78.5,
+                  12.5
+                ],
+                [
+                  77.5,
+                  10.5
+                ]
+              ]
+            ],
+            "fiscal": 100,
+            "revuelta": 12,
+            "guarnicion": 20000,
+            "nota": "Vijayalaya recupera Tanjavur hacia 850 y la dinastía renace tras tres siglos de eclipse. La base es el delta del Kaveri, regado por una red de canales gestionada por asambleas de aldea con voto documentado en piedra."
+          }
+        },
+        {
           "year": 1030,
-          "members": [
-            "India",
-            "Sri Lanka",
-            "Maldives"
-          ],
-          "box": [
-            73,
-            6,
-            82,
-            18
+          "core": {
+            "nombre": "Chola",
+            "members": [
+              "India",
+              "Sri Lanka",
+              "Maldives"
+            ],
+            "box": [
+              73,
+              6,
+              82,
+              18
+            ]
+          }
+        },
+        {
+          "year": 1150,
+          "core": {
+            "nombre": "Tanjavur y el Kaveri",
+            "members": [
+              "India"
+            ],
+            "poly": [
+              [
+                [
+                  77,
+                  8
+                ],
+                [
+                  80.5,
+                  9
+                ],
+                [
+                  81,
+                  13.5
+                ],
+                [
+                  78,
+                  14
+                ],
+                [
+                  76.5,
+                  11
+                ]
+              ]
+            ],
+            "fiscal": 80,
+            "revuelta": 20,
+            "guarnicion": 25000,
+            "nota": "Declive lento: los Chalukya occidentales por el norte, los Pandya por el sur y la pérdida de Sri Lanka. La flota que llegó a Srivijaya en 1025 ya no se sostiene."
+          },
+          "tributary": [
+            {
+              "nombre": "Sri Lanka",
+              "members": [
+                "Sri Lanka"
+              ],
+              "poly": [
+                [
+                  [
+                    79.5,
+                    5.8
+                  ],
+                  [
+                    82,
+                    6
+                  ],
+                  [
+                    82,
+                    10
+                  ],
+                  [
+                    79.5,
+                    10
+                  ]
+                ]
+              ],
+              "via": "conquista",
+              "fiscal": 12,
+              "revuelta": 60,
+              "nota": "Conquistada en 1017 y perdida en 1070 ante Vijayabahu I. Se conserva la influencia en el norte de la isla y poco más."
+            }
           ]
         }
       ]
@@ -12389,69 +13442,124 @@
       },
       "snapshots": [
         {
+          "year": 1000,
+          "core": {
+            "nombre": "Goryeo",
+            "members": [
+              "South Korea",
+              "North Korea"
+            ],
+            "box": [
+              124,
+              34,
+              130,
+              42
+            ],
+            "fiscal": 100,
+            "revuelta": 12,
+            "guarnicion": 40000,
+            "nota": "Reunificada la península en 936, Goryeo adopta el examen de funcionarios a la china y aguanta tres invasiones kitán entre 993 y 1019. La victoria de Gwiju consolida un equilibrio a tres bandas con Liao y Song."
+          }
+        },
+        {
           "year": 1150,
-          "members": [
-            "South Korea",
-            "North Korea"
-          ],
-          "box": [
-            124,
-            34,
-            130,
-            43
-          ]
+          "core": {
+            "nombre": "Corea",
+            "members": [
+              "South Korea",
+              "North Korea"
+            ],
+            "box": [
+              124,
+              34,
+              130,
+              43
+            ]
+          }
+        },
+        {
+          "year": 1270,
+          "core": {
+            "nombre": "Goryeo sometido",
+            "members": [
+              "South Korea",
+              "North Korea"
+            ],
+            "box": [
+              124,
+              34,
+              130,
+              43
+            ],
+            "fiscal": 100,
+            "revuelta": 30,
+            "guarnicion": 30000,
+            "nota": "Treinta años de guerra y seis invasiones mongolas; la corte se refugia en la isla de Ganghwa y allí manda tallar los ochenta y un mil bloques del Tripitaka Coreano. En 1270 se rinde y Goryeo se convierte en Estado yerno de los Yuan: conserva dinastía y leyes, y aporta las flotas de las dos invasiones fallidas de Japón."
+          }
         },
         {
           "year": 1400,
-          "members": [
-            "South Korea",
-            "North Korea"
-          ],
-          "box": [
-            124,
-            33,
-            131,
-            43
-          ]
+          "core": {
+            "nombre": "Corea",
+            "members": [
+              "South Korea",
+              "North Korea"
+            ],
+            "box": [
+              124,
+              33,
+              131,
+              43
+            ]
+          }
         },
         {
           "year": 1600,
-          "members": [
-            "South Korea",
-            "North Korea"
-          ],
-          "box": [
-            124,
-            34,
-            130,
-            43
-          ]
+          "core": {
+            "nombre": "Corea",
+            "members": [
+              "South Korea",
+              "North Korea"
+            ],
+            "box": [
+              124,
+              34,
+              130,
+              43
+            ]
+          }
         },
         {
           "year": 1700,
-          "members": [
-            "South Korea",
-            "North Korea"
-          ],
-          "box": [
-            124,
-            34,
-            130,
-            43
-          ]
+          "core": {
+            "nombre": "Corea",
+            "members": [
+              "South Korea",
+              "North Korea"
+            ],
+            "box": [
+              124,
+              34,
+              130,
+              43
+            ]
+          }
         },
         {
           "year": 1850,
-          "members": [
-            "South Korea",
-            "North Korea"
-          ],
-          "box": [
-            124,
-            34,
-            130,
-            43
-          ]
+          "core": {
+            "nombre": "Corea",
+            "members": [
+              "South Korea",
+              "North Korea"
+            ],
+            "box": [
+              124,
+              34,
+              130,
+              43
+            ]
+          }
         }
       ]
     },
@@ -15270,48 +16378,51 @@
         },
         {
           "year": 1800,
-          "members": [
-            "Turkey",
-            "Greece",
-            "Bulgaria",
-            "Macedonia",
-            "Albania",
-            "Serbia",
-            "Montenegro",
-            "Kosovo",
-            "Bosnia and Herz.",
-            "Romania",
-            "Syria",
-            "Lebanon",
-            "Israel",
-            "Palestine",
-            "Jordan",
-            "Egypt",
-            "Iraq",
-            "Libya",
-            "Cyprus",
-            "Saudi Arabia"
-          ],
-          "box": [
-            12,
-            20,
-            50,
-            47
-          ],
-          "holes": [
-            [
+          "core": {
+            "nombre": "Devlet-i Aliyye",
+            "members": [
+              "Turkey",
+              "Greece",
+              "Bulgaria",
+              "Macedonia",
+              "Albania",
+              "Serbia",
+              "Montenegro",
+              "Kosovo",
+              "Bosnia and Herz.",
+              "Romania",
+              "Syria",
+              "Lebanon",
+              "Israel",
+              "Palestine",
+              "Jordan",
+              "Egypt",
+              "Iraq",
+              "Libya",
+              "Cyprus",
+              "Saudi Arabia"
+            ],
+            "box": [
               12,
               20,
-              28,
-              29
-            ],
-            [
-              38,
-              20,
               50,
-              27
+              47
+            ],
+            "holes": [
+              [
+                12,
+                20,
+                28,
+                29
+              ],
+              [
+                38,
+                20,
+                50,
+                27
+              ]
             ]
-          ]
+          }
         },
         {
           "year": 1878,
@@ -15814,19 +16925,128 @@
       },
       "snapshots": [
         {
+          "year": 1450,
+          "core": {
+            "nombre": "Cuenca del Chao Phraya",
+            "members": [
+              "Thailand"
+            ],
+            "box": [
+              98,
+              12,
+              102,
+              18
+            ],
+            "fiscal": 85,
+            "revuelta": 10,
+            "guarnicion": 40000,
+            "nota": "Trailokanat reorganiza el reino con el sakdina, un sistema que asigna a cada súbdito un número de unidades de tierra y con él su rango, su tributo y su obligación militar. Angkor ha caído en 1431 y su corte, sus brahmanes y su ritual se trasladan a Ayutthaya."
+          },
+          "tributary": [
+            {
+              "nombre": "Sukhothai y el norte",
+              "members": [
+                "Thailand",
+                "Laos"
+              ],
+              "box": [
+                99,
+                15,
+                104,
+                20
+              ],
+              "via": "sumision",
+              "fiscal": 10,
+              "revuelta": 25
+            },
+            {
+              "nombre": "Península malaya",
+              "members": [
+                "Malaysia",
+                "Thailand"
+              ],
+              "box": [
+                99,
+                5,
+                104,
+                12
+              ],
+              "via": "sumision",
+              "fiscal": 5,
+              "revuelta": 35,
+              "nota": "Malaca se declara independiente y se pasa al islam en la década de 1440: la disputa por el estrecho durará todo el siglo."
+            }
+          ]
+        },
+        {
           "year": 1600,
-          "members": [
-            "Thailand",
-            "Laos",
-            "Cambodia",
-            "Malaysia",
-            "Myanmar"
-          ],
-          "box": [
-            97,
-            5,
-            106,
-            20
+          "core": {
+            "nombre": "Ayutthaya",
+            "members": [
+              "Thailand",
+              "Laos",
+              "Cambodia",
+              "Malaysia",
+              "Myanmar"
+            ],
+            "box": [
+              97,
+              5,
+              106,
+              20
+            ]
+          }
+        },
+        {
+          "year": 1700,
+          "core": {
+            "nombre": "Cuenca del Chao Phraya",
+            "members": [
+              "Thailand"
+            ],
+            "box": [
+              97,
+              11,
+              103,
+              19
+            ],
+            "fiscal": 88,
+            "revuelta": 8,
+            "guarnicion": 50000,
+            "nota": "Tras la expulsión del aventurero griego Constantino Phaulkon y la revolución de 1688, Ayutthaya cierra la puerta a Francia y deja abierto sólo el comercio chino y holandés. El reino es rico y está a medio siglo de ser arrasado por Birmania."
+          },
+          "tributary": [
+            {
+              "nombre": "Camboya y Laos",
+              "members": [
+                "Cambodia",
+                "Laos"
+              ],
+              "box": [
+                100,
+                10,
+                107,
+                20
+              ],
+              "via": "sumision",
+              "fiscal": 8,
+              "revuelta": 30
+            },
+            {
+              "nombre": "Sultanatos malayos",
+              "members": [
+                "Malaysia"
+              ],
+              "box": [
+                99,
+                5,
+                104,
+                8
+              ],
+              "via": "sumision",
+              "fiscal": 4,
+              "revuelta": 40
+            }
           ]
         }
       ]
@@ -17240,29 +18460,32 @@
         },
         {
           "year": 1898,
-          "members": [
-            "Spain",
-            "Cuba",
-            "Puerto Rico",
-            "Philippines",
-            "W. Sahara",
-            "Eq. Guinea",
-            "Morocco"
-          ],
-          "box": [
-            -20,
-            -2,
-            128,
-            45
-          ],
-          "holes": [
-            [
-              -12,
-              30,
-              0,
-              36
+          "core": {
+            "nombre": "España",
+            "members": [
+              "Spain",
+              "Cuba",
+              "Puerto Rico",
+              "Philippines",
+              "W. Sahara",
+              "Eq. Guinea",
+              "Morocco"
+            ],
+            "box": [
+              -20,
+              -2,
+              128,
+              45
+            ],
+            "holes": [
+              [
+                -12,
+                30,
+                0,
+                36
+              ]
             ]
-          ]
+          }
         }
       ]
     },
@@ -17329,19 +18552,22 @@
       "snapshots": [
         {
           "year": 1600,
-          "members": [
-            "India",
-            "Pakistan",
-            "Bangladesh",
-            "Afghanistan",
-            "Nepal"
-          ],
-          "box": [
-            64,
-            18,
-            92,
-            36
-          ]
+          "core": {
+            "nombre": "Mogoles",
+            "members": [
+              "India",
+              "Pakistan",
+              "Bangladesh",
+              "Afghanistan",
+              "Nepal"
+            ],
+            "box": [
+              64,
+              18,
+              92,
+              36
+            ]
+          }
         },
         {
           "year": 1700,
@@ -19473,15 +20699,18 @@
       "snapshots": [
         {
           "year": 1800,
-          "members": [
-            "United States of America"
-          ],
-          "box": [
-            -95,
-            24,
-            -66,
-            50
-          ]
+          "core": {
+            "nombre": "EE. UU.",
+            "members": [
+              "United States of America"
+            ],
+            "box": [
+              -95,
+              24,
+              -66,
+              50
+            ]
+          }
         },
         {
           "year": 1900,
@@ -19961,18 +21190,21 @@
       "snapshots": [
         {
           "year": 1910,
-          "members": [
-            "Japan",
-            "South Korea",
-            "North Korea",
-            "Taiwan"
-          ],
-          "box": [
-            122,
-            22,
-            155,
-            48
-          ]
+          "core": {
+            "nombre": "Japón",
+            "members": [
+              "Japan",
+              "South Korea",
+              "North Korea",
+              "Taiwan"
+            ],
+            "box": [
+              122,
+              22,
+              155,
+              48
+            ]
+          }
         },
         {
           "year": 1942,
