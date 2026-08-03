@@ -14827,16 +14827,42 @@
               "Luxembourg",
               "Germany"
             ],
-            "box": [
-              1,
-              46,
-              10,
-              52
-            ],
             "via": "herencia",
             "fiscal": 45,
             "revuelta": 4,
-            "nota": "Aquisgrán y el valle del Mosa. El imperio no tiene capital fiscal: tiene los dominios personales del rey, y se gobierna viajando entre ellos."
+            "nota": "Aquisgrán y el valle del Mosa. El imperio no tiene capital fiscal: tiene los dominios personales del rey, y se gobierna viajando entre ellos.",
+            "poly": [
+              [
+                [
+                  2,
+                  46.5
+                ],
+                [
+                  6,
+                  46
+                ],
+                [
+                  9,
+                  47.5
+                ],
+                [
+                  9.5,
+                  50.5
+                ],
+                [
+                  7,
+                  52.5
+                ],
+                [
+                  3.5,
+                  52
+                ],
+                [
+                  1.2,
+                  49.5
+                ]
+              ]
+            ]
           },
           "provinces": [
             {
@@ -14844,30 +14870,82 @@
               "members": [
                 "France"
               ],
-              "box": [
-                -2,
-                42,
-                7,
-                48
-              ],
               "fiscal": 18,
-              "revuelta": 8
+              "revuelta": 8,
+              "poly": [
+                [
+                  [
+                    -1.8,
+                    42.8
+                  ],
+                  [
+                    2.5,
+                    42.8
+                  ],
+                  [
+                    5.5,
+                    44.5
+                  ],
+                  [
+                    6,
+                    47
+                  ],
+                  [
+                    3,
+                    47.5
+                  ],
+                  [
+                    -0.8,
+                    46.5
+                  ],
+                  [
+                    -2.2,
+                    44.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Italia lombarda",
               "members": [
                 "Italy"
               ],
-              "box": [
-                7,
-                42,
-                14,
-                47
-              ],
               "via": "conquista",
               "desde": 774,
               "fiscal": 15,
-              "revuelta": 12
+              "revuelta": 12,
+              "poly": [
+                [
+                  [
+                    6.8,
+                    43.5
+                  ],
+                  [
+                    10.5,
+                    42.5
+                  ],
+                  [
+                    13.5,
+                    42.2
+                  ],
+                  [
+                    14,
+                    44.5
+                  ],
+                  [
+                    13.5,
+                    46.5
+                  ],
+                  [
+                    9.5,
+                    46.5
+                  ],
+                  [
+                    6.8,
+                    45.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Baviera y Alamania",
@@ -14876,16 +14954,42 @@
                 "Austria",
                 "Switzerland"
               ],
-              "box": [
-                7,
-                46,
-                14,
-                50
-              ],
               "via": "conquista",
               "desde": 788,
               "fiscal": 10,
-              "revuelta": 10
+              "revuelta": 10,
+              "poly": [
+                [
+                  [
+                    7,
+                    46
+                  ],
+                  [
+                    11,
+                    45.8
+                  ],
+                  [
+                    14,
+                    46.5
+                  ],
+                  [
+                    14.5,
+                    49.5
+                  ],
+                  [
+                    11,
+                    50
+                  ],
+                  [
+                    7.5,
+                    49.5
+                  ],
+                  [
+                    6.5,
+                    47.5
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -14894,35 +14998,75 @@
               "members": [
                 "Spain"
               ],
-              "box": [
-                0,
-                41,
-                3,
-                43
-              ],
               "via": "conquista",
               "desde": 801,
               "fiscal": 1,
               "revuelta": 20,
-              "nota": "Barcelona tomada en 801. Es la franja que separa al imperio de al-Ándalus y el germen de los condados catalanes."
+              "nota": "Barcelona tomada en 801. Es la franja que separa al imperio de al-Ándalus y el germen de los condados catalanes.",
+              "poly": [
+                [
+                  [
+                    0.2,
+                    41.2
+                  ],
+                  [
+                    2.5,
+                    41
+                  ],
+                  [
+                    3.3,
+                    42.4
+                  ],
+                  [
+                    1.5,
+                    43
+                  ],
+                  [
+                    -0.5,
+                    42.8
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Sajonia",
               "members": [
                 "Germany"
               ],
-              "box": [
-                7,
-                51,
-                12,
-                54
-              ],
               "via": "conquista",
               "desde": 804,
               "fiscal": 2,
               "revuelta": 40,
               "guarnicion": 10000,
-              "nota": "Treinta y tres años de guerra y conversión forzosa. Es la conquista más larga y más sangrienta del reinado."
+              "nota": "Treinta y tres años de guerra y conversión forzosa. Es la conquista más larga y más sangrienta del reinado.",
+              "poly": [
+                [
+                  [
+                    6.5,
+                    50.5
+                  ],
+                  [
+                    10,
+                    50.5
+                  ],
+                  [
+                    12.5,
+                    51.5
+                  ],
+                  [
+                    12.5,
+                    54.3
+                  ],
+                  [
+                    8.5,
+                    55
+                  ],
+                  [
+                    6.5,
+                    53.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Marca del Este y Panonia",
@@ -14932,17 +15076,43 @@
                 "Croatia",
                 "Czechia"
               ],
-              "box": [
-                13,
-                45,
-                19,
-                50
-              ],
               "via": "conquista",
               "desde": 796,
               "fiscal": 2,
               "revuelta": 25,
-              "nota": "El tesoro ávaro capturado aquí financia una década de donaciones imperiales."
+              "nota": "El tesoro ávaro capturado aquí financia una década de donaciones imperiales.",
+              "poly": [
+                [
+                  [
+                    13,
+                    45.2
+                  ],
+                  [
+                    16.5,
+                    45
+                  ],
+                  [
+                    19.5,
+                    46
+                  ],
+                  [
+                    19.5,
+                    49.5
+                  ],
+                  [
+                    16,
+                    50.2
+                  ],
+                  [
+                    13,
+                    48.5
+                  ],
+                  [
+                    12.2,
+                    46.8
+                  ]
+                ]
+              ]
             }
           ],
           "sphere": [
@@ -14952,13 +15122,39 @@
                 "Czechia",
                 "Germany"
               ],
-              "box": [
-                9,
-                48,
-                18,
-                54
-              ],
-              "nota": "Tributo irregular y expediciones de castigo. Ninguna administración cruza el Elba."
+              "nota": "Tributo irregular y expediciones de castigo. Ninguna administración cruza el Elba.",
+              "poly": [
+                [
+                  [
+                    11.5,
+                    48.5
+                  ],
+                  [
+                    15.5,
+                    48.5
+                  ],
+                  [
+                    19,
+                    49.5
+                  ],
+                  [
+                    19,
+                    54
+                  ],
+                  [
+                    14,
+                    54.5
+                  ],
+                  [
+                    11,
+                    53
+                  ],
+                  [
+                    10.5,
+                    50.5
+                  ]
+                ]
+              ]
             }
           ]
         }
@@ -15975,11 +16171,57 @@
               "Slovenia",
               "Italy"
             ],
-            "box": [
-              4,
-              42,
-              19,
-              55
+            "poly": [
+              [
+                [
+                  4.2,
+                  45.5
+                ],
+                [
+                  8,
+                  44
+                ],
+                [
+                  11.5,
+                  43.8
+                ],
+                [
+                  15,
+                  45
+                ],
+                [
+                  18.5,
+                  46.5
+                ],
+                [
+                  19,
+                  49.5
+                ],
+                [
+                  17,
+                  52.5
+                ],
+                [
+                  14,
+                  54.5
+                ],
+                [
+                  9,
+                  55
+                ],
+                [
+                  5.5,
+                  53
+                ],
+                [
+                  3.5,
+                  50.5
+                ],
+                [
+                  3.2,
+                  47.5
+                ]
+              ]
             ]
           }
         },
@@ -16000,11 +16242,57 @@
               "Poland",
               "France"
             ],
-            "box": [
-              3,
-              41,
-              19,
-              55
+            "poly": [
+              [
+                [
+                  4.2,
+                  45.5
+                ],
+                [
+                  8,
+                  44
+                ],
+                [
+                  11.5,
+                  43.8
+                ],
+                [
+                  15,
+                  45
+                ],
+                [
+                  18.5,
+                  46.5
+                ],
+                [
+                  19,
+                  49.5
+                ],
+                [
+                  17,
+                  52.5
+                ],
+                [
+                  14,
+                  54.5
+                ],
+                [
+                  9,
+                  55
+                ],
+                [
+                  5.5,
+                  53
+                ],
+                [
+                  3.5,
+                  50.5
+                ],
+                [
+                  3.2,
+                  47.5
+                ]
+              ]
             ]
           }
         },
@@ -16022,11 +16310,53 @@
               "Slovenia",
               "Italy"
             ],
-            "box": [
-              4,
-              43,
-              19,
-              55
+            "poly": [
+              [
+                [
+                  5.5,
+                  45.5
+                ],
+                [
+                  9,
+                  44.5
+                ],
+                [
+                  12.5,
+                  44.5
+                ],
+                [
+                  16,
+                  45.8
+                ],
+                [
+                  18.8,
+                  47.5
+                ],
+                [
+                  18.5,
+                  50.5
+                ],
+                [
+                  16,
+                  53
+                ],
+                [
+                  12,
+                  54.8
+                ],
+                [
+                  8,
+                  55
+                ],
+                [
+                  6,
+                  52.5
+                ],
+                [
+                  5,
+                  49.5
+                ]
+              ]
             ]
           }
         },
@@ -16043,11 +16373,53 @@
               "Belgium",
               "Slovenia"
             ],
-            "box": [
-              4,
-              45,
-              19,
-              55
+            "poly": [
+              [
+                [
+                  5.5,
+                  45.5
+                ],
+                [
+                  9,
+                  44.5
+                ],
+                [
+                  12.5,
+                  44.5
+                ],
+                [
+                  16,
+                  45.8
+                ],
+                [
+                  18.8,
+                  47.5
+                ],
+                [
+                  18.5,
+                  50.5
+                ],
+                [
+                  16,
+                  53
+                ],
+                [
+                  12,
+                  54.8
+                ],
+                [
+                  8,
+                  55
+                ],
+                [
+                  6,
+                  52.5
+                ],
+                [
+                  5,
+                  49.5
+                ]
+              ]
             ]
           }
         },
@@ -16060,11 +16432,45 @@
               "Austria",
               "Czechia"
             ],
-            "box": [
-              6,
-              46,
-              19,
-              55
+            "poly": [
+              [
+                [
+                  6,
+                  47
+                ],
+                [
+                  10,
+                  46
+                ],
+                [
+                  14,
+                  46
+                ],
+                [
+                  17.5,
+                  47.5
+                ],
+                [
+                  18.5,
+                  50.5
+                ],
+                [
+                  16,
+                  53.5
+                ],
+                [
+                  11,
+                  54.8
+                ],
+                [
+                  7.5,
+                  53.5
+                ],
+                [
+                  5.8,
+                  50
+                ]
+              ]
             ]
           }
         }
@@ -16161,17 +16567,47 @@
             "members": [
               "Mongolia"
             ],
-            "box": [
-              88,
-              41,
-              120,
-              52
-            ],
             "via": "conquista",
             "fiscal": 2,
             "revuelta": 1,
             "guarnicion": 100000,
-            "nota": "El núcleo no es una economía: es un depósito de caballos y jinetes. Todo lo demás se cobra fuera."
+            "nota": "El núcleo no es una economía: es un depósito de caballos y jinetes. Todo lo demás se cobra fuera.",
+            "poly": [
+              [
+                [
+                  85,
+                  40.5
+                ],
+                [
+                  98,
+                  40
+                ],
+                [
+                  110,
+                  41
+                ],
+                [
+                  122,
+                  43.5
+                ],
+                [
+                  121,
+                  52
+                ],
+                [
+                  106,
+                  53
+                ],
+                [
+                  92,
+                  52.5
+                ],
+                [
+                  84,
+                  47
+                ]
+              ]
+            ]
           },
           "provinces": [
             {
@@ -16179,17 +16615,43 @@
               "members": [
                 "China"
               ],
-              "box": [
-                96,
-                35,
-                110,
-                42
-              ],
               "via": "conquista",
               "desde": 1227,
               "fiscal": 6,
               "revuelta": 25,
-              "nota": "Aniquilado el mismo año de la muerte de Gengis. La destrucción es deliberada y documentada."
+              "nota": "Aniquilado el mismo año de la muerte de Gengis. La destrucción es deliberada y documentada.",
+              "poly": [
+                [
+                  [
+                    95,
+                    35.5
+                  ],
+                  [
+                    101,
+                    35
+                  ],
+                  [
+                    106,
+                    36.5
+                  ],
+                  [
+                    110,
+                    39
+                  ],
+                  [
+                    108,
+                    41
+                  ],
+                  [
+                    102,
+                    41
+                  ],
+                  [
+                    97,
+                    39.5
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -16198,18 +16660,52 @@
               "members": [
                 "China"
               ],
-              "box": [
-                110,
-                33,
-                124,
-                42
-              ],
               "via": "conquista",
               "desde": 1215,
               "fiscal": 12,
               "revuelta": 30,
               "guarnicion": 60000,
-              "nota": "Pekín tomada y arrasada. Se discute en la corte si convertir la llanura en pasto; un consejero kitán convence de que cobrar impuestos rinde más."
+              "nota": "Pekín tomada y arrasada. Se discute en la corte si convertir la llanura en pasto; un consejero kitán convence de que cobrar impuestos rinde más.",
+              "poly": [
+                [
+                  [
+                    110,
+                    33
+                  ],
+                  [
+                    115,
+                    32.5
+                  ],
+                  [
+                    119,
+                    33
+                  ],
+                  [
+                    122,
+                    36
+                  ],
+                  [
+                    122,
+                    40
+                  ],
+                  [
+                    118,
+                    41.5
+                  ],
+                  [
+                    113,
+                    41
+                  ],
+                  [
+                    109,
+                    39
+                  ],
+                  [
+                    107,
+                    36
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Asia Central",
@@ -16220,17 +16716,67 @@
                 "Kyrgyzstan",
                 "Tajikistan"
               ],
-              "box": [
-                55,
-                36,
-                80,
-                50
-              ],
               "via": "conquista",
               "desde": 1221,
               "fiscal": 8,
               "revuelta": 20,
-              "nota": "Campaña contra Corasmia: Merv, Nishapur y Bujará destruidas. Los sistemas de regadío no se recuperan en siglos."
+              "nota": "Campaña contra Corasmia: Merv, Nishapur y Bujará destruidas. Los sistemas de regadío no se recuperan en siglos.",
+              "poly": [
+                [
+                  [
+                    50,
+                    38.5
+                  ],
+                  [
+                    56,
+                    36.5
+                  ],
+                  [
+                    62,
+                    36
+                  ],
+                  [
+                    68,
+                    37
+                  ],
+                  [
+                    74,
+                    39
+                  ],
+                  [
+                    80,
+                    43
+                  ],
+                  [
+                    82,
+                    47
+                  ],
+                  [
+                    77,
+                    51
+                  ],
+                  [
+                    69,
+                    53
+                  ],
+                  [
+                    60,
+                    53
+                  ],
+                  [
+                    52,
+                    50
+                  ],
+                  [
+                    48,
+                    45
+                  ],
+                  [
+                    48,
+                    41
+                  ]
+                ]
+              ]
             }
           ],
           "contested": [
@@ -16240,13 +16786,55 @@
                 "Russia",
                 "Kazakhstan"
               ],
-              "box": [
-                45,
-                44,
-                60,
-                56
-              ],
-              "revuelta": 40
+              "revuelta": 40,
+              "poly": [
+                [
+                  [
+                    29,
+                    44.5
+                  ],
+                  [
+                    35,
+                    45
+                  ],
+                  [
+                    41,
+                    45.5
+                  ],
+                  [
+                    47,
+                    46.5
+                  ],
+                  [
+                    53,
+                    48
+                  ],
+                  [
+                    55,
+                    51
+                  ],
+                  [
+                    51,
+                    53
+                  ],
+                  [
+                    44,
+                    53
+                  ],
+                  [
+                    37,
+                    52
+                  ],
+                  [
+                    31,
+                    50
+                  ],
+                  [
+                    28,
+                    47
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -16299,13 +16887,49 @@
             "nombre": "Mongolia y China del norte",
             "members": [
               "Mongolia",
-              "China"
+              "China",
+              "North Korea",
+              "South Korea"
             ],
             "fiscal": 20,
             "revuelta": 5,
             "guarnicion": 120000,
             "nota": "Kublai ya reina como emperador chino: la capital está en Dadu y la corte se ha vuelto sedentaria. Los kanatos occidentales no lo reconocen.",
             "poly": [
+              [
+                [
+                  85,
+                  40.5
+                ],
+                [
+                  98,
+                  40
+                ],
+                [
+                  110,
+                  41
+                ],
+                [
+                  122,
+                  43.5
+                ],
+                [
+                  121,
+                  52
+                ],
+                [
+                  106,
+                  53
+                ],
+                [
+                  92,
+                  52.5
+                ],
+                [
+                  84,
+                  47
+                ]
+              ],
               [
                 [
                   103,
@@ -16354,40 +16978,6 @@
               ],
               [
                 [
-                  86,
-                  41
-                ],
-                [
-                  100,
-                  40.5
-                ],
-                [
-                  112,
-                  41
-                ],
-                [
-                  122,
-                  43
-                ],
-                [
-                  120,
-                  51
-                ],
-                [
-                  106,
-                  52
-                ],
-                [
-                  94,
-                  52
-                ],
-                [
-                  86,
-                  47
-                ]
-              ],
-              [
-                [
                   117,
                   40
                 ],
@@ -16415,6 +17005,86 @@
                   115,
                   46
                 ]
+              ],
+              [
+                [
+                  76,
+                  30
+                ],
+                [
+                  85,
+                  27
+                ],
+                [
+                  92,
+                  27
+                ],
+                [
+                  98,
+                  27.5
+                ],
+                [
+                  103,
+                  32
+                ],
+                [
+                  98,
+                  37
+                ],
+                [
+                  88,
+                  37
+                ],
+                [
+                  78,
+                  35
+                ]
+              ],
+              [
+                [
+                  73,
+                  36
+                ],
+                [
+                  80,
+                  35.5
+                ],
+                [
+                  88,
+                  36
+                ],
+                [
+                  94,
+                  38.5
+                ],
+                [
+                  96,
+                  42
+                ],
+                [
+                  95,
+                  45
+                ],
+                [
+                  91,
+                  47.5
+                ],
+                [
+                  85,
+                  48.5
+                ],
+                [
+                  80,
+                  47
+                ],
+                [
+                  76,
+                  43.5
+                ],
+                [
+                  73,
+                  40
+                ]
               ]
             ]
           },
@@ -16426,17 +17096,47 @@
                 "Belarus",
                 "Ukraine"
               ],
-              "box": [
-                28,
-                48,
-                45,
-                60
-              ],
               "via": "sumision",
               "desde": 1240,
               "fiscal": 2,
               "revuelta": 10,
-              "nota": "El yugo tártaro es sobre todo un censo y una recaudación: los príncipes rusos conservan el trono y viajan a Sarái a besar la mano."
+              "nota": "El yugo tártaro es sobre todo un censo y una recaudación: los príncipes rusos conservan el trono y viajan a Sarái a besar la mano.",
+              "poly": [
+                [
+                  [
+                    26.5,
+                    48.5
+                  ],
+                  [
+                    32,
+                    50
+                  ],
+                  [
+                    38,
+                    52
+                  ],
+                  [
+                    43,
+                    55.5
+                  ],
+                  [
+                    41,
+                    60
+                  ],
+                  [
+                    35,
+                    61
+                  ],
+                  [
+                    29,
+                    58
+                  ],
+                  [
+                    25,
+                    53
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Cáucaso y Anatolia selyúcida",
@@ -16590,17 +17290,59 @@
                 "Afghanistan",
                 "Turkmenistan"
               ],
-              "box": [
-                40,
-                25,
-                66,
-                40
-              ],
               "via": "conquista",
               "desde": 1258,
               "fiscal": 0,
               "revuelta": 15,
-              "nota": "Bagdad saqueada en 1258 y el califato abasí liquidado. Reconoce al Gran Kan de boquilla y hace su propia política exterior."
+              "nota": "Bagdad saqueada en 1258 y el califato abasí liquidado. Reconoce al Gran Kan de boquilla y hace su propia política exterior.",
+              "poly": [
+                [
+                  [
+                    37,
+                    26.5
+                  ],
+                  [
+                    45,
+                    24.5
+                  ],
+                  [
+                    53,
+                    25
+                  ],
+                  [
+                    60,
+                    26.5
+                  ],
+                  [
+                    65,
+                    30
+                  ],
+                  [
+                    64,
+                    36
+                  ],
+                  [
+                    59,
+                    40
+                  ],
+                  [
+                    51,
+                    41
+                  ],
+                  [
+                    44,
+                    40
+                  ],
+                  [
+                    39,
+                    37
+                  ],
+                  [
+                    35.5,
+                    32
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Horda de Oro",
@@ -16610,17 +17352,67 @@
                 "Belarus",
                 "Kazakhstan"
               ],
-              "box": [
-                30,
-                44,
-                80,
-                60
-              ],
               "via": "conquista",
               "desde": 1240,
               "fiscal": 0,
               "revuelta": 20,
-              "nota": "Ya en guerra abierta con el Ilkanato por el Cáucaso. El imperio mongol se ha partido antes de terminar de conquistar."
+              "nota": "Ya en guerra abierta con el Ilkanato por el Cáucaso. El imperio mongol se ha partido antes de terminar de conquistar.",
+              "poly": [
+                [
+                  [
+                    26,
+                    44
+                  ],
+                  [
+                    34,
+                    45
+                  ],
+                  [
+                    44,
+                    45.5
+                  ],
+                  [
+                    54,
+                    46.5
+                  ],
+                  [
+                    64,
+                    48
+                  ],
+                  [
+                    74,
+                    49.5
+                  ],
+                  [
+                    80,
+                    53
+                  ],
+                  [
+                    74,
+                    57.5
+                  ],
+                  [
+                    62,
+                    59
+                  ],
+                  [
+                    50,
+                    59
+                  ],
+                  [
+                    38,
+                    57.5
+                  ],
+                  [
+                    30,
+                    54
+                  ],
+                  [
+                    25.5,
+                    49
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Kanato de Chagatai",
@@ -16630,13 +17422,47 @@
                 "Tajikistan",
                 "Kazakhstan"
               ],
-              "box": [
-                58,
-                36,
-                88,
-                48
-              ],
-              "revuelta": 25
+              "revuelta": 25,
+              "poly": [
+                [
+                  [
+                    56,
+                    34.5
+                  ],
+                  [
+                    64,
+                    34
+                  ],
+                  [
+                    72,
+                    36
+                  ],
+                  [
+                    80,
+                    38.5
+                  ],
+                  [
+                    86,
+                    43
+                  ],
+                  [
+                    82,
+                    47.5
+                  ],
+                  [
+                    70,
+                    49
+                  ],
+                  [
+                    60,
+                    46
+                  ],
+                  [
+                    54,
+                    40
+                  ]
+                ]
+              ]
             }
           ]
         }
@@ -22827,11 +23653,45 @@
               "Croatia",
               "Belgium"
             ],
-            "box": [
-              3,
-              44,
-              24,
-              52
+            "poly": [
+              [
+                [
+                  9.5,
+                  45.5
+                ],
+                [
+                  13.5,
+                  44.5
+                ],
+                [
+                  17.5,
+                  44.8
+                ],
+                [
+                  21.5,
+                  45.8
+                ],
+                [
+                  23,
+                  48.5
+                ],
+                [
+                  20,
+                  50.5
+                ],
+                [
+                  15.5,
+                  50.5
+                ],
+                [
+                  11.5,
+                  49
+                ],
+                [
+                  9,
+                  47.5
+                ]
+              ]
             ]
           }
         },
@@ -22853,11 +23713,45 @@
               "Serbia",
               "Italy"
             ],
-            "box": [
-              9,
-              42,
-              27,
-              51
+            "poly": [
+              [
+                [
+                  9.5,
+                  45.5
+                ],
+                [
+                  14,
+                  44
+                ],
+                [
+                  18.5,
+                  43.5
+                ],
+                [
+                  23,
+                  44.5
+                ],
+                [
+                  26.5,
+                  47
+                ],
+                [
+                  25.5,
+                  50.5
+                ],
+                [
+                  20,
+                  51
+                ],
+                [
+                  14,
+                  50.5
+                ],
+                [
+                  10.5,
+                  48
+                ]
+              ]
             ]
           }
         }
@@ -22943,14 +23837,56 @@
               "members": [
                 "Russia"
               ],
-              "box": [
-                35,
-                50,
-                60,
-                68
-              ],
               "fiscal": 20,
-              "revuelta": 8
+              "revuelta": 8,
+              "poly": [
+                [
+                  [
+                    36,
+                    55
+                  ],
+                  [
+                    42,
+                    54.5
+                  ],
+                  [
+                    48,
+                    53.5
+                  ],
+                  [
+                    53,
+                    55
+                  ],
+                  [
+                    55,
+                    59
+                  ],
+                  [
+                    53,
+                    64
+                  ],
+                  [
+                    48,
+                    66.5
+                  ],
+                  [
+                    42,
+                    66.5
+                  ],
+                  [
+                    36,
+                    64
+                  ],
+                  [
+                    33,
+                    60
+                  ],
+                  [
+                    33,
+                    57
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -23016,15 +23952,57 @@
                 "Russia",
                 "Ukraine"
               ],
-              "box": [
-                30,
-                44,
-                55,
-                52
-              ],
               "fiscal": 3,
               "revuelta": 25,
-              "nota": "Líneas de fortines contra las incursiones tártaras de Crimea, que aún se llevan esclavos todos los años."
+              "nota": "Líneas de fortines contra las incursiones tártaras de Crimea, que aún se llevan esclavos todos los años.",
+              "poly": [
+                [
+                  [
+                    29,
+                    44.5
+                  ],
+                  [
+                    35,
+                    45
+                  ],
+                  [
+                    41,
+                    45.5
+                  ],
+                  [
+                    47,
+                    46.5
+                  ],
+                  [
+                    53,
+                    48
+                  ],
+                  [
+                    55,
+                    51
+                  ],
+                  [
+                    51,
+                    53
+                  ],
+                  [
+                    44,
+                    53
+                  ],
+                  [
+                    37,
+                    52
+                  ],
+                  [
+                    31,
+                    50
+                  ],
+                  [
+                    28,
+                    47
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -23062,16 +24040,70 @@
               "Belarus",
               "Ukraine"
             ],
-            "box": [
-              22,
-              44,
-              60,
-              68
-            ],
             "fiscal": 62,
             "revuelta": 5,
             "guarnicion": 400000,
-            "nota": "La emancipación de los siervos es de 1861: veintitrés millones de personas cambian de estatuto legal y casi ninguna de situación material."
+            "nota": "La emancipación de los siervos es de 1861: veintitrés millones de personas cambian de estatuto legal y casi ninguna de situación material.",
+            "poly": [
+              [
+                [
+                  22.5,
+                  50.5
+                ],
+                [
+                  28,
+                  48
+                ],
+                [
+                  34,
+                  46.5
+                ],
+                [
+                  40,
+                  46
+                ],
+                [
+                  46,
+                  48
+                ],
+                [
+                  50,
+                  51
+                ],
+                [
+                  53,
+                  55
+                ],
+                [
+                  55,
+                  60
+                ],
+                [
+                  52,
+                  65
+                ],
+                [
+                  46,
+                  68
+                ],
+                [
+                  38,
+                  68.5
+                ],
+                [
+                  31,
+                  66
+                ],
+                [
+                  27.5,
+                  61
+                ],
+                [
+                  24,
+                  56
+                ]
+              ]
+            ]
           },
           "provinces": [
             {
@@ -23082,17 +24114,73 @@
                 "Lithuania",
                 "Finland"
               ],
-              "box": [
-                20,
-                54,
-                32,
-                70
-              ],
               "via": "conquista",
               "desde": 1721,
               "fiscal": 8,
               "revuelta": 6,
-              "nota": "Finlandia es Gran Ducado con dieta y moneda propias: el imperio sabe gobernar por estatutos distintos cuando le conviene."
+              "nota": "Finlandia es Gran Ducado con dieta y moneda propias: el imperio sabe gobernar por estatutos distintos cuando le conviene.",
+              "poly": [
+                [
+                  [
+                    20.8,
+                    53.8
+                  ],
+                  [
+                    25,
+                    53.5
+                  ],
+                  [
+                    28.5,
+                    55.5
+                  ],
+                  [
+                    28.5,
+                    59.5
+                  ],
+                  [
+                    25,
+                    60.2
+                  ],
+                  [
+                    22,
+                    58.5
+                  ],
+                  [
+                    20.4,
+                    56
+                  ]
+                ],
+                [
+                  [
+                    20.5,
+                    59.8
+                  ],
+                  [
+                    28,
+                    60
+                  ],
+                  [
+                    31.5,
+                    62.5
+                  ],
+                  [
+                    30,
+                    68
+                  ],
+                  [
+                    25,
+                    70.2
+                  ],
+                  [
+                    21,
+                    67
+                  ],
+                  [
+                    20,
+                    63
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Cáucaso",
@@ -23101,16 +24189,42 @@
                 "Armenia",
                 "Azerbaijan"
               ],
-              "box": [
-                40,
-                38,
-                50,
-                45
-              ],
               "via": "conquista",
               "fiscal": 4,
               "revuelta": 22,
-              "nota": "La guerra del Cáucaso acaba en 1864 tras cuarenta y siete años y la expulsión de gran parte de la población circasiana."
+              "nota": "La guerra del Cáucaso acaba en 1864 tras cuarenta y siete años y la expulsión de gran parte de la población circasiana.",
+              "poly": [
+                [
+                  [
+                    39.5,
+                    38.5
+                  ],
+                  [
+                    44,
+                    38.5
+                  ],
+                  [
+                    48,
+                    38.5
+                  ],
+                  [
+                    50.5,
+                    41
+                  ],
+                  [
+                    48,
+                    43.5
+                  ],
+                  [
+                    43,
+                    43.5
+                  ],
+                  [
+                    39.5,
+                    41.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Siberia",
@@ -23171,17 +24285,43 @@
               "members": [
                 "Poland"
               ],
-              "box": [
-                17,
-                49,
-                25,
-                55
-              ],
               "via": "conquista",
               "desde": 1815,
               "fiscal": 9,
               "revuelta": 40,
-              "nota": "Tras el levantamiento de 1863 pierde hasta el nombre: pasa a llamarse Territorio del Vístula y se rusifica por decreto."
+              "nota": "Tras el levantamiento de 1863 pierde hasta el nombre: pasa a llamarse Territorio del Vístula y se rusifica por decreto.",
+              "poly": [
+                [
+                  [
+                    17,
+                    49.8
+                  ],
+                  [
+                    20.5,
+                    49
+                  ],
+                  [
+                    24,
+                    50.5
+                  ],
+                  [
+                    24.2,
+                    54
+                  ],
+                  [
+                    21,
+                    55
+                  ],
+                  [
+                    18,
+                    54.5
+                  ],
+                  [
+                    16.4,
+                    52.2
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Turkestán",
@@ -23192,18 +24332,68 @@
                 "Kyrgyzstan",
                 "Tajikistan"
               ],
-              "box": [
-                50,
-                35,
-                80,
-                55
-              ],
               "via": "conquista",
               "desde": 1865,
               "fiscal": 2,
               "revuelta": 30,
               "guarnicion": 40000,
-              "nota": "Taskent cae el año pasado. El algodón centroasiático empieza a sustituir al americano cortado por la guerra civil."
+              "nota": "Taskent cae el año pasado. El algodón centroasiático empieza a sustituir al americano cortado por la guerra civil.",
+              "poly": [
+                [
+                  [
+                    50,
+                    38.5
+                  ],
+                  [
+                    56,
+                    36.5
+                  ],
+                  [
+                    62,
+                    36
+                  ],
+                  [
+                    68,
+                    37
+                  ],
+                  [
+                    74,
+                    39
+                  ],
+                  [
+                    80,
+                    43
+                  ],
+                  [
+                    82,
+                    47
+                  ],
+                  [
+                    77,
+                    51
+                  ],
+                  [
+                    69,
+                    53
+                  ],
+                  [
+                    60,
+                    53
+                  ],
+                  [
+                    52,
+                    50
+                  ],
+                  [
+                    48,
+                    45
+                  ],
+                  [
+                    48,
+                    41
+                  ]
+                ]
+              ]
             }
           ],
           "client": [
@@ -23213,29 +24403,73 @@
                 "Uzbekistan",
                 "Turkmenistan"
               ],
-              "box": [
-                56,
-                37,
-                68,
-                44
-              ],
               "via": "sumision",
               "fiscal": 1,
-              "revuelta": 15
+              "revuelta": 15,
+              "poly": [
+                [
+                  [
+                    56,
+                    37
+                  ],
+                  [
+                    62,
+                    37
+                  ],
+                  [
+                    67,
+                    38.5
+                  ],
+                  [
+                    68,
+                    42
+                  ],
+                  [
+                    64,
+                    44
+                  ],
+                  [
+                    58,
+                    43.5
+                  ],
+                  [
+                    55,
+                    40.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Besarabia y Moldavia",
               "members": [
                 "Moldova"
               ],
-              "box": [
-                26,
-                45,
-                30,
-                49
-              ],
               "fiscal": 1,
-              "revuelta": 12
+              "revuelta": 12,
+              "poly": [
+                [
+                  [
+                    26.4,
+                    45.2
+                  ],
+                  [
+                    30,
+                    45.4
+                  ],
+                  [
+                    30.5,
+                    48.5
+                  ],
+                  [
+                    27.5,
+                    48.6
+                  ],
+                  [
+                    26.2,
+                    47
+                  ]
+                ]
+              ]
             }
           ]
         },
@@ -23287,15 +24521,69 @@
                 "Belarus",
                 "Moldova"
               ],
-              "box": [
-                22,
-                44,
-                42,
-                56
-              ],
               "fiscal": 22,
               "revuelta": 12,
-              "nota": "Arrasadas dos veces en cuatro años. La insurgencia nacionalista en Ucrania occidental y los bálticos dura hasta los años cincuenta."
+              "nota": "Arrasadas dos veces en cuatro años. La insurgencia nacionalista en Ucrania occidental y los bálticos dura hasta los años cincuenta.",
+              "poly": [
+                [
+                  [
+                    22.5,
+                    50.5
+                  ],
+                  [
+                    28,
+                    48
+                  ],
+                  [
+                    34,
+                    46.5
+                  ],
+                  [
+                    40,
+                    46
+                  ],
+                  [
+                    46,
+                    48
+                  ],
+                  [
+                    50,
+                    51
+                  ],
+                  [
+                    53,
+                    55
+                  ],
+                  [
+                    55,
+                    60
+                  ],
+                  [
+                    52,
+                    65
+                  ],
+                  [
+                    46,
+                    68
+                  ],
+                  [
+                    38,
+                    68.5
+                  ],
+                  [
+                    31,
+                    66
+                  ],
+                  [
+                    27.5,
+                    61
+                  ],
+                  [
+                    24,
+                    56
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Bálticas",
@@ -23304,17 +24592,43 @@
                 "Latvia",
                 "Lithuania"
               ],
-              "box": [
-                20,
-                54,
-                29,
-                60
-              ],
               "via": "conquista",
               "desde": 1940,
               "fiscal": 3,
               "revuelta": 30,
-              "nota": "Anexión no reconocida por buena parte del mundo durante cincuenta y un años."
+              "nota": "Anexión no reconocida por buena parte del mundo durante cincuenta y un años.",
+              "poly": [
+                [
+                  [
+                    20.8,
+                    53.8
+                  ],
+                  [
+                    25,
+                    53.5
+                  ],
+                  [
+                    28.5,
+                    55.5
+                  ],
+                  [
+                    28.5,
+                    59.5
+                  ],
+                  [
+                    25,
+                    60.2
+                  ],
+                  [
+                    22,
+                    58.5
+                  ],
+                  [
+                    20.4,
+                    56
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Asia Central y Cáucaso",
@@ -23328,14 +24642,94 @@
                 "Armenia",
                 "Azerbaijan"
               ],
-              "box": [
-                45,
-                35,
-                88,
-                56
-              ],
               "fiscal": 12,
-              "revuelta": 6
+              "revuelta": 6,
+              "poly": [
+                [
+                  [
+                    50,
+                    38.5
+                  ],
+                  [
+                    56,
+                    36.5
+                  ],
+                  [
+                    62,
+                    36
+                  ],
+                  [
+                    68,
+                    37
+                  ],
+                  [
+                    74,
+                    39
+                  ],
+                  [
+                    80,
+                    43
+                  ],
+                  [
+                    82,
+                    47
+                  ],
+                  [
+                    77,
+                    51
+                  ],
+                  [
+                    69,
+                    53
+                  ],
+                  [
+                    60,
+                    53
+                  ],
+                  [
+                    52,
+                    50
+                  ],
+                  [
+                    48,
+                    45
+                  ],
+                  [
+                    48,
+                    41
+                  ]
+                ],
+                [
+                  [
+                    39.5,
+                    38.5
+                  ],
+                  [
+                    44,
+                    38.5
+                  ],
+                  [
+                    48,
+                    38.5
+                  ],
+                  [
+                    50.5,
+                    41
+                  ],
+                  [
+                    48,
+                    43.5
+                  ],
+                  [
+                    43,
+                    43.5
+                  ],
+                  [
+                    39.5,
+                    41.5
+                  ]
+                ]
+              ]
             }
           ],
           "march": [
@@ -23345,16 +24739,60 @@
                 "Russia",
                 "Poland"
               ],
-              "box": [
-                19,
-                54,
-                32,
-                70
-              ],
               "via": "conquista",
               "desde": 1945,
               "fiscal": 1,
-              "revuelta": 8
+              "revuelta": 8,
+              "poly": [
+                [
+                  [
+                    19,
+                    54
+                  ],
+                  [
+                    23,
+                    54
+                  ],
+                  [
+                    23,
+                    55.5
+                  ],
+                  [
+                    19,
+                    55.5
+                  ]
+                ],
+                [
+                  [
+                    20.5,
+                    59.8
+                  ],
+                  [
+                    28,
+                    60
+                  ],
+                  [
+                    31.5,
+                    62.5
+                  ],
+                  [
+                    30,
+                    68
+                  ],
+                  [
+                    25,
+                    70.2
+                  ],
+                  [
+                    21,
+                    67
+                  ],
+                  [
+                    20,
+                    63
+                  ]
+                ]
+              ]
             }
           ],
           "client": [
@@ -23368,17 +24806,59 @@
                 "Romania",
                 "Bulgaria"
               ],
-              "box": [
-                11,
-                41,
-                27,
-                55
-              ],
               "via": "conquista",
               "desde": 1945,
               "fiscal": 4,
               "revuelta": 25,
-              "nota": "Ocupación militar que se convertirá en bloque en tres años. Todavía hay elecciones plurales en varios de estos países."
+              "nota": "Ocupación militar que se convertirá en bloque en tres años. Todavía hay elecciones plurales en varios de estos países.",
+              "poly": [
+                [
+                  [
+                    10.5,
+                    47
+                  ],
+                  [
+                    15,
+                    45
+                  ],
+                  [
+                    20,
+                    44
+                  ],
+                  [
+                    25,
+                    43.5
+                  ],
+                  [
+                    29,
+                    44.5
+                  ],
+                  [
+                    29,
+                    48.5
+                  ],
+                  [
+                    26,
+                    51
+                  ],
+                  [
+                    21,
+                    54.5
+                  ],
+                  [
+                    15,
+                    55
+                  ],
+                  [
+                    11,
+                    54
+                  ],
+                  [
+                    9.5,
+                    50.5
+                  ]
+                ]
+              ]
             }
           ]
         }
@@ -23418,11 +24898,49 @@
               "Moldova",
               "Russia"
             ],
-            "box": [
-              17,
-              46,
-              34,
-              58
+            "poly": [
+              [
+                [
+                  17.5,
+                  49.2
+                ],
+                [
+                  22,
+                  48.2
+                ],
+                [
+                  27,
+                  48.5
+                ],
+                [
+                  31.5,
+                  50.5
+                ],
+                [
+                  33,
+                  54
+                ],
+                [
+                  30,
+                  57
+                ],
+                [
+                  26,
+                  58
+                ],
+                [
+                  21.5,
+                  57
+                ],
+                [
+                  18.5,
+                  54.5
+                ],
+                [
+                  16.4,
+                  51.5
+                ]
+              ]
             ]
           }
         }
@@ -24005,11 +25523,85 @@
               "Russia",
               "Poland"
             ],
-            "box": [
-              8,
-              53,
-              33,
-              70
+            "poly": [
+              [
+                [
+                  11,
+                  55.2
+                ],
+                [
+                  17,
+                  55.5
+                ],
+                [
+                  20,
+                  58
+                ],
+                [
+                  24,
+                  62
+                ],
+                [
+                  25,
+                  66
+                ],
+                [
+                  22,
+                  69.5
+                ],
+                [
+                  16,
+                  68
+                ],
+                [
+                  12,
+                  64
+                ],
+                [
+                  9,
+                  59
+                ]
+              ],
+              [
+                [
+                  21,
+                  56.5
+                ],
+                [
+                  28.5,
+                  56.5
+                ],
+                [
+                  30,
+                  59.5
+                ],
+                [
+                  27,
+                  60.5
+                ],
+                [
+                  22,
+                  59
+                ]
+              ],
+              [
+                [
+                  11,
+                  53.3
+                ],
+                [
+                  16,
+                  53.5
+                ],
+                [
+                  16,
+                  54.7
+                ],
+                [
+                  11,
+                  54.5
+                ]
+              ]
             ]
           }
         }
@@ -24254,19 +25846,31 @@
                   ],
                   [
                     94,
-                    38
+                    38.5
                   ],
                   [
-                    93,
-                    43
+                    96,
+                    42
                   ],
                   [
-                    86,
+                    95,
                     45
                   ],
                   [
-                    78,
-                    43
+                    91,
+                    47.5
+                  ],
+                  [
+                    85,
+                    48.5
+                  ],
+                  [
+                    80,
+                    47
+                  ],
+                  [
+                    76,
+                    43.5
                   ],
                   [
                     73,
@@ -24291,31 +25895,31 @@
                     41
                   ],
                   [
-                    100,
+                    98,
                     40.5
                   ],
                   [
-                    112,
-                    41
+                    110,
+                    41.5
                   ],
                   [
                     122,
-                    43
+                    43.5
                   ],
                   [
                     120,
-                    51
+                    51.5
                   ],
                   [
                     106,
+                    52.5
+                  ],
+                  [
+                    93,
                     52
                   ],
                   [
-                    94,
-                    52
-                  ],
-                  [
-                    86,
+                    85,
                     47
                   ]
                 ]
@@ -24530,19 +26134,31 @@
                   ],
                   [
                     94,
-                    38
+                    38.5
                   ],
                   [
-                    93,
-                    43
+                    96,
+                    42
                   ],
                   [
-                    86,
+                    95,
                     45
                   ],
                   [
-                    78,
-                    43
+                    91,
+                    47.5
+                  ],
+                  [
+                    85,
+                    48.5
+                  ],
+                  [
+                    80,
+                    47
+                  ],
+                  [
+                    76,
+                    43.5
                   ],
                   [
                     73,
@@ -24565,31 +26181,31 @@
                     41
                   ],
                   [
-                    100,
+                    98,
                     40.5
                   ],
                   [
-                    112,
-                    41
+                    110,
+                    41.5
                   ],
                   [
                     122,
-                    43
+                    43.5
                   ],
                   [
                     120,
-                    51
+                    51.5
                   ],
                   [
                     106,
+                    52.5
+                  ],
+                  [
+                    93,
                     52
                   ],
                   [
-                    94,
-                    52
-                  ],
-                  [
-                    86,
+                    85,
                     47
                   ]
                 ]
@@ -25022,16 +26638,50 @@
               "Belgium",
               "Luxembourg"
             ],
-            "box": [
-              -5,
-              42,
-              8,
-              51
-            ],
             "fiscal": 52,
             "revuelta": 3,
             "guarnicion": 200000,
-            "nota": "Departamentos con código civil, catastro y conscripción. Es el Estado administrativo más eficaz de Europa y el modelo que copiarán todos."
+            "nota": "Departamentos con código civil, catastro y conscripción. Es el Estado administrativo más eficaz de Europa y el modelo que copiarán todos.",
+            "poly": [
+              [
+                [
+                  -2,
+                  42.8
+                ],
+                [
+                  4,
+                  42.8
+                ],
+                [
+                  7.8,
+                  44.5
+                ],
+                [
+                  8.5,
+                  47.5
+                ],
+                [
+                  7,
+                  50.5
+                ],
+                [
+                  4,
+                  51.5
+                ],
+                [
+                  -1,
+                  49.5
+                ],
+                [
+                  -5,
+                  47.5
+                ],
+                [
+                  -2,
+                  44.5
+                ]
+              ]
+            ]
           },
           "contested": [
             {
@@ -25059,14 +26709,40 @@
                 "Austria",
                 "Czechia"
               ],
-              "box": [
-                9,
-                46,
-                19,
-                50
-              ],
               "via": "tratado",
-              "revuelta": 30
+              "revuelta": 30,
+              "poly": [
+                [
+                  [
+                    9.5,
+                    46
+                  ],
+                  [
+                    13.5,
+                    45.5
+                  ],
+                  [
+                    17.5,
+                    46
+                  ],
+                  [
+                    19.5,
+                    47.5
+                  ],
+                  [
+                    19,
+                    50.5
+                  ],
+                  [
+                    15,
+                    51
+                  ],
+                  [
+                    10.5,
+                    48.5
+                  ]
+                ]
+              ]
             }
           ],
           "provinces": [
@@ -25077,16 +26753,38 @@
                 "Germany",
                 "Italy"
               ],
-              "box": [
-                4,
-                43,
-                14,
-                54
-              ],
               "via": "conquista",
               "fiscal": 20,
               "revuelta": 12,
-              "nota": "Holanda, la costa alemana del mar del Norte y el noroeste italiano gobernados directamente desde París. Aquí el bloqueo continental se hace cumplir con gendarmes."
+              "nota": "Holanda, la costa alemana del mar del Norte y el noroeste italiano gobernados directamente desde París. Aquí el bloqueo continental se hace cumplir con gendarmes.",
+              "poly": [
+                [
+                  [
+                    3.5,
+                    50.5
+                  ],
+                  [
+                    7.5,
+                    50.5
+                  ],
+                  [
+                    9.5,
+                    53
+                  ],
+                  [
+                    8.5,
+                    54.5
+                  ],
+                  [
+                    4,
+                    53.5
+                  ],
+                  [
+                    3,
+                    51.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Iliria",
@@ -25094,16 +26792,38 @@
                 "Slovenia",
                 "Croatia"
               ],
-              "box": [
-                13,
-                42,
-                19,
-                47
-              ],
               "via": "conquista",
               "desde": 1809,
               "fiscal": 3,
-              "revuelta": 20
+              "revuelta": 20,
+              "poly": [
+                [
+                  [
+                    12.8,
+                    42
+                  ],
+                  [
+                    16.5,
+                    42.2
+                  ],
+                  [
+                    19.5,
+                    44
+                  ],
+                  [
+                    19,
+                    46.5
+                  ],
+                  [
+                    15.5,
+                    46.8
+                  ],
+                  [
+                    13,
+                    45.8
+                  ]
+                ]
+              ]
             }
           ],
           "client": [
@@ -25112,50 +26832,128 @@
               "members": [
                 "Italy"
               ],
-              "box": [
-                7,
-                36,
-                19,
-                47
-              ],
               "via": "conquista",
               "fiscal": 10,
               "revuelta": 15,
-              "nota": "Coronas repartidas entre parientes: un hijastro en Milán, un cuñado en Nápoles. El nepotismo como sistema de gobierno internacional."
+              "nota": "Coronas repartidas entre parientes: un hijastro en Milán, un cuñado en Nápoles. El nepotismo como sistema de gobierno internacional.",
+              "poly": [
+                [
+                  [
+                    6.8,
+                    37.5
+                  ],
+                  [
+                    12,
+                    36.5
+                  ],
+                  [
+                    16.5,
+                    38
+                  ],
+                  [
+                    18.8,
+                    40.5
+                  ],
+                  [
+                    16,
+                    42.5
+                  ],
+                  [
+                    13.5,
+                    45.8
+                  ],
+                  [
+                    9.5,
+                    46.5
+                  ],
+                  [
+                    6.8,
+                    45
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Confederación del Rin",
               "members": [
                 "Germany"
               ],
-              "box": [
-                6,
-                47,
-                14,
-                54
-              ],
               "via": "tratado",
               "desde": 1806,
               "fiscal": 8,
               "revuelta": 18,
-              "nota": "Dieciséis Estados alemanes que aportan contingentes. La disolución del Sacro Imperio se firma aquí, no en Viena."
+              "nota": "Dieciséis Estados alemanes que aportan contingentes. La disolución del Sacro Imperio se firma aquí, no en Viena.",
+              "poly": [
+                [
+                  [
+                    6.5,
+                    47
+                  ],
+                  [
+                    11,
+                    46.8
+                  ],
+                  [
+                    14,
+                    48
+                  ],
+                  [
+                    14.5,
+                    51.5
+                  ],
+                  [
+                    12,
+                    54.3
+                  ],
+                  [
+                    8,
+                    54.5
+                  ],
+                  [
+                    6,
+                    51
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Ducado de Varsovia",
               "members": [
                 "Poland"
               ],
-              "box": [
-                16,
-                49,
-                24,
-                55
-              ],
               "via": "conquista",
               "desde": 1807,
               "fiscal": 3,
               "revuelta": 8,
-              "nota": "La única clientela genuinamente entusiasta: los polacos aportan cien mil hombres a la campaña de Rusia."
+              "nota": "La única clientela genuinamente entusiasta: los polacos aportan cien mil hombres a la campaña de Rusia.",
+              "poly": [
+                [
+                  [
+                    16.5,
+                    49.5
+                  ],
+                  [
+                    21,
+                    49
+                  ],
+                  [
+                    24.5,
+                    50.5
+                  ],
+                  [
+                    24.5,
+                    54.5
+                  ],
+                  [
+                    20,
+                    55
+                  ],
+                  [
+                    16.5,
+                    53.5
+                  ]
+                ]
+              ]
             },
             {
               "nombre": "Suiza y Dinamarca",

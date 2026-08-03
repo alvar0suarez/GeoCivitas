@@ -66,8 +66,8 @@ Son **221 instantáneas** para 76 entidades. Ninguna entidad supera los 250 año
 sin recalcular y la mediana del mayor hueco por entidad está en 156 años; en los
 periodos con más registro, en décadas.
 
-Donde la frontera es un río y no un paralelo, se traza como tal. **328 zonas**
-—el 54 % del total— se recortan con polígonos sobre las líneas que de verdad
+Donde la frontera es un río y no un paralelo, se traza como tal. **375 zonas**
+—el 62 % del total— se recortan con polígonos sobre las líneas que de verdad
 organizaron el territorio:
 
 - **Iberia**: el Duero, el Tajo, el Ebro y Sierra Morena
@@ -81,6 +81,10 @@ organizaron el territorio:
   entre el Pacífico y la selva—, la cuenca de México y el Petén maya
 - **Sudeste asiático**: el delta del río Rojo, el Tonlé Sap, el Chao Phraya,
   el estrecho de Malaca y el eje Java-Sumatra
+- **Rusia y la estepa**: la cuenca del Volga, la estepa póntica del Danubio al
+  Irtish, el Turkestán y Siberia
+- **Europa central**: el Sacro Imperio del Elba al Po, la Mancomunidad
+  polaco-lituana, el Báltico sueco y los ocho pedazos del imperio carolingio
 
 Quedan cajas donde la costa ya hace de recorte y la diferencia no se ve.
 
